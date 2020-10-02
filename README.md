@@ -35,7 +35,7 @@ Find formal description of Navigine-SDK API including the list of classes and th
 
 ### Using .framework file in XCode
 
-- Download `navigine.framework` file from current repositories `Frameworks` folder;
+- Download `navigine.framework.zip` file from current repositories `Frameworks` folder and unarchive it;
 - In your project create `Frameworks` folder and move `navigine.framework` to there;
 - Embed and sign it, add Bridging Headers file;
 - Start using Navigine SDK.

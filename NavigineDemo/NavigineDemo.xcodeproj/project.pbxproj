@@ -12,10 +12,10 @@
 		8628214425274774007546DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8628214225274774007546DA /* Main.storyboard */; };
 		8628214625274775007546DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8628214525274775007546DA /* Assets.xcassets */; };
 		8628214925274775007546DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8628214725274775007546DA /* LaunchScreen.storyboard */; };
-		8628215425274B84007546DA /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628215125274907007546DA /* navigine.framework */; };
-		8628215525274B84007546DA /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8628215125274907007546DA /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8628215A25274C0E007546DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628215925274C0E007546DA /* SceneDelegate.swift */; };
 		8628215C25274E42007546DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628215B25274E42007546DA /* Constants.swift */; };
+		866AA0D2261348C6002BD2F7 /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866AA0D02613487A002BD2F7 /* navigine.framework */; };
+		866AA0D3261348C6002BD2F7 /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 866AA0D02613487A002BD2F7 /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8628215525274B84007546DA /* navigine.framework in Embed Frameworks */,
+				866AA0D3261348C6002BD2F7 /* navigine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,10 +40,10 @@
 		8628214525274775007546DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8628214825274775007546DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8628214A25274775007546DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8628215125274907007546DA /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = navigine.framework; sourceTree = "<group>"; };
 		8628215325274945007546DA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		8628215925274C0E007546DA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8628215B25274E42007546DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		866AA0D02613487A002BD2F7 /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = navigine.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8628215425274B84007546DA /* navigine.framework in Frameworks */,
+				866AA0D2261348C6002BD2F7 /* navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 		8628215025274907007546DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8628215125274907007546DA /* navigine.framework */,
+				866AA0D02613487A002BD2F7 /* navigine.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

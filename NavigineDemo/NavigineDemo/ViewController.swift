@@ -28,11 +28,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: NCLocationListener {
+    func onDownloadProgress(_ received: Int32, total: Int32) { }
+    
     func onLocationLoaded(_ location: NCLocation?) {
         mLocationView.setSublocation(Int32(Constants.SUBLOCATION_ID))
     }
-    
-    func onUploadProgress(_ received: Int32, total: Int32) { }
-    
+        
     func onLocationFailed(_ error: Error?) { }
 }

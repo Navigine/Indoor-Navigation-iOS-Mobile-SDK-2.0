@@ -1,6 +1,6 @@
 <a href="http://navigine.com"><img src="https://navigine.com/assets/web/images/logo.svg" align="right" height="60" width="180" hspace="10" vspace="5"></a>
 
-# iOS SDK 2.0 Beta version
+# iOS SDK 2.0
 
 The following sections describe the contents of the Navigine iOS SDK repository. Files in our public repository for iOS are:
 

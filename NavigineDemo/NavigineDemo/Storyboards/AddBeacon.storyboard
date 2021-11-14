@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="elZ-f3-taW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="UUE-6f-8Lz">
+            <objects>
+                <viewController id="elZ-f3-taW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DmT-Kr-vYl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Major" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8Z-qS-M0s">
+                                <rect key="frame" x="20" y="44" width="374" height="34"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Minor" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-eU-MqL">
+                                <rect key="frame" x="20" y="88" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b7z-is-Fs0" firstAttribute="trailing" secondItem="PHo-eU-MqL" secondAttribute="trailing" constant="20" id="0Oz-oy-CQl"/>
+                            <constraint firstItem="PHo-eU-MqL" firstAttribute="leading" secondItem="b7z-is-Fs0" secondAttribute="leading" constant="20" id="FK6-HP-fL6"/>
+                            <constraint firstItem="o8Z-qS-M0s" firstAttribute="leading" secondItem="b7z-is-Fs0" secondAttribute="leading" constant="20" id="O8n-Pr-ye5"/>
+                            <constraint firstItem="PHo-eU-MqL" firstAttribute="top" secondItem="o8Z-qS-M0s" secondAttribute="bottom" constant="10" id="ZmF-zM-TRg"/>
+                            <constraint firstItem="b7z-is-Fs0" firstAttribute="trailing" secondItem="o8Z-qS-M0s" secondAttribute="trailing" constant="20" id="t13-kC-xBF"/>
+                            <constraint firstItem="o8Z-qS-M0s" firstAttribute="top" secondItem="b7z-is-Fs0" secondAttribute="top" id="yzr-XO-9yC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b7z-is-Fs0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gcX-V9-nf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="200"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,25 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8628213D25274774007546DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628213C25274774007546DA /* AppDelegate.swift */; };
-		8628214125274774007546DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628214025274774007546DA /* ViewController.swift */; };
-		8628214425274774007546DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8628214225274774007546DA /* Main.storyboard */; };
-		8628214625274775007546DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8628214525274775007546DA /* Assets.xcassets */; };
-		8628214925274775007546DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8628214725274775007546DA /* LaunchScreen.storyboard */; };
-		8628215A25274C0E007546DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628215925274C0E007546DA /* SceneDelegate.swift */; };
-		8628215C25274E42007546DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8628215B25274E42007546DA /* Constants.swift */; };
-		866AA0D5261376BA002BD2F7 /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866AA0D02613487A002BD2F7 /* navigine.framework */; };
-		866AA0D6261376BA002BD2F7 /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 866AA0D02613487A002BD2F7 /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653E24C88F2100509D5E /* GLKit.framework */; };
+		62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
+		62A7FC7D27073882002D1C18 /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; };
+		62A7FC7E27073882002D1C18 /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AEFF552732B9D0000223D5 /* blue_dot.png */; };
+		860164E924C7456900509D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164E824C7456900509D5E /* AppDelegate.swift */; };
+		860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164EA24C7456900509D5E /* SceneDelegate.swift */; };
+		860164F224C7456900509D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860164F124C7456900509D5E /* Assets.xcassets */; };
+		8601650F24C8567C00509D5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601650D24C8567C00509D5E /* LaunchScreen.storyboard */; };
+		8601651324C8575900509D5E /* LocationsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601651224C8575900509D5E /* LocationsList.storyboard */; };
+		8601651724C8581500509D5E /* AddBeacon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601651624C8581500509D5E /* AddBeacon.storyboard */; };
+		8601651924C8582800509D5E /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601651824C8582800509D5E /* Debug.storyboard */; };
+		8601651B24C8583600509D5E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601651A24C8583600509D5E /* Profile.storyboard */; };
+		8601651E24C85AD900509D5E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601651D24C85AD900509D5E /* TabBarController.swift */; };
+		8601652824C85D5C00509D5E /* Circe-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8601652024C85D5C00509D5E /* Circe-ExtraLight.ttf */; };
+		8601652924C85D5C00509D5E /* Circe-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8601652124C85D5C00509D5E /* Circe-ExtraBold.ttf */; };
+		8601652A24C85D5C00509D5E /* Circe-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8601652224C85D5C00509D5E /* Circe-Bold.ttf */; };
+		8601653124C867FC00509D5E /* LocationsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601653024C867FC00509D5E /* LocationsListController.swift */; };
+		8601653524C86DAD00509D5E /* LocationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601653424C86DAD00509D5E /* LocationSearchController.swift */; };
+		8601653824C87FC600509D5E /* NavigineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601653724C87FC600509D5E /* NavigineApp.swift */; };
+		8601654024C88F2100509D5E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653E24C88F2100509D5E /* GLKit.framework */; };
+		8601654724C9C39C00509D5E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601654624C9C39C00509D5E /* NavigationController.swift */; };
+		86016BBF24C9D00B00509D5E /* Circe-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8601652624C85D5C00509D5E /* Circe-Thin.ttf */; };
+		86016BC024C9D00B00509D5E /* Circe-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8601652724C85D5C00509D5E /* Circe-Regular.ttf */; };
+		86016BC124C9D00B00509D5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601650C24C8567C00509D5E /* Main.storyboard */; };
+		86016BC224C9D00B00509D5E /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8601651424C857F400509D5E /* Navigation.storyboard */; };
+		8610E3A924E536E0002BED87 /* AddBeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E3A824E536E0002BED87 /* AddBeaconController.swift */; };
+		861E3D8F24E1A9F4008DD348 /* LocationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E3D8E24E1A9F4008DD348 /* LocationItemCell.swift */; };
+		861E3D9724E2D0E2008DD348 /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861E3D9624E2D0E2008DD348 /* CircularLoaderView.swift */; };
+		8676DD5B24DC3CE200325212 /* DebugController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676DD5A24DC3CE200325212 /* DebugController.swift */; };
+		8695E0D824F3DA19005D738C /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0D724F3DA19005D738C /* VenueDetailsViewController.swift */; };
+		8695E0E724F3DAF8005D738C /* FloatingPanelCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0DB24F3DAF8005D738C /* FloatingPanelCore.swift */; };
+		8695E0E824F3DAF8005D738C /* FloatingPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0DC24F3DAF8005D738C /* FloatingPanelController.swift */; };
+		8695E0E924F3DAF8005D738C /* FloatingPanelSurfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0DD24F3DAF8005D738C /* FloatingPanelSurfaceView.swift */; };
+		8695E0EA24F3DAF8005D738C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0DE24F3DAF8005D738C /* Logger.swift */; };
+		8695E0EB24F3DAF8005D738C /* FloatingPanelBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0DF24F3DAF8005D738C /* FloatingPanelBehavior.swift */; };
+		8695E0EC24F3DAF8005D738C /* FloatingPanelTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E124F3DAF8005D738C /* FloatingPanelTransitioning.swift */; };
+		8695E0ED24F3DAF8005D738C /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E224F3DAF8005D738C /* FloatingPanelView.swift */; };
+		8695E0EE24F3DAF8005D738C /* GrabberHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E324F3DAF8005D738C /* GrabberHandleView.swift */; };
+		8695E0EF24F3DAF8005D738C /* FloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E424F3DAF8005D738C /* FloatingPanelLayout.swift */; };
+		8695E0F024F3DAF8005D738C /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E524F3DAF8005D738C /* FloatingPanelBackdropView.swift */; };
+		8695E0F124F3DAF8005D738C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E624F3DAF8005D738C /* UIExtensions.swift */; };
+		86F43C4524E3E1080084C2D3 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4424E3E1080084C2D3 /* MyCollectionViewCell.swift */; };
+		86F43C4924E418CC0084C2D3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4824E418CC0084C2D3 /* ProfileController.swift */; };
+		86F43C4B24E419B90084C2D3 /* LogsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4A24E419B90084C2D3 /* LogsItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		866AA0D7261376BA002BD2F7 /* Embed Frameworks */ = {
+		62A7FC7F27073882002D1C18 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				866AA0D6261376BA002BD2F7 /* navigine.framework in Embed Frameworks */,
+				62A7FC7E27073882002D1C18 /* navigine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,83 +69,230 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8628213925274774007546DA /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8628213C25274774007546DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8628214025274774007546DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8628214325274774007546DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8628214525274775007546DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8628214825274775007546DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8628214A25274775007546DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8628215325274945007546DA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		8628215925274C0E007546DA /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8628215B25274E42007546DA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		866AA0D02613487A002BD2F7 /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = navigine.framework; sourceTree = "<group>"; };
+		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
+		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		860164E824C7456900509D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		860164EA24C7456900509D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		860164F124C7456900509D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		860164F624C7456900509D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		860164FD24C745BA00509D5E /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = navigine.framework; sourceTree = "<group>"; };
+		8601650224C7479700509D5E /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		8601650C24C8567C00509D5E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8601650D24C8567C00509D5E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8601651224C8575900509D5E /* LocationsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationsList.storyboard; sourceTree = "<group>"; };
+		8601651424C857F400509D5E /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		8601651624C8581500509D5E /* AddBeacon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBeacon.storyboard; sourceTree = "<group>"; };
+		8601651824C8582800509D5E /* Debug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Debug.storyboard; sourceTree = "<group>"; };
+		8601651A24C8583600509D5E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		8601651D24C85AD900509D5E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8601652024C85D5C00509D5E /* Circe-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8601652124C85D5C00509D5E /* Circe-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-ExtraBold.ttf"; sourceTree = "<group>"; };
+		8601652224C85D5C00509D5E /* Circe-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Bold.ttf"; sourceTree = "<group>"; };
+		8601652624C85D5C00509D5E /* Circe-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Thin.ttf"; sourceTree = "<group>"; };
+		8601652724C85D5C00509D5E /* Circe-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Circe-Regular.ttf"; sourceTree = "<group>"; };
+		8601653024C867FC00509D5E /* LocationsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListController.swift; sourceTree = "<group>"; };
+		8601653424C86DAD00509D5E /* LocationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchController.swift; sourceTree = "<group>"; };
+		8601653724C87FC600509D5E /* NavigineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigineApp.swift; sourceTree = "<group>"; };
+		8601653E24C88F2100509D5E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8601653F24C88F2100509D5E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8601654624C9C39C00509D5E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		8610E3A824E536E0002BED87 /* AddBeaconController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconController.swift; sourceTree = "<group>"; };
+		861E3D8E24E1A9F4008DD348 /* LocationItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItemCell.swift; sourceTree = "<group>"; };
+		861E3D9624E2D0E2008DD348 /* CircularLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
+		8676DD5A24DC3CE200325212 /* DebugController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugController.swift; sourceTree = "<group>"; };
+		8695E0D724F3DA19005D738C /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		8695E0DB24F3DAF8005D738C /* FloatingPanelCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelCore.swift; sourceTree = "<group>"; };
+		8695E0DC24F3DAF8005D738C /* FloatingPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelController.swift; sourceTree = "<group>"; };
+		8695E0DD24F3DAF8005D738C /* FloatingPanelSurfaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelSurfaceView.swift; sourceTree = "<group>"; };
+		8695E0DE24F3DAF8005D738C /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		8695E0DF24F3DAF8005D738C /* FloatingPanelBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBehavior.swift; sourceTree = "<group>"; };
+		8695E0E024F3DAF8005D738C /* FloatingPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingPanel.h; sourceTree = "<group>"; };
+		8695E0E124F3DAF8005D738C /* FloatingPanelTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelTransitioning.swift; sourceTree = "<group>"; };
+		8695E0E224F3DAF8005D738C /* FloatingPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelView.swift; sourceTree = "<group>"; };
+		8695E0E324F3DAF8005D738C /* GrabberHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrabberHandleView.swift; sourceTree = "<group>"; };
+		8695E0E424F3DAF8005D738C /* FloatingPanelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelLayout.swift; sourceTree = "<group>"; };
+		8695E0E524F3DAF8005D738C /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
+		8695E0E624F3DAF8005D738C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		86F43C4424E3E1080084C2D3 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		86F43C4824E418CC0084C2D3 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		86F43C4A24E419B90084C2D3 /* LogsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8628213625274774007546DA /* Frameworks */ = {
+		860164E224C7456900509D5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866AA0D5261376BA002BD2F7 /* navigine.framework in Frameworks */,
+				8601654024C88F2100509D5E /* GLKit.framework in Frameworks */,
+				62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */,
+				62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */,
+				62A7FC7D27073882002D1C18 /* navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8628213025274774007546DA = {
+		62C796BB2678F91E005FEB09 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8628213B25274774007546DA /* NavigineDemo */,
-				8628213A25274774007546DA /* Products */,
+				62C796BC2678F91E005FEB09 /* img */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		62C796BC2678F91E005FEB09 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				62AEFF552732B9D0000223D5 /* blue_dot.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		860164DC24C7456900509D5E = {
+			isa = PBXGroup;
+			children = (
+				860164E724C7456900509D5E /* NavigineDemo */,
+				860164E624C7456900509D5E /* Products */,
+				8601653D24C88F2100509D5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		8628213A25274774007546DA /* Products */ = {
+		860164E624C7456900509D5E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8628213925274774007546DA /* NavigineDemo.app */,
+				860164E524C7456900509D5E /* NavigineDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8628213B25274774007546DA /* NavigineDemo */ = {
+		860164E724C7456900509D5E /* NavigineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8628215025274907007546DA /* Frameworks */,
-				8628215925274C0E007546DA /* SceneDelegate.swift */,
-				8628213C25274774007546DA /* AppDelegate.swift */,
-				8628214025274774007546DA /* ViewController.swift */,
-				8628214225274774007546DA /* Main.storyboard */,
-				8628214525274775007546DA /* Assets.xcassets */,
-				8628214725274775007546DA /* LaunchScreen.storyboard */,
-				8628214A25274775007546DA /* Info.plist */,
-				8628215325274945007546DA /* BridgingHeader.h */,
-				8628215B25274E42007546DA /* Constants.swift */,
+				62C796BB2678F91E005FEB09 /* Resources */,
+				8695E0D924F3DAD9005D738C /* Libs */,
+				8601653624C87FA900509D5E /* Helpers */,
+				8601651F24C85D5C00509D5E /* Fonts */,
+				8601651C24C85AC100509D5E /* ViewControllers */,
+				8601650624C8558300509D5E /* Storyboards */,
+				860164FC24C7458200509D5E /* Frameworks */,
+				860164E824C7456900509D5E /* AppDelegate.swift */,
+				860164EA24C7456900509D5E /* SceneDelegate.swift */,
+				860164F124C7456900509D5E /* Assets.xcassets */,
+				860164F624C7456900509D5E /* Info.plist */,
+				8601650224C7479700509D5E /* BridgingHeader.h */,
 			);
 			path = NavigineDemo;
 			sourceTree = "<group>";
 		};
-		8628215025274907007546DA /* Frameworks */ = {
+		860164FC24C7458200509D5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				866AA0D02613487A002BD2F7 /* navigine.framework */,
+				860164FD24C745BA00509D5E /* navigine.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		8601650624C8558300509D5E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8601650D24C8567C00509D5E /* LaunchScreen.storyboard */,
+				8601650C24C8567C00509D5E /* Main.storyboard */,
+				8601651224C8575900509D5E /* LocationsList.storyboard */,
+				8601651424C857F400509D5E /* Navigation.storyboard */,
+				8601651624C8581500509D5E /* AddBeacon.storyboard */,
+				8601651824C8582800509D5E /* Debug.storyboard */,
+				8601651A24C8583600509D5E /* Profile.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8601651C24C85AC100509D5E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8601651D24C85AD900509D5E /* TabBarController.swift */,
+				8601653024C867FC00509D5E /* LocationsListController.swift */,
+				8601653424C86DAD00509D5E /* LocationSearchController.swift */,
+				8601654624C9C39C00509D5E /* NavigationController.swift */,
+				8676DD5A24DC3CE200325212 /* DebugController.swift */,
+				86F43C4824E418CC0084C2D3 /* ProfileController.swift */,
+				8610E3A824E536E0002BED87 /* AddBeaconController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8601651F24C85D5C00509D5E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8601652024C85D5C00509D5E /* Circe-ExtraLight.ttf */,
+				8601652124C85D5C00509D5E /* Circe-ExtraBold.ttf */,
+				8601652224C85D5C00509D5E /* Circe-Bold.ttf */,
+				8601652624C85D5C00509D5E /* Circe-Thin.ttf */,
+				8601652724C85D5C00509D5E /* Circe-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8601653624C87FA900509D5E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8601653724C87FC600509D5E /* NavigineApp.swift */,
+				861E3D8E24E1A9F4008DD348 /* LocationItemCell.swift */,
+				861E3D9624E2D0E2008DD348 /* CircularLoaderView.swift */,
+				86F43C4424E3E1080084C2D3 /* MyCollectionViewCell.swift */,
+				86F43C4A24E419B90084C2D3 /* LogsItemCell.swift */,
+				8695E0D724F3DA19005D738C /* VenueDetailsViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8601653D24C88F2100509D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8601653E24C88F2100509D5E /* GLKit.framework */,
+				8601653F24C88F2100509D5E /* OpenGLES.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8695E0D924F3DAD9005D738C /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				8695E0DA24F3DAF8005D738C /* FloatingPanel */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		8695E0DA24F3DAF8005D738C /* FloatingPanel */ = {
+			isa = PBXGroup;
+			children = (
+				8695E0DB24F3DAF8005D738C /* FloatingPanelCore.swift */,
+				8695E0DC24F3DAF8005D738C /* FloatingPanelController.swift */,
+				8695E0DD24F3DAF8005D738C /* FloatingPanelSurfaceView.swift */,
+				8695E0DE24F3DAF8005D738C /* Logger.swift */,
+				8695E0DF24F3DAF8005D738C /* FloatingPanelBehavior.swift */,
+				8695E0E024F3DAF8005D738C /* FloatingPanel.h */,
+				8695E0E124F3DAF8005D738C /* FloatingPanelTransitioning.swift */,
+				8695E0E224F3DAF8005D738C /* FloatingPanelView.swift */,
+				8695E0E324F3DAF8005D738C /* GrabberHandleView.swift */,
+				8695E0E424F3DAF8005D738C /* FloatingPanelLayout.swift */,
+				8695E0E524F3DAF8005D738C /* FloatingPanelBackdropView.swift */,
+				8695E0E624F3DAF8005D738C /* UIExtensions.swift */,
+			);
+			path = FloatingPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8628213825274774007546DA /* NavigineDemo */ = {
+		860164E424C7456900509D5E /* NavigineDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8628214D25274775007546DA /* Build configuration list for PBXNativeTarget "NavigineDemo" */;
+			buildConfigurationList = 860164F924C7456900509D5E /* Build configuration list for PBXNativeTarget "NavigineDemo" */;
 			buildPhases = (
-				8628213525274774007546DA /* Sources */,
-				8628213625274774007546DA /* Frameworks */,
-				8628213725274774007546DA /* Resources */,
-				866AA0D7261376BA002BD2F7 /* Embed Frameworks */,
+				860164E124C7456900509D5E /* Sources */,
+				860164E224C7456900509D5E /* Frameworks */,
+				860164E324C7456900509D5E /* Resources */,
+				62A7FC7F27073882002D1C18 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -117,25 +300,26 @@
 			);
 			name = NavigineDemo;
 			productName = NavigineDemo;
-			productReference = 8628213925274774007546DA /* NavigineDemo.app */;
+			productReference = 860164E524C7456900509D5E /* NavigineDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8628213125274774007546DA /* Project object */ = {
+		860164DD24C7456900509D5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = navigine;
 				TargetAttributes = {
-					8628213825274774007546DA = {
+					860164E424C7456900509D5E = {
 						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
-			buildConfigurationList = 8628213425274774007546DA /* Build configuration list for PBXProject "NavigineDemo" */;
+			buildConfigurationList = 860164E024C7456900509D5E /* Build configuration list for PBXProject "NavigineDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,64 +327,78 @@
 				en,
 				Base,
 			);
-			mainGroup = 8628213025274774007546DA;
-			productRefGroup = 8628213A25274774007546DA /* Products */;
+			mainGroup = 860164DC24C7456900509D5E;
+			productRefGroup = 860164E624C7456900509D5E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8628213825274774007546DA /* NavigineDemo */,
+				860164E424C7456900509D5E /* NavigineDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8628213725274774007546DA /* Resources */ = {
+		860164E324C7456900509D5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8628214925274775007546DA /* LaunchScreen.storyboard in Resources */,
-				8628214625274775007546DA /* Assets.xcassets in Resources */,
-				8628214425274774007546DA /* Main.storyboard in Resources */,
+				86016BBF24C9D00B00509D5E /* Circe-Thin.ttf in Resources */,
+				62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */,
+				86016BC024C9D00B00509D5E /* Circe-Regular.ttf in Resources */,
+				86016BC124C9D00B00509D5E /* Main.storyboard in Resources */,
+				86016BC224C9D00B00509D5E /* Navigation.storyboard in Resources */,
+				8601651324C8575900509D5E /* LocationsList.storyboard in Resources */,
+				8601652A24C85D5C00509D5E /* Circe-Bold.ttf in Resources */,
+				8601650F24C8567C00509D5E /* LaunchScreen.storyboard in Resources */,
+				8601651724C8581500509D5E /* AddBeacon.storyboard in Resources */,
+				8601652924C85D5C00509D5E /* Circe-ExtraBold.ttf in Resources */,
+				8601651B24C8583600509D5E /* Profile.storyboard in Resources */,
+				8601651924C8582800509D5E /* Debug.storyboard in Resources */,
+				860164F224C7456900509D5E /* Assets.xcassets in Resources */,
+				8601652824C85D5C00509D5E /* Circe-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8628213525274774007546DA /* Sources */ = {
+		860164E124C7456900509D5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8628214125274774007546DA /* ViewController.swift in Sources */,
-				8628213D25274774007546DA /* AppDelegate.swift in Sources */,
-				8628215A25274C0E007546DA /* SceneDelegate.swift in Sources */,
-				8628215C25274E42007546DA /* Constants.swift in Sources */,
+				8695E0EA24F3DAF8005D738C /* Logger.swift in Sources */,
+				86F43C4524E3E1080084C2D3 /* MyCollectionViewCell.swift in Sources */,
+				8695E0E824F3DAF8005D738C /* FloatingPanelController.swift in Sources */,
+				8601651E24C85AD900509D5E /* TabBarController.swift in Sources */,
+				8695E0E924F3DAF8005D738C /* FloatingPanelSurfaceView.swift in Sources */,
+				8601654724C9C39C00509D5E /* NavigationController.swift in Sources */,
+				8601653524C86DAD00509D5E /* LocationSearchController.swift in Sources */,
+				8676DD5B24DC3CE200325212 /* DebugController.swift in Sources */,
+				861E3D8F24E1A9F4008DD348 /* LocationItemCell.swift in Sources */,
+				860164E924C7456900509D5E /* AppDelegate.swift in Sources */,
+				86F43C4B24E419B90084C2D3 /* LogsItemCell.swift in Sources */,
+				8695E0EE24F3DAF8005D738C /* GrabberHandleView.swift in Sources */,
+				8695E0ED24F3DAF8005D738C /* FloatingPanelView.swift in Sources */,
+				861E3D9724E2D0E2008DD348 /* CircularLoaderView.swift in Sources */,
+				8695E0EC24F3DAF8005D738C /* FloatingPanelTransitioning.swift in Sources */,
+				8695E0F124F3DAF8005D738C /* UIExtensions.swift in Sources */,
+				860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */,
+				8601653824C87FC600509D5E /* NavigineApp.swift in Sources */,
+				86F43C4924E418CC0084C2D3 /* ProfileController.swift in Sources */,
+				8695E0D824F3DA19005D738C /* VenueDetailsViewController.swift in Sources */,
+				8601653124C867FC00509D5E /* LocationsListController.swift in Sources */,
+				8695E0F024F3DAF8005D738C /* FloatingPanelBackdropView.swift in Sources */,
+				8610E3A924E536E0002BED87 /* AddBeaconController.swift in Sources */,
+				8695E0EB24F3DAF8005D738C /* FloatingPanelBehavior.swift in Sources */,
+				8695E0EF24F3DAF8005D738C /* FloatingPanelLayout.swift in Sources */,
+				8695E0E724F3DAF8005D738C /* FloatingPanelCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		8628214225274774007546DA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8628214325274774007546DA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8628214725274775007546DA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8628214825274775007546DA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		8628214B25274775007546DA /* Debug */ = {
+		860164F724C7456900509D5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -252,7 +450,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/NavigineDemo/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/NavigineDemo/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -261,11 +459,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
-		8628214C25274775007546DA /* Release */ = {
+		860164F824C7456900509D5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,7 +508,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/NavigineDemo/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/NavigineDemo/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -319,77 +516,83 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		8628214E25274775007546DA /* Debug */ = {
+		860164FA24C7456900509D5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9L9SSEDTLA;
-				EXCLUDED_ARCHS = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NavigineDemo/Frameworks",
+				);
 				INFOPLIST_FILE = NavigineDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navigine.NavigineDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_WORKSPACE = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8628214F25274775007546DA /* Release */ = {
+		860164FB24C7456900509D5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9L9SSEDTLA;
-				EXCLUDED_ARCHS = "";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NavigineDemo/Frameworks",
+				);
 				INFOPLIST_FILE = NavigineDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.navigine.NavigineDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_WORKSPACE = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8628213425274774007546DA /* Build configuration list for PBXProject "NavigineDemo" */ = {
+		860164E024C7456900509D5E /* Build configuration list for PBXProject "NavigineDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8628214B25274775007546DA /* Debug */,
-				8628214C25274775007546DA /* Release */,
+				860164F724C7456900509D5E /* Debug */,
+				860164F824C7456900509D5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8628214D25274775007546DA /* Build configuration list for PBXNativeTarget "NavigineDemo" */ = {
+		860164F924C7456900509D5E /* Build configuration list for PBXNativeTarget "NavigineDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8628214E25274775007546DA /* Debug */,
-				8628214F25274775007546DA /* Release */,
+				860164FA24C7456900509D5E /* Debug */,
+				860164FB24C7456900509D5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8628213125274774007546DA /* Project object */;
+	rootObject = 860164DD24C7456900509D5E /* Project object */;
 }

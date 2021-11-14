@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2f3-ah-FUq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Debug Controller-->
+        <scene sceneID="ehP-Oh-wRY">
+            <objects>
+                <viewController id="2f3-ah-FUq" customClass="DebugController" customModule="NavigineDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1cs-r8-f36">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UUID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJl-Oe-ttT">
+                                <rect key="frame" x="20" y="64" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error code:   Sublocation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48K-6c-hff">
+                                <rect key="frame" x="20" y="85" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-B6-d4P">
+                                <rect key="frame" x="20" y="106" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensors:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho4-7n-aAi">
+                                <rect key="frame" x="20" y="127" width="374" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magnetometer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dz-pt-Wjr">
+                                <rect key="frame" x="20" y="170" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gyroscope:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILI-x8-Ohm">
+                                <rect key="frame" x="20" y="191" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uef-oD-DLB">
+                                <rect key="frame" x="20" y="212" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLE devices:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqF-s6-Nz2">
+                                <rect key="frame" x="20" y="233" width="374" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accelerometer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YD4-rb-pxT">
+                                <rect key="frame" x="20" y="149" width="374" height="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="ILI-x8-Ohm" secondAttribute="trailing" constant="20" id="09n-73-hcW"/>
+                            <constraint firstItem="FqF-s6-Nz2" firstAttribute="top" secondItem="uef-oD-DLB" secondAttribute="bottom" constant="5" id="0hl-gY-mri"/>
+                            <constraint firstItem="6Dz-pt-Wjr" firstAttribute="top" secondItem="YD4-rb-pxT" secondAttribute="bottom" constant="5" id="2PT-Qu-JcV"/>
+                            <constraint firstItem="ho4-7n-aAi" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="3U0-Vu-qK3"/>
+                            <constraint firstItem="XJl-Oe-ttT" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="8df-N7-EIG"/>
+                            <constraint firstItem="ho4-7n-aAi" firstAttribute="top" secondItem="HUv-B6-d4P" secondAttribute="bottom" constant="5" id="9wL-hQ-ed0"/>
+                            <constraint firstItem="XJl-Oe-ttT" firstAttribute="top" secondItem="bQT-ba-03o" secondAttribute="top" constant="20" id="9xI-gq-lYV"/>
+                            <constraint firstItem="YD4-rb-pxT" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="Csk-uJ-geH"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="HUv-B6-d4P" secondAttribute="trailing" constant="20" id="Cwx-gP-Y86"/>
+                            <constraint firstItem="48K-6c-hff" firstAttribute="top" secondItem="XJl-Oe-ttT" secondAttribute="bottom" constant="5" id="IHt-R4-fuQ"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="ho4-7n-aAi" secondAttribute="trailing" constant="20" id="LZZ-af-Odb"/>
+                            <constraint firstItem="6Dz-pt-Wjr" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="N13-Wp-OWL"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="XJl-Oe-ttT" secondAttribute="trailing" constant="20" id="OW3-Wp-NTY"/>
+                            <constraint firstItem="uef-oD-DLB" firstAttribute="top" secondItem="ILI-x8-Ohm" secondAttribute="bottom" constant="5" id="PRD-re-Brg"/>
+                            <constraint firstItem="uef-oD-DLB" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="PvN-CV-5DK"/>
+                            <constraint firstItem="ILI-x8-Ohm" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="Sm9-C3-YCY"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="FqF-s6-Nz2" secondAttribute="trailing" constant="20" id="Xkr-Ie-Rcl"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="YD4-rb-pxT" secondAttribute="trailing" constant="20" id="bpF-b1-qVR"/>
+                            <constraint firstItem="48K-6c-hff" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="eXH-eg-Jtn"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="48K-6c-hff" secondAttribute="trailing" constant="20" id="ezG-sS-W5j"/>
+                            <constraint firstItem="HUv-B6-d4P" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="f4U-Mg-CHQ"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="6Dz-pt-Wjr" secondAttribute="trailing" constant="20" id="g4U-WT-fGu"/>
+                            <constraint firstItem="bQT-ba-03o" firstAttribute="trailing" secondItem="uef-oD-DLB" secondAttribute="trailing" constant="20" id="iQk-TF-XAi"/>
+                            <constraint firstItem="YD4-rb-pxT" firstAttribute="top" secondItem="ho4-7n-aAi" secondAttribute="bottom" constant="5" id="job-Mm-a3h"/>
+                            <constraint firstItem="HUv-B6-d4P" firstAttribute="top" secondItem="48K-6c-hff" secondAttribute="bottom" constant="5" id="lK1-QG-8Bl"/>
+                            <constraint firstItem="FqF-s6-Nz2" firstAttribute="leading" secondItem="bQT-ba-03o" secondAttribute="leading" constant="20" id="sH8-SP-vUC"/>
+                            <constraint firstItem="ILI-x8-Ohm" firstAttribute="top" secondItem="6Dz-pt-Wjr" secondAttribute="bottom" constant="5" id="xbR-Rb-YwB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bQT-ba-03o"/>
+                    </view>
+                    <connections>
+                        <outlet property="mAccellerometer" destination="YD4-rb-pxT" id="vsN-RB-spc"/>
+                        <outlet property="mBleCount" destination="FqF-s6-Nz2" id="3pK-zz-57E"/>
+                        <outlet property="mErrorCode" destination="48K-6c-hff" id="4y8-Pb-bde"/>
+                        <outlet property="mGps" destination="uef-oD-DLB" id="Wlj-l1-3GT"/>
+                        <outlet property="mGyro" destination="ILI-x8-Ohm" id="LeH-Qm-1Kd"/>
+                        <outlet property="mMagnetometer" destination="6Dz-pt-Wjr" id="Ebv-gB-gnH"/>
+                        <outlet property="mNavResult" destination="HUv-B6-d4P" id="c69-8T-9JT"/>
+                        <outlet property="mUuid" destination="XJl-Oe-ttT" id="OZL-eP-KEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfj-8m-6FU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350.72463768115944" y="-173.4375"/>
+        </scene>
+    </scenes>
+</document>

@@ -21,15 +21,23 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>5</string>
+	<string>4</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>1</string>
+	<string>4</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>2</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>3</string>
 	<key>NSMotionUsageDescription</key>
-	<string>4</string>
+	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Circe-ExtraLight.ttf</string>
+		<string>Circe-ExtraBold.ttf</string>
+		<string>Circe-Bold.ttf</string>
+		<string>Circe-Thin.ttf</string>
+		<string>Circe-Regular.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -50,7 +58,7 @@
 		</dict>
 	</dict>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -60,8 +68,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

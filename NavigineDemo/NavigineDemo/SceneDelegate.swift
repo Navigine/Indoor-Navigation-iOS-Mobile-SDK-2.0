@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  NavigineDemo
-//
-//  Created by mrcrambo on 02/10/2020.
-//  Copyright © 2020 navigine. All rights reserved.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

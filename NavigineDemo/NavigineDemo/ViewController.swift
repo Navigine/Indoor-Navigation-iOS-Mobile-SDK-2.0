@@ -1,38 +1,50 @@
-//
-//  ViewController.swift
-//  NavigineDemo
-//
-//  Created by mrcrambo on 02/10/2020.
-//  Copyright © 2020 navigine. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
-
-    var mNavigineSdk: NCNavigineSdk?
-    var mLocationManager: NCLocationManager?
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var mLocationView: NCLocationView!
+    @IBOutlet weak var mTableView: UITableView!
+    
+    var mLocationsList: [String] = []
+    
+    var mNavigineSdk: NCNavigineSdk?
+    var mLocationListManager: NCLocationListManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
-        mNavigineSdk = NCNavigineSdk.getInstance()!
+        mNavigineSdk = NCNavigineSdk.createInstance("4EE6-9A3F-F126-5FE6", server: "https://api.navigine.com")
         
-        mLocationManager = mNavigineSdk?.getLocationManager()!
-        mLocationManager?.add(self)
-        mLocationManager?.setLocation(Int32(Constants.LOCATION_ID))
+        mLocationListManager = mNavigineSdk?.getLocationListManager()
+        
+        mLocationListManager?.add(self)
+        
+        self.mTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.mLocationsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.mTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+
+        cell.textLabel?.text = self.mLocationsList[indexPath.row]
+
+        return cell
+    }
 }
 
-extension ViewController: NCLocationListener {
-    func onDownloadProgress(_ received: Int32, total: Int32) { }
-    
-    func onLocationLoaded(_ location: NCLocation?) {
-        mLocationView.setSublocation(Int32(Constants.SUBLOCATION_ID))
+extension ViewController: NCLocationListListener {
+    func onLocationListLoaded(_ locationInfos: [NSNumber : NCLocationInfo]) {
+        self.mLocationsList.removeAll()
+        for el in locationInfos {
+            self.mLocationsList.append(el.value.name)
+        }
+        self.mTableView.reloadData()
     }
+    
+    func onLocationListFailed(_ error: Error?) {
         
-    func onLocationFailed(_ error: Error?) { }
+    }
 }

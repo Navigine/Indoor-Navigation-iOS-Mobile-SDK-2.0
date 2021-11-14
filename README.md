@@ -23,7 +23,7 @@ The NavigineDemo subfolder in this repository contains source files that you can
 To get the Navigine demo application for iOS, 
 
 - Either find the [Navigine application in the Apple Store](https://itunes.apple.com/ru/app/navigine/id972099798) using your iOS device
-- Or compile the application yourself [using source code, available at GitHub](https://github.com/Navigine/iOS-SDK-2.0).
+- Or compile the application yourself [using source code, available at GitHub](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0).
 
 For complete guidelines on using the Demo, refer to the [corresponding sections in the Navigine User Manual](http://docs.navigine.com/ud_ios_demo.html), or refer to the Help file incorporated into the application.
 
@@ -32,15 +32,33 @@ For complete guidelines on using the Demo, refer to the [corresponding sections 
 Navigine SDK for iOS applications enables you to develop your own indoor navigation apps using the well-developed methods, classes, and functions created by the Navigine team.
 The SDK file resides in the libs folder.
 
-Find formal description of Navigine-SDK API including the list of classes and their public fields and methods at [Navigine SDK wiki](https://github.com/Navigine/iOS-SDK-2.0/wiki).
+Find formal description of Navigine-SDK API including the list of classes and their public fields and methods at [Navigine SDK wiki](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki).
 
-### Using .framework file in XCode
+## Installation with CocoaPods
 
-- Download `navigine.framework.zip` file from current repositories `Frameworks` folder and unarchive it;
-- In your project create `Frameworks` folder and move `navigine.framework` to there;
-- Embed and sign it, add Bridging Headers file;
-- Start using Navigine SDK.
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like Navigine in your projects. See the ["Getting Started" guide for more information](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/Getting-Started). You can install it with the following command:
 
-### Using with CocoaPods
+```bash
+$ gem install cocoapods
+```
 
-Will be added soon...
+> CocoaPods 0.39.0+ is required to build Navigine 2.0.0+.
+
+#### Podfile
+
+To integrate Navigine into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+
+target 'TargetName' do
+pod 'Navigine'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```

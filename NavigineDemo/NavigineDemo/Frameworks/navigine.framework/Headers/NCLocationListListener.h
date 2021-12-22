@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCLocationListListener
+@protocol NCLocationListListener <NSObject>
 
 - (void)onLocationListLoaded:(nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)locationInfos;
 

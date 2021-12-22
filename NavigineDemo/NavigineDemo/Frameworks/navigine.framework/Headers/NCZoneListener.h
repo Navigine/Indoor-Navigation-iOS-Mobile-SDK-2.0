@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCZoneListener
+@protocol NCZoneListener <NSObject>
 
 - (void)onEnterZone:(nullable NCZone *)zone;
 

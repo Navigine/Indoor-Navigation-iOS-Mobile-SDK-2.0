@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCRouteListener
+@protocol NCRouteListener <NSObject>
 
 - (void)onPathsUpdated:(nonnull NSArray<NCRoutePath *> *)paths;
 

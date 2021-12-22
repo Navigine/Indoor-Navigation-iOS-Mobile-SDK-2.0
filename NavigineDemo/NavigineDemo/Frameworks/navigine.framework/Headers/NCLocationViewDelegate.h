@@ -19,8 +19,8 @@
  @param pickResult A result object with information about the picked object or `nil` if no object was found.
  @param position The view position where object was picked.
  */
-- (void)locationView:(nonnull NCLocationView *)mapView
-didSelectMapObject:(nullable NCMapObjectPickResult *)markerPickResult
+- (void)locationView:(nonnull NCLocationView *) locationView
+didSelectMapObject:(nullable NCMapObjectPickResult *)mapObjectPickResult
 atScreenPosition:(CGPoint)position;
 
 @end // protocol NCLocationViewDelegate

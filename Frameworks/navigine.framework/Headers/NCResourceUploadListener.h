@@ -3,7 +3,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCResourceUploadListener
+@protocol NCResourceUploadListener <NSObject>
 
 - (void)onUploaded;
 

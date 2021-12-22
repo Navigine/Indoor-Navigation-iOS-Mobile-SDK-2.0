@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCNotificationListener
+@protocol NCNotificationListener <NSObject>
 
 - (void)onNotificationLoaded:(nullable NCNotification *)notification;
 

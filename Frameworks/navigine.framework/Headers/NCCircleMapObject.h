@@ -1,11 +1,12 @@
 #import "NCAnimationType.h"
 #import "NCExport.h"
 #import "NCLocationPoint.h"
+#import "NCMapObject.h"
 #import <Foundation/Foundation.h>
 
 
 NAVIGINE_EXPORT
-@interface NCCircleMapObject : NSObject
+@interface NCCircleMapObject : NCMapObject
 
 - (BOOL)setPosition:(nonnull NCLocationPoint *)point;
 
@@ -14,12 +15,5 @@ NAVIGINE_EXPORT
                        type:(NCAnimationType)type;
 
 - (BOOL)setRadius:(float)radius;
-
-- (BOOL)setVisible:(BOOL)visible;
-
-- (BOOL)setColor:(float)red
-           green:(float)green
-            blue:(float)blue
-           alpha:(float)alpha;
 
 @end

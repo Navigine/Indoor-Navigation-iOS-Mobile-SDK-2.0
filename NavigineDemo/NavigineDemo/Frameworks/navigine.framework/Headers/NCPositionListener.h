@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCPositionListener
+@protocol NCPositionListener <NSObject>
 
 - (void)onPositionUpdated:(nonnull NCPosition *)position;
 

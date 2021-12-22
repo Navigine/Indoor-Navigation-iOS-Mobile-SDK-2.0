@@ -6,7 +6,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCMeasurementListener
+@protocol NCMeasurementListener <NSObject>
 
 - (void)onSensorMeasurementDetected:(nonnull NSDictionary<NSNumber *, NCSensorMeasurement *> *)sensors;
 

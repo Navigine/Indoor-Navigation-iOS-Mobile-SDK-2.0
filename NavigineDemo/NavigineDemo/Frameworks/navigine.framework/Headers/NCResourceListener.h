@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCResourceListener
+@protocol NCResourceListener <NSObject>
 
 - (void)onLoaded:(nonnull NSString *)imageId
            image:(nullable NCImage *)image;

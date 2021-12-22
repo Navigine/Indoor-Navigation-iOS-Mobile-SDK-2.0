@@ -4,7 +4,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCLocationListener
+@protocol NCLocationListener <NSObject>
 
 - (void)onLocationLoaded:(nullable NCLocation *)location;
 

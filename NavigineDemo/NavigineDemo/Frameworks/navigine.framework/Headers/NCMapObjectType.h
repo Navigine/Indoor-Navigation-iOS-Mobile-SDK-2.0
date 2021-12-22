@@ -2,9 +2,7 @@
 
 typedef NS_ENUM(NSInteger, NCMapObjectType)
 {
-    NCMapObjectTypeBEACON,
-    NCMapObjectTypeEDDYSTONE,
-    NCMapObjectTypeWIFI,
-    NCMapObjectTypeVENUE,
-    NCMapObjectTypeOTHER,
+    NCMapObjectTypeICON,
+    NCMapObjectTypePOLYLINE,
+    NCMapObjectTypeCIRCLE,
 };

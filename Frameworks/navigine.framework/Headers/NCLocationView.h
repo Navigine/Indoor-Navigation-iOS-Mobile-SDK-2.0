@@ -6,11 +6,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class NCCircleMapObject;
 @class NCIconMapObject;
 @class NCPolylineMapObject;
-@class NCPoint;
-@class NCSublocation;
 
 @protocol NCGestureRecognizerDelegate;
-@protocol NCLocationViewDelegate;
+@protocol NCPickListener;
 
 NAVIGINE_EXPORT
 @interface NCLocationView : UIView
@@ -45,7 +43,7 @@ NAVIGINE_EXPORT
 
 @property (assign, nonatomic) NSInteger preferredFramesPerSecond;
 
-@property (weak, nonatomic, nullable) id<NCLocationViewDelegate> locationViewDelegate;
+@property (weak, nonatomic, nullable) id<NCPickListener> pickListener;
 
 #pragma mark Gesture Recognizers
 

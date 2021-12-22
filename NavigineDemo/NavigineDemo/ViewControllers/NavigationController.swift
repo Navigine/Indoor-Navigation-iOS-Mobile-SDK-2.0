@@ -115,8 +115,10 @@ extension NavigationController : NCGestureRecognizerDelegate {
     }
 }
 
-extension NavigationController {
-    
+extension NavigationController: NCPickListener {
+    func onMapObjectPickComplete(_ mapObjectPickResult: NCMapObjectPickResult?, screenPosition: NCPoint) {
+        
+    }
 }
 
 extension NavigationController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

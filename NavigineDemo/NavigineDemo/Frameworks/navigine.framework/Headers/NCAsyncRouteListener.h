@@ -5,7 +5,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCAsyncRouteListener
+@protocol NCAsyncRouteListener <NSObject>
 
 - (void)onRouteChanged:(nullable NCRoutePath *)currentPath
           pendingPaths:(nonnull NSArray<NCRoutePath *> *)pendingPaths;

@@ -3,7 +3,7 @@
 
 
 NAVIGINE_EXPORT
-@protocol NCLocationEditListener
+@protocol NCLocationEditListener <NSObject>
 
 - (void)onLocationUploaded;
 

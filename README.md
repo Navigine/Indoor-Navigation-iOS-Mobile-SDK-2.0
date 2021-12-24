@@ -9,8 +9,7 @@ The following sections describe the contents of the Navigine iOS SDK repository.
 
 ## Useful Links
 
-- [SDK documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki){: .btn .btn-purple}
-- <button name="button" onclick="http://www.google.com">Click me</button>
+- [SDK documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki)
 - Refer to the [Navigine official documentation](https://docs.navigine.com) for complete list of downloads, useful materials, information about the company, and so on.
 - [Get started](http://client.navigine.com/login) with Navigine to get full access to Navigation services, SDKs, and applications.
 - Refer to the Navigine [User Manual](http://docs.navigine.com/) for complete product usage guidelines.

@@ -20,6 +20,6 @@ NAVIGINE_EXPORT
 
 @property (nonatomic, nonnull, readonly) NSString * uuid;
 
-@property (nonatomic, readonly) int32_t power;
+@property (nonatomic, nullable, readonly) NSNumber * power;
 
 @end

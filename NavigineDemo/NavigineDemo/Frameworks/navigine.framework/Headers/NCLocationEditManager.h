@@ -13,7 +13,7 @@ NAVIGINE_EXPORT
             minor:(int32_t)minor
             point:(nonnull NCPoint *)point
              name:(nonnull NSString *)name
-            power:(int32_t)power;
+            power:(nullable NSNumber *)power;
 
 - (void)editBeacon:(int32_t)subLocId
               uuid:(nonnull NSString *)uuid
@@ -21,7 +21,7 @@ NAVIGINE_EXPORT
              minor:(int32_t)minor
              point:(nonnull NCPoint *)point
               name:(nonnull NSString *)name
-             power:(int32_t)power;
+             power:(nullable NSNumber *)power;
 
 - (void)removeBeacon:(int32_t)subLocId
                 uuid:(nonnull NSString *)uuid
@@ -33,14 +33,14 @@ NAVIGINE_EXPORT
           instanceId:(nonnull NSString *)instanceId
                point:(nonnull NCPoint *)point
                 name:(nonnull NSString *)name
-               power:(int32_t)power;
+               power:(nullable NSNumber *)power;
 
 - (void)editEddystone:(int32_t)subLocId
           namespaceId:(nonnull NSString *)namespaceId
            instanceId:(nonnull NSString *)instanceId
                 point:(nonnull NCPoint *)point
                  name:(nonnull NSString *)name
-                power:(int32_t)power;
+                power:(nullable NSNumber *)power;
 
 - (void)removeEddystone:(int32_t)subLocId
             namespaceId:(nonnull NSString *)namespaceId

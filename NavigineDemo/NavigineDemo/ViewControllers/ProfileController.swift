@@ -46,5 +46,16 @@ extension ProfileController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NavigineApp.mResourceManager?.uploadLogFile(self.mLogsList[indexPath.row], listener: self)
+    }
+}
+
+extension ProfileController : NCResourceUploadListener {
+    func onUploaded() {
+        print("success")
+    }
+
+    func onFailed(_ error: Error?) {
+        print("fail \(String(describing: error))")
     }
 }

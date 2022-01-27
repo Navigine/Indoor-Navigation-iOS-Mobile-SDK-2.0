@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.4](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.0.4) / 2022-01-27
+* Fix invalid geometry buffer
+
 ## [2.0.3](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.0.3) / 2022-01-25
 * Fix beacon filters
 

@@ -27,7 +27,9 @@ To get the Navigine demo application for iOS,
 
 For complete guidelines on using the Demo, refer to the [corresponding sections in the Navigine User Manual](http://docs.navigine.com/ud_ios_demo.html), or refer to the Help file incorporated into the application.
 
-<img src="img/debug_ios.jpg" alt="img/debug_ios.jpg" width="250"/><img src="img/levels_ios.jpg" alt="img/levels_ios.jpg" width="250"/><img src="img/locations_ios.jpg" alt="img/locations_ios.jpg" width="250"/><img src="img/navigation_ios.jpg" alt="img/navigation_ios.jpg" width="250"/>
+Below, you can see some screenshots of the Demo representing locations list, defined location levels, navigation bar, and debug process.
+
+<img src="img/locations_ios.jpg" alt="img/locations_ios.jpg" width="250"/><img src="img/levels_ios.jpg" alt="img/levels_ios.jpg" width="250"/><img src="img/navigation_ios.jpg" alt="img/navigation_ios.jpg" width="250"/><img src="img/debug_ios.jpg" alt="img/debug_ios.jpg" width="250"/>
 
 ## Navigation SDK and Implementation
 

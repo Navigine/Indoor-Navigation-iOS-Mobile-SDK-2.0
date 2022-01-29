@@ -27,6 +27,8 @@ To get the Navigine demo application for iOS,
 
 For complete guidelines on using the Demo, refer to the [corresponding sections in the Navigine User Manual](http://docs.navigine.com/ud_ios_demo.html), or refer to the Help file incorporated into the application.
 
+<img src="img/debug_ios.jpg" alt="img/debug_ios.jpg" width="400"/>
+
 ## Navigation SDK and Implementation
 
 Navigine SDK for iOS applications enables you to develop your own indoor navigation apps using the well-developed methods, classes, and functions created by the Navigine team.

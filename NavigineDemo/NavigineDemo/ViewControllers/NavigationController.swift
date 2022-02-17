@@ -24,8 +24,6 @@ class NavigationController: UIViewController {
     
     var mSublocationsList: [NCSublocation] = []
     
-    var mVenuesMap = [String : [NCIconMapObject]]()
-    
     var mPosition: NCIconMapObject!
     var mCirclePosition: NCCircleMapObject!
     var mPolyline: NCPolylineMapObject!
@@ -116,6 +114,10 @@ extension NavigationController : NCGestureRecognizerDelegate {
 }
 
 extension NavigationController: NCPickListener {
+    func onMapFeaturePickComplete(_ mapFeaturePickResult: [String : String], screenPosition: NCPoint) {
+        
+    }
+    
     func onMapObjectPickComplete(_ mapObjectPickResult: NCMapObjectPickResult?, screenPosition: NCPoint) {
         
     }
@@ -184,21 +186,6 @@ extension NavigationController: NCLocationListener {
         
         for subloc in location!.sublocations {
             self.mSublocationsList.append(subloc)
-            for venue in subloc.venues {
-                let category = location?.getCategoryById(venue.categoryId)
-                let venueMapObject = mLocationView.addIconMapObject()
-                venueMapObject.setPosition(NCLocationPoint.init(point: venue.point, locationId: venue.locationId, sublocationId: venue.sublocationId))
-                let cat = category
-                let imageId = cat?.imageId
-                if mVenuesMap[imageId!] == nil {
-                    mVenuesMap[(category?.imageId!)!] = [NCIconMapObject]();
-                }
-                mVenuesMap[(category?.imageId!)!]!.append(venueMapObject)
-            }
-        }
-        
-        for imageId in mVenuesMap.keys {
-            NavigineApp.mResourceManager?.loadImage(imageId, listener: self)
         }
         self.mCollectionView.isHidden = false
         self.mCollectionView.reloadData()
@@ -246,20 +233,6 @@ extension NavigationController: NCZoneListener {
     }
     
     
-}
-
-extension NavigationController: NCResourceListener {
-    func onLoaded(_ imageId: String, image: NCImage?) {
-        let decoder = NCBitmapRegionDecoder.newInstance(image!.data, length: image!.width * image!.height)
-        let bitmap = decoder?.decodeRegion(NCRectangle(x: 0, y: 0, width: Float(image!.width), height: Float(image!.height)), sampleSize: 1)
-        let venuesMapObjects = mVenuesMap[imageId]
-        for venueMapObject in venuesMapObjects! {
-            venueMapObject.setBitmap(bitmap)
-            venueMapObject.setSize(20, height: 20)
-        }
-    }
-
-    func onFailed(_ imageId: String, error: Error?) { }
 }
 
 extension NavigationController: FloatingPanelControllerDelegate {

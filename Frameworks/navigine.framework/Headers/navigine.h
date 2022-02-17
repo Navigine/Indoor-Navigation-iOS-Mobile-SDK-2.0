@@ -72,5 +72,4 @@
 #import "NCLocationPolyline.h"
 #import "NCExport.h"
 #import "NCLocationView.h"
-#import "NCLocationViewDelegate.h"
 #import "NCGestureRecognizerDelegate.h"

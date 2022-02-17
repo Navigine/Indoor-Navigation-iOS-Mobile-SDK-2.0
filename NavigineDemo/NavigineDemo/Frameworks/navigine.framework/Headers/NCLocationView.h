@@ -33,6 +33,8 @@ NAVIGINE_EXPORT
 
 - (void)pickMapObjectAt:(CGPoint)viewPosition;
 
+- (void)pickMapFeatureAt:(CGPoint)viewPosition;
+
 @property (assign, nonatomic) CGFloat minZoomFactor;
 
 @property (assign, nonatomic) CGFloat maxZoomFactor;

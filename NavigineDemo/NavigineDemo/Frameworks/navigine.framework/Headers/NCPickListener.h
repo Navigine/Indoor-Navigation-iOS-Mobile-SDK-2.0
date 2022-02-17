@@ -10,4 +10,7 @@ NAVIGINE_EXPORT
 - (void)onMapObjectPickComplete:(nullable NCMapObjectPickResult *)mapObjectPickResult
                  screenPosition:(nonnull NCPoint *)screenPosition;
 
+- (void)onMapFeaturePickComplete:(nonnull NSDictionary<NSString *, NSString *> *)mapFeaturePickResult
+                  screenPosition:(nonnull NCPoint *)screenPosition;
+
 @end

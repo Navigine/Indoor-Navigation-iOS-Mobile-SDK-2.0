@@ -8,8 +8,7 @@
 NAVIGINE_EXPORT
 @interface NCBitmapRegionDecoder : NSObject
 
-+ (nullable NCBitmapRegionDecoder *)newInstance:(nonnull NSData *)data
-                                         length:(int32_t)length;
++ (nullable NCBitmapRegionDecoder *)newInstance:(nonnull NSData *)data;
 
 - (nullable UIImage *)decodeRegion:(nonnull NCRectangle *)rect
                         sampleSize:(int32_t)sampleSize;

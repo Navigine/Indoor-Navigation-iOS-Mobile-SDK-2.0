@@ -90,13 +90,13 @@ class NavigationController: UIViewController {
     
     @IBAction func zoomIn(_ sender: Any) {
         let zoomFactor = mLocationView.zoomFactor
-        mLocationView.zoomFactor = zoomFactor * 2
+//        mLocationView.zoomFactor = zoomFactor * 2
     }
     
     
     @IBAction func zoomOut(_ sender: Any) {
         let zoomFactor = mLocationView.zoomFactor
-        mLocationView.zoomFactor = zoomFactor / 2
+//        mLocationView.zoomFactor = zoomFactor / 2
     }
 }
 
@@ -114,11 +114,11 @@ extension NavigationController : NCGestureRecognizerDelegate {
 }
 
 extension NavigationController: NCPickListener {
-    func onMapFeaturePickComplete(_ mapFeaturePickResult: [String : String], screenPosition: NCPoint) {
+    func onMapFeaturePickComplete(_ mapFeaturePickResult: [String : String], screenPosition: CGPoint) {
         
     }
     
-    func onMapObjectPickComplete(_ mapObjectPickResult: NCMapObjectPickResult?, screenPosition: NCPoint) {
+    func onMapObjectPickComplete(_ mapObjectPickResult: NCMapObjectPickResult?, screenPosition: CGPoint) {
         
     }
 }

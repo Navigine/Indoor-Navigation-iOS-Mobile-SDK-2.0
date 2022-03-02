@@ -6,6 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NCCircleMapObject;
 @class NCIconMapObject;
 @class NCPolylineMapObject;
+@class NCPoint;
 
 @protocol NCGestureRecognizerDelegate;
 @protocol NCPickListener;
@@ -31,9 +32,15 @@ NAVIGINE_EXPORT
 
 - (void) requestRender;
 
-- (void)pickMapObjectAt:(CGPoint)viewPosition;
+- (NCPoint*) screenPositionToMeters:(CGPoint)screenPosition;
 
-- (void)pickMapFeatureAt:(CGPoint)viewPosition;
+- (CGPoint) metersToScreenPosition:(NCPoint *)meters clipToViewport:(BOOL)clip;
+
+- (void) pickMapObjectAt:(CGPoint)viewPosition;
+
+- (void) pickMapFeatureAt:(CGPoint)viewPosition;
+
+- (void)loadConfig:(NSString *)config;
 
 @property (assign, nonatomic) CGFloat minZoomFactor;
 

@@ -24,6 +24,10 @@ class NavigationController: UIViewController {
     
     var mSublocationsList: [NCSublocation] = []
     
+    var mSublocationPicker: SublocationPicker?
+    
+    var currentFloor = 0
+    
     var mPosition: NCIconMapObject!
     var mCirclePosition: NCCircleMapObject!
     var mPolyline: NCPolylineMapObject!
@@ -39,6 +43,11 @@ class NavigationController: UIViewController {
         mRecLogs.addTarget(self, action: #selector(recClicked), for: .touchUpInside)
 
         mLocationView.gestureDelegate = self
+        
+        mSublocationPicker = SublocationPicker(frame: CGRect(x: 0, y: 0, width: 180, height: 22))
+        
+        mSublocationPicker!.sublocationPickerDelegate = self
+        navigationItem.titleView = mSublocationPicker
         
 //        NavigineApp.mMeasurementManager?.addWifiGenerator("C83A353BFF20", timeout: 1000, rssiMin: -75, rssiMax: -55)
 //
@@ -58,7 +67,7 @@ class NavigationController: UIViewController {
         mZoomOutBtn.isHidden = true
         
         mPosition = mLocationView.addIconMapObject()
-        mPosition.setBitmap(UIImage(named: "blue_dot.png"))
+        mPosition.setBitmap(UIImage(named: "UserLocation"))
         mPosition.setSize(Float(30), height: Float(30))
         mPosition.setVisible(false)
         
@@ -68,10 +77,12 @@ class NavigationController: UIViewController {
         mPolyline.setVisible(false)
     }
     
+    
+    
     @objc func levelsClicked(_ sender: AnyObject?) {
         mCollectionView.isHidden = !mCollectionView.isHidden
-        mZoomInBtn.isHidden = !mZoomInBtn.isHidden
-        mZoomOutBtn.isHidden = !mZoomOutBtn.isHidden
+//        mZoomInBtn.isHidden = !mZoomInBtn.isHidden
+//        mZoomOutBtn.isHidden = !mZoomOutBtn.isHidden
     }
     
     @objc func recClicked(_ sender: AnyObject?) {
@@ -123,6 +134,21 @@ extension NavigationController: NCPickListener {
     }
 }
 
+extension NavigationController: SublocationPickerDelegate {
+    func setupFloor(_ floor: Int) {
+        currentFloor = floor
+        subLoc = mLocation?.sublocations[floor]
+        mLocationView.setSublocationId(subLoc.id)
+        
+        mLocationView.maxZoomFactor = mLocationView.frame.width * 20 / CGFloat(subLoc.width)
+        mLocationView.zoomFactor = mLocationView.frame.width / 20 / CGFloat(subLoc.width)
+        
+        view.layoutIfNeeded()
+    }
+    
+    
+}
+
 extension NavigationController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.mSublocationsList.count
@@ -132,7 +158,8 @@ extension NavigationController: UICollectionViewDataSource, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
         cell.mLabel.text = self.mSublocationsList[indexPath.item].name
-        cell.backgroundColor = UIColor.white
+//        cell.backgroundColor = UIColor.white
+        cell.contentView.backgroundColor = .white
         cell.contentView.layer.cornerRadius = 6
         cell.contentView.layer.borderWidth = 0.5
         cell.contentView.layer.borderColor = UIColor.black.cgColor
@@ -178,17 +205,21 @@ extension NavigationController: NCLocationListener {
     func onDownloadProgress(_ received: Int32, total: Int32) { }
     
     func onLocationLoaded(_ location: NCLocation?) {
+        currentFloor = 0
         self.mSublocationsList.removeAll()
         mLocation = location
         mCirclePosition = mLocationView.addCircleMapObject();
         mCirclePosition.setColor(0.5, green: 0, blue: 0, alpha: 1)
         mCirclePosition.setRadius(5)
         
+        mSublocationPicker?.setLocation(location!)
+        mSublocationPicker?.updateUI(currentFloor)
+        
         for subloc in location!.sublocations {
             self.mSublocationsList.append(subloc)
         }
-        self.mCollectionView.isHidden = false
-        self.mCollectionView.reloadData()
+//        self.mCollectionView.isHidden = false
+//        self.mCollectionView.reloadData()
     }
     
     func onLocationFailed(_ error: Error?) {

@@ -56,7 +56,7 @@ extension LocationsListController: UITableViewDelegate, UITableViewDataSource{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as? LocationItemCell {
             cell.nameView.text = item.name
-            cell.versionView.text = String(item.version)
+            cell.versionView.text = "Version #\(item.version)"
             
             if item.id == currentProgress.currentLocationId {
                 cell.progressBar.progress = currentProgress.progress

@@ -1,10 +1,9 @@
 import Foundation
 
-class NavigationController: UIViewController {
+class NavigationViewController: UIViewController {
     
     @IBOutlet weak var mLocationView: NCLocationView!
     @IBOutlet weak var mCollectionView: UICollectionView!
-    @IBOutlet weak var mLevelsButton: UIButton!
     @IBOutlet weak var mRecLogs: UIButton!
     
     @IBOutlet weak var mZoomInBtn: UIButton!
@@ -33,21 +32,25 @@ class NavigationController: UIViewController {
     var mPolyline: NCPolylineMapObject!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         NavigineApp.mLocationManager?.add(self)
         NavigineApp.mNavigationManager?.add(self)
         NavigineApp.mZoneManager?.add(self)
         NavigineApp.mRouteManager?.add(self)
 
         mRecLogs.setTitleColor(UIColor.blue, for: .normal)
-        mLevelsButton.addTarget(self, action: #selector(levelsClicked), for: .touchUpInside)
         mRecLogs.addTarget(self, action: #selector(recClicked), for: .touchUpInside)
 
         mLocationView.gestureDelegate = self
         
         mSublocationPicker = SublocationPicker(frame: CGRect(x: 0, y: 0, width: 180, height: 22))
-        
         mSublocationPicker!.sublocationPickerDelegate = self
-        navigationItem.titleView = mSublocationPicker
+        self.navigationItem.titleView = mSublocationPicker
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.isUserInteractionEnabled = true
+        //.titleView?.isUserInteractionEnabled = true
+        
         
 //        NavigineApp.mMeasurementManager?.addWifiGenerator("C83A353BFF20", timeout: 1000, rssiMin: -75, rssiMax: -55)
 //
@@ -77,12 +80,9 @@ class NavigationController: UIViewController {
         mPolyline.setVisible(false)
     }
     
-    
-    
-    @objc func levelsClicked(_ sender: AnyObject?) {
-        mCollectionView.isHidden = !mCollectionView.isHidden
-//        mZoomInBtn.isHidden = !mZoomInBtn.isHidden
-//        mZoomOutBtn.isHidden = !mZoomOutBtn.isHidden
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      setNavigationViewColor(color: UIColor(displayP3Red: 29/255.0, green: 51/255.0, blue: 79/255.0, alpha: 1.0), textColor: .white)
     }
     
     @objc func recClicked(_ sender: AnyObject?) {
@@ -111,7 +111,7 @@ class NavigationController: UIViewController {
     }
 }
 
-extension NavigationController : NCGestureRecognizerDelegate {
+extension NavigationViewController : NCGestureRecognizerDelegate {
     func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeSingleTapGesture location: CGPoint) {
         view.pickMapObject(at: location)
     }
@@ -124,7 +124,7 @@ extension NavigationController : NCGestureRecognizerDelegate {
     }
 }
 
-extension NavigationController: NCPickListener {
+extension NavigationViewController: NCPickListener {
     func onMapFeaturePickComplete(_ mapFeaturePickResult: [String : String], screenPosition: CGPoint) {
         
     }
@@ -134,7 +134,7 @@ extension NavigationController: NCPickListener {
     }
 }
 
-extension NavigationController: SublocationPickerDelegate {
+extension NavigationViewController: SublocationPickerDelegate {
     func setupFloor(_ floor: Int) {
         currentFloor = floor
         subLoc = mLocation?.sublocations[floor]
@@ -149,59 +149,7 @@ extension NavigationController: SublocationPickerDelegate {
     
 }
 
-extension NavigationController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.mSublocationsList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
-        
-        cell.mLabel.text = self.mSublocationsList[indexPath.item].name
-//        cell.backgroundColor = UIColor.white
-        cell.contentView.backgroundColor = .white
-        cell.contentView.layer.cornerRadius = 6
-        cell.contentView.layer.borderWidth = 0.5
-        cell.contentView.layer.borderColor = UIColor.black.cgColor
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if subLoc != mSublocationsList[indexPath.row] {
-            subLoc = mSublocationsList[indexPath.row]
-            mLocationView.setSublocationId(subLoc.id)
-            
-            mLocationView.maxZoomFactor = mLocationView.frame.width * 2 / CGFloat(subLoc.width)
-            mLocationView.zoomFactor = mLocationView.frame.width / CGFloat(subLoc.width)
-            
-            collectionView.isHidden = true
-            mZoomInBtn.isHidden = false
-            mZoomOutBtn.isHidden = false
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = (collectionView.bounds.width - 30) / 2.0
-        let yourHeight = (collectionView.bounds.height - 20 - mLevelsButton.frame.size.height) / 4.0
-        
-        return CGSize(width: yourWidth, height: yourHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: mLevelsButton.frame.size.height, left: 10, bottom: 10, right: 10)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
-    }
-}
-
-extension NavigationController: NCLocationListener {
+extension NavigationViewController: NCLocationListener {
     func onDownloadProgress(_ received: Int32, total: Int32) { }
     
     func onLocationLoaded(_ location: NCLocation?) {
@@ -215,6 +163,8 @@ extension NavigationController: NCLocationListener {
         mSublocationPicker?.setLocation(location!)
         mSublocationPicker?.updateUI(currentFloor)
         
+        setupFloor(currentFloor)
+        
         for subloc in location!.sublocations {
             self.mSublocationsList.append(subloc)
         }
@@ -227,7 +177,7 @@ extension NavigationController: NCLocationListener {
     }
 }
 
-extension NavigationController: NCRouteListener {
+extension NavigationViewController: NCRouteListener {
     func onPathsUpdated(_ paths: [NCRoutePath]) {
         var points: [NCPoint] = []
         for point in paths[0].points {
@@ -240,7 +190,7 @@ extension NavigationController: NCRouteListener {
     }
 }
 
-extension NavigationController: NCPositionListener {
+extension NavigationViewController: NCPositionListener {
     func onPositionUpdated(_ position: NCPosition) {
         if (mPosition != nil) {
             let locationPoint = NCLocationPoint.init(point: position.point, locationId: position.locationId, sublocationId: position.sublocationId)
@@ -254,7 +204,7 @@ extension NavigationController: NCPositionListener {
     }
 }
 
-extension NavigationController: NCZoneListener {
+extension NavigationViewController: NCZoneListener {
     func onEnter(_ zone: NCZone?) {
         print("OnEnter zone \(String(describing: zone?.name))")
     }
@@ -266,7 +216,7 @@ extension NavigationController: NCZoneListener {
     
 }
 
-extension NavigationController: FloatingPanelControllerDelegate {
+extension NavigationViewController: FloatingPanelControllerDelegate {
     func addMainPanel(with contentVC: UIViewController) {
         
         let oldBottomSheet = mBottomSheet

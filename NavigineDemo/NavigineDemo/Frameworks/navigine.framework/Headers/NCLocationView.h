@@ -9,6 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NCPoint;
 
 @protocol NCGestureRecognizerDelegate;
+@protocol NCLocationViewListener;
 @protocol NCPickListener;
 
 NAVIGINE_EXPORT
@@ -48,11 +49,15 @@ NAVIGINE_EXPORT
 
 @property (assign, nonatomic) CGFloat zoomFactor;
 
+@property (assign, nonatomic) BOOL stickToBorder;
+
 @property (strong, nonatomic, readonly) CADisplayLink *displayLink;
 
 @property (assign, nonatomic) NSInteger preferredFramesPerSecond;
 
 @property (weak, nonatomic, nullable) id<NCPickListener> pickListener;
+
+@property (weak, nonatomic, nullable) id<NCLocationViewListener> locationViewListener;
 
 #pragma mark Gesture Recognizers
 

@@ -3,7 +3,6 @@ import Foundation
 class NavigationViewController: UIViewController {
     
     @IBOutlet weak var mLocationView: NCLocationView!
-    @IBOutlet weak var mCollectionView: UICollectionView!
     @IBOutlet weak var mRecLogs: UIButton!
     
     @IBOutlet weak var mZoomInBtn: UIButton!
@@ -66,9 +65,6 @@ class NavigationViewController: UIViewController {
 //            minor: 26457,
 //            power: 32, timeout: 100, rssiMin: -89, rssiMax: -55);
         
-        mZoomInBtn.isHidden = true
-        mZoomOutBtn.isHidden = true
-        
         mPosition = mLocationView.addIconMapObject()
         mPosition.setBitmap(UIImage(named: "UserLocation"))
         mPosition.setSize(Float(30), height: Float(30))
@@ -101,13 +97,13 @@ class NavigationViewController: UIViewController {
     
     @IBAction func zoomIn(_ sender: Any) {
         let zoomFactor = mLocationView.zoomFactor
-//        mLocationView.zoomFactor = zoomFactor * 2
+        mLocationView.zoomFactor = zoomFactor * 2
     }
     
     
     @IBAction func zoomOut(_ sender: Any) {
         let zoomFactor = mLocationView.zoomFactor
-//        mLocationView.zoomFactor = zoomFactor / 2
+        mLocationView.zoomFactor = zoomFactor / 2
     }
 }
 
@@ -150,7 +146,12 @@ extension NavigationViewController: SublocationPickerDelegate {
 }
 
 extension NavigationViewController: NCLocationListener {
-    func onDownloadProgress(_ received: Int32, total: Int32) { }
+    func onDownloadProgress(_ locationId: Int32, received: Int32, total: Int32) { }
+    
+    func onLocationFailed(_ locationId: Int32, error: Error?) { }
+    
+    func onLocationCancelled(_ locationId: Int32) { }
+    
     
     func onLocationLoaded(_ location: NCLocation?) {
         currentFloor = 0
@@ -168,13 +169,8 @@ extension NavigationViewController: NCLocationListener {
         for subloc in location!.sublocations {
             self.mSublocationsList.append(subloc)
         }
-//        self.mCollectionView.isHidden = false
-//        self.mCollectionView.reloadData()
     }
     
-    func onLocationFailed(_ error: Error?) {
-        
-    }
 }
 
 extension NavigationViewController: NCRouteListener {

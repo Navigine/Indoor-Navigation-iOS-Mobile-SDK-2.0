@@ -107,12 +107,7 @@ extension LocationsListController: LocationListDataSource {
 }
 
 extension LocationsListController: NCLocationListener {
-    func onLocationLoaded(_ location: NCLocation?) {
-        currentProgress.progress = 1.0
-        self.mTableView.reloadData()
-    }
-    
-    func onDownloadProgress(_ received: Int32, total: Int32) {
+    func onDownloadProgress(_ locationId: Int32, received: Int32, total: Int32) {
         let p = CGFloat(received) / CGFloat(total)
         if (abs(p - currentProgress.progress) * 100 > 1) {
             currentProgress.progress = p
@@ -120,5 +115,14 @@ extension LocationsListController: NCLocationListener {
         }
     }
     
-    func onLocationFailed(_ error: Error?) { }
+    func onLocationFailed(_ locationId: Int32, error: Error?) { }
+    
+    func onLocationCancelled(_ locationId: Int32) { }
+    
+    func onLocationLoaded(_ location: NCLocation?) {
+        currentProgress.progress = 1.0
+        self.mTableView.reloadData()
+    }
+    
+    
 }

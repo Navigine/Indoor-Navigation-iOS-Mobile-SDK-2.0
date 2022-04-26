@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		244E27112812993A0078C90B /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601654624C9C39C00509D5E /* NavigationViewController.swift */; };
+		24ABA5E52817F1AE00B0BC3B /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; };
+		24ABA5E62817F1AE00B0BC3B /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24F330EE280DD93F0026B052 /* SublocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330ED280DD93D0026B052 /* SublocationPicker.swift */; };
 		24F330F0280DDDC30026B052 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330EF280DDDC20026B052 /* UIWindow.swift */; };
-		24F330F2280E07640026B052 /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F330F1280E07640026B052 /* navigine.framework */; };
 		24F330F4280E12E20026B052 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330F3280E12E20026B052 /* UIViewController.swift */; };
 		62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653E24C88F2100509D5E /* GLKit.framework */; };
 		62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
-		62A7FC7D27073882002D1C18 /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; };
-		62A7FC7E27073882002D1C18 /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AEFF552732B9D0000223D5 /* blue_dot.png */; };
 		860164E924C7456900509D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164E824C7456900509D5E /* AppDelegate.swift */; };
 		860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164EA24C7456900509D5E /* SceneDelegate.swift */; };
@@ -53,18 +52,17 @@
 		8695E0F024F3DAF8005D738C /* FloatingPanelBackdropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E524F3DAF8005D738C /* FloatingPanelBackdropView.swift */; };
 		8695E0F124F3DAF8005D738C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8695E0E624F3DAF8005D738C /* UIExtensions.swift */; };
 		86F43C4524E3E1080084C2D3 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4424E3E1080084C2D3 /* MyCollectionViewCell.swift */; };
-		86F43C4924E418CC0084C2D3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4824E418CC0084C2D3 /* ProfileController.swift */; };
 		86F43C4B24E419B90084C2D3 /* LogsItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F43C4A24E419B90084C2D3 /* LogsItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		62A7FC7F27073882002D1C18 /* Embed Frameworks */ = {
+		24ABA5D42813569800B0BC3B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				62A7FC7E27073882002D1C18 /* navigine.framework in Embed Frameworks */,
+				24ABA5E62817F1AE00B0BC3B /* navigine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +72,6 @@
 /* Begin PBXFileReference section */
 		24F330ED280DD93D0026B052 /* SublocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublocationPicker.swift; sourceTree = "<group>"; };
 		24F330EF280DDDC20026B052 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
-		24F330F1280E07640026B052 /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = navigine.framework; path = ../../Frameworks/navigine.framework; sourceTree = "<group>"; };
 		24F330F3280E12E20026B052 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
 		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +117,6 @@
 		8695E0E524F3DAF8005D738C /* FloatingPanelBackdropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPanelBackdropView.swift; sourceTree = "<group>"; };
 		8695E0E624F3DAF8005D738C /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		86F43C4424E3E1080084C2D3 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
-		86F43C4824E418CC0084C2D3 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		86F43C4A24E419B90084C2D3 /* LogsItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,8 +128,7 @@
 				8601654024C88F2100509D5E /* GLKit.framework in Frameworks */,
 				62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */,
 				62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */,
-				62A7FC7D27073882002D1C18 /* navigine.framework in Frameworks */,
-				24F330F2280E07640026B052 /* navigine.framework in Frameworks */,
+				24ABA5E52817F1AE00B0BC3B /* navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +183,6 @@
 				860164F124C7456900509D5E /* Assets.xcassets */,
 				860164F624C7456900509D5E /* Info.plist */,
 				8601650224C7479700509D5E /* BridgingHeader.h */,
-				24F330F1280E07640026B052 /* navigine.framework */,
 			);
 			path = NavigineDemo;
 			sourceTree = "<group>";
@@ -222,7 +216,6 @@
 				8601653424C86DAD00509D5E /* LocationSearchController.swift */,
 				8601654624C9C39C00509D5E /* NavigationViewController.swift */,
 				8676DD5A24DC3CE200325212 /* DebugController.swift */,
-				86F43C4824E418CC0084C2D3 /* ProfileController.swift */,
 				8610E3A824E536E0002BED87 /* AddBeaconController.swift */,
 			);
 			path = ViewControllers;
@@ -302,7 +295,7 @@
 				860164E124C7456900509D5E /* Sources */,
 				860164E224C7456900509D5E /* Frameworks */,
 				860164E324C7456900509D5E /* Resources */,
-				62A7FC7F27073882002D1C18 /* Embed Frameworks */,
+				24ABA5D42813569800B0BC3B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,7 +389,6 @@
 				8695E0F124F3DAF8005D738C /* UIExtensions.swift in Sources */,
 				860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */,
 				8601653824C87FC600509D5E /* NavigineApp.swift in Sources */,
-				86F43C4924E418CC0084C2D3 /* ProfileController.swift in Sources */,
 				8695E0D824F3DA19005D738C /* VenueDetailsViewController.swift in Sources */,
 				8601653124C867FC00509D5E /* LocationsListController.swift in Sources */,
 				8695E0F024F3DAF8005D738C /* FloatingPanelBackdropView.swift in Sources */,
@@ -543,6 +535,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NavigineDemo/Frameworks",
+					"$(PROJECT_DIR)/NavigineDemo",
 				);
 				INFOPLIST_FILE = NavigineDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -571,6 +564,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NavigineDemo/Frameworks",
+					"$(PROJECT_DIR)/NavigineDemo",
 				);
 				INFOPLIST_FILE = NavigineDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;

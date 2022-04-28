@@ -34,6 +34,7 @@ class LocationSearchController : UISearchController {
     searchBar.placeholder = "Search"
     searchBar.searchBarStyle = .minimal
     searchBar.sizeToFit()
+    searchBar.tintColor = .black
   }
   
   private func filterContentForSearchText() {

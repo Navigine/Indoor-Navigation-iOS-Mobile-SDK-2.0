@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		244E27112812993A0078C90B /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601654624C9C39C00509D5E /* NavigationViewController.swift */; };
-		24ABA5E52817F1AE00B0BC3B /* navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; };
-		24ABA5E62817F1AE00B0BC3B /* navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 860164FD24C745BA00509D5E /* navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24F330EE280DD93F0026B052 /* SublocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330ED280DD93D0026B052 /* SublocationPicker.swift */; };
 		24F330F0280DDDC30026B052 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330EF280DDDC20026B052 /* UIWindow.swift */; };
 		24F330F4280E12E20026B052 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330F3280E12E20026B052 /* UIViewController.swift */; };
 		62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653E24C88F2100509D5E /* GLKit.framework */; };
 		62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
 		62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AEFF552732B9D0000223D5 /* blue_dot.png */; };
+		62D6D1192893DA610034087B /* Navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D6D1172893DA580034087B /* Navigine.framework */; };
+		62D6D11A2893DA610034087B /* Navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D6D1172893DA580034087B /* Navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		860164E924C7456900509D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164E824C7456900509D5E /* AppDelegate.swift */; };
 		860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164EA24C7456900509D5E /* SceneDelegate.swift */; };
 		860164F224C7456900509D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860164F124C7456900509D5E /* Assets.xcassets */; };
@@ -62,7 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				24ABA5E62817F1AE00B0BC3B /* navigine.framework in Embed Frameworks */,
+				62D6D11A2893DA610034087B /* Navigine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,12 +74,12 @@
 		24F330EF280DDDC20026B052 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		24F330F3280E12E20026B052 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
+		62D6D1172893DA580034087B /* Navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Navigine.framework; sourceTree = "<group>"; };
 		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860164E824C7456900509D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		860164EA24C7456900509D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		860164F124C7456900509D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		860164F624C7456900509D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		860164FD24C745BA00509D5E /* navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = navigine.framework; sourceTree = "<group>"; };
 		8601650224C7479700509D5E /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		8601650C24C8567C00509D5E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8601650D24C8567C00509D5E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				8601654024C88F2100509D5E /* GLKit.framework in Frameworks */,
 				62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */,
 				62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */,
-				24ABA5E52817F1AE00B0BC3B /* navigine.framework in Frameworks */,
+				62D6D1192893DA610034087B /* Navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +190,7 @@
 		860164FC24C7458200509D5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				860164FD24C745BA00509D5E /* navigine.framework */,
+				62D6D1172893DA580034087B /* Navigine.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;
@@ -572,7 +572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = NavigineDemo/BridgingHeader.h;

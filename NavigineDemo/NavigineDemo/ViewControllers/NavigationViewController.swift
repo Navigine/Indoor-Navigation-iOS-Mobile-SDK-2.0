@@ -146,12 +146,10 @@ extension NavigationViewController: SublocationPickerDelegate {
 }
 
 extension NavigationViewController: NCLocationListener {
-    func onDownloadProgress(_ locationId: Int32, received: Int32, total: Int32) { }
     
     func onLocationFailed(_ locationId: Int32, error: Error?) { }
-    
-    func onLocationCancelled(_ locationId: Int32) { }
-    
+
+    func onLocationUploaded(_ locationId: Int32) { }
     
     func onLocationLoaded(_ location: NCLocation?) {
         currentFloor = 0

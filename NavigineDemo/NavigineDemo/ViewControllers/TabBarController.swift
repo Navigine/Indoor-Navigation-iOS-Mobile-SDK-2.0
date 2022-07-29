@@ -4,7 +4,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         
-        NavigineApp.initWith(userHash: "0000-0000-0000-0000", serverUrl: "https://api.navigine.com")
+        NavigineApp.initWith(userHash: "0000-0000-0000-0000", serverUrl: "https://ips.navigine.com")
         
         let selectedColor = UIColor(red: 62.0 / 255.0, green: 157.0 / 255.0, blue: 202.0 / 255.0, alpha: 1.0)
         

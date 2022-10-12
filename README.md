@@ -25,7 +25,7 @@ To get the Navigine demo application for iOS,
 - Either find the [Navigine application in the Apple Store](https://itunes.apple.com/ru/app/navigine/id972099798) using your iOS device
 - Or compile the application yourself [using source code, available at GitHub](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0).
 
-For complete guidelines on using the Demo, refer to the [corresponding sections in the Navigine User Manual](http://docs.navigine.com/ud_ios_demo.html), or refer to the Help file incorporated into the application.
+For complete guidelines on using the Demo, refer to the [corresponding sections in the Navigine User Manual](https://docs.navigine.com/en/Getting_Started), or refer to the Help file incorporated into the application.
 
 Below, you can see some screenshots of the Demo representing locations list, defined location levels, navigation bar, and debug process.
 

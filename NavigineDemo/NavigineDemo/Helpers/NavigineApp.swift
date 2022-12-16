@@ -19,7 +19,7 @@ class NavigineApp {
         mLocationManager = mNavigineSdk?.getLocationManager()
         mNavigationManager = mNavigineSdk?.getNavigationManager(mLocationManager)
         mResourceManager = mNavigineSdk?.getResourceManager(mLocationManager)
-        mMeasurementManager = mNavigineSdk?.getMeasurementManager()
+        mMeasurementManager = mNavigineSdk?.getMeasurementManager(mLocationManager)
         mInspectManager = mNavigineSdk?.getLocationEdit(mLocationManager)
         mRouteManager = mNavigineSdk?.getRouteManager(mLocationManager, navigationManager: mNavigationManager)
         mZoneManager = mNavigineSdk?.getZoneManager(mLocationManager, navigationManager: mNavigationManager)

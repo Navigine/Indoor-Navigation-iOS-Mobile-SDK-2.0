@@ -194,7 +194,9 @@ extension NavigationViewController: NCPositionListener {
     }
 
     func onPositionError(_ error: Error?) {
-        mCirclePosition.setVisible(false)
+        if mCirclePosition != nil {
+            mCirclePosition.setVisible(false)
+        }
     }
 }
 

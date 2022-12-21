@@ -11,11 +11,10 @@
 		24F330EE280DD93F0026B052 /* SublocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330ED280DD93D0026B052 /* SublocationPicker.swift */; };
 		24F330F0280DDDC30026B052 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330EF280DDDC20026B052 /* UIWindow.swift */; };
 		24F330F4280E12E20026B052 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330F3280E12E20026B052 /* UIViewController.swift */; };
-		62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653E24C88F2100509D5E /* GLKit.framework */; };
-		62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
+		62211203295304930088D2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
+		62211210295308D00088D2C0 /* Navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; };
+		62211211295308D00088D2C0 /* Navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AEFF552732B9D0000223D5 /* blue_dot.png */; };
-		62D6D1192893DA610034087B /* Navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D6D1172893DA580034087B /* Navigine.framework */; };
-		62D6D11A2893DA610034087B /* Navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D6D1172893DA580034087B /* Navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		860164E924C7456900509D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164E824C7456900509D5E /* AppDelegate.swift */; };
 		860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164EA24C7456900509D5E /* SceneDelegate.swift */; };
 		860164F224C7456900509D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860164F124C7456900509D5E /* Assets.xcassets */; };
@@ -56,13 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		24ABA5D42813569800B0BC3B /* Embed Frameworks */ = {
+		62211212295308D00088D2C0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				62D6D11A2893DA610034087B /* Navigine.framework in Embed Frameworks */,
+				62211211295308D00088D2C0 /* Navigine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +72,8 @@
 		24F330ED280DD93D0026B052 /* SublocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublocationPicker.swift; sourceTree = "<group>"; };
 		24F330EF280DDDC20026B052 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		24F330F3280E12E20026B052 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		6221120E295308CB0088D2C0 /* Navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Navigine.framework; sourceTree = "<group>"; };
 		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
-		62D6D1172893DA580034087B /* Navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Navigine.framework; sourceTree = "<group>"; };
 		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860164E824C7456900509D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		860164EA24C7456900509D5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,9 +125,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8601654024C88F2100509D5E /* GLKit.framework in Frameworks */,
-				62157CD326D15EB7008D2ED2 /* GLKit.framework in Frameworks */,
-				62A7FC7B27073861002D1C18 /* OpenGLES.framework in Frameworks */,
-				62D6D1192893DA610034087B /* Navigine.framework in Frameworks */,
+				62211203295304930088D2C0 /* OpenGLES.framework in Frameworks */,
+				62211210295308D00088D2C0 /* Navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +188,7 @@
 		860164FC24C7458200509D5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				62D6D1172893DA580034087B /* Navigine.framework */,
+				6221120E295308CB0088D2C0 /* Navigine.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -295,7 +293,7 @@
 				860164E124C7456900509D5E /* Sources */,
 				860164E224C7456900509D5E /* Frameworks */,
 				860164E324C7456900509D5E /* Resources */,
-				24ABA5D42813569800B0BC3B /* Embed Frameworks */,
+				62211212295308D00088D2C0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

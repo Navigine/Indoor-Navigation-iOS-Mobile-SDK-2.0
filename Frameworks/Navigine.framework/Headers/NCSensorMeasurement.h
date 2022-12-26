@@ -6,7 +6,7 @@
 #import "NCVector3d.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSensorMeasurement : NSObject
 - (nonnull instancetype)initWithType:(NCSensorType)type
                               values:(nonnull NCVector3d *)values

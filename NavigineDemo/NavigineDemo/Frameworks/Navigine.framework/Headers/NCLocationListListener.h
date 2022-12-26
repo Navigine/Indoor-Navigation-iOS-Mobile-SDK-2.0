@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationListListener <NSObject>
 
 - (void)onLocationListLoaded:(nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)locationInfos;

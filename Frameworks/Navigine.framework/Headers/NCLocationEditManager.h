@@ -7,7 +7,7 @@
 @protocol NCLocationEditListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationEditManager : NSObject
 
 - (void)addBeacon:(int32_t)subLocId

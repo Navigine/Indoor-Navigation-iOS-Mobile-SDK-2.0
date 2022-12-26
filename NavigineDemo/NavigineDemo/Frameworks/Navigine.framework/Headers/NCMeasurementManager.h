@@ -7,7 +7,7 @@
 @protocol NCMeasurementListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMeasurementManager : NSObject
 
 - (void)addMeasurementListener:(nullable id<NCMeasurementListener>)listener;

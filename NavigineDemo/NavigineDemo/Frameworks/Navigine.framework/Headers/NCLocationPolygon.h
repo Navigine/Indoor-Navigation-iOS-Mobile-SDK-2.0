@@ -5,7 +5,7 @@
 #import "NCPolygon.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolygon : NSObject
 - (nonnull instancetype)initWithPolygon:(nonnull NCPolygon *)polygon
                              locationId:(int32_t)locationId

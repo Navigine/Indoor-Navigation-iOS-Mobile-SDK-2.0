@@ -6,7 +6,7 @@
 @class NCZone;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCZoneListener <NSObject>
 
 - (void)onEnterZone:(nullable NCZone *)zone;

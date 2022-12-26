@@ -1,2 +1,2 @@
 #pragma once
-#define NAVIGINE_EXPORT __attribute__((visibility("default")))
+#define DEFAULT_EXPORT_ATTRIBUTE __attribute__((visibility("default")))

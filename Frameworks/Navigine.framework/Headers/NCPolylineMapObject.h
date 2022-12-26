@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPolylineMapObject : NCMapObject
 
 - (BOOL)setPolyLine:(nonnull NCLocationPolyline *)polyline;

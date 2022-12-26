@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZone : NSObject
 
 @property (nonatomic, nonnull, readonly) NCPolygon * polygon;

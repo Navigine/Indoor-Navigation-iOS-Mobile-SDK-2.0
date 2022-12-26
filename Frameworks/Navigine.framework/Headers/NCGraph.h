@@ -7,7 +7,7 @@
 @class NCGraphVertex;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGraph : NSObject
 
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphVertex *> * vertexes;

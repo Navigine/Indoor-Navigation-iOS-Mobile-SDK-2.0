@@ -16,7 +16,7 @@
 @class NCZoneManager;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigineSdk : NSObject
 
 + (void)setUserHash:(nonnull NSString *)userHash;

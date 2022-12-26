@@ -7,7 +7,7 @@
 @class NCRoutePath;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCAsyncRouteListener <NSObject>
 
 - (void)onRouteChanged:(nullable NCRoutePath *)currentPath

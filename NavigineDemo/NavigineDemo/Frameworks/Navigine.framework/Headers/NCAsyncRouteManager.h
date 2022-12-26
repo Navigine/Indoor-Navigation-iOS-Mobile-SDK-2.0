@@ -7,10 +7,10 @@
 @class NCRouteSession;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCAsyncRouteManager : NSObject
 
-- (nullable NCRouteSession *)createRouteSession:(nonnull NSArray<NCLocationPoint *> *)wayPoints;
+- (nullable NCRouteSession *)createRouteSession:(nonnull NCLocationPoint *)wayPoint;
 
 - (void)cancelRouteSession:(nullable NCRouteSession *)session;
 

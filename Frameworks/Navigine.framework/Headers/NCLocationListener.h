@@ -6,7 +6,7 @@
 @class NCLocation;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationListener <NSObject>
 
 - (void)onLocationLoaded:(nullable NCLocation *)location;

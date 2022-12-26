@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGraphEdge : NSObject
 
 @property (nonatomic, readonly) float weight;

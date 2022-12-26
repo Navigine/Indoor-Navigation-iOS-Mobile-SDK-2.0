@@ -5,7 +5,7 @@
 #import "NCPoint.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPolygon : NSObject
 - (nonnull instancetype)initWithPoints:(nonnull NSArray<NCPoint *> *)points;
 + (nonnull instancetype)polygonWithPoints:(nonnull NSArray<NCPoint *> *)points;

@@ -5,7 +5,7 @@
 #import "NCPoint.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSegment : NSObject
 - (nonnull instancetype)initWithStart:(nonnull NCPoint *)start
                                   end:(nonnull NCPoint *)end;

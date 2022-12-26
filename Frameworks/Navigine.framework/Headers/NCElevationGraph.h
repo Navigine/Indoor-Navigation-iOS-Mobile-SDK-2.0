@@ -6,7 +6,7 @@
 @class NCGraphEdge;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCElevationGraph : NSObject
 
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphEdge *> * edges;

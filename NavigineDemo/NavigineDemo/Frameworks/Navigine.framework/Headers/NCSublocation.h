@@ -14,7 +14,7 @@
 @class NCZone;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSublocation : NSObject
 
 - (nonnull NCLocationPoint *)globalToLocal:(nonnull NCGlobalPoint *)globalPoint;

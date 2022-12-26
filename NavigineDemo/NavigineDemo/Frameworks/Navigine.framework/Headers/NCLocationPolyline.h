@@ -5,7 +5,7 @@
 #import "NCPolyline.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolyline : NSObject
 - (nonnull instancetype)initWithPolyline:(nonnull NCPolyline *)polyline
                               locationId:(int32_t)locationId

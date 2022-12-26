@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol NCLocationViewListener;
 @protocol NCPickListener;
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame;
@@ -92,7 +92,7 @@ NAVIGINE_EXPORT
 /**
  Replaces the rotation gesture recognizer used by the map view and adds it to the UIView.
  */
-// @property (strong, nonatomic) UIRotationGestureRecognizer* rotationGestureRecognizer;
+@property (strong, nonatomic) UIRotationGestureRecognizer* rotationGestureRecognizer;
 
 /**
  Replaces the shove gesture recognizer used by the map view and adds it to the UIView.
@@ -176,6 +176,7 @@ NAVIGINE_EXPORT
 - (bool) mapObjectSetVisible:(int32_t) id visible: (bool) visible;
 - (bool) mapObjectSetInteractive:(int32_t) id interactive:(bool) interactive;
 - (bool) mapObjectSetStyling:(int32_t) id style: (NSString*) style;
+- (bool) mapObjectSetTitle:(int32_t) id title: (NSString*) title;
 - (bool) mapObjectSetPosition:(int32_t) id position: (NCLocationPoint*) locationPoint;
 - (bool) mapObjectSetPositionAnimated:(int32_t) id position: (NCLocationPoint*) locationPoint duration: (float) duration type: (NCAnimationType) type;
 - (bool) mapObjectSetBitmap:(int32_t) id;

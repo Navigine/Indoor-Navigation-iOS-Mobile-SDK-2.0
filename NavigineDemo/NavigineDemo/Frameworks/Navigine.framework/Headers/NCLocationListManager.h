@@ -7,7 +7,7 @@
 @protocol NCLocationListListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationListManager : NSObject
 
 - (void)addLocationListListener:(nullable id<NCLocationListListener>)listener;

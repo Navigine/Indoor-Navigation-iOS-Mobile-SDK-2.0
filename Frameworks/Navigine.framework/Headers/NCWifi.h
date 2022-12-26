@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCWifi : NSObject
 
 @property (nonatomic, nonnull, readonly) NCPoint * point;

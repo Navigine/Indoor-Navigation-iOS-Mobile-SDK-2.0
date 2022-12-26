@@ -6,7 +6,7 @@
 @class NCImage;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCResourceListener <NSObject>
 
 - (void)onLoaded:(nonnull NSString *)imageId

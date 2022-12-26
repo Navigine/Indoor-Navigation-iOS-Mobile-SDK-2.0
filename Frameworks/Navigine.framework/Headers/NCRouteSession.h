@@ -7,7 +7,7 @@
 @protocol NCAsyncRouteListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteSession : NSObject
 
 - (void)addRouteListener:(nullable id<NCAsyncRouteListener>)listener;

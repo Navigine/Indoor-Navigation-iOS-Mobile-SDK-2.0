@@ -8,7 +8,7 @@
 @class NCSublocation;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocation : NSObject
 
 - (nullable NCElevationGraph *)getElevationGraph:(nonnull NSString *)tag;

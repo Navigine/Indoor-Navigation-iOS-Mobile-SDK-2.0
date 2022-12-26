@@ -7,16 +7,11 @@
 @protocol NCResourceUploadListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCResourceManager : NSObject
 
 - (void)loadImage:(nonnull NSString *)imageId
          listener:(nullable id<NCResourceListener>)listener;
-
-- (nonnull NSString *)publishUserEvent:(nonnull NSString *)content;
-
-- (void)uploadUserFile:(nonnull NSString *)filePath
-              listener:(nullable id<NCResourceUploadListener>)listener;
 
 /** working with logs */
 - (nonnull NSArray<NSString *> *)getLogsList;

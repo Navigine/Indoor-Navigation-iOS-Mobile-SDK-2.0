@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCIconMapObject : NCMapObject
 
 - (BOOL)setPosition:(nonnull NCLocationPoint *)point;

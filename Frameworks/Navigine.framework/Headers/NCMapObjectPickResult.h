@@ -7,7 +7,7 @@
 @class NCMapObject;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMapObjectPickResult : NSObject
 
 @property (nonatomic, nonnull, readonly) NCLocationPoint * point;

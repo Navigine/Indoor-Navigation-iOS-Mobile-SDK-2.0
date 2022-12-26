@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMultiLineMapObject : NSObject
 
 - (void)setLines:(nonnull NSArray<NSArray<NCPoint *> *> *)lines;

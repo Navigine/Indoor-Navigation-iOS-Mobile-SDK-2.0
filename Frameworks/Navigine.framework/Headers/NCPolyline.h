@@ -5,7 +5,7 @@
 #import "NCPoint.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPolyline : NSObject
 - (nonnull instancetype)initWithPoints:(nonnull NSArray<NCPoint *> *)points;
 + (nonnull instancetype)polylineWithPoints:(nonnull NSArray<NCPoint *> *)points;

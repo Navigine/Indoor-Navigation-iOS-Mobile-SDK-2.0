@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationViewListener <NSObject>
 
 - (void)onLocationViewComplete;

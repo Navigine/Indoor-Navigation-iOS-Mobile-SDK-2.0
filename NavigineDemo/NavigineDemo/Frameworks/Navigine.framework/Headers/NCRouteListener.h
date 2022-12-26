@@ -6,7 +6,7 @@
 @class NCRoutePath;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCRouteListener <NSObject>
 
 - (void)onPathsUpdated:(nonnull NSArray<NCRoutePath *> *)paths;

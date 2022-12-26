@@ -6,7 +6,7 @@
 @protocol NCNotificationListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNotificationManager : NSObject
 
 - (void)addNotificationListener:(nullable id<NCNotificationListener>)listener;

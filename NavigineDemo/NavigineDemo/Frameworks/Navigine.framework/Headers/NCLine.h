@@ -5,7 +5,7 @@
 #import "NCSegment.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLine : NSObject
 - (nonnull instancetype)initWithSegments:(nonnull NSArray<NCSegment *> *)segments;
 + (nonnull instancetype)lineWithSegments:(nonnull NSArray<NCSegment *> *)segments;

@@ -5,7 +5,7 @@
 #import "NCSignalType.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSignalMeasurement : NSObject
 - (nonnull instancetype)initWithType:(NCSignalType)type
                                   id:(nonnull NSString *)id

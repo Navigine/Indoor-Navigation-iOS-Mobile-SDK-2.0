@@ -4,7 +4,7 @@
 #import "NCExport.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCCategory : NSObject
 - (nonnull instancetype)initWithId:(int32_t)id
                               name:(nonnull NSString *)name

@@ -7,7 +7,7 @@
 @class NCMapObjectPickResult;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPickListener <NSObject>
 
 - (void)onMapObjectPickComplete:(nullable NCMapObjectPickResult *)mapObjectPickResult

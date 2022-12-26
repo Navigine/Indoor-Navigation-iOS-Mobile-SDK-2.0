@@ -6,7 +6,7 @@
 @class NCNotification;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCNotificationListener <NSObject>
 
 - (void)onNotificationLoaded:(nullable NCNotification *)notification;

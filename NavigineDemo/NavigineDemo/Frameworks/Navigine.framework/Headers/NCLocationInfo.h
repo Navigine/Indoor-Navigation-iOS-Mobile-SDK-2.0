@@ -4,7 +4,7 @@
 #import "NCExport.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationInfo : NSObject
 - (nonnull instancetype)initWithId:(int32_t)id
                            version:(int32_t)version

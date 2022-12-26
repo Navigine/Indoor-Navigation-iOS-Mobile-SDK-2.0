@@ -8,7 +8,7 @@
 @class NCBitmapRegionDecoder;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCBitmapRegionDecoder : NSObject
 
 + (nullable NCBitmapRegionDecoder *)newInstance:(nonnull NSData *)data;

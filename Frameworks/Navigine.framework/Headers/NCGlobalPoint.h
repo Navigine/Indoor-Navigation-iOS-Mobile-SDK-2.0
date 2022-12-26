@@ -4,7 +4,7 @@
 #import "NCExport.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGlobalPoint : NSObject
 - (nonnull instancetype)initWithLatitude:(float)latitude
                                longitude:(float)longitude;

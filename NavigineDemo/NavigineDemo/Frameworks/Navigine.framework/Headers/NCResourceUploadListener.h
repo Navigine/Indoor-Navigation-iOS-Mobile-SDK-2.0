@@ -5,10 +5,10 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCResourceUploadListener <NSObject>
 
-- (void)onUploaded;
+- (void)onUploaded:(nonnull NSString *)fileName;
 
 - (void)onFailed:(nullable NSError *)error;
 

@@ -6,7 +6,7 @@
 @protocol NCZoneListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneManager : NSObject
 
 - (void)addZoneListener:(nullable id<NCZoneListener>)listener;

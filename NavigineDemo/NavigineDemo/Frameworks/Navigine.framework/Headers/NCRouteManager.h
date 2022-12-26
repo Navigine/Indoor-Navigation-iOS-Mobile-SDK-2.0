@@ -8,14 +8,11 @@
 @protocol NCRouteListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteManager : NSObject
 
 - (nullable NCRoutePath *)makeRoute:(nonnull NCLocationPoint *)from
                                  to:(nonnull NCLocationPoint *)to;
-
-- (nonnull NSArray<NCLocationPoint *> *)arrangePoints:(nonnull NCLocationPoint *)startPoint
-                                          checkPoints:(nonnull NSArray<NCLocationPoint *> *)checkPoints;
 
 - (void)setTarget:(nonnull NCLocationPoint *)target;
 
@@ -30,8 +27,6 @@ NAVIGINE_EXPORT
 - (nonnull NSString *)getGraphTag;
 
 - (nonnull NSArray<NSString *> *)getGraphTags;
-
-- (nonnull NSString *)getGraphDescription;
 
 - (void)addRouteListener:(nullable id<NCRouteListener>)listener;
 

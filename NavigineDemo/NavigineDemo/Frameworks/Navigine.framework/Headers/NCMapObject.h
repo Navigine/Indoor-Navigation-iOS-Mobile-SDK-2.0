@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMapObject : NSObject
 
 - (int32_t)getId;
@@ -22,5 +22,7 @@ NAVIGINE_EXPORT
 - (BOOL)setStyle:(nonnull NSString *)style;
 
 - (void)setData:(nonnull NSData *)data;
+
+- (BOOL)setTitle:(nonnull NSString *)title;
 
 @end

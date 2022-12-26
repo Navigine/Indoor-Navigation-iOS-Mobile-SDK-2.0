@@ -8,7 +8,7 @@
 @class NCReferenceEntry;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCReferencePoint : NSObject
 
 @property (nonatomic, readonly) int32_t locationId;

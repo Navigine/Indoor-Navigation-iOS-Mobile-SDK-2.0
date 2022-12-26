@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCImage : NSObject
 
 @property (nonatomic, nonnull, readonly) NSData * data;

@@ -82,9 +82,9 @@ shouldRecognizePinchGesture:(CGPoint)location;
  @param location The position of the recognized gesture in the view.
  @return `YES` if the map view should handle this gesture, otherwise `NO`.
  */
-// - (BOOL)locationView:(NCLocationView *)view
-//           recognizer:(UIGestureRecognizer *)recognizer
-// shouldRecognizeRotationGesture:(CGPoint)location;
+- (BOOL)locationView:(NCLocationView *)view
+          recognizer:(UIGestureRecognizer *)recognizer
+shouldRecognizeRotationGesture:(CGPoint)location;
 
 /**
  Whether the map view should handle a shove gesture.
@@ -155,9 +155,9 @@ didRecognizePinchGesture:(CGPoint)location;
  @param recognizer The `UIGestureRecognizer` the recognized the gesture.
  @param location The position of the recognized gesture in the view.
  */
-// - (void)locationView:(NCLocationView *)view
-//           recognizer:(UIGestureRecognizer *)recognizer
-// didRecognizeRotationGesture:(CGPoint)location;
+- (void)locationView:(NCLocationView *)view
+          recognizer:(UIGestureRecognizer *)recognizer
+didRecognizeRotationGesture:(CGPoint)location;
 
 /**
  Called when the map view just handled a shove gesture.
@@ -169,6 +169,16 @@ didRecognizePinchGesture:(CGPoint)location;
 // - (void)locationView:(NCLocationView *)view
 //           recognizer:(UIGestureRecognizer *)recognizer
 // didRecognizeShoveGesture:(CGPoint)displacement;
+
+
+/**
+ If implemented, the returned value will be the focus for the rotation gesture.
+
+ @param view The map view instance.
+ @param recognizer The `UIGestureRecognizer` that recognized the gesture.
+ @return The screen position the rotation gesture should focus to.
+ */
+- (CGPoint)rotationFocus:(NCLocationView *)view recognizer:(UIGestureRecognizer *)recognizer;
 
 /**
  If implemented, the returned value will be the focus for the pinch gesture.

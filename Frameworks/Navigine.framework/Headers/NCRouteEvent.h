@@ -5,7 +5,7 @@
 #import "NCRouteEventType.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteEvent : NSObject
 - (nonnull instancetype)initWithType:(NCRouteEventType)type
                                value:(int32_t)value

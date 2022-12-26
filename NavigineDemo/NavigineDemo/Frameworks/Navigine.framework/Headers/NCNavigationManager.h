@@ -7,7 +7,7 @@
 @protocol NCPositionListener;
 
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigationManager : NSObject
 
 - (void)addPositionListener:(nullable id<NCPositionListener>)listener;

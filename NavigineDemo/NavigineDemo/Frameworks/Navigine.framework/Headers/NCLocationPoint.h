@@ -5,7 +5,7 @@
 #import "NCPoint.h"
 #import <Foundation/Foundation.h>
 
-NAVIGINE_EXPORT
+DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPoint : NSObject
 - (nonnull instancetype)initWithPoint:(nonnull NCPoint *)point
                            locationId:(int32_t)locationId

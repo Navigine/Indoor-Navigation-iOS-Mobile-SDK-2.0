@@ -10,6 +10,7 @@ class NavigineApp {
     static var mMeasurementManager: NCMeasurementManager?
     static var mInspectManager: NCLocationEditManager?
     static var mRouteManager: NCRouteManager?
+    static var locationState = NCLocationState.none
     
     static func initWith(userHash: String, serverUrl: String) {
         NCNavigineSdk.setServer(serverUrl)

@@ -33,7 +33,7 @@ class NavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NavigineApp.mLocationManager?.add(self)
+        
         NavigineApp.mNavigationManager?.add(self)
         NavigineApp.mZoneManager?.add(self)
         NavigineApp.mRouteManager?.add(self)
@@ -49,7 +49,7 @@ class NavigationViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.isUserInteractionEnabled = true
         //.titleView?.isUserInteractionEnabled = true
-        
+        NavigineApp.mLocationManager?.add(self)
         
 //        NavigineApp.mMeasurementManager?.addWifiGenerator("C83A353BFF20", timeout: 1000, rssiMin: -75, rssiMax: -55)
 //
@@ -152,20 +152,22 @@ extension NavigationViewController: NCLocationListener {
     func onLocationUploaded(_ locationId: Int32) { }
     
     func onLocationLoaded(_ location: NCLocation?) {
-        currentFloor = 0
-        self.mSublocationsList.removeAll()
-        mLocation = location
-        mCirclePosition = mLocationView.addCircleMapObject();
-        mCirclePosition.setColor(0.5, green: 0, blue: 0, alpha: 1)
-        mCirclePosition.setRadius(5)
-        
-        mSublocationPicker?.setLocation(location!)
-        mSublocationPicker?.updateUI(currentFloor)
-        
-        setupFloor(currentFloor)
-        
-        for subloc in location!.sublocations {
-            self.mSublocationsList.append(subloc)
+        if mLocation == nil || mLocation?.id != location?.id {
+            currentFloor = 0
+            self.mSublocationsList.removeAll()
+            mLocation = location
+            mCirclePosition = mLocationView.addCircleMapObject();
+            mCirclePosition.setColor(0.5, green: 0, blue: 0, alpha: 1)
+            mCirclePosition.setRadius(5)
+            
+            mSublocationPicker?.setLocation(location!)
+            mSublocationPicker?.updateUI(currentFloor)
+            
+            setupFloor(currentFloor)
+            
+            for subloc in location!.sublocations {
+                self.mSublocationsList.append(subloc)
+            }
         }
     }
     

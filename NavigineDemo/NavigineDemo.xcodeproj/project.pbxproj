@@ -11,6 +11,10 @@
 		24F330EE280DD93F0026B052 /* SublocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330ED280DD93D0026B052 /* SublocationPicker.swift */; };
 		24F330F0280DDDC30026B052 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330EF280DDDC20026B052 /* UIWindow.swift */; };
 		24F330F4280E12E20026B052 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F330F3280E12E20026B052 /* UIViewController.swift */; };
+		24FF752C296EBEAC009C5087 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF752B296EBEAC009C5087 /* LocationDataManager.swift */; };
+		24FF752E296EBF07009C5087 /* LocationInfoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF752D296EBF06009C5087 /* LocationInfoItem.swift */; };
+		24FF7530296EBF36009C5087 /* NCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF752F296EBF36009C5087 /* NCError.swift */; };
+		24FF7532296FF893009C5087 /* NCLocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF7531296FF893009C5087 /* NCLocationState.swift */; };
 		62211203295304930088D2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
 		62211210295308D00088D2C0 /* Navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; };
 		62211211295308D00088D2C0 /* Navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +76,10 @@
 		24F330ED280DD93D0026B052 /* SublocationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublocationPicker.swift; sourceTree = "<group>"; };
 		24F330EF280DDDC20026B052 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		24F330F3280E12E20026B052 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		24FF752B296EBEAC009C5087 /* LocationDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		24FF752D296EBF06009C5087 /* LocationInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInfoItem.swift; sourceTree = "<group>"; };
+		24FF752F296EBF36009C5087 /* NCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCError.swift; sourceTree = "<group>"; };
+		24FF7531296FF893009C5087 /* NCLocationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCLocationState.swift; sourceTree = "<group>"; };
 		6221120E295308CB0088D2C0 /* Navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Navigine.framework; sourceTree = "<group>"; };
 		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
 		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +251,10 @@
 				24F330ED280DD93D0026B052 /* SublocationPicker.swift */,
 				24F330EF280DDDC20026B052 /* UIWindow.swift */,
 				24F330F3280E12E20026B052 /* UIViewController.swift */,
+				24FF752B296EBEAC009C5087 /* LocationDataManager.swift */,
+				24FF752D296EBF06009C5087 /* LocationInfoItem.swift */,
+				24FF752F296EBF36009C5087 /* NCError.swift */,
+				24FF7531296FF893009C5087 /* NCLocationState.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -367,8 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F330F4280E12E20026B052 /* UIViewController.swift in Sources */,
+				24FF752E296EBF07009C5087 /* LocationInfoItem.swift in Sources */,
 				8695E0EA24F3DAF8005D738C /* Logger.swift in Sources */,
 				86F43C4524E3E1080084C2D3 /* MyCollectionViewCell.swift in Sources */,
+				24FF752C296EBEAC009C5087 /* LocationDataManager.swift in Sources */,
 				8695E0E824F3DAF8005D738C /* FloatingPanelController.swift in Sources */,
 				24F330EE280DD93F0026B052 /* SublocationPicker.swift in Sources */,
 				8601651E24C85AD900509D5E /* TabBarController.swift in Sources */,
@@ -385,11 +399,13 @@
 				8695E0EC24F3DAF8005D738C /* FloatingPanelTransitioning.swift in Sources */,
 				244E27112812993A0078C90B /* NavigationViewController.swift in Sources */,
 				8695E0F124F3DAF8005D738C /* UIExtensions.swift in Sources */,
+				24FF7530296EBF36009C5087 /* NCError.swift in Sources */,
 				860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */,
 				8601653824C87FC600509D5E /* NavigineApp.swift in Sources */,
 				8695E0D824F3DA19005D738C /* VenueDetailsViewController.swift in Sources */,
 				8601653124C867FC00509D5E /* LocationsListController.swift in Sources */,
 				8695E0F024F3DAF8005D738C /* FloatingPanelBackdropView.swift in Sources */,
+				24FF7532296FF893009C5087 /* NCLocationState.swift in Sources */,
 				8610E3A924E536E0002BED87 /* AddBeaconController.swift in Sources */,
 				8695E0EB24F3DAF8005D738C /* FloatingPanelBehavior.swift in Sources */,
 				8695E0EF24F3DAF8005D738C /* FloatingPanelLayout.swift in Sources */,

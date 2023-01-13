@@ -69,6 +69,7 @@ class NavigationViewController: UIViewController {
         mPosition.setBitmap(UIImage(named: "UserLocation"))
         mPosition.setSize(Float(30), height: Float(30))
         mPosition.setVisible(false)
+        mPosition.setStyle("{ order: 1, collide: false}")
         
         mPolyline = mLocationView.addPolylineMapObject()
         mPolyline.setColor(0.0, green: 0.5, blue: 0.5, alpha: 1)

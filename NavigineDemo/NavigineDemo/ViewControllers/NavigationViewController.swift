@@ -189,9 +189,8 @@ extension NavigationViewController: NCRouteListener {
 
 extension NavigationViewController: NCPositionListener {
     func onPositionUpdated(_ position: NCPosition) {
-        if (mPosition != nil) {
-            let locationPoint = NCLocationPoint.init(point: position.point, locationId: position.locationId, sublocationId: position.sublocationId)
-            mPosition.setPositionAnimated(locationPoint, duration: 1.0, type: NCAnimationType.cubic)
+        if (mPosition != nil && position.locationPoint != nil) {
+            mPosition.setPositionAnimated(position.locationPoint!, duration: 1.0, type: NCAnimationType.cubic)
             mPosition.setVisible(true)
         }
     }

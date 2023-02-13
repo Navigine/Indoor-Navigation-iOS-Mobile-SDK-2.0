@@ -43,6 +43,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, nonnull, readonly) NCGlobalPoint * originPoint;
 
+@property (nonatomic, nonnull, readonly) NSString * levelId;
+
 @property (nonatomic, nonnull, readonly) NSArray<NCBeacon *> * beacons;
 
 @property (nonatomic, nonnull, readonly) NSArray<NCEddystone *> * eddystones;

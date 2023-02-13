@@ -74,8 +74,13 @@ extension DebugController: NCMeasurementListener {
 
 extension DebugController: NCPositionListener {
     func onPositionUpdated(_ position: NCPosition) {
-        mErrorCode.text = "Error code: 0   Sublocation: \(position.sublocationId)"
-        mNavResult.text = "Result:  x: \(position.point.x)  y: \(position.point.y)"
+        if position.locationPoint != nil {
+            mErrorCode.text = "Error code: 0   Sublocation: \(position.locationPoint!.sublocationId)"
+            mNavResult.text = "Result:  x: \(position.locationPoint!.point.x)  y: \(position.locationPoint!.point.y)"
+        } else {
+            mErrorCode.text = "Error code: 0"
+            mNavResult.text = "Result:  lat: \(position.point.latitude)  lon: \(position.point.longitude)"
+        }
     }
     
     func onPositionError(_ error: Error?) {

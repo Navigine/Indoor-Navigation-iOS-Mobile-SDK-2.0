@@ -10,8 +10,7 @@
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCAsyncRouteListener <NSObject>
 
-- (void)onRouteChanged:(nullable NCRoutePath *)currentPath
-          pendingPaths:(nonnull NSArray<NCRoutePath *> *)pendingPaths;
+- (void)onRouteChanged:(nullable NCRoutePath *)currentPath;
 
 - (void)onRouteAdvanced:(float)distance
                   point:(nonnull NCLocationPoint *)point;

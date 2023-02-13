@@ -10,7 +10,8 @@
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCAsyncRouteManager : NSObject
 
-- (nullable NCRouteSession *)createRouteSession:(nonnull NCLocationPoint *)wayPoint;
+- (nullable NCRouteSession *)createRouteSession:(nonnull NCLocationPoint *)wayPoint
+                                   smoothRadius:(float)smoothRadius;
 
 - (void)cancelRouteSession:(nullable NCRouteSession *)session;
 

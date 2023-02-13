@@ -6,13 +6,13 @@
 
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGlobalPoint : NSObject
-- (nonnull instancetype)initWithLatitude:(float)latitude
-                               longitude:(float)longitude;
-+ (nonnull instancetype)globalPointWithLatitude:(float)latitude
-                                      longitude:(float)longitude;
+- (nonnull instancetype)initWithLatitude:(double)latitude
+                               longitude:(double)longitude;
++ (nonnull instancetype)globalPointWithLatitude:(double)latitude
+                                      longitude:(double)longitude;
 
-@property (nonatomic, readonly) float latitude;
+@property (nonatomic, readonly) double latitude;
 
-@property (nonatomic, readonly) float longitude;
+@property (nonatomic, readonly) double longitude;
 
 @end

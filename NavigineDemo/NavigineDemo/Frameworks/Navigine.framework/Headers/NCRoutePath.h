@@ -5,10 +5,13 @@
 #import "NCLocationPoint.h"
 #import "NCRouteEvent.h"
 #import <Foundation/Foundation.h>
+@class NCRoutePath;
 
 
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRoutePath : NSObject
+
+- (nonnull NSArray<NCRoutePath *> *)split:(float)advance;
 
 @property (nonatomic, readonly) float length;
 

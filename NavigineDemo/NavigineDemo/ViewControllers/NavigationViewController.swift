@@ -73,8 +73,9 @@ class NavigationViewController: UIViewController {
         
         mPolyline = mLocationView.addPolylineMapObject()
         mPolyline.setColor(0.0, green: 0.5, blue: 0.5, alpha: 1)
-        mPolyline.setWidth(Float(0.1))
+        mPolyline.setWidth(4)
         mPolyline.setVisible(false)
+        mPolyline.setStyle("{style: 'points', placement_min_length_ratio: 0, placement_spacing: 8px, size: [8px, 8px], placement: 'spaced', collide: false}")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,8 +117,9 @@ extension NavigationViewController : NCGestureRecognizerDelegate {
     func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeLongPressGesture location: CGPoint) {
         NavigineApp.mRouteManager?.clearTargets()
 
-        let point = NCLocationPoint(point: NCPoint.init(x: 0, y: 0), locationId: mLocation.id , sublocationId: subLoc.id)
-        NavigineApp.mRouteManager?.setTarget(point);
+        let point = view.screenPosition(toMeters: location)
+        let locPoint = NCLocationPoint(point: point, locationId: mLocation.id , sublocationId: subLoc.id)
+        NavigineApp.mRouteManager?.setTarget(locPoint)
     }
 }
 

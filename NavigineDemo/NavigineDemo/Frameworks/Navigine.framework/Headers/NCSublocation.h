@@ -5,6 +5,7 @@
 #import "NCGlobalPoint.h"
 #import "NCLocationPoint.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class NCBeacon;
 @class NCEddystone;
 @class NCGraph;
@@ -16,6 +17,8 @@
 
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSublocation : NSObject
+
+- (nullable UIImage *)getImage:(nullable NSNumber *)maxTextureSize;
 
 - (nonnull NCLocationPoint *)globalToLocal:(nonnull NCGlobalPoint *)globalPoint;
 
@@ -33,8 +36,6 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-@property (nonatomic, nonnull, readonly) NSString * imageId;
-
 @property (nonatomic, readonly) float width;
 
 @property (nonatomic, readonly) float height;
@@ -44,6 +45,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, nonnull, readonly) NCGlobalPoint * originPoint;
 
 @property (nonatomic, nonnull, readonly) NSString * levelId;
+
+@property (nonatomic, nonnull, readonly) NSString * externalId;
 
 @property (nonatomic, nonnull, readonly) NSArray<NCBeacon *> * beacons;
 

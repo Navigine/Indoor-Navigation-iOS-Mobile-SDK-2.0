@@ -8,15 +8,15 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCCategory : NSObject
 - (nonnull instancetype)initWithId:(int32_t)id
                               name:(nonnull NSString *)name
-                           imageId:(nullable NSString *)imageId;
+                          imageUrl:(nullable NSString *)imageUrl;
 + (nonnull instancetype)categoryWithId:(int32_t)id
                                   name:(nonnull NSString *)name
-                               imageId:(nullable NSString *)imageId;
+                              imageUrl:(nullable NSString *)imageUrl;
 
 @property (nonatomic, readonly) int32_t id;
 
 @property (nonatomic, readonly, nonnull) NSString * name;
 
-@property (nonatomic, readonly, nullable) NSString * imageId;
+@property (nonatomic, readonly, nullable) NSString * imageUrl;
 
 @end

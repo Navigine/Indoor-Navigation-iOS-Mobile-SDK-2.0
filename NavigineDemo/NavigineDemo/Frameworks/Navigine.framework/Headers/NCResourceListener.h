@@ -9,10 +9,10 @@
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCResourceListener <NSObject>
 
-- (void)onLoaded:(nonnull NSString *)imageId
+- (void)onLoaded:(nonnull NSString *)imageUrl
            image:(nullable NCImage *)image;
 
-- (void)onFailed:(nonnull NSString *)imageId
+- (void)onFailed:(nonnull NSString *)imageUrl
            error:(nullable NSError *)error;
 
 @end

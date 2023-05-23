@@ -27,6 +27,6 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, readonly) int32_t categoryId;
 
-@property (nonatomic, nullable, readonly) NSString * imageId;
+@property (nonatomic, nullable, readonly) NSString * imageUrl;
 
 @end

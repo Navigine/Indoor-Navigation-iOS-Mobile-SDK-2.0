@@ -6,6 +6,7 @@
 typedef NS_ENUM(NSInteger, NCMapObjectType)
 {
     NCMapObjectTypeICON,
+    NCMapObjectTypeFLATICON,
     NCMapObjectTypePOLYLINE,
     NCMapObjectTypeCIRCLE,
 };

@@ -10,7 +10,7 @@
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCResourceManager : NSObject
 
-- (void)loadImage:(nonnull NSString *)imageId
+- (void)loadImage:(nonnull NSString *)imageUrl
          listener:(nullable id<NCResourceListener>)listener;
 
 /** working with logs */

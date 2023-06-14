@@ -94,9 +94,9 @@ shouldRecognizeRotationGesture:(CGPoint)location;
  @param displacement The displacement of the recognized gesture in the view.
  @return `YES` if the map view should handle this gesture, otherwise `NO`.
  */
-// - (BOOL)locationView:(NCLocationView *)view
-//           recognizer:(UIGestureRecognizer *)recognizer
-// shouldRecognizeShoveGesture:(CGPoint)displacement;
+- (BOOL)locationView:(NCLocationView *)view
+          recognizer:(UIGestureRecognizer *)recognizer
+shouldRecognizeShoveGesture:(CGPoint)displacement;
 
 /**
  Called when the map view just handled a single tap gesture.
@@ -166,10 +166,9 @@ didRecognizeRotationGesture:(CGPoint)location;
  @param recognizer The `UIGestureRecognizer` the recognized the gesture.
  @param displacement The displacement of the recognized gesture in the view.
  */
-// - (void)locationView:(NCLocationView *)view
-//           recognizer:(UIGestureRecognizer *)recognizer
-// didRecognizeShoveGesture:(CGPoint)displacement;
-
+ - (void)locationView:(NCLocationView *)view
+           recognizer:(UIGestureRecognizer *)recognizer
+ didRecognizeShoveGesture:(CGPoint)displacement;
 
 /**
  If implemented, the returned value will be the focus for the rotation gesture.

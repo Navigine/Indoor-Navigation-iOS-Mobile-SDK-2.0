@@ -40,6 +40,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, readonly) float height;
 
+@property (nonatomic, readonly) float altitude;
+
 @property (nonatomic, readonly) float azimuth;
 
 @property (nonatomic, nonnull, readonly) NCGlobalPoint * originPoint;

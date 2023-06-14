@@ -17,6 +17,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 - (int32_t)getLocationId;
 
+- (void)setLocationUpdateInterval:(int32_t)interval;
+
 - (void)commitChanges;
 
 - (void)revertChanges;

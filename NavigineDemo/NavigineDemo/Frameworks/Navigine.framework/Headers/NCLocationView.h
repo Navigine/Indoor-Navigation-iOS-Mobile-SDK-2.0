@@ -111,7 +111,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  Replaces the shove gesture recognizer used by the map view and adds it to the UIView.
  */
-// @property (strong, nonatomic) UIPanGestureRecognizer* shoveGestureRecognizer;
+@property (strong, nonatomic) UIPanGestureRecognizer* shoveGestureRecognizer;
 
 /**
  Replaces the long press gesture recognizer used by the map view and adds it to the UIView.

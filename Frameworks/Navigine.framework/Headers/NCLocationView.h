@@ -5,6 +5,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class NCCircleMapObject;
+@class NCFlatIconMapObject;
 @class NCIconMapObject;
 @class NCLocationPoint;
 @class NCLocationPolyline;
@@ -32,6 +33,10 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (NCIconMapObject *) addIconMapObject;
 
 - (bool) removeIconMapObject: (NCIconMapObject *) iconMapObject;
+
+- (NCFlatIconMapObject *) addFlatIconMapObject;
+
+- (bool) removeFlatIconMapObject: (NCFlatIconMapObject *) iconMapObject;
 
 - (NCPolylineMapObject *) addPolylineMapObject;
 
@@ -65,6 +70,15 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (weak, nonatomic, nullable) id<NCLocationViewListener> locationViewListener;
 
+/**
+ If `continuous` is `YES`, the map view will re-draw continuously. Otherwise, the map will re-draw only when an event
+ changes the map view.
+
+ @note Changing this property will override the inferred value from the scene. Enabling continuous rendering can
+ significantly increase the energy usage of an application.
+ */
+@property (assign, nonatomic) BOOL continuous;
+
 #pragma mark Gesture Recognizers
 
 @property (weak, nonatomic, nullable) id<NCGestureRecognizerDelegate> gestureDelegate;
@@ -97,7 +111,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  Replaces the shove gesture recognizer used by the map view and adds it to the UIView.
  */
-// @property (strong, nonatomic) UIPanGestureRecognizer* shoveGestureRecognizer;
+@property (strong, nonatomic) UIPanGestureRecognizer* shoveGestureRecognizer;
 
 /**
  Replaces the long press gesture recognizer used by the map view and adds it to the UIView.
@@ -122,12 +136,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  Move the map camera to a new position with an easing animation.
 
  @param camera The new camera position
- @param duration The animation duration in seconds
+ @param duration The animation duration in milliseconds
  @param animationType The type of easing animation
  @param completion A callback to execute when the animation completes
  */
 - (void)setCamera:(NCCamera *)camera
-     withDuration:(NSTimeInterval)duration
+     withDuration:(NSInteger)duration
     animationType:(NCAnimationType)animationType
        completion:(nullable void (^)(BOOL canceled))completion;
 
@@ -146,11 +160,11 @@ DEFAULT_EXPORT_ATTRIBUTE
  Move the map camera to a new position with an animation that pans and zooms in a smooth arc.
 
  @param camera The new camera position
- @param duration Duration of the animation in seconds
+ @param duration Duration of the animation in milliseconds
  @param callback A callback to execute when the animation completes
  */
 - (void)flyToCamera:(NCCamera *)camera
-       withDuration:(NSTimeInterval)duration
+       withDuration:(NSInteger)duration
            callback:(nullable void (^)(BOOL canceled))callback;
 
 /**
@@ -179,6 +193,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (bool) mapObjectSetTitle:(int32_t) id title: (NSString*) title;
 - (bool) mapObjectSetPosition:(int32_t) id position: (NCLocationPoint*) locationPoint;
 - (bool) mapObjectSetPositionAnimated:(int32_t) id position: (NCLocationPoint*) locationPoint duration: (float) duration type: (NCAnimationType) type;
+- (bool) mapObjectSetAngle:(int32_t) id angle: (float) angle;
+- (bool) mapObjectSetAngleAnimated:(int32_t) id angle: (float) angle duration: (float) duration type: (NCAnimationType) type;
 - (bool) mapObjectSetBitmap:(int32_t) id;
 - (bool) mapObjectSetPolyline:(int32_t) id polyline: (NCLocationPolyline*) polyline;
 - (bool) mapObjectSetSize:(int32_t) id width: (float) width height: (float) height;

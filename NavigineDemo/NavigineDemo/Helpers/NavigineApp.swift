@@ -13,9 +13,9 @@ class NavigineApp {
     static var locationState = NCLocationState.none
     
     static func initWith(userHash: String, serverUrl: String) {
-        NCNavigineSdk.setServer(serverUrl)
-        NCNavigineSdk.setUserHash(userHash)
         mNavigineSdk = NCNavigineSdk.getInstance()
+        mNavigineSdk?.setServer(serverUrl)
+        mNavigineSdk?.setUserHash(userHash)
         mLocationListManager = mNavigineSdk?.getLocationListManager()
         mLocationManager = mNavigineSdk?.getLocationManager()
         mNavigationManager = mNavigineSdk?.getNavigationManager(mLocationManager)

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,8 @@
 		24FF7530296EBF36009C5087 /* NCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF752F296EBF36009C5087 /* NCError.swift */; };
 		24FF7532296FF893009C5087 /* NCLocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF7531296FF893009C5087 /* NCLocationState.swift */; };
 		62211203295304930088D2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8601653F24C88F2100509D5E /* OpenGLES.framework */; };
-		62211210295308D00088D2C0 /* Navigine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; };
-		62211211295308D00088D2C0 /* Navigine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6221120E295308CB0088D2C0 /* Navigine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		629623CB2A93FAC0003DC9CE /* Navigine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 629623C92A93FABD003DC9CE /* Navigine.xcframework */; };
+		629623CC2A93FAC0003DC9CE /* Navigine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 629623C92A93FABD003DC9CE /* Navigine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		62AEFF562732B9D0000223D5 /* blue_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 62AEFF552732B9D0000223D5 /* blue_dot.png */; };
 		860164E924C7456900509D5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164E824C7456900509D5E /* AppDelegate.swift */; };
 		860164EB24C7456900509D5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860164EA24C7456900509D5E /* SceneDelegate.swift */; };
@@ -65,7 +65,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				62211211295308D00088D2C0 /* Navigine.framework in Embed Frameworks */,
+				629623CC2A93FAC0003DC9CE /* Navigine.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 		24FF752D296EBF06009C5087 /* LocationInfoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInfoItem.swift; sourceTree = "<group>"; };
 		24FF752F296EBF36009C5087 /* NCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCError.swift; sourceTree = "<group>"; };
 		24FF7531296FF893009C5087 /* NCLocationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCLocationState.swift; sourceTree = "<group>"; };
-		6221120E295308CB0088D2C0 /* Navigine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Navigine.framework; sourceTree = "<group>"; };
+		629623C92A93FABD003DC9CE /* Navigine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Navigine.xcframework; sourceTree = "<group>"; };
 		62AEFF552732B9D0000223D5 /* blue_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_dot.png; sourceTree = "<group>"; };
 		860164E524C7456900509D5E /* NavigineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860164E824C7456900509D5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,9 +132,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629623CB2A93FAC0003DC9CE /* Navigine.xcframework in Frameworks */,
 				8601654024C88F2100509D5E /* GLKit.framework in Frameworks */,
 				62211203295304930088D2C0 /* OpenGLES.framework in Frameworks */,
-				62211210295308D00088D2C0 /* Navigine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +196,7 @@
 		860164FC24C7458200509D5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6221120E295308CB0088D2C0 /* Navigine.framework */,
+				629623C92A93FABD003DC9CE /* Navigine.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

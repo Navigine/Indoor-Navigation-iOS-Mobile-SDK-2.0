@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.3.1](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.3.2) / 2023-08-21
+## [2.3.2](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.3.2) / 2023-08-21
 * Improved indoor positioning algorithm
 
 ## [2.3.1](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.3.1) / 2023-06-15

@@ -10,8 +10,8 @@ Pod::Spec.new do |spec|
   spec.documentation_url    = 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki/Getting-Started'
   spec.vendored_frameworks  = 'Frameworks/Navigine.xcframework'
 #  spec.vendored_libraries   = 'Frameworks/navigine.framework/Navigine'
-  spec.public_header_files  = 'Frameworks/Navigine.xcframework/*/Headers/*.h'
-  spec.source_files         = 'Frameworks/Navigine.xcframework/*/Headers'
+  spec.public_header_files  = 'Frameworks/Navigine.xcframework/ios-arm64/Headers/*.h'
+  spec.source_files         = 'Frameworks/Navigine.xcframework/ios-arm64/Headers'
   spec.pod_target_xcconfig  = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.exclude_files        = "Classes/Exclude"

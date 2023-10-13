@@ -1,7 +1,6 @@
 import Foundation
 
 class NavigationViewController: UIViewController {
-    
     @IBOutlet weak var mLocationView: NCLocationView!
     @IBOutlet weak var mRecLogs: UIButton!
     
@@ -41,7 +40,8 @@ class NavigationViewController: UIViewController {
         mRecLogs.setTitleColor(UIColor.blue, for: .normal)
         mRecLogs.addTarget(self, action: #selector(recClicked), for: .touchUpInside)
 
-        mLocationView.gestureDelegate = self
+        mLocationView.locationWindow.add(self as NCPickListener)
+        mLocationView.locationWindow.add(self as NCInputListener)
         
         mSublocationPicker = SublocationPicker(frame: CGRect(x: 0, y: 0, width: 180, height: 22))
         mSublocationPicker!.sublocationPickerDelegate = self
@@ -65,13 +65,13 @@ class NavigationViewController: UIViewController {
 //            minor: 26457,
 //            power: 32, timeout: 100, rssiMin: -89, rssiMax: -55);
         
-        mPosition = mLocationView.addIconMapObject()
+        mPosition = mLocationView.locationWindow.addIconMapObject()
         mPosition.setBitmap(UIImage(named: "UserLocation"))
         mPosition.setSize(Float(30), height: Float(30))
         mPosition.setVisible(false)
         mPosition.setStyle("{ order: 1, collide: false}")
         
-        mPolyline = mLocationView.addPolylineMapObject()
+        mPolyline = mLocationView.locationWindow.addPolylineMapObject()
         mPolyline.setColor(0.0, green: 0.5, blue: 0.5, alpha: 1)
         mPolyline.setWidth(3)
         mPolyline.setVisible(false)
@@ -97,26 +97,28 @@ class NavigationViewController: UIViewController {
     }
     
     @IBAction func zoomIn(_ sender: Any) {
-        let zoomFactor = mLocationView.zoomFactor
-        mLocationView.zoomFactor = zoomFactor * 2
+        let zoomFactor = mLocationView.locationWindow.zoomFactor
+        mLocationView.locationWindow.zoomFactor = zoomFactor * 2
     }
     
     
     @IBAction func zoomOut(_ sender: Any) {
-        let zoomFactor = mLocationView.zoomFactor
-        mLocationView.zoomFactor = zoomFactor / 2
+        let zoomFactor = mLocationView.locationWindow.zoomFactor
+        mLocationView.locationWindow.zoomFactor = zoomFactor / 2
     }
 }
 
-extension NavigationViewController : NCGestureRecognizerDelegate {
-    func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeSingleTapGesture location: CGPoint) {
-        view.pickMapObject(at: location)
+extension NavigationViewController : NCInputListener {
+    func onViewTap(_ screenPoint: CGPoint) {
+        mLocationView.locationWindow.pickMapObject(at: screenPoint)
     }
     
-    func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeLongPressGesture location: CGPoint) {
+    func onViewDoubleTap(_ screenPoint: CGPoint) {}
+    
+    func onViewLongTap(_ screenPoint: CGPoint) {
         NavigineApp.mRouteManager?.clearTargets()
 
-        let point = NCLocationPoint(point: mLocationView.screenPosition(toMeters: location), locationId: mLocation.id , sublocationId: subLoc.id)
+        let point = NCLocationPoint(point: mLocationView.locationWindow.screenPosition(toMeters: screenPoint), locationId: mLocation.id , sublocationId: subLoc.id)
         NavigineApp.mRouteManager?.setTarget(point);
     }
 }
@@ -135,15 +137,13 @@ extension NavigationViewController: SublocationPickerDelegate {
     func setupFloor(_ floor: Int) {
         currentFloor = floor
         subLoc = mLocation?.sublocations[floor]
-        mLocationView.setSublocationId(subLoc.id)
+        mLocationView.locationWindow.setSublocationId(subLoc.id)
         
-        mLocationView.maxZoomFactor = mLocationView.frame.width * 20 / CGFloat(subLoc.width)
-        mLocationView.zoomFactor = mLocationView.frame.width / 20 / CGFloat(subLoc.width)
+        mLocationView.locationWindow.maxZoomFactor = Float(mLocationView.frame.width * 20 / CGFloat(subLoc.width))
+        mLocationView.locationWindow.zoomFactor = Float(mLocationView.frame.width / 20 / CGFloat(subLoc.width))
         
         view.layoutIfNeeded()
     }
-    
-    
 }
 
 extension NavigationViewController: NCLocationListener {
@@ -157,7 +157,7 @@ extension NavigationViewController: NCLocationListener {
             currentFloor = 0
             self.mSublocationsList.removeAll()
             mLocation = location
-            mCirclePosition = mLocationView.addCircleMapObject();
+            mCirclePosition = mLocationView.locationWindow.addCircleMapObject();
             mCirclePosition.setColor(0.5, green: 0, blue: 0, alpha: 1)
             mCirclePosition.setRadius(5)
             

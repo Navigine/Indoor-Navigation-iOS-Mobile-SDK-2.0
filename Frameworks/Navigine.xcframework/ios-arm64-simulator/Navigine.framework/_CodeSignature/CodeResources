@@ -28,6 +28,18 @@
 		<data>
 		4Nrhf+g9PEBTu692sJrPBixFBGI=
 		</data>
+		<key>Headers/NCCameraCallback.h</key>
+		<data>
+		NK6IlpoG46HD2g0SW5jYUrmtPR4=
+		</data>
+		<key>Headers/NCCameraListener.h</key>
+		<data>
+		h0TfYW53sYAFTsqBWuunMqJUuCw=
+		</data>
+		<key>Headers/NCCameraUpdateReason.h</key>
+		<data>
+		cylsAMxbr7ksLBI0oOdVsEpmdw4=
+		</data>
 		<key>Headers/NCCategory.h</key>
 		<data>
 		hc54v1HSoyaExjZlVhY5ERZiHpQ=
@@ -35,6 +47,10 @@
 		<key>Headers/NCCircleMapObject.h</key>
 		<data>
 		aFiPdI6gl9dMrPvyxvlvJDvap+Q=
+		</data>
+		<key>Headers/NCDebugFlag.h</key>
+		<data>
+		ople/aqV5e+45t7XB/TpCEmmt2c=
 		</data>
 		<key>Headers/NCEddystone.h</key>
 		<data>
@@ -88,6 +104,10 @@
 		<data>
 		/yeL5Et65pPzTFKiHCqHB6OUtzs=
 		</data>
+		<key>Headers/NCInputListener.h</key>
+		<data>
+		+YuD/AEj2t5+X60FdFLKQoRDmGQ=
+		</data>
 		<key>Headers/NCLine.h</key>
 		<data>
 		QAewwn6hNuO3hacVxsgRRCSS7WA=
@@ -138,11 +158,15 @@
 		</data>
 		<key>Headers/NCLocationView.h</key>
 		<data>
-		CtgyGGo9WQqOPJLEuw83BSZ9OaE=
+		7ddA0gIkQPMeNCOt9cx3m84VT1w=
 		</data>
 		<key>Headers/NCLocationViewListener.h</key>
 		<data>
 		2lPKxdxzMIGR3/hptrWNkCQebqs=
+		</data>
+		<key>Headers/NCLocationWindow.h</key>
+		<data>
+		kAvMHryXaSjZF1qqHAtEL6ikMkU=
 		</data>
 		<key>Headers/NCMapObject.h</key>
 		<data>
@@ -174,7 +198,7 @@
 		</data>
 		<key>Headers/NCNavigineSdk.h</key>
 		<data>
-		Gd9ofXXLnuOrKywFzWmvAsgSWhc=
+		fePChMiiIrtK4XljPH+m+7pPAIQ=
 		</data>
 		<key>Headers/NCNotification.h</key>
 		<data>
@@ -326,11 +350,11 @@
 		</data>
 		<key>Headers/Navigine.h</key>
 		<data>
-		BFMwLV6dviPzbkoPmFKzHK1IEpU=
+		fVOunHUh8/poLYOUoklHFIUw6I8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cvVqyo0rpvUhBxK0xkCh+Fujz5U=
+		NXiFS0nKcFxchLv2e51WodUUxsg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -381,6 +405,27 @@
 			XB4p2SjpiIODsXFyEhovMPqzfVvlBXBW34r/I5L1j48=
 			</data>
 		</dict>
+		<key>Headers/NCCameraCallback.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IK29FvqMjHXwDxXwREpUleNmcmmXh/ZZB63HNmvxP90=
+			</data>
+		</dict>
+		<key>Headers/NCCameraListener.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UZGxs+nJauaVK3P6VXe5pba4qWv+AWffQSrpHb9gP6k=
+			</data>
+		</dict>
+		<key>Headers/NCCameraUpdateReason.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vVISKfsQvw3Z+jlxFLRtqFZg8gcAmEIzt3T4Xm7ft9k=
+			</data>
+		</dict>
 		<key>Headers/NCCategory.h</key>
 		<dict>
 			<key>hash2</key>
@@ -393,6 +438,13 @@
 			<key>hash2</key>
 			<data>
 			jSjpOBBTrG+ZI16Ksu6aaexSUhuLj+X0w5ccIfqIRqs=
+			</data>
+		</dict>
+		<key>Headers/NCDebugFlag.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LvqUsKOcDMNbf0jH+1J1BiGBs41ZZ1ko9lfGLEmX+QU=
 			</data>
 		</dict>
 		<key>Headers/NCEddystone.h</key>
@@ -486,6 +538,13 @@
 			qGRch5VSTa7mD6wuOiPl860sT4LDkw0p+KMML8T638M=
 			</data>
 		</dict>
+		<key>Headers/NCInputListener.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eFBdRrhk1OzZp+uBfuACNvxEh8HzITzmWR0S8WsnY0k=
+			</data>
+		</dict>
 		<key>Headers/NCLine.h</key>
 		<dict>
 			<key>hash2</key>
@@ -574,7 +633,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FuhZF7pVQ0Thvw2B2BLe7Lm7nA9LDoH+RhTFyR4qbiA=
+			aru7bJJgxykuH1kp0Ulycoa87DNUkXYEf13T23+0ovQ=
 			</data>
 		</dict>
 		<key>Headers/NCLocationViewListener.h</key>
@@ -582,6 +641,13 @@
 			<key>hash2</key>
 			<data>
 			WF9TMKqNs87A3ckM0hwUrT8QI13FvYR3CI+fcUzx8qw=
+			</data>
+		</dict>
+		<key>Headers/NCLocationWindow.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KUxnEsbX81S9IJAmimIQCESle+nrZCnQPI8Cy+qyceM=
 			</data>
 		</dict>
 		<key>Headers/NCMapObject.h</key>
@@ -637,7 +703,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hx0KzWyk7Dlo/rYJf6teweYnQVmQDzD8+9eMh8wUN+8=
+			iJqV6z12rwea0SdApdffW3D09wOek2qA+GFgQ9+Lm+o=
 			</data>
 		</dict>
 		<key>Headers/NCNotification.h</key>
@@ -903,7 +969,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Cw3OuTxpCShyAg+cC4Sxh+VLkLzCERV9KJ2cTwqtY0o=
+			G3VECpjb4hS0DELaUDTDeLKvJ7i0SSTtmjnW5Xlxi0w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

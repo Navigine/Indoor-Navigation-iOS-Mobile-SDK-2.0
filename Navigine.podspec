@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
   spec.name                 = 'Navigine'
-  spec.version              = '2.3.2'
+  spec.version              = '2.4.0'
   spec.license              = { :type => 'Custom', :text => 'Navigine Licence'}
   spec.summary              = "iOS SDK for performing indoor navigation"
   spec.platform             = :ios, "11.0"
   spec.homepage             = 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0'
   spec.authors              = { 'Pavel Tychinin' => 'p.tychinin@navigine.com' }
-  spec.source               = { :git => 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0.git', :tag => 'v.2.3.2' }
+  spec.source               = { :git => 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0.git', :tag => 'v.2.4.0' }
   spec.documentation_url    = 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki/Getting-Started'
   spec.vendored_frameworks  = 'Frameworks/Navigine.xcframework/ios-arm64/Navigine.framework'
 #  spec.vendored_libraries   = 'Frameworks/navigine.framework/Navigine'

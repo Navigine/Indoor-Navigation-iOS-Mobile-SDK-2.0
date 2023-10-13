@@ -7,6 +7,7 @@
 @class NCLocationEditManager;
 @class NCLocationListManager;
 @class NCLocationManager;
+@class NCLocationWindow;
 @class NCMeasurementManager;
 @class NCNavigationManager;
 @class NCNavigineSdk;
@@ -14,6 +15,7 @@
 @class NCResourceManager;
 @class NCRouteManager;
 @class NCZoneManager;
+@protocol NCPlatformView;
 
 
 DEFAULT_EXPORT_ATTRIBUTE
@@ -55,5 +57,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (nonnull NSString *)getErrorDescription:(int32_t)errorCode;
 
 - (nullable NCLocationListManager *)getLocationListManager;
+
+- (nullable NCLocationWindow *)createLocationWindow:(nullable id<NCPlatformView>)platformView;
 
 @end

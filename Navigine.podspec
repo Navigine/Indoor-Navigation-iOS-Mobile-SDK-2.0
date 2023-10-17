@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
   spec.libraries            = ["c++"]
   spec.homepage             = 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0'
   spec.authors              = { 'Pavel Tychinin' => 'p.tychinin@navigine.com' }
-  spec.source               = { :git => 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0.git', :tag => 'v.2.4.0' }
+  spec.source               = { :git => 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0.git', :branch => 'Cocoapos' }
   spec.documentation_url    = 'https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki/Getting-Started'
   spec.vendored_frameworks  = 'Frameworks/Navigine.xcframework'
   spec.preserve_paths       = 'Frameworks/Navigine.xcframework'

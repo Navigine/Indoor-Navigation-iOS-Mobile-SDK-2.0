@@ -23,22 +23,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 - (id)initWithFrame:(CGRect)frame;
 
-// - (void)applyFilter:(NSString *)filer layer:(NSString *)layer;
-
-
-// @property (weak, nonatomic, nullable) id<NCLocationViewListener> locationViewListener;
-
-
 @property (nonatomic, readonly) NCLocationWindow* locationWindow;
-
-
-// #pragma mark Memory Management
-
-// /**
-//  Reduce memory usage by freeing currently unused resources.
-//  */
-// - (void)didReceiveMemoryWarning;
-
 
 @end
 

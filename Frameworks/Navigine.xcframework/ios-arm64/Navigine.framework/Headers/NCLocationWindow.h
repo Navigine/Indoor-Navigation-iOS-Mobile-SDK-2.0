@@ -68,13 +68,11 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @param camera The new camera position
  * @param duration The animation duration in milliseconds
- * @param animationType The type of easing animation
  * @param completion A callback to execute when the animation completes
  *
  */
 - (void)flyTo:(nonnull NCCamera *)camera
      duration:(int32_t)duration
-animationType:(NCAnimationType)animationType
      callback:(nullable NCCameraCallback)callback;
 
 /**
@@ -85,13 +83,13 @@ animationType:(NCAnimationType)animationType
  *
  * @param camera The new camera position
  * @param duration Duration of the animation in milliseconds (-1 for default duration)
- * @param speed Specified speed scaling factor (1 for default speed)
+ * @param animationType The type of easing animation
  * @param callback A callback to execute when the animation completes
  *
  */
 - (void)moveTo:(nonnull NCCamera *)camera
       duration:(int32_t)duration
-         speed:(float)speed
+ animationType:(NCAnimationType)animationType
       callback:(nullable NCCameraCallback)callback;
 
 - (void)applyFilter:(nonnull NSString *)filter

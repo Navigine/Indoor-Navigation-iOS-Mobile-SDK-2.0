@@ -72,6 +72,10 @@
 		<data>
 		ByJVr46+XEDYP0zTOssajwHJmJ8=
 		</data>
+		<key>Headers/NCGestureRecognizerDelegate.h</key>
+		<data>
+		NurBM4rjGoe/82h2ijvviXOrdnc=
+		</data>
 		<key>Headers/NCGlobalPoint.h</key>
 		<data>
 		JfqMAjfHC7xSi5bDUssBkp4Sk9s=
@@ -154,11 +158,15 @@
 		</data>
 		<key>Headers/NCLocationView.h</key>
 		<data>
-		7ddA0gIkQPMeNCOt9cx3m84VT1w=
+		QRCgLurrlHNOK3T530f4COw17/A=
+		</data>
+		<key>Headers/NCLocationViewListener.h</key>
+		<data>
+		2lPKxdxzMIGR3/hptrWNkCQebqs=
 		</data>
 		<key>Headers/NCLocationWindow.h</key>
 		<data>
-		kAvMHryXaSjZF1qqHAtEL6ikMkU=
+		oR6ZeYAZzEHhAVvg7ssBUGpZMIs=
 		</data>
 		<key>Headers/NCMapObject.h</key>
 		<data>
@@ -346,7 +354,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rk0MytR0bJl48s/1Ah/tXG++PEE=
+		NXiFS0nKcFxchLv2e51WodUUxsg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -472,6 +480,13 @@
 			<key>hash2</key>
 			<data>
 			/Xttp9LFTsuEIiqCItRnVItvqe0l0OLFwedr8rLv6x4=
+			</data>
+		</dict>
+		<key>Headers/NCGestureRecognizerDelegate.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			IFq1BhYqP1nOqQhoH87cVa4W5Ir0+c2Zzvzw50ZmiJw=
 			</data>
 		</dict>
 		<key>Headers/NCGlobalPoint.h</key>
@@ -618,14 +633,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aru7bJJgxykuH1kp0Ulycoa87DNUkXYEf13T23+0ovQ=
+			zgKMc3ZcwFW+7Ab5DLWmlfkulcWrzUmLtI1nk5vlwCg=
+			</data>
+		</dict>
+		<key>Headers/NCLocationViewListener.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WF9TMKqNs87A3ckM0hwUrT8QI13FvYR3CI+fcUzx8qw=
 			</data>
 		</dict>
 		<key>Headers/NCLocationWindow.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KUxnEsbX81S9IJAmimIQCESle+nrZCnQPI8Cy+qyceM=
+			RTgpbwMLvSHz/HtoxI9illD1yEmfmL/Dx241rkyukPI=
 			</data>
 		</dict>
 		<key>Headers/NCMapObject.h</key>

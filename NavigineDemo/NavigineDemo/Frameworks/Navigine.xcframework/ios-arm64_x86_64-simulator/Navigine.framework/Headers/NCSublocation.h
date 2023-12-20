@@ -40,7 +40,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, readonly) float height;
 
-@property (nonatomic, readonly) float altitude;
+@property (nonatomic, nullable, readonly) NSNumber * altitude;
 
 @property (nonatomic, readonly) float azimuth;
 

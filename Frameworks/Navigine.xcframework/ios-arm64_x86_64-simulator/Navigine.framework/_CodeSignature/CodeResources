@@ -20,6 +20,18 @@
 		<data>
 		4UaBqThPog3il2TJk5eYmaI/Q8Y=
 		</data>
+		<key>Headers/NCBeaconProximityEntry.h</key>
+		<data>
+		ekTTWtk3B2kVeZoYJhoB9l7fyjc=
+		</data>
+		<key>Headers/NCBeaconProximityEstimator.h</key>
+		<data>
+		pQYnN61X8NJzxfqMsmnQNBYaQJI=
+		</data>
+		<key>Headers/NCBeaconProximityEstimatorListener.h</key>
+		<data>
+		Ooq2QJUJd6Usgqa5kSM0SE6pNW0=
+		</data>
 		<key>Headers/NCBitmapRegionDecoder.h</key>
 		<data>
 		m0VJjhBSVI76UmTaTHTbP7DVc9s=
@@ -190,7 +202,7 @@
 		</data>
 		<key>Headers/NCNavigineSdk.h</key>
 		<data>
-		fePChMiiIrtK4XljPH+m+7pPAIQ=
+		oFIr5CUElUkyiFItTzARZ1ky+pc=
 		</data>
 		<key>Headers/NCNotification.h</key>
 		<data>
@@ -310,7 +322,7 @@
 		</data>
 		<key>Headers/NCSublocation.h</key>
 		<data>
-		cay7fNVb+Ll4zrpPlQ89c6btUZk=
+		H+ih8m8L0uPHT7/ZD1b5mA7hGO8=
 		</data>
 		<key>Headers/NCTransmitterStatus.h</key>
 		<data>
@@ -342,11 +354,11 @@
 		</data>
 		<key>Headers/Navigine.h</key>
 		<data>
-		fVOunHUh8/poLYOUoklHFIUw6I8=
+		DAscXe/FcJm2tJIQHdYJAzGAwkE=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NXiFS0nKcFxchLv2e51WodUUxsg=
+		idn4Hr37rMXlw/eZhHWfQU+EpxA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -381,6 +393,27 @@
 			<key>hash2</key>
 			<data>
 			dFeSxjQa0p5roWqEbrTN/ikysOHUv4V3/IW3Nx9lbDc=
+			</data>
+		</dict>
+		<key>Headers/NCBeaconProximityEntry.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UMgPii3hBR67B7SP6GFBulWeD3qvCPKGfIfEkjwXRyM=
+			</data>
+		</dict>
+		<key>Headers/NCBeaconProximityEstimator.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vFYXr1F/qqtf5mphGbalbUpqVC5t6bbBW750bbBeRdU=
+			</data>
+		</dict>
+		<key>Headers/NCBeaconProximityEstimatorListener.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JKwgAXP4c3i7qhF6MVO/CIkf9qLZZZ2737B9mbgycEY=
 			</data>
 		</dict>
 		<key>Headers/NCBitmapRegionDecoder.h</key>
@@ -681,7 +714,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJqV6z12rwea0SdApdffW3D09wOek2qA+GFgQ9+Lm+o=
+			/94dj6Me8xEc8yqbuELrazCBkpXn8L0uaAMTFM9cgtQ=
 			</data>
 		</dict>
 		<key>Headers/NCNotification.h</key>
@@ -891,7 +924,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yzNl3hzP0yPo65QipJ0QRHkrdQhcYNxFDYLjz4sSt4o=
+			0FIgMCY9PEjtOVrqJWM3YICETRFrBYonV+gONYyDuFg=
 			</data>
 		</dict>
 		<key>Headers/NCTransmitterStatus.h</key>
@@ -947,7 +980,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G3VECpjb4hS0DELaUDTDeLKvJ7i0SSTtmjnW5Xlxi0w=
+			aTVcKageCRzuDYy0upWd6a5n8OPMn7VKiMlHeaBFpdw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

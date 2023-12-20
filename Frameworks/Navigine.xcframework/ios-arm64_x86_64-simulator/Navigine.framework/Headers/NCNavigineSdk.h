@@ -4,6 +4,7 @@
 #import "NCExport.h"
 #import <Foundation/Foundation.h>
 @class NCAsyncRouteManager;
+@class NCBeaconProximityEstimator;
 @class NCLocationEditManager;
 @class NCLocationListManager;
 @class NCLocationManager;
@@ -53,6 +54,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (nullable NCLocationEditManager *)getLocationEditManager:(nullable NCLocationManager *)locationManager;
 
 - (nullable NCMeasurementManager *)getMeasurementManager:(nullable NCLocationManager *)locationManager;
+
+- (nullable NCBeaconProximityEstimator *)getBeaconProximityEstimator:(nullable NCLocationManager *)locationManager;
 
 - (nonnull NSString *)getErrorDescription:(int32_t)errorCode;
 

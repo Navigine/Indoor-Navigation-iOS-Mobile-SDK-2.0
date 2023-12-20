@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.4.3](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.3) / 2023-12-20
+* Up internal dependencies
+
 ## [2.4.2](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.2) / 2023-10-13
 * Refactor LocationView
 * Fix race condition in render thread

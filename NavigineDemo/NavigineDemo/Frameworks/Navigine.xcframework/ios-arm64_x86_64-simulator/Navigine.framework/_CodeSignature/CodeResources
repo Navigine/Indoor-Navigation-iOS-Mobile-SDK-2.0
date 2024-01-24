@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/NCBeaconProximityEntry.h</key>
 		<data>
-		ekTTWtk3B2kVeZoYJhoB9l7fyjc=
+		yPiZWUsQycYlf5gcPCTjI6L+E4k=
 		</data>
 		<key>Headers/NCBeaconProximityEstimator.h</key>
 		<data>
@@ -170,7 +170,7 @@
 		</data>
 		<key>Headers/NCLocationWindow.h</key>
 		<data>
-		oR6ZeYAZzEHhAVvg7ssBUGpZMIs=
+		8JkBd62BBYqjYMgQ0WN/atgoKOs=
 		</data>
 		<key>Headers/NCMapObject.h</key>
 		<data>
@@ -358,7 +358,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		idn4Hr37rMXlw/eZhHWfQU+EpxA=
+		KwkAZpJ0m5YTrdhdWVXRXxHwjT8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -399,7 +399,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UMgPii3hBR67B7SP6GFBulWeD3qvCPKGfIfEkjwXRyM=
+			k8RV379gQNHQ2mggwHiKBK+JcEycL4zS28ASplDQzwY=
 			</data>
 		</dict>
 		<key>Headers/NCBeaconProximityEstimator.h</key>
@@ -658,7 +658,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			RTgpbwMLvSHz/HtoxI9illD1yEmfmL/Dx241rkyukPI=
+			JN5Eq10vYWnUVa89IvTTwmEgdo5KhBUGzyG1OjhlKDA=
 			</data>
 		</dict>
 		<key>Headers/NCMapObject.h</key>

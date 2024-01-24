@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.4.5](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.5) / 2024-01-24
+* Up libcurl
+* Add BeaconEstimator
+
 ## [2.4.4](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.4) / 2023-12-21
 * Add outdoor position estimator
 

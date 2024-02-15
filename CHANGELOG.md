@@ -26,7 +26,7 @@ All notable changes to this project will be documented in this file.
 * Refactor LocationView
 * customization methods moved to LocationWindow
 * New PickListener and InputListener
-* Fix memory leaks in loggind
+* Fix memory leaks in logging
 
 ## [2.3.2](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.3.2) / 2023-08-21
 * Improved indoor positioning algorithm

@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.4.8](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.8) / 2024-04-03
+* Fix setCamera method
+* Fix locationId and sublocationId in outdoor positioning
+* Fix crash with invalid ibeacon uuid
+
 ## [2.4.7](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.7) / 2024-03-18
 * Fix memory leakage
 

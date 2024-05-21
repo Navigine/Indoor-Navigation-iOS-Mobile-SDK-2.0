@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.5.0](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.0) / 2024-05-21
+* Аixed crash in internal process
+* Improved navigation algorithms
+
 ## [2.4.9](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.4.9) / 2024-04-03
 * Fix invalid locationId & sublocationId in outdoor algorithm
 

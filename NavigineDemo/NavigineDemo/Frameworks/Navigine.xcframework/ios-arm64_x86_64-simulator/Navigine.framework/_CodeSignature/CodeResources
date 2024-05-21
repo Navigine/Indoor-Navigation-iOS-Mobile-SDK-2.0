@@ -116,6 +116,14 @@
 		<data>
 		+YuD/AEj2t5+X60FdFLKQoRDmGQ=
 		</data>
+		<key>Headers/NCLifecycleListener.h</key>
+		<data>
+		ucWXdaMT80jv/13Xop2x3POPxSE=
+		</data>
+		<key>Headers/NCLifecycleProvider.h</key>
+		<data>
+		YuHQLY8LVOVzNBsp7X8wN7p+zuk=
+		</data>
 		<key>Headers/NCLine.h</key>
 		<data>
 		QAewwn6hNuO3hacVxsgRRCSS7WA=
@@ -202,7 +210,7 @@
 		</data>
 		<key>Headers/NCNavigineSdk.h</key>
 		<data>
-		oFIr5CUElUkyiFItTzARZ1ky+pc=
+		nN68kQBiNFZ7LVFLDgBxJjYThsM=
 		</data>
 		<key>Headers/NCNotification.h</key>
 		<data>
@@ -354,11 +362,11 @@
 		</data>
 		<key>Headers/Navigine.h</key>
 		<data>
-		DAscXe/FcJm2tJIQHdYJAzGAwkE=
+		qyg8yIoPZr+rnkYN954dPzHdxNU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KwkAZpJ0m5YTrdhdWVXRXxHwjT8=
+		1uvMOU1fZpyMJOUg+tEPDNabBPE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -563,6 +571,20 @@
 			eFBdRrhk1OzZp+uBfuACNvxEh8HzITzmWR0S8WsnY0k=
 			</data>
 		</dict>
+		<key>Headers/NCLifecycleListener.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ODuL4qfCHcPYSKTX6Zd3RGoJB+Wf/T5TMYxWQWB+/Ks=
+			</data>
+		</dict>
+		<key>Headers/NCLifecycleProvider.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AGXqczlDQTgkZxJAjwspjD/2AHt1DhAEL8kpaJANNKA=
+			</data>
+		</dict>
 		<key>Headers/NCLine.h</key>
 		<dict>
 			<key>hash2</key>
@@ -714,7 +736,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/94dj6Me8xEc8yqbuELrazCBkpXn8L0uaAMTFM9cgtQ=
+			1U/KYEqcmjlQAk6jnLqzk/AZgr3Yb+MNIfy5v4Y2e/o=
 			</data>
 		</dict>
 		<key>Headers/NCNotification.h</key>
@@ -980,7 +1002,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aTVcKageCRzuDYy0upWd6a5n8OPMn7VKiMlHeaBFpdw=
+			VdH56rmAp8QxPln68nvh0/BKpCChmUDiAWp8m55KpMM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

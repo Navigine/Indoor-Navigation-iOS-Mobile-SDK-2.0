@@ -15,6 +15,8 @@ class NavigationViewController: UIViewController {
     
     var mAttached: Bool = false
     
+    var mOrientationPointState: Bool = false
+
     let reuseIdentifier = "subloc"
     
     var subLoc: NCSublocation!
@@ -25,7 +27,7 @@ class NavigationViewController: UIViewController {
     
     var currentFloor = 0
     
-    var mPosition: NCIconMapObject!
+    var mPosition: NCFlatIconMapObject!
     var mCirclePosition: NCCircleMapObject!
     var mPolyline: NCPolylineMapObject!
     
@@ -65,7 +67,7 @@ class NavigationViewController: UIViewController {
 //            minor: 26457,
 //            power: 32, timeout: 100, rssiMin: -89, rssiMax: -55);
         
-        mPosition = mLocationView.locationWindow.addIconMapObject()
+        mPosition = mLocationView.locationWindow.addFlatIconMapObject()
         mPosition.setBitmap(UIImage(named: "UserLocation"))
         mPosition.setSize(Float(30), height: Float(30))
         mPosition.setVisible(false)
@@ -189,6 +191,22 @@ extension NavigationViewController: NCRouteListener {
 
 extension NavigationViewController: NCPositionListener {
     func onPositionUpdated(_ position: NCPosition) {
+        if (position.locationHeading != nil) {
+            if (!mOrientationPointState) {
+                mOrientationPointState = true
+                mPosition.setBitmap(UIImage(named: "curDirection"))
+                mPosition.setSize(Float(68), height: Float(68))
+                mPosition.setAngle(position.locationHeading!.doubleValue)
+            }
+            mPosition.setAngleAnimated(position.locationHeading!.doubleValue, duration: 1, type: NCAnimationType.cubic)
+        } else {
+            if (mOrientationPointState) {
+                mOrientationPointState = false
+                mPosition.setBitmap(UIImage(named: "UserLocation"))
+                mPosition.setSize(Float(30), height: Float(30))
+            }
+        }
+        
         if (mPosition != nil && position.locationPoint != nil) {
             mPosition.setPositionAnimated(position.locationPoint!, duration: 1.0, type: NCAnimationType.cubic)
             mPosition.setVisible(true)

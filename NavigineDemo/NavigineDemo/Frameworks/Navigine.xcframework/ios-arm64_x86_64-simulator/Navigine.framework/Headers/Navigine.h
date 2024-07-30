@@ -17,6 +17,8 @@ FOUNDATION_EXPORT const unsigned char NavigineVersionString[];
 #import "NCResourceManager.h"
 #import "NCRouteListener.h"
 #import "NCRouteManager.h"
+#import "NCZoneEventType.h"
+#import "NCZoneEvent.h"
 #import "NCZoneListener.h"
 #import "NCZoneManager.h"
 #import "NCNotification.h"

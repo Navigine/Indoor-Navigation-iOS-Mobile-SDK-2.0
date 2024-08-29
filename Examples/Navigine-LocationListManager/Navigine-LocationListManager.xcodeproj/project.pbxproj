@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24E6B90D2C31FF410074E7EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B90C2C31FF410074E7EE /* AppDelegate.swift */; };
+		24E6B90F2C31FF410074E7EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B90E2C31FF410074E7EE /* SceneDelegate.swift */; };
+		24E6B9112C31FF410074E7EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B9102C31FF410074E7EE /* ViewController.swift */; };
+		24E6B9142C31FF420074E7EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E6B9122C31FF420074E7EE /* Main.storyboard */; };
+		24E6B9162C31FF480074E7EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E6B9152C31FF480074E7EE /* Assets.xcassets */; };
+		24E6B9192C31FF480074E7EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E6B9172C31FF480074E7EE /* LaunchScreen.storyboard */; };
+		24E6B9242C31FF490074E7EE /* Navigine_LocationListManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B9232C31FF490074E7EE /* Navigine_LocationListManagerTests.swift */; };
+		24E6B92E2C31FF490074E7EE /* Navigine_LocationListManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B92D2C31FF490074E7EE /* Navigine_LocationListManagerUITests.swift */; };
+		24E6B9302C31FF490074E7EE /* Navigine_LocationListManagerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6B92F2C31FF490074E7EE /* Navigine_LocationListManagerUITestsLaunchTests.swift */; };
+		24E6B93F2C328CDA0074E7EE /* Navigine.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E6B93D2C328CCA0074E7EE /* Navigine.xcframework */; };
+		24E6B9402C328CDA0074E7EE /* Navigine.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24E6B93D2C328CCA0074E7EE /* Navigine.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24E6B9202C31FF490074E7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E6B9012C31FF410074E7EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24E6B9082C31FF410074E7EE;
+			remoteInfo = "Navigine-LocationListManager";
+		};
+		24E6B92A2C31FF490074E7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24E6B9012C31FF410074E7EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24E6B9082C31FF410074E7EE;
+			remoteInfo = "Navigine-LocationListManager";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		24E6B9412C328CDA0074E7EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24E6B9402C328CDA0074E7EE /* Navigine.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		24E6B9092C31FF410074E7EE /* Navigine-LocationListManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Navigine-LocationListManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E6B90C2C31FF410074E7EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24E6B90E2C31FF410074E7EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		24E6B9102C31FF410074E7EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24E6B9132C31FF420074E7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24E6B9152C31FF480074E7EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24E6B9182C31FF480074E7EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24E6B91A2C31FF480074E7EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E6B91F2C31FF490074E7EE /* Navigine-LocationListManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navigine-LocationListManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E6B9232C31FF490074E7EE /* Navigine_LocationListManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigine_LocationListManagerTests.swift; sourceTree = "<group>"; };
+		24E6B9292C31FF490074E7EE /* Navigine-LocationListManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Navigine-LocationListManagerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E6B92D2C31FF490074E7EE /* Navigine_LocationListManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigine_LocationListManagerUITests.swift; sourceTree = "<group>"; };
+		24E6B92F2C31FF490074E7EE /* Navigine_LocationListManagerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigine_LocationListManagerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24E6B93D2C328CCA0074E7EE /* Navigine.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Navigine.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24E6B9062C31FF410074E7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E6B93F2C328CDA0074E7EE /* Navigine.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B91C2C31FF490074E7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B9262C31FF490074E7EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24E6B9002C31FF410074E7EE = {
+			isa = PBXGroup;
+			children = (
+				24E6B90B2C31FF410074E7EE /* Navigine-LocationListManager */,
+				24E6B9222C31FF490074E7EE /* Navigine-LocationListManagerTests */,
+				24E6B92C2C31FF490074E7EE /* Navigine-LocationListManagerUITests */,
+				24E6B90A2C31FF410074E7EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24E6B90A2C31FF410074E7EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24E6B9092C31FF410074E7EE /* Navigine-LocationListManager.app */,
+				24E6B91F2C31FF490074E7EE /* Navigine-LocationListManagerTests.xctest */,
+				24E6B9292C31FF490074E7EE /* Navigine-LocationListManagerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24E6B90B2C31FF410074E7EE /* Navigine-LocationListManager */ = {
+			isa = PBXGroup;
+			children = (
+				24E6B90C2C31FF410074E7EE /* AppDelegate.swift */,
+				24E6B90E2C31FF410074E7EE /* SceneDelegate.swift */,
+				24E6B9102C31FF410074E7EE /* ViewController.swift */,
+				24E6B9122C31FF420074E7EE /* Main.storyboard */,
+				24E6B9152C31FF480074E7EE /* Assets.xcassets */,
+				24E6B9172C31FF480074E7EE /* LaunchScreen.storyboard */,
+				24E6B91A2C31FF480074E7EE /* Info.plist */,
+				24E6B93C2C328CCA0074E7EE /* Navigine */,
+			);
+			path = "Navigine-LocationListManager";
+			sourceTree = "<group>";
+		};
+		24E6B9222C31FF490074E7EE /* Navigine-LocationListManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				24E6B9232C31FF490074E7EE /* Navigine_LocationListManagerTests.swift */,
+			);
+			path = "Navigine-LocationListManagerTests";
+			sourceTree = "<group>";
+		};
+		24E6B92C2C31FF490074E7EE /* Navigine-LocationListManagerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				24E6B92D2C31FF490074E7EE /* Navigine_LocationListManagerUITests.swift */,
+				24E6B92F2C31FF490074E7EE /* Navigine_LocationListManagerUITestsLaunchTests.swift */,
+			);
+			path = "Navigine-LocationListManagerUITests";
+			sourceTree = "<group>";
+		};
+		24E6B93C2C328CCA0074E7EE /* Navigine */ = {
+			isa = PBXGroup;
+			children = (
+				24E6B93D2C328CCA0074E7EE /* Navigine.xcframework */,
+			);
+			path = Navigine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24E6B9082C31FF410074E7EE /* Navigine-LocationListManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24E6B9332C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManager" */;
+			buildPhases = (
+				24E6B9052C31FF410074E7EE /* Sources */,
+				24E6B9062C31FF410074E7EE /* Frameworks */,
+				24E6B9072C31FF410074E7EE /* Resources */,
+				24E6B9412C328CDA0074E7EE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Navigine-LocationListManager";
+			productName = "Navigine-LocationListManager";
+			productReference = 24E6B9092C31FF410074E7EE /* Navigine-LocationListManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		24E6B91E2C31FF490074E7EE /* Navigine-LocationListManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24E6B9362C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManagerTests" */;
+			buildPhases = (
+				24E6B91B2C31FF490074E7EE /* Sources */,
+				24E6B91C2C31FF490074E7EE /* Frameworks */,
+				24E6B91D2C31FF490074E7EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24E6B9212C31FF490074E7EE /* PBXTargetDependency */,
+			);
+			name = "Navigine-LocationListManagerTests";
+			productName = "Navigine-LocationListManagerTests";
+			productReference = 24E6B91F2C31FF490074E7EE /* Navigine-LocationListManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		24E6B9282C31FF490074E7EE /* Navigine-LocationListManagerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24E6B9392C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManagerUITests" */;
+			buildPhases = (
+				24E6B9252C31FF490074E7EE /* Sources */,
+				24E6B9262C31FF490074E7EE /* Frameworks */,
+				24E6B9272C31FF490074E7EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24E6B92B2C31FF490074E7EE /* PBXTargetDependency */,
+			);
+			name = "Navigine-LocationListManagerUITests";
+			productName = "Navigine-LocationListManagerUITests";
+			productReference = 24E6B9292C31FF490074E7EE /* Navigine-LocationListManagerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24E6B9012C31FF410074E7EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					24E6B9082C31FF410074E7EE = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					24E6B91E2C31FF490074E7EE = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 24E6B9082C31FF410074E7EE;
+					};
+					24E6B9282C31FF490074E7EE = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 24E6B9082C31FF410074E7EE;
+					};
+				};
+			};
+			buildConfigurationList = 24E6B9042C31FF410074E7EE /* Build configuration list for PBXProject "Navigine-LocationListManager" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24E6B9002C31FF410074E7EE;
+			productRefGroup = 24E6B90A2C31FF410074E7EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24E6B9082C31FF410074E7EE /* Navigine-LocationListManager */,
+				24E6B91E2C31FF490074E7EE /* Navigine-LocationListManagerTests */,
+				24E6B9282C31FF490074E7EE /* Navigine-LocationListManagerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24E6B9072C31FF410074E7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E6B9192C31FF480074E7EE /* LaunchScreen.storyboard in Resources */,
+				24E6B9162C31FF480074E7EE /* Assets.xcassets in Resources */,
+				24E6B9142C31FF420074E7EE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B91D2C31FF490074E7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B9272C31FF490074E7EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24E6B9052C31FF410074E7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E6B9112C31FF410074E7EE /* ViewController.swift in Sources */,
+				24E6B90D2C31FF410074E7EE /* AppDelegate.swift in Sources */,
+				24E6B90F2C31FF410074E7EE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B91B2C31FF490074E7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E6B9242C31FF490074E7EE /* Navigine_LocationListManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24E6B9252C31FF490074E7EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24E6B9302C31FF490074E7EE /* Navigine_LocationListManagerUITestsLaunchTests.swift in Sources */,
+				24E6B92E2C31FF490074E7EE /* Navigine_LocationListManagerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24E6B9212C31FF490074E7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24E6B9082C31FF410074E7EE /* Navigine-LocationListManager */;
+			targetProxy = 24E6B9202C31FF490074E7EE /* PBXContainerItemProxy */;
+		};
+		24E6B92B2C31FF490074E7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24E6B9082C31FF410074E7EE /* Navigine-LocationListManager */;
+			targetProxy = 24E6B92A2C31FF490074E7EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		24E6B9122C31FF420074E7EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E6B9132C31FF420074E7EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24E6B9172C31FF480074E7EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24E6B9182C31FF480074E7EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24E6B9312C31FF490074E7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		24E6B9322C31FF490074E7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24E6B9342C31FF490074E7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Navigine-LocationListManager/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24E6B9352C31FF490074E7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Navigine-LocationListManager/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		24E6B9372C31FF490074E7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManagerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigine-LocationListManager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Navigine-LocationListManager";
+			};
+			name = Debug;
+		};
+		24E6B9382C31FF490074E7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManagerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Navigine-LocationListManager.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Navigine-LocationListManager";
+			};
+			name = Release;
+		};
+		24E6B93A2C31FF490074E7EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManagerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Navigine-LocationListManager";
+			};
+			name = Debug;
+		};
+		24E6B93B2C31FF490074E7EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9L9SSEDTLA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navigine.Navigine-LocationListManagerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Navigine-LocationListManager";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24E6B9042C31FF410074E7EE /* Build configuration list for PBXProject "Navigine-LocationListManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24E6B9312C31FF490074E7EE /* Debug */,
+				24E6B9322C31FF490074E7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24E6B9332C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24E6B9342C31FF490074E7EE /* Debug */,
+				24E6B9352C31FF490074E7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24E6B9362C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24E6B9372C31FF490074E7EE /* Debug */,
+				24E6B9382C31FF490074E7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24E6B9392C31FF490074E7EE /* Build configuration list for PBXNativeTarget "Navigine-LocationListManagerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24E6B93A2C31FF490074E7EE /* Debug */,
+				24E6B93B2C31FF490074E7EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24E6B9012C31FF410074E7EE /* Project object */;
+}

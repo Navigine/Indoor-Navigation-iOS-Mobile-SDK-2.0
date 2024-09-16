@@ -7,14 +7,6 @@ The following sections describe the contents of the Navigine iOS SDK repository.
 - Sources of the Navigine Demo Application for iOS
 - Navigine SDK for iOS - header files and resources
 
-## Useful Links
-
-- [SDK documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki)
-- Refer to the [Navigine official documentation](https://docs.navigine.com) for complete list of downloads, useful materials, information about the company, and so on.
-- [Get started](http://locations.navigine.com/login) with Navigine to get full access to Navigation services, SDKs, and applications.
-- Refer to the Navigine [User Manual](http://docs.navigine.com/) for complete product usage guidelines.
-- Find company contact information at the official website under <a href="https://navigine.com/contacts/">Contact</a> tab.
-
 ## iOS Demo Application
 
 Navigine demo application for iOS enables you to test indoor navigation that you set up using Navigine CMS.
@@ -29,7 +21,7 @@ For complete guidelines on using the Demo, refer to the [corresponding sections 
 
 Below, you can see some screenshots of the Demo representing locations list, defined location levels, navigation bar, and debug process.
 
-<img src="img/locations_ios.jpg" alt="img/locations_ios.jpg" width="250"/><img src="img/levels_ios.jpg" alt="img/levels_ios.jpg" width="250"/><img src="img/navigation_ios.jpg" alt="img/navigation_ios.jpg" width="250"/><img src="img/debug_ios.jpg" alt="img/debug_ios.jpg" width="250"/>
+<img src="img/demo.gif" alt="img/demo.gif" width="600"/>
 
 ## Navigation SDK and Implementation
 
@@ -54,7 +46,7 @@ To integrate Navigine into your Xcode project using CocoaPods, specify it in you
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'TargetName' do
 pod 'Navigine'
@@ -66,3 +58,78 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+
+To start using Navigation library in your project you should do the following steps.
+## Get started
+##### Step 1
+Register on https://locations.navigine.com, create a location and get your personal security key in the profile (it has the form 16 hexadecimal digits: `XXXX-XXXX-XXXX-XXXX`).
+
+##### Step 2
+Download [framework](../tree/main/Frameworks/) , unzip it and add it to the your project. 
+
+##### Step 3
+Set your user hash and server and get instance of Navigine SDK:
+
+```Swift
+// Set user hash and server before getting the instance of [[NavigineSdk|class-NavigineSdk]]
+
+var mNavigineSdk: NCNavigineSdk?
+
+mNavigineSdk = NCNavigineSdk.getInstance()
+mNavigineSdk?.setServer(serverUrl) // your user hash from the server
+mNavigineSdk?.setUserHash(userHash) // your server url (by default `https://ips.navigine.com`)
+```
+
+##### Step 4
+
+Get instance of [[NCLocationManager|class-NCLocationManager]], set [[NCLocationListener|class-NCLocationListener]]and download a location archive from the server using the following (or similar) code:
+
+```Swift
+var mLocationManager = mNavigineSdk?.getLocationManager()
+mLocationManager.add(self)
+mLocationManager.setLocation(/* your location id */)
+
+...
+
+extension YourControllerClass: NCLocationListener {
+    func onLocationLoaded(_ location: NCLocation?) {
+        // do smth with location
+    }
+    
+    func onLocationUploaded(_ locationId: Int32) { 
+        // do smth when location changes uploaded
+    }
+    
+    func onLocationFailed(_ error: Error?) {
+        // do smth with error
+    }
+}
+
+```
+
+##### Step 5
+If location archive was successfully loaded you can start navigation (see [[NCNavigationManager|Class-NCNavigationManager]] for details). You can set the [[NCLocationView|Class-NCLocationView]] and it will display your position, or you can use [[NCNavigationManager|Class-NCNavigationManager]] and get updates about your position through [[NCPositionListener|Class-NCPositionListener]].
+
+```Swift
+var mNavigationManager = mNavigineSdk?.getNavigationManager()
+mNavigationManager.add(self)
+
+...
+
+extension YourControllerClass: NCPositionListener {
+    func onPositionUpdated(_ position: NCPosition) {
+        // do smth with position
+    }
+
+    func onPositionError(_ error: Error?) {
+        // do smth with error
+    }
+}
+```
+## Useful Links
+
+- [SDK documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki)
+- Refer to the [Navigine official documentation](https://docs.navigine.com) for complete list of downloads, useful materials, information about the company, and so on.
+- [Get started](http://locations.navigine.com/login) with Navigine to get full access to Navigation services, SDKs, and applications.
+- Refer to the Navigine [User Manual](http://docs.navigine.com/) for complete product usage guidelines.
+- Find company contact information at the official website under <a href="https://navigine.com/contacts/">Contact</a> tab.

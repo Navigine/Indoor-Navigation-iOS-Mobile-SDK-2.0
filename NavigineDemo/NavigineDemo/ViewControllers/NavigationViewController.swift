@@ -221,6 +221,10 @@ extension NavigationViewController: NCPositionListener {
 }
 
 extension NavigationViewController: NCZoneListener {
+    func onZoneEvent(_ zoneEvent: NCZoneEvent) {
+        
+    }
+    
     func onEnter(_ zone: NCZone?) {
         print("OnEnter zone \(String(describing: zone?.name))")
     }

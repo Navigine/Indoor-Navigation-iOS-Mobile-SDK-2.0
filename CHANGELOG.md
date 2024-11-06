@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.5.3](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.3) / 2024-11-06
+* Migrated to Metal
+* Improved geolib
+* Improved navigation algorighms
+
 ## [2.5.2](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.2) / 2024-07-30
 * Fixed ZoneManager behavior
 * Added ZoneEvent class

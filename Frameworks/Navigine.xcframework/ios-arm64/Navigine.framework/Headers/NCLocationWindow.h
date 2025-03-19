@@ -15,32 +15,44 @@
 @protocol NCPickListener;
 
 
-/** Class is used to interact with the view. */
+/**
+ * @file NCLocationWindow.h
+ * @brief @copybrief NCLocationWindow
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ *
+ * @brief Class is used to interact with the view.
+ *
+ * Referenced from: @see LocationView "LocationView",
+ *
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationWindow : NSObject
 
 /**
  *
- * Method is used to switch LocationView between sublocations (floors).
- * @param id - sublocation unique identifier (@see Sublocation class or CMS).
+ * @brief Method is used to switch location view between sublocations (floors).
+ * @param id sublocation unique identifier @see Sublocation "Sublocation".
  *
  */
 - (void)setSublocationId:(int32_t)id;
 
 /**
  *
- * Method is used to convert screen (pixels) coordinates to metrics coordinates.
- * @param point - (x,y) point in screen pixels.
- * @return (x,y) point in meters coordinates (@see Point class).
+ * @brief Method is used to convert screen (pixels) coordinates to metrics coordinates.
+ * @param point (x,y) point in screen pixels.
+ * @return (x,y) point in meters coordinates @see Point "Point".
  *
  */
 - (nonnull NCPoint *)screenPositionToMeters:(CGPoint)point;
 
 /**
  *
- * Method is used to convert metrics coordinates to screen (pixels) coordinates.
- * @param point - (x,y) point in meters coordinates (@see Point class).
- * @param clipToViewport - if true, results that would be outside the viewport are clipped to a position on the edge of the viewport in the direction of the location.
+ * @brief Method is used to convert metrics coordinates to screen (pixels) coordinates.
+ * @param point (x,y) point in meters coordinates @see Point "Point".
+ * @param clipToViewport if true, results that would be outside the viewport are clipped to a position on the edge of the viewport in the direction of the location.
  * @return (x,y) point in screen pixels.
  *
  */
@@ -49,16 +61,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to create and add circle map object to the LocationView.
- * @return CircleMapObject instance (@see CircleMapObject) if success, null otherwise.
+ * @brief Method is used to create and add circle map object to the location view.
+ * @return CircleMapObject instance @see CircleMapObject "CircleMapObject" if success, null otherwise.
  *
  */
 - (nullable NCCircleMapObject *)addCircleMapObject;
 
 /**
  *
- * Method is used to remove circle map object from the LocationView.
- * @param CircleMapObject instance (@see CircleMapObject).
+ * @brief Method is used to remove circle map object from the location view.
+ * @param circleMapObject circle map object instance @see CircleMapObject "CircleMapObject".
  * @return true if success, false otherwise.
  *
  */
@@ -66,16 +78,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to create and add icon map object to the LocationView.
- * @return IconMapObject instance (@see IconMapObject) if success, null otherwise.
+ * @brief Method is used to create and add icon map object to the location view.
+ * @return IconMapObject instance @see IconMapObject "IconMapObject" if success, null otherwise.
  *
  */
 - (nullable NCIconMapObject *)addIconMapObject;
 
 /**
  *
- * Method is used to remove icon map object from the LocationView.
- * @param IconMapObject instance (@see IconMapObject).
+ * @brief Method is used to remove icon map object from the location view.
+ * @param iconMapObject icon map object instance @see IconMapObject "IconMapObject".
  * @return true if success, false otherwise.
  *
  */
@@ -83,33 +95,33 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to create and add flat icon map object to the LocationView.
- * @return FlatIconMapObject instance (@see FlatIconMapObject) if success, null otherwise.
+ * @brief Method is used to create and add flat icon map object to the location view.
+ * @return FlatIconMapObject instance @see FlatIconMapObject "FlatIconMapObject" if success, null otherwise.
  *
  */
 - (nullable NCFlatIconMapObject *)addFlatIconMapObject;
 
 /**
  *
- * Method is used to remove flat icon map object from the LocationView.
- * @param FlatIconMapObject instance (@see FlatIconMapObject).
+ * @brief Method is used to remove flat icon map object from the location view.
+ * @param flatIconMapObject flat icon map object instance @see FlatIconMapObject "FlatIconMapObject".
  * @return true if success, false otherwise.
  *
  */
-- (BOOL)removeFlatIconMapObject:(nullable NCFlatIconMapObject *)iconMapObject;
+- (BOOL)removeFlatIconMapObject:(nullable NCFlatIconMapObject *)flatIconMapObject;
 
 /**
  *
- * Method is used to create and add polyline map object to the LocationView.
- * @return PolylineMapObject instance (@see PolylineMapObject) if success, null otherwise.
+ * @brief Method is used to create and add polyline map object to the location view.
+ * @return PolylineMapObject instance @see PolylineMapObject "PolylineMapObject" if success, null otherwise.
  *
  */
 - (nullable NCPolylineMapObject *)addPolylineMapObject;
 
 /**
  *
- * Method is used to remove polyline map object from the LocationView.
- * @param PolylineMapObject instance (@see PolylineMapObject).
+ * @brief Method is used to remove polyline map object from the location view.
+ * @param polylineMapObject polyline map object instance @see PolylineMapObject "PolylineMapObject".
  * @return true if success, false otherwise.
  *
  */
@@ -117,82 +129,90 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to remove all object from the LocationView.
+ * @brief Method is used to remove all object from the location view.
  *
  */
 - (void)removeAllMapObjects;
 
 /**
  *
- * Method is used to select a visible map object marked as `interactive` (@see MapObject).
- * The result will be delivered to the `PickListener` by `onMapObjectPickComplete` (@see PickListener).
- * @param point - position in the view to pick from, in pixels.
+ * @brief Method is used to select a visible map object marked as `interactive` @see MapObject "MapObject".
+ * The result will be delivered to the `PickListener` by `onMapObjectPickComplete` @see PickListener "PickListener".
+ * @param point position in the view to pick from, in pixels.
  *
  */
 - (void)pickMapObjectAt:(CGPoint)point;
 
 /**
  *
- * Method is used to select a visible map features, such as venues etc.
- * The result will be delivered to the `PickListener` by `onMapFeaturePickComplete` (@see PickListener).
- * @param point - position in the view to pick from, in pixels.
+ * @brief Method is used to select a visible map features, such as venues etc.
+ * The result will be delivered to the `PickListener` by `onMapFeaturePickComplete` @see PickListener "PickListener".
+ * @param point position in the view to pick from, in pixels.
  *
  */
 - (void)pickMapFeatureAt:(CGPoint)point;
 
 /**
  *
- * Method is used to add listener to handle picking results (@see PickListener).
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see PickListener "PickListener" class element which will notify
+ * all picking results events.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see PickListener "PickListener" listener class.
  *
  */
 - (void)addPickListener:(nullable id<NCPickListener>)listener;
 
 /**
  *
- * Method is used to remove listener.
+ * @brief Method is used for removing previously added @see PickListener "PickListener" class element.
+ * @param listener Сorresponding @see PickListener "PickListener" class to remove.
  *
  */
 - (void)removePickListener:(nullable id<NCPickListener>)listener;
 
 /**
  *
- * Method is used to add listener to handle input results (@see InputListener).
- * Such as tap, double tap, long tap
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see InputListener "InputListener" class element which will notify
+ * input events.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see InputListener "InputListener" listener class.
  *
  */
 - (void)addInputListener:(nullable id<NCInputListener>)listener;
 
 /**
  *
- * Method is used to remove listener.
+ * @brief Method is used for removing previously added @see InputListener "InputListener" class element.
+ * @param listener Сorresponding @see InputListener "InputListener" class to remove.
  *
  */
 - (void)removeInputListener:(nullable id<NCInputListener>)listener;
 
 /**
  *
- * Method is used to add listener to handle camera movements (@see CameraListener).
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see CameraListener "CameraListener" class element which will notify
+ * camera movements events.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see CameraListener "CameraListener" listener class.
  *
  */
 - (void)addCameraListener:(nullable id<NCCameraListener>)listener;
 
 /**
  *
- * Method is used to remove listener.
+ * @brief Method is used for removing previously added @see CameraListener "CameraListener" class element.
+ * @param listener Сorresponding @see CameraListener "CameraListener" class to remove.
  *
  */
 - (void)removeCameraListener:(nullable id<NCCameraListener>)listener;
 
 /**
  *
- * Move the map camera to a new position with an easing animation.
+ * @brief Move the map camera to a new position with an easing animation.
  *
  * @param camera The new camera position
  * @param duration The animation duration in milliseconds
- * @param completion A callback to execute when the animation completes
+ * @param callback completion callback to execute when the animation completes
  *
  */
 - (void)flyTo:(nonnull NCCamera *)camera
@@ -200,10 +220,24 @@ DEFAULT_EXPORT_ATTRIBUTE
      callback:(nullable NCCameraCallback)callback;
 
 /**
+ * @cond
+ */
+- (void)applyFilter:(nonnull NSString *)filter
+              layer:(nonnull NSString *)layer;
+
+- (void)setIcons:(nonnull NSDictionary<NSString *, UIImage *> *)icons;
+
++ (void)setDebugFlag:(NCDebugFlag)flag
+                  on:(BOOL)on;
+
++ (BOOL)getDebugFlag:(NCDebugFlag)flag;
+
+/**
+ * @endcond
  *
- * Move the map camera to a new position with an animation that pans and zooms in a smooth arc.
+ * @brief Move the map camera to a new position with an animation that pans and zooms in a smooth arc.
  *
- * The animation duration is calculated based on the distance to the new camera position and the specified speed
+ * @note The animation duration is calculated based on the distance to the new camera position and the specified speed
  *
  * @param camera The new camera position
  * @param duration Duration of the animation in milliseconds (-1 for default duration)
@@ -218,107 +252,72 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @internal
- * Don't use it if you don't know what is it
- *
- */
-- (void)applyFilter:(nonnull NSString *)filter
-              layer:(nonnull NSString *)layer;
-
-/**
- *
- * @internal
- * Don't use it if you don't know what is it
- *
- */
-- (void)setIcons:(nonnull NSDictionary<NSString *, UIImage *> *)icons;
-
-/**
- *
- * @internal
- * Don't use it if you don't know what is it
- *
- */
-+ (void)setDebugFlag:(NCDebugFlag)flag
-                  on:(BOOL)on;
-
-/**
- *
- * @internal
- * Don't use it if you don't know what is it
- *
- */
-+ (BOOL)getDebugFlag:(NCDebugFlag)flag;
-
-/**
- *
- * Parameter is used to change LocationView zoom.
- * @param zoomFactor - value indicates count of pixels in 1 meter (default: approx 100m in screen width).
+ * @brief Parameter is used to change location view zoom.
+ * Value indicates count of pixels in 1 meter (default: approx 100m in screen width).
  *
  */
 @property (nonatomic) float zoomFactor;
 
 /**
  *
- * @param minZoomFactor - minimum zoomFactor value (@see zoomFactor parameter).
+ * @brief Minimum zoomFactor value (ZoomFactor parameter).
  *
  */
 @property (nonatomic) float minZoomFactor;
 
 /**
  *
- * @param zoomFactor - maximum zoomFactor value (@see zoomFactor parameter).
+ * @brief Maximum zoomFactor value (ZoomFactor parameter).
  *
  */
 @property (nonatomic) float maxZoomFactor;
 
 /**
  *
- * Parameter is used to enable/disable sublocation content sticking to screen borders.
- * @param stickToBorder - if true image sticking to screen bounds, if false sticking to center of screen (Default: true).
+ * @brief Parameter is used to enable/disable sublocation content sticking to screen borders.
+ * If true image sticking to screen bounds, if false sticking to center of screen (Default: true).
  *
  */
 @property (nonatomic) BOOL stickToBorder;
 
 /**
  *
- * Current camera position in meters.
+ * @brief Current camera position in meters.
  *
  */
 @property (nonatomic, nonnull) NCCamera * camera;
 
 /**
  *
- * Parameter is used to enable/disable rotation gestures, such as rotation with two fingers.
+ * @brief Parameter is used to enable/disable rotation gestures, such as rotation with two fingers.
  *
  */
 @property (nonatomic) BOOL rotateGestureEnabled;
 
 /**
  *
- * Parameter is used to enable/disable tilt gestures, such as parallel pan with two fingers.
+ * @brief Parameter is used to enable/disable tilt gestures, such as parallel pan with two fingers.
  *
  */
 @property (nonatomic) BOOL tiltGesturesEnabled;
 
 /**
  *
- * Parameter is used to enable/disable scroll gestures, such as the pan gesture.
+ * @brief Parameter is used to enable/disable scroll gestures, such as the pan gesture.
  *
  */
 @property (nonatomic) BOOL scrollGesturesEnabled;
 
 /**
  *
- * Parameter is used to enable/disable zoom gestures, such as the pinch with two fingers.
+ * @brief Parameter is used to enable/disable zoom gestures, such as the pinch with two fingers.
  *
  */
 @property (nonatomic) BOOL zoomGesturesEnabled;
 
 /**
  *
- * Radius to use when picking features on the map. The default radius is 0.5 dp.
- * @param pickRadius - radius in dp (density-independent pixels).
+ * @brief Radius to use when picking features on the map. The default radius is 0.5 dp (density-independent pixels).
  *
  */
 @property (nonatomic) float pickRadius;

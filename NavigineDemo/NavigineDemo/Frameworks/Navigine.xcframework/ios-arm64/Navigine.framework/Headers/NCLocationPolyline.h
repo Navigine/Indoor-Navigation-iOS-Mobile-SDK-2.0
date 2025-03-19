@@ -3,38 +3,50 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * @file NCLocationPolyline.h
+ * @brief @copybrief NCLocationPolyline
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_geometry_classes
  *
- * Polyline at specified location and sublocation
- * Units: meters
- * Origin: bottom left corner
+ * @brief Class is used for representing certain polyline within the location @see Polyline "Polyline"
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolyline : NSObject
+
+/** 
+ * @brief Default constructor for class NCLocationPolyline 
+ */
 - (nonnull instancetype)initWithPolyline:(nonnull NCPolyline *)polyline
                               locationId:(int32_t)locationId
                            sublocationId:(int32_t)sublocationId;
+
+/** 
+ * @brief Factory method for class NCLocationPolyline 
+ */
 + (nonnull instancetype)locationPolylineWithPolyline:(nonnull NCPolyline *)polyline
                                           locationId:(int32_t)locationId
                                        sublocationId:(int32_t)sublocationId;
 
 /**
  *
- * Metrics polyline (@see Polyline).
+ * @brief Metrics polyline @see Polyline.
  *
  */
 @property (nonatomic, readonly, nonnull) NCPolyline * polyline;
 
 /**
  *
- * Location unique identifier in CMS
+ * @brief location polyline location identifier.
  *
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
  *
- * Sublocation unique identifier in CMS
+ * @brief location polyline sublocation identifier.
  *
  */
 @property (nonatomic, readonly) int32_t sublocationId;

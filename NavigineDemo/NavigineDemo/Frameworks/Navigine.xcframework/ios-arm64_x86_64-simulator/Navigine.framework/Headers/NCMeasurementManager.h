@@ -3,6 +3,10 @@
 @protocol NCMeasurementListener;
 
 
+/**
+ * @file NCMeasurementManager.h
+ * @brief @copybrief NCMeasurementManager
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMeasurementManager : NSObject
 

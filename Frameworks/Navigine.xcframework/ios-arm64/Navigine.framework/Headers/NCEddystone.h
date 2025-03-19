@@ -5,35 +5,59 @@
 
 
 /**
+ * @file NCEddystone.h
+ * @brief @copybrief NCEddystone
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @ingroup navigine_objc_transmitters
+ * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/Eddystone_(Google)">Eddystone</a>.
  *
- * Object describing eddystone transmitter.
+ * Referenced from @see Sublocation "Sublocation".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCEddystone : NSObject
 
-/** Metrics coordinate of eddystone position (@see Point). */
+/**
+ * @brief eddystone's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
-/** Unique location identifier of eddystone position. */
+/**
+ * @brief eddystone's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of eddystone position. */
+/**
+ * @brief eddystone's sublocation identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** Eddystone name. */
+/**
+ * @brief eddystone's name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** Eddystone namespaceId. */
+/**
+ * @brief eddystone's namespaceId.
+ */
 @property (nonatomic, nonnull, readonly) NSString * namespaceId;
 
-/** Eddystone instanceId. */
+/**
+ * @brief eddystone's instanceId.
+ */
 @property (nonatomic, nonnull, readonly) NSString * instanceId;
 
-/** Eddystone power. If exsists. */
+/**
+ * @brief eddystone's power.
+ */
 @property (nonatomic, nullable, readonly) NSNumber * power;
 
-/** Eddystone status. (@see TransmitterStatus) */
+/**
+ * @brief eddystone status. @see TransmitterStatus "TransmitterStatus"
+ */
 @property (nonatomic, readonly) NCTransmitterStatus status;
 
 @end

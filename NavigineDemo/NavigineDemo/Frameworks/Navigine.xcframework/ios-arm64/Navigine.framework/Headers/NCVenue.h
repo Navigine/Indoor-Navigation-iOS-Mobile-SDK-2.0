@@ -4,41 +4,68 @@
 
 
 /**
+ * @file NCVenue.h
+ * @brief @copybrief NCVenue
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @brief Class is used for storing venue.
  *
- * Object describing venue in CMS.
+ * Referenced from @see Sublocation "Sublocation".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCVenue : NSObject
 
-/** Metrics coordinate of Venue position (@see Point). */
+/**
+ * @brief venue's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
-/** Unique location identifier of Venue position. */
+/**
+ * @brief venue's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of Venue position. */
+/**
+ * @brief venue's sublocation identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** Venue unique identifier. */
+/**
+ * @brief venue's identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Venue name. */
+/**
+ * @brief venue's name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** Venue phone. */
+/**
+ * @brief venue's phone.
+ */
 @property (nonatomic, nonnull, readonly) NSString * phone;
 
-/** Venue description. */
+/**
+ * @brief venue's description.
+ */
 @property (nonatomic, nonnull, readonly) NSString * descript;
 
-/** Venue alias. */
+/**
+ * @brief venue's alias.
+ */
 @property (nonatomic, nonnull, readonly) NSString * alias;
 
-/** Venue category unique identifier (@Category). */
+/**
+ * @brief venue's category unique identifier @see Category "Category"
+ */
 @property (nonatomic, readonly) int32_t categoryId;
 
-/** Venue image url if specified. */
+/**
+ * @brief venue's image url if specified.
+ */
 @property (nonatomic, nullable, readonly) NSString * imageUrl;
 
 @end

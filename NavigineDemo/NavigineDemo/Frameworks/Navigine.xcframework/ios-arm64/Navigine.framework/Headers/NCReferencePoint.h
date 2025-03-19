@@ -5,6 +5,10 @@
 @class NCReferenceEntry;
 
 
+/**
+ * @file NCReferencePoint.h
+ * @brief @copybrief NCReferencePoint
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCReferencePoint : NSObject
 

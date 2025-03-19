@@ -3,6 +3,10 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ * @file NCReferenceEntry.h
+ * @brief @copybrief NCReferenceEntry
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCReferenceEntry : NSObject
 

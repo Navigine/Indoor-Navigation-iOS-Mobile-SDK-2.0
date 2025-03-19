@@ -7,9 +7,18 @@
 
 
 /**
+ * @file NCIconMapObject.h
+ * @brief @copybrief NCIconMapObject
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
  *
- * Object represents icon object on location view.
- * IconMapObject keep orientation to screen surface.
+ * @brief represents icon object on location view.
+ *
+ * Referenced from @see LocationWindow "LocationWindow".
+ *
+ * @note IconMapObject keep orientation to screen surface.
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -17,18 +26,20 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to specify center of object.
- * @param point - metrics coordinate of center (@see LocationPoint).
+ * @brief Method is used to specify center of object.
+ * @param point metrics coordinate of center @see LocationPoint "LocationPoint".
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setPosition:(nonnull NCLocationPoint *)point;
 
 /**
  *
- * Method is used to move center of object with specified animation (@see LocationPoint).
- * @param point - metrics coordinate of center (@see LocationPoint).
- * @param duration - animation duration in seconds.
- * @param type - animation type (@see AnimationType).
+ * @brief Method is used to move center of object with specified animation @see LocationPoint "LocationPoint".
+ * @param point metrics coordinate of center @see LocationPoint "LocationPoint".
+ * @param duration animation duration in seconds.
+ * @param type animation type @see AnimationType "AnimationType".
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setPositionAnimated:(nonnull NCLocationPoint *)point
@@ -37,17 +48,19 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to specify bitmap image to the object.
- * @param bitmap - platfrom bitmap object.
+ * @brief Method is used to specify bitmap image to the object.
+ * @param bitmap platfrom bitmap object.
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setBitmap:(nullable UIImage *)bitmap;
 
 /**
  *
- * Method is used to specify size of object.
- * @param width - width of object in pixels.
- * @param height - width of object in pixels.
+ * @brief Method is used to specify size of object.
+ * @param width width of object in pixels.
+ * @param height width of object in pixels.
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setSize:(float)width

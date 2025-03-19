@@ -1,16 +1,37 @@
 #import <Foundation/Foundation.h>
 
-/** Describe animation functions */
+/**
+ * @file NCAnimationType.h
+ * @brief @copybrief NCAnimationType
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ * @brief Enum described animation functions.
+ *
+ * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see FlatIconMapObject "FlatIconMapObject", @see LocationWindow "LocationWindow".
+ *
+ */
 typedef NS_ENUM(NSInteger, NCAnimationType)
 {
-    /** Disable animation */
+    /**
+     * @brief disable animation
+     */
     NCAnimationTypeNone,
-    /** Animation according to formula `f(t) = t`. */
+    /**
+     * @brief animation according to formula `f(t) = t`.
+     */
     NCAnimationTypeLinear,
-    /** Animation according to formula `f(t) = (-2 * t + 3) * t * t`. */
+    /**
+     * @brief animation according to formula `f(t) = (-2 * t + 3) * t * t`.
+     */
     NCAnimationTypeCubic,
-    /** Animation according to formula `f(t) = (6 * t * t - 15 * t + 10) * t * t * t`. */
+    /**
+     * @brief animation according to formula `f(t) = (6 * t * t - 15 * t + 10) * t * t * t`.
+     */
     NCAnimationTypeQuint,
-    /** Animation according to formula `f(t) = 0.5 - 0.5 * cos(PI * t)`. */
+    /**
+     * @brief animation according to formula `f(t) = 0.5 - 0.5 * cos(PI * t)`.
+     */
     NCAnimationTypeSine,
 };

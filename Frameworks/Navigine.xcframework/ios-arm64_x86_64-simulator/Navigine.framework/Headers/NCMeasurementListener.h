@@ -5,6 +5,10 @@
 #import <Foundation/Foundation.h>
 
 
+/**
+ * @file NCMeasurementListener.h
+ * @brief @copybrief NCMeasurementListener-p
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCMeasurementListener <NSObject>
 

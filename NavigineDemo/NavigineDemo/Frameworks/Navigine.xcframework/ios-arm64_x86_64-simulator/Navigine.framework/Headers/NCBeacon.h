@@ -5,38 +5,65 @@
 
 
 /**
+ * @file NCBeacon.h
+ * @brief @copybrief NCBeacon
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @ingroup navigine_objc_transmitters
+ * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/IBeacon">iBeacon</a>.
  *
- * Object describing iBeacon transmitter.
+ * Referenced from @see Sublocation "Sublocation".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCBeacon : NSObject
 
-/** Metrics coordinate of iBeacon position (@see Point). */
+/**
+ * @brief beacon's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
-/** Unique location identifier of iBeacon position. */
+/**
+ * @brief beacon's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of iBeacon position. */
+/**
+ * @brief beacon's sublocation identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** iBeacon name. */
+/**
+ * @brief beacon's name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** iBeacon major. Values [1-65535] */
+/**
+ * @brief beacon's major. Values [1-65535]
+ */
 @property (nonatomic, readonly) int32_t major;
 
-/** iBeacon minor. Values [1-65535] */
+/**
+ * @brief beacon's minor. Values [1-65535]
+ */
 @property (nonatomic, readonly) int32_t minor;
 
-/** iBeacon uuid. Format [XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX] */
+/**
+ * @brief beacon's uuid. Format [XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX]
+ */
 @property (nonatomic, nonnull, readonly) NSString * uuid;
 
-/** iBeacon power. If exsists. */
+/**
+ * iBeacon power. If exsists.
+ * @brief beacon's power.
+ */
 @property (nonatomic, nullable, readonly) NSNumber * power;
 
-/** iBeacon status. (@see TransmitterStatus) */
+/**
+ * @brief iBeacon status. @see TransmitterStatus "TransmitterStatus"
+ */
 @property (nonatomic, readonly) NCTransmitterStatus status;
 
 @end

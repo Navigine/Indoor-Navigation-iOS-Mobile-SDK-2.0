@@ -5,19 +5,33 @@
 @class NCRouteSession;
 
 
-/** Class is used to manage routing sessions */
+/**
+ * @file NCAsyncRouteManager.h
+ * @brief @copybrief NCAsyncRouteManager
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_managers
+ * @brief Class is used for managing @see RouteSession "RouteSession"s
+ *
+ * Referenced from @see NavigineSdk "NavigineSdk".
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCAsyncRouteManager : NSObject
 
 /**
- * Method is used to create routing session
- * @param wayPoint - destination point
- * @param routeOptions - params of routing session (@see RouteSession class)
+ * @brief Method is used to create routing session
+ * @param wayPoint destination point.
+ * @param routeOptions params of @see RouteSession "RouteSession".
+ * @return @see RouteSession "RouteSession" instance.
  */
 - (nullable NCRouteSession *)createRouteSession:(nonnull NCLocationPoint *)wayPoint
                                    routeOptions:(nonnull NCRouteOptions *)routeOptions;
 
-/** Method is used to cancel routing session */
+/**
+ * @brief Method is used to cancel routing session
+ * @param session @see RouteSession "RouteSession" object to cancel.
+ */
 - (void)cancelRouteSession:(nullable NCRouteSession *)session;
 
 @end

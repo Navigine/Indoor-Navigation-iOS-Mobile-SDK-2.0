@@ -2,26 +2,46 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * @file NCCategory.h
+ * @brief @copybrief NCCategory
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @brief class is used for storing venue categories.
  *
- * Object describing category in CMS
- *
+ * Referenced from @see Location "Location" @see Venue "Venue".
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCCategory : NSObject
+
+/** 
+ * @brief Default constructor for class NCCategory 
+ */
 - (nonnull instancetype)initWithId:(int32_t)id
                               name:(nonnull NSString *)name
                           imageUrl:(nullable NSString *)imageUrl;
+
+/** 
+ * @brief Factory method for class NCCategory 
+ */
 + (nonnull instancetype)categoryWithId:(int32_t)id
                                   name:(nonnull NSString *)name
                               imageUrl:(nullable NSString *)imageUrl;
 
-/** Category unique identifier */
+/**
+ * @brief category identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Category name */
+/**
+ * @brief category name.
+ */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
-/** Category image source. If presented. */
+/**
+ * @brief image source. If presented.
+ */
 @property (nonatomic, readonly, nullable) NSString * imageUrl;
 
 @end

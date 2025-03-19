@@ -4,13 +4,19 @@
 @protocol NCResourceUploadListener;
 
 
+/**
+ * @file NCResourceManager.h
+ * @brief @copybrief NCResourceManager
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCResourceManager : NSObject
 
 - (void)loadImage:(nonnull NSString *)imageUrl
          listener:(nullable id<NCResourceListener>)listener;
 
-/** working with logs */
+/**
+ * working with logs
+ */
 - (nonnull NSArray<NSString *> *)getLogsList;
 
 - (void)removeLogFile:(nonnull NSString *)fileName;

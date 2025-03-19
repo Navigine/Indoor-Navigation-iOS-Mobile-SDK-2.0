@@ -4,31 +4,43 @@
 
 
 /**
- * Class is used to handle events coming from LocationManager (@see LocationManager).
- * Methods invoked in UI
+ * @file NCLocationListener.h
+ * @brief @copybrief NCLocationListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_listeners
+ * @brief Class provides a callback to be invoked when @see LocationManager "LocationManager"
+ * class downloads the location from server or load it from the storage.
+ *
+ * Referenced from @see LocationManager "LocationManager".
+ * @note The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationListener <NSObject>
 
 /**
  *
- * @method onLocationLoaded - called when new location version has been downloaded from CMS
- * @parameter location - downloaded location instance (@see Location).
+ * @brief Called when new location version has been downloaded from server or load it from the storage
+ * @param location @see Location "Location" instance.
  *
  */
 - (void)onLocationLoaded:(nullable NCLocation *)location;
 
 /**
+ * @cond
+ */
+- (void)onLocationUploaded:(int32_t)locationId;
+
+/**
+ * @endcond
  *
- * @method onLocationFailed - called if unable to download location version from CMS
- * @parameter locationId - location unique identifier in SMC.
- * @parameter error - handled error.
+ * @brief Called if unable to download location version from CMS
+ * @param locationId location unique identifier in SMC.
+ * @param error handled error.
  *
  */
 - (void)onLocationFailed:(int32_t)locationId
                    error:(nullable NSError *)error;
-
-/** @internal */
-- (void)onLocationUploaded:(int32_t)locationId;
 
 @end

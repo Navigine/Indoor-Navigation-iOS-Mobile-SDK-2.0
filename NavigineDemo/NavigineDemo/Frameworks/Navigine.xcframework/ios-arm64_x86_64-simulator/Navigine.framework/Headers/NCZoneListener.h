@@ -4,16 +4,25 @@
 
 
 /**
- * Class is used to handle events coming from ZoneManager (@see ZoneManager).
- * Methods invoked in UI
+ * @file NCZoneListener.h
+ * @brief @copybrief NCZoneListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_listeners
+ * @brief Class provides a callback to be invoked when @see ZoneManager "ZoneManager"
+ * detects entering/leaving zone events.
+ *
+ * Referenced from @see ZoneManager "ZoneManager".
+ * @note The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCZoneListener <NSObject>
 
 /**
  *
- * @method onZoneEvent - called when user handle particular zone event
- * @parameter zoneEvent - handled zone event (@see ZoneEvent).
+ * @brief Called when user handle particular zone event
+ * @param zoneEvent handled @see ZoneEvent "ZoneEvent".
  *
  */
 - (void)onZoneEvent:(nonnull NCZoneEvent *)zoneEvent;

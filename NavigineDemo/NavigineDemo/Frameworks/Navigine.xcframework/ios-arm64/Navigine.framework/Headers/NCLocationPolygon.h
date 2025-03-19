@@ -3,38 +3,50 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * @file NCLocationPolygon.h
+ * @brief @copybrief NCLocationPolygon
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_geometry_classes
  *
- * Polygon at specified location and sublocation
- * Units: meters
- * Origin: bottom left corner
+ * @brief Class is used for representing certain polygon within the location @see Polygon "Polygon"
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolygon : NSObject
+
+/** 
+ * @brief Default constructor for class NCLocationPolygon 
+ */
 - (nonnull instancetype)initWithPolygon:(nonnull NCPolygon *)polygon
                              locationId:(int32_t)locationId
                           sublocationId:(int32_t)sublocationId;
+
+/** 
+ * @brief Factory method for class NCLocationPolygon 
+ */
 + (nonnull instancetype)locationPolygonWithPolygon:(nonnull NCPolygon *)polygon
                                         locationId:(int32_t)locationId
                                      sublocationId:(int32_t)sublocationId;
 
 /**
  *
- * Metrics polygon (@see Polygon).
+ * @brief Metrics polygon @see Polygon "Polygon".
  *
  */
 @property (nonatomic, readonly, nonnull) NCPolygon * polygon;
 
 /**
  *
- * Location unique identifier in CMS
+ * @brief location polygon location identifier.
  *
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
  *
- * Sublocation unique identifier in CMS
+ * @brief location polygon sublocation identifier.
  *
  */
 @property (nonatomic, readonly) int32_t sublocationId;

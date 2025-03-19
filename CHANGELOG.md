@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.5.4](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.4) / 2025-03-19
+* Fixed Metal DEPTH_TEST
+* Fixed navigation algorighms
+* Improved ssl certificate verification
+
 ## [2.5.3](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.3) / 2024-11-06
 * Migrated to Metal
 * Improved geolib

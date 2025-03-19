@@ -6,52 +6,84 @@
 
 
 /**
+ * @file NCLocation.h
+ * @brief @copybrief NCLocation
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @brief Class is used for storing location parameters: identifier, version, name, a list of sublocations, etc.
  *
- * Object describing location in CMS.
+ * Location instance can be obtained from @see LocationManager "LocationManager" using @see LocationListener "LocationListener" callback,
+ * when the location is loaded.
  *
+ * Referenced from @see LocationManager "LocationManager" @see LocationListener "LocationListener".
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocation : NSObject
 
-/** Method returns location elevation graph (@see ElevationGraph). */
+/**
+ * @brief Method returns location elevation graph @see ElevationGraph "ElevationGraph"
+ * for specified tag
+ * @param tag Graph tag in CMS
+ * @return Elevation graph instance or `null`.
+ * @return @see ElevationGraph "ElevationGraph" of the current location with the specified tag, if it exists. If elevation graph with the specified tag doesn't exist, function returns null.
+ */
 - (nullable NCElevationGraph *)getElevationGraph:(nonnull NSString *)tag;
 
-/** Method returns list of available graph tags. */
+/**
+ * @brief Method returns list of available graph tags.
+ * @return Array of existing tags
+ */
 - (nonnull NSArray<NSString *> *)getGraphTags;
 
 /**
- * Method returns sublocation by id.
- * @param id - unique sublocation identifier.
- * @return - sublocation instance or null.
+ * @brief Method is used for obtaining a sublocation with the specified identifier from the current location.
+ * @param id sublocation identifier.
+ * @return The @see Sublocation "Sublocation" of the current location with the specified identifier, if it exists. If sublocation with the specified identifier doesn't exist, function returns null.
  */
 - (nullable NCSublocation *)getSublocationById:(int32_t)id;
 
 /**
- * Method returns category by id.
- * @param id - unique category identifier.
- * @return - category instance or null.
+ * @brief Method is used for obtaining a category with the specified identifier from the current location.
+ * @param id category identifier.
+ * @return @see Category "Category" of the current location with the specified identifier, if it exists. If category with the specified identifier doesn't exist, function returns null.
  */
 - (nullable NCCategory *)getCategoryById:(int32_t)id;
 
-/** Location unique identifier. */
+/**
+ * @brief location's identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Current location version. */
+/**
+ * @brief location's version.
+ */
 @property (nonatomic, readonly) int32_t version;
 
-/** Location name. */
+/**
+ * @brief location name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** Location description. */
+/**
+ * @brief location's description.
+ */
 @property (nonatomic, nonnull, readonly) NSString * descript;
 
-/** List of supported categories (@see Category). */
+/**
+ * @brief List of venue categories defined for the location @see Category "Category".
+ */
 @property (nonatomic, nonnull, readonly) NSArray<NCCategory *> * categories;
 
-/** List of created sublocations (@see Sublocation). */
+/**
+ * @brief List of sublocations @see Sublocation "Sublocation"
+ */
 @property (nonatomic, nonnull, readonly) NSArray<NCSublocation *> * sublocations;
 
-/** Flag indicates if location has been modified by user or not */
+/**
+ * @brief Flag indicates if location has been modified by user or not
+ */
 @property (nonatomic, readonly) BOOL modified;
 
 @end

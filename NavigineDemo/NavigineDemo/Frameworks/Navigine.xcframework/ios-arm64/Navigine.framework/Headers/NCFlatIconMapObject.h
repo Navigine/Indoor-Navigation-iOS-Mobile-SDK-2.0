@@ -5,9 +5,18 @@
 
 
 /**
+ * @file NCFlatIconMapObject.h
+ * @brief @copybrief NCFlatIconMapObject
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
  *
- * Object represents icon object on location view.
- * FlatIconMapObject keep orientation to location view surface.
+ * @brief represents icon object on location view.
+ *
+ * Referenced from @see LocationWindow "LocationWindow".
+ *
+ * @note FlatIconMapObject keep orientation to location view surface.
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -15,18 +24,20 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Method is used to specify rotation of object.
- * @param angle - angle of rotation in degrees.
+ * @brief Method is used to specify rotation of object.
+ * @param angle angle of rotation in degrees.
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setAngle:(double)angle;
 
 /**
  *
- * Method is used to rotate object with specified animation.
- * @param angle - angle of rotation in degrees.
- * @param duration - animation duration in seconds.
- * @param type - animation type (@see AnimationType).
+ * @brief Method is used to rotate object with specified animation.
+ * @param angle angle of rotation in degrees.
+ * @param duration animation duration in seconds.
+ * @param type animation type @see AnimationType "AnimationType".
+ * @return true if success, false otherwise.
  *
  */
 - (BOOL)setAngleAnimated:(double)angle

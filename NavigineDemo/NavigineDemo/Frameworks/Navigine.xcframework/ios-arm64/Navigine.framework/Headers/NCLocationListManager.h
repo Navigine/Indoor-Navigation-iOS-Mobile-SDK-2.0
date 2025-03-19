@@ -4,35 +4,49 @@
 @protocol NCLocationListListener;
 
 
-/** Class is used to manage list of available locations */
+/**
+ * @file NCLocationListManager.h
+ * @brief @copybrief NCLocationListManager
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_managers
+ * @brief Class is used for downloading locations list from the server and providing it to the user.
+ *
+ * Referenced from @see NavigineSdk "NavigineSdk".
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationListManager : NSObject
 
 /**
  *
- * Method is used to add listener to handle location list updates (@see LocationListListener).
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see LocationListListener "LocationListListener" element
+ * which will notify about newly downloaded list of available locations.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see LocationListListener "LocationListListener" class.
  *
  */
 - (void)addLocationListListener:(nullable id<NCLocationListListener>)listener;
 
 /**
  *
- * Method is used to remove listener.
+ * @brief Method is used for removing previously added @see LocationListListener "LocationListListener" class element.
+ * @param listener Сorresponding @see LocationListListener "LocationListListener" class to remove.
  *
  */
 - (void)removeLocationListListener:(nullable id<NCLocationListListener>)listener;
 
 /**
  *
- * Method is used to force reload location list.
+ * @brief Method is used to force reload location list.
  *
  */
 - (void)updateLocationList;
 
 /**
  *
- * Method is used to get current location list.
+ * @brief Method is used to get current location list @see LocationInfo "LocationInfo".
+ * @return dictionary {location_id -> location_info}
  *
  */
 - (nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)getLocationList;

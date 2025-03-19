@@ -3,23 +3,39 @@
 
 
 /**
+ * @file NCNotification.h
+ * @brief @copybrief NCNotification
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_secondary_classes
  *
- * Object describing notification in CMS.
+ * @brief Class is used for working with the notifications and storing its data.
+ *
+ * Referenced from: @see NotificationListener "NotificationListener".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNotification : NSObject
 
-/** Notification unique identifier. */
+/**
+ * @brief notification's unique identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Notification title. */
+/**
+ * @brief notification's title.
+ */
 @property (nonatomic, nonnull, readonly) NSString * title;
 
-/** Notification content. */
+/**
+ * @brief notification's content.
+ */
 @property (nonatomic, nonnull, readonly) NSString * content;
 
-/** Notification image url if specified. */
+/**
+ * @brief notification's image url if specified.
+ */
 @property (nonatomic, nullable, readonly) NSString * imageUrl;
 
 @end

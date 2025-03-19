@@ -3,30 +3,42 @@
 #import <UIKit/UIKit.h>
 
 
-/** Class is used to listen for interactions with view (@see LocationView). */
+/**
+ * @file NCInputListener.h
+ * @brief @copybrief NCInputListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ *
+ * @brief Class is used to listen for interactions with location view
+ *
+ * Referenced from @see LocationWindow "LocationWindow".
+ *
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCInputListener <NSObject>
 
 /**
  *
- * Called when a tap occurred.
- * @param screenPoint - point in screen coordinates.
+ * @brief Called when a tap occurred.
+ * @param screenPoint point in screen coordinates.
  *
  */
 - (void)onViewTap:(CGPoint)screenPoint;
 
 /**
  *
- * Called when a double tap occurred.
- * @param screenPoint - point in screen coordinates.
+ * @brief Called when a double tap occurred.
+ * @param screenPoint point in screen coordinates.
  *
  */
 - (void)onViewDoubleTap:(CGPoint)screenPoint;
 
 /**
  *
- * Called when a long tap occurred.
- * @param screenPoint - point in screen coordinates.
+ * @brief Called when a long tap occurred.
+ * @param screenPoint point in screen coordinates.
  *
  */
 - (void)onViewLongTap:(CGPoint)screenPoint;

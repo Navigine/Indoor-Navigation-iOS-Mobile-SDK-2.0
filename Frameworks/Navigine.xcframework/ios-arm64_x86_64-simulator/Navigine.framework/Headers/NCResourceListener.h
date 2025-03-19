@@ -3,6 +3,10 @@
 @class NCImage;
 
 
+/**
+ * @file NCResourceListener.h
+ * @brief @copybrief NCResourceListener-p
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCResourceListener <NSObject>
 

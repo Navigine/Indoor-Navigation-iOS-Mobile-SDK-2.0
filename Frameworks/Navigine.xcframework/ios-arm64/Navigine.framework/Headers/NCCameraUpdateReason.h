@@ -1,10 +1,29 @@
 #import <Foundation/Foundation.h>
 
-/** Reason of the camera update. */
+/**
+ * @file NCCameraUpdateReason.h
+ * @brief @copybrief NCCameraUpdateReason
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ * @brief Reason of the camera update.
+ *
+ * Referenced from @see CameraListener "CameraListener".
+ *
+ */
 typedef NS_ENUM(NSInteger, NCCameraUpdateReason)
 {
-    /** User manipulation, for example: zoom, scroll, rotate, fling. */
+    /**
+     * @brief user manipulation.
+     *
+     * For example: zoom, scroll, rotate, fling.
+     */
     NCCameraUpdateReasonGestures,
-    /** Application, by calling the LocationLiew::move methods. */
+    /**
+     * @brief Application.
+     *
+     * By calling the LocationLiew::move methods.
+     */
     NCCameraUpdateReasonApplication,
 };

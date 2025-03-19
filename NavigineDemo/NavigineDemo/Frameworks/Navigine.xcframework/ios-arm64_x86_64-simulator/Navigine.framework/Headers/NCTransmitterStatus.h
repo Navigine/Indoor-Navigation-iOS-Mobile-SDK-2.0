@@ -1,14 +1,34 @@
 #import <Foundation/Foundation.h>
 
-/** Describe possible transmitter state */
+/**
+ * @file NCTransmitterStatus.h
+ * @brief @copybrief NCTransmitterStatus
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_secondary_classes
+ *
+ * @brief enum described possible transmitter state.
+ *
+ * Referenced from @see Beacon "Beacon", @see Eddystone "Eddystone", @see Wifi "Wifi".
+ *
+ */
 typedef NS_ENUM(NSInteger, NCTransmitterStatus)
 {
-    /** Syncronized with CMS. */
+    /**
+     * @brief Syncronized with CMS.
+     */
     NCTransmitterStatusNone,
-    /** Added in SDK but not syncronized with CMS. */
+    /**
+     * @brief Added in SDK but not syncronized with CMS.
+     */
     NCTransmitterStatusNew,
-    /** Deleted in SDK but not syncronized with CMS. */
+    /**
+     * @brief Deleted in SDK but not syncronized with CMS.
+     */
     NCTransmitterStatusDeleted,
-    /** Changed in SDK but not syncronized with CMS. */
+    /**
+     * @brief Changed in SDK but not syncronized with CMS.
+     */
     NCTransmitterStatusModified,
 };

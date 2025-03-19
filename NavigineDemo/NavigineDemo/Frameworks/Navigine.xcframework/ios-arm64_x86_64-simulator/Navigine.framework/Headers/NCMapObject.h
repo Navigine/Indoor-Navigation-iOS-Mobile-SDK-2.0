@@ -4,44 +4,74 @@
 
 
 /**
+ * @file NCMapObject.h
+ * @brief @copybrief NCMapObject
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
  *
- * Object on map created and managing by user
- * Could be handled in `pickMapObjectAt` method (@see LocationWindow)
+ * @brief Class is used to handle object on @see LocationWindow "LocationWindow" created and managing by user
+ * Could be handled in `pickMapObjectAt` method @see LocationWindow "LocationWindow"
+ *
+ * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see FlatIconMapObject "FlatIconMapObject".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMapObject : NSObject
 
-/** Unique identifier of map object */
+/**
+ * @brief Unique identifier of map object
+ * @return Unique identifier of current map objcet @see MapObjectType "MapObjectType"
+ */
 - (int32_t)getId;
 
 /**
- * Map object type (@see MapObjectType).
+ * @brief Map object type @see MapObjectType "MapObjectType".
  * Map object could be casted to the specified type.
+ * @return Type of current map objcet @see MapObjectType "MapObjectType".
  */
 - (NCMapObjectType)getType;
 
-/** Any kind of user's data */
+/**
+ * @brief Any kind of user's data
+ * @return Data stored in map object @see MapObjectType "MapObjectType".
+ */
 - (nonnull NSData *)getData;
 
-/** Method is used to change visibility of map object. */
+/**
+ * @brief Method is used to change visibility of map object.
+ * @param visible control visibility of the object.
+ * @return true if success, false otherwise.
+ */
 - (BOOL)setVisible:(BOOL)visible;
 
 /**
- * Method is used to interactive property
+ * @brief Method is used to interactive property
  * If True - map object could be handled in `pickMapObjectAt` method.
+ * @param interactive control interactivity of the object.
+ * @return true if success, false otherwise.
  */
 - (BOOL)setInteractive:(BOOL)interactive;
 
-/** Method is used to apply custom styling to map object. */
+/**
+ * @brief Method is used to apply custom styling to map object.
+ * @param style styling string.
+ * @return true if success, false otherwise.
+ */
 - (BOOL)setStyle:(nonnull NSString *)style;
 
-/** Method is used to set any kind of user's data */
+/**
+ * @brief Method is used to set any kind of user's data
+ * @param data Data to store in map object
+ */
 - (void)setData:(nonnull NSData *)data;
 
 /**
- * Method is used to set object title.
- * Title will shown on LocationView.
+ * @brief Method is used to set object title.
+ * Title will shown on location view.
+ * @param title of map object.
+ * @return true if success, false otherwise.
  */
 - (BOOL)setTitle:(nonnull NSString *)title;
 

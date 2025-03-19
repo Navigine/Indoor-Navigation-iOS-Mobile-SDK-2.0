@@ -3,18 +3,34 @@
 #import <Foundation/Foundation.h>
 
 /**
+ * @file NCZoneEvent.h
+ * @brief @copybrief NCZoneEvent
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_secondary_classes
  *
- * Object describing user zone_event.
+ * @brief Class described user zone event.
+ *
+ * Referenced from @see ZoneListener "ZoneListener".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneEvent : NSObject
+
+/** 
+ * @brief Default constructor for class NCZoneEvent 
+ */
 - (nonnull instancetype)initWithType:(NCZoneEventType)type
                           locationId:(int32_t)locationId
                        sublocationId:(int32_t)sublocationId
                                   id:(int32_t)id
                                 name:(nonnull NSString *)name
                                alias:(nonnull NSString *)alias;
+
+/** 
+ * @brief Factory method for class NCZoneEvent 
+ */
 + (nonnull instancetype)zoneEventWithType:(NCZoneEventType)type
                                locationId:(int32_t)locationId
                             sublocationId:(int32_t)sublocationId
@@ -22,22 +38,34 @@ DEFAULT_EXPORT_ATTRIBUTE
                                      name:(nonnull NSString *)name
                                     alias:(nonnull NSString *)alias;
 
-/** Handled zone event type. */
+/**
+ * @brief Handled zone event type.
+ */
 @property (nonatomic, readonly) NCZoneEventType type;
 
-/** Unique location identifier of Zone position. */
+/**
+ * @brief zone's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of Zone position. */
+/**
+ * @brief zone's sublocationId identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** Zone unique identifier. */
+/**
+ * @brief zone's identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Zone name. */
+/**
+ * @brief zone's name.
+ */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
-/** Zone alias. */
+/**
+ * @brief zone's alias.
+ */
 @property (nonatomic, readonly, nonnull) NSString * alias;
 
 @end

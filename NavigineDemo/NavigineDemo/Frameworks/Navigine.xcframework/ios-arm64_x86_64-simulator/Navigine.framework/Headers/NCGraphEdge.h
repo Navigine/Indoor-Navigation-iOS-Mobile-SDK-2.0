@@ -3,23 +3,37 @@
 
 
 /**
+ * @file NCGraphEdge.h
+ * @brief @copybrief NCGraphEdge
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
  *
- * Object describing graph edge in CMS.
+ * @brief Class is used for storing graph edge.
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGraphEdge : NSObject
 
-/** edge weight. */
+/**
+ * @brief Edge weight.
+ */
 @property (nonatomic, readonly) float weight;
 
-/** destination vertex id (@see GraphVertex) */
+/**
+ * @brief Destination vertex id @see GraphVertex "GraphVertex"
+ */
 @property (nonatomic, readonly) int32_t dst;
 
-/** source vertex id (@see GraphVertex) */
+/**
+ * @brief Source vertex id @see GraphVertex "GraphVertex"
+ */
 @property (nonatomic, readonly) int32_t src;
 
-/** edge weight coefficient. */
+/**
+ * @brief Edge weight coefficient.
+ */
 @property (nonatomic, readonly) int32_t weightCoef;
 
 @end

@@ -3,21 +3,34 @@
 @protocol NCAsyncRouteListener;
 
 
-/** Class is used to manage route listeners */
+/**
+ * @file NCRouteSession.h
+ * @brief @copybrief NCRouteSession
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_managers
+ * @brief Class is used for managing async route listeners
+ *
+ * Referenced from @see AsyncRouteManager "AsyncRouteManager".
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteSession : NSObject
 
 /**
  *
- * Method is used to add listener to handle async route events (@see AsyncRouteListener).
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see AsyncRouteListener "AsyncRouteListener" class element
+ * which will notify async route events.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class.
  *
  */
 - (void)addRouteListener:(nullable id<NCAsyncRouteListener>)listener;
 
 /**
  *
- * Method is used to remove listener.
+ * @brief Method is used for removing previously added @see AsyncRouteListener "AsyncRouteListener" class element.
+ * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class to remove.
  *
  */
 - (void)removeRouteListener:(nullable id<NCAsyncRouteListener>)listener;

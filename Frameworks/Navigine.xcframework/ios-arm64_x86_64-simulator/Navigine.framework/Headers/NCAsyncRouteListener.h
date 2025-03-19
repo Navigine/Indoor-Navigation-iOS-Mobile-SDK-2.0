@@ -5,26 +5,37 @@
 
 
 /**
- * Class is used to handle events coming from routing session (@see RouteSession)
- * Methods invoked in UI
+ * @file NCAsyncRouteListener.h
+ * @brief @copybrief NCAsyncRouteListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_listeners
+ * @brief Class provides a callback to be invoked when @see RouteSession "RouteSession"
+ * handle changed/advanced events.
+ *
+ * Referenced from @see AsyncRouteManager "AsyncRouteManager" @see RouteSession "RouteSession".
+ * @note The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCAsyncRouteListener <NSObject>
 
 /**
- * @method onRouteChanged - called when new route was built or
+ * @brief Called when new route was built or
  *     old route was rebuilt after missing previouse one.
  *
- * @parameter currentPath - path from current postion to destination point
+ * @param currentPath @see RoutePath "RoutePath" from current postion to destination point
+ *
  */
 - (void)onRouteChanged:(nullable NCRoutePath *)currentPath;
 
 /**
- * @method onRouteAdvanced - called when user has progressed along the route
+ * @brief Called when user has progressed along the route
  *     that was built in the method `onRouteChanged`
  *
- * @parameter distance - distance from the beginning or the route (unit meters)
- * @parameter point - current location point on the route
+ * @param distance distance from the beginning or the route (unit meters)
+ * @param point current location point on the route
+ *
  */
 - (void)onRouteAdvanced:(float)distance
                   point:(nonnull NCLocationPoint *)point;

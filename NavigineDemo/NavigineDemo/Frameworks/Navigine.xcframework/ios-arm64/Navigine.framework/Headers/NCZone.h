@@ -4,32 +4,53 @@
 
 
 /**
+ * @file NCZone.h
+ * @brief @copybrief NCZone
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @brief Class is used for storing location polygonal zones.
  *
- * Object describing zone in CMS.
+ * Referenced from @see Sublocation "Sublocation".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZone : NSObject
 
-/** Metrics polygon of Zone (@see Polygon). */
+/**
+ * @brief zone's list of points composing the polygonal zone @see Polygon "Polygon"
+ */
 @property (nonatomic, nonnull, readonly) NCPolygon * polygon;
 
-/** Unique location identifier of Zone position. */
+/**
+ * @brief zone's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of Zone position. */
+/**
+ * @brief zone's sublocationId identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** Zone unique identifier. */
+/**
+ * @brief zone's identifier.
+ */
 @property (nonatomic, readonly) int32_t id;
 
-/** Zone name. */
+/**
+ * @brief zone's name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** Zone color. */
+/**
+ * @brief zone's color.
+ */
 @property (nonatomic, nonnull, readonly) NSString * color;
 
-/** Zone alias. */
+/**
+ * @brief zone's alias.
+ */
 @property (nonatomic, nonnull, readonly) NSString * alias;
 
 @end

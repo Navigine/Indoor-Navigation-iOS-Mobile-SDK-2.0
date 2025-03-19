@@ -5,37 +5,50 @@
 @protocol NCPositionListener;
 
 
-/** Class is used to manage navigation routine */
+/**
+ * @file NCNavigationManager.h
+ * @brief @copybrief NCNavigationManager
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_managers
+ * @brief Class is used for evaluating navigation and calculating users' @see Position "Position"
+ *
+ * Referenced from @see NavigineSdk "NavigineSdk".
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigationManager : NSObject
 
 /**
  *
- * Method is used to add listener to handle position updates (@see PositionListener).
- * Do not forget to remove listener if it is no longer needed!
+ * @brief Method is used to add @see PositionListener "PositionListener" class element
+ * which will notify about new user position.
+ * @note Do not forget to remove listener if it is no longer needed!
+ * @param listener Сorresponding @see PositionListener "PositionListener" class.
  *
  */
 - (void)addPositionListener:(nullable id<NCPositionListener>)listener;
 
 /**
- *
- * Method is used to remove listener.
- *
+ * @cond
  */
-- (void)removePositionListener:(nullable id<NCPositionListener>)listener;
-
-/** @internal */
 - (void)startLogRecording;
 
-/** @internal */
 - (void)addCheckPoint:(nonnull NCLocationPoint *)point;
 
-/** @internal */
 - (void)stopLogRecording;
 
-/** @internal */
 - (void)addLocationMeasurement:(nonnull NCGlobalPoint *)point
                       accuracy:(double)accuracy
                       provider:(nonnull NSString *)provider;
+
+/**
+ * @endcond
+ *
+ * @brief Method is used for removing previously added @see PositionListener "PositionListener" class element.
+ * @param listener Сorresponding @see PositionListener "PositionListener" class to remove.
+ *
+ */
+- (void)removePositionListener:(nullable id<NCPositionListener>)listener;
 
 @end

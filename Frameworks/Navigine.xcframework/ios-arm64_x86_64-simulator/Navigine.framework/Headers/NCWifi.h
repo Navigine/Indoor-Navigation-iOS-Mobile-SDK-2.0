@@ -5,29 +5,49 @@
 
 
 /**
+ * @file NCWifi.h
+ * @brief @copybrief NCWifi
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
+ * @ingroup navigine_objc_transmitters
+ * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a>.
  *
- * Object describing WiFi transmitter.
+ * Referenced from @see Sublocation "Sublocation".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCWifi : NSObject
 
-/** Metrics coordinate of WiFi position (@see Point). */
+/**
+ * @brief wifi's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
-/** Unique location identifier of WiFi position. */
+/**
+ * @brief wifi's location identifier.
+ */
 @property (nonatomic, readonly) int32_t locationId;
 
-/** Unique sublocation identifier of WiFi position. */
+/**
+ * @brief wifi's sublocation identifier.
+ */
 @property (nonatomic, readonly) int32_t sublocationId;
 
-/** WiFi name. */
+/**
+ * @brief wifi's name.
+ */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
-/** WiFi mac. */
+/**
+ * @brief wifi's mac.
+ */
 @property (nonatomic, nonnull, readonly) NSString * mac;
 
-/** WiFi status. (@see TransmitterStatus) */
+/**
+ * @brief wifi's status. @see TransmitterStatus "TransmitterStatus"
+ */
 @property (nonatomic, readonly) NCTransmitterStatus status;
 
 @end

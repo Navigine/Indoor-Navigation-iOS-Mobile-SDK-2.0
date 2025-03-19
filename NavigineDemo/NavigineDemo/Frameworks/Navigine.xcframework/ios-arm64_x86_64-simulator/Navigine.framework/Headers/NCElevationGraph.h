@@ -4,14 +4,23 @@
 
 
 /**
+ * @file NCElevationGraph.h
+ * @brief @copybrief NCElevationGraph
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_elements
  *
- * Сlass describing a graph that connects the sublocations.
+ * @brief Сlass describing a graph that connects the sublocations.
  *
+ * Referenced from @see Location "Location"
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCElevationGraph : NSObject
 
-/** list of edges that connect two sublocations (@see GraphEdge). */
+/**
+ * @brief List of edges that connect two sublocations @see GraphEdge "GraphEdge".
+ */
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphEdge *> * edges;
 
 @end

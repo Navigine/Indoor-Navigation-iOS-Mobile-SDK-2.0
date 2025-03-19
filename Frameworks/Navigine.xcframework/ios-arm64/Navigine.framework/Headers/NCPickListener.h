@@ -4,15 +4,27 @@
 @class NCMapObjectPickResult;
 
 
-/** Class is used to handle for picking objects on the view (@see LocationView) */
+/**
+ * @file NCPickListener.h
+ * @brief @copybrief NCPickListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ *
+ * @brief Class is used to handle for picking objects on the location view
+ *
+ * Referenced from @see LocationWindow "LocationWindow".
+ *
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPickListener <NSObject>
 
 /**
  *
- * Receive the result from LocationView `pickMapObjectAt` method (@see LocationView)
- * @param mapObjectPickResult - MapObjectPickResult instance or `nil` if no objects was found (@see MapObjectPickResult).
- * @param screenPosition - position where the object was picked in pixels.
+ * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapObjectAt` method
+ * @param mapObjectPickResult @see MapObjectPickResult "MapObjectPickResult" instance or `nil` if no objects was found.
+ * @param screenPosition position where the object was picked in pixels.
  *
  */
 - (void)onMapObjectPickComplete:(nullable NCMapObjectPickResult *)mapObjectPickResult
@@ -20,9 +32,9 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * Receive the result from LocationView `pickMapFeatureAt` method (@see LocationView)
- * @param mapFeaturePickResult - dictionary of properties of the picked feature or `nil` if no objects was found.
- * @param screenPosition - position where the object was picked in pixels.
+ * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapFeatureAt`
+ * @param mapFeaturePickResult dictionary of properties of the picked feature or `nil` if no objects was found.
+ * @param screenPosition position where the object was picked in pixels.
  *
  */
 - (void)onMapFeaturePickComplete:(nonnull NSDictionary<NSString *, NSString *> *)mapFeaturePickResult

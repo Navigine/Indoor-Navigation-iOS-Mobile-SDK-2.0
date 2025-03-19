@@ -4,24 +4,33 @@
 
 
 /**
- * Class is used to handle events coming from NotificationManager (@see NotificationManager).
- * Methods invoked in UI
+ * @file NCNotificationListener.h
+ * @brief @copybrief NCNotificationListener-p
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_listeners
+ * @brief Class provides a callback to be invoked when @see NotificationManager "NotificationManager"
+ * detects local notification events.
+ *
+ * Referenced from @see NotificationManager "NotificationManager".
+ * @note The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCNotificationListener <NSObject>
 
 /**
  *
- * @method onNotificationLoaded - called when iBeacon signal mathed all parameters in notification
- * @parameter notification - notification instance created in CMS (@see Notification).
+ * @brief Called when iBeacon signal mathed all parameters in notification
+ * @param notification notification instance created in CMS @see Notification "Notification".
  *
  */
 - (void)onNotificationLoaded:(nullable NCNotification *)notification;
 
 /**
  *
- * @method onNotificationFailed - called if unable to calculate notification or network errors.
- * @parameter error - handled error.
+ * @brief Called if unable to calculate notification or network errors.
+ * @param error handled error.
  *
  */
 - (void)onNotificationFailed:(nullable NSError *)error;

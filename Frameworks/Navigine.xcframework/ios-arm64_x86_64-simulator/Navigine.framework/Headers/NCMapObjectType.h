@@ -1,14 +1,41 @@
 #import <Foundation/Foundation.h>
 
-/** Describe underlying type of map object */
+/**
+ * @file NCMapObjectType.h
+ * @brief @copybrief NCMapObjectType
+ */
+/**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ * @brief Enum underlying type of map object
+ *
+ * Referenced from @see MapObject "MapObject".
+ *
+ */
 typedef NS_ENUM(NSInteger, NCMapObjectType)
 {
-    /** (@see IconMapObject) */
+    /**
+     * @brief icon
+     *
+     * @see IconMapObject "IconMapObject"
+     */
     NCMapObjectTypeICON,
-    /** (@see FlatIconMapObject) */
+    /**
+     * @brief flat icon
+     *
+     * @see FlatIconMapObject "FlatIconMapObject"
+     */
     NCMapObjectTypeFLATICON,
-    /** (@see PolylineIconMapObject) */
+    /**
+     * @brief polyline
+     *
+     * @see PolylineMapObject "PolylineMapObject"
+     */
     NCMapObjectTypePOLYLINE,
-    /** (@see CircleMapObject) */
+    /**
+     * @brief circle
+     *
+     * @see CircleMapObject "CircleMapObject"
+     */
     NCMapObjectTypeCIRCLE,
 };

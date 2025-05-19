@@ -225,8 +225,6 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (void)applyFilter:(nonnull NSString *)filter
               layer:(nonnull NSString *)layer;
 
-- (void)setIcons:(nonnull NSDictionary<NSString *, UIImage *> *)icons;
-
 + (void)setDebugFlag:(NCDebugFlag)flag
                   on:(BOOL)on;
 

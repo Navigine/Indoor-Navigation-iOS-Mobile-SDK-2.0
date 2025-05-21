@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 `navigine.framework` adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.5.6](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.6) / 2025-05-21
+* NCCircleMapObject renrerring
+* Fixed navigation algorighms
+
 ## [2.5.5](https://github.com/Navigine/navigine_ios_framework/releases/tag/v.2.5.5) / 2025-05-19
 * NCCircleMapObject renrerring
 * Fixed navigation algorighms

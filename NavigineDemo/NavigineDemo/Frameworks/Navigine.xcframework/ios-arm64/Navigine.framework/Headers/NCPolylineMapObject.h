@@ -22,8 +22,8 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Method is used to specify source pyline of object.
- * @param polyline metrics coordinate of pyline @see LocationPolyline "LocationPolyline".
+ * @brief Method is used to specify source polyline of object.
+ * @param polyline metrics coordinate of polyline @see LocationPolyline "LocationPolyline".
  * @return true if success, false otherwise.
  *
  */

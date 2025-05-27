@@ -9,6 +9,7 @@
 @class NCCircleMapObject;
 @class NCFlatIconMapObject;
 @class NCIconMapObject;
+@class NCPolygonMapObject;
 @class NCPolylineMapObject;
 @protocol NCCameraListener;
 @protocol NCInputListener;
@@ -109,6 +110,23 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (BOOL)removeFlatIconMapObject:(nullable NCFlatIconMapObject *)flatIconMapObject;
+
+/**
+ *
+ * @brief Method is used to create and add polygon map object to the location view.
+ * @return PolygonMapObject instance @see PolygonMapObject "PolygonMapObject" if success, null otherwise.
+ *
+ */
+- (nullable NCPolygonMapObject *)addPolygonMapObject;
+
+/**
+ *
+ * @brief Method is used to remove polygon map object from the location view.
+ * @param polygonMapObject polygon map object instance @see PolygonMapObject "PolygonMapObject".
+ * @return true if success, false otherwise.
+ *
+ */
+- (BOOL)removePolygonMapObject:(nullable NCPolygonMapObject *)polygonMapObject;
 
 /**
  *
@@ -220,6 +238,35 @@ DEFAULT_EXPORT_ATTRIBUTE
      callback:(nullable NCCameraCallback)callback;
 
 /**
+ *
+ * @brief Selects a map feature with the specified featureId.
+ *
+ * @param featureId featureId can be extracted from the `mapFeaturePickResult` container by
+ * using @see onMapFeaturePickComplete "onMapFeaturePickComplete" callback of @see PickListener "PickListener".
+ * @return true if success, false otherwise.
+ *
+ */
+- (BOOL)selectMapFeature:(nonnull NSString *)featureId;
+
+/**
+ *
+ * @brief Deselects a map feature with the specified featureId.
+ *
+ * @param featureId featureId can be extracted from the `mapFeaturePickResult` container by
+ * using @see onMapFeaturePickComplete "onMapFeaturePickComplete" callback of @see PickListener "PickListener".
+ * @return true if success, false otherwise.
+ *
+ */
+- (BOOL)deselectMapFeature:(nonnull NSString *)featureId;
+
+/**
+ *
+ * @brief Resets the currently selected map features.
+ *
+ */
+- (void)deselectAllMapFeatures;
+
+/**
  * @cond
  */
 - (void)applyFilter:(nonnull NSString *)filter
@@ -319,5 +366,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 @property (nonatomic) float pickRadius;
+
+/**
+ *
+ * @brief List of currently selected map features.
+ *
+ */
+@property (nonatomic, nonnull, readonly) NSArray<NSString *> * selectedMapFeatures;
 
 @end

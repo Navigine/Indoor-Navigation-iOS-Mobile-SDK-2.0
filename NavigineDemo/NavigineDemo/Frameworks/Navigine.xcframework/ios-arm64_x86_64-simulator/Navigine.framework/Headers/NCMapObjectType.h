@@ -27,6 +27,12 @@ typedef NS_ENUM(NSInteger, NCMapObjectType)
      */
     NCMapObjectTypeFLATICON,
     /**
+     * @brief polygon
+     *
+     * @see PolygonMapObject "PolygonMapObject"
+     */
+    NCMapObjectTypePOLYGON,
+    /**
      * @brief polyline
      *
      * @see PolylineMapObject "PolylineMapObject"

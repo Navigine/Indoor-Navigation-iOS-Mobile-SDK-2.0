@@ -5,12 +5,14 @@
 @class NCLocationEditManager;
 @class NCLocationListManager;
 @class NCLocationManager;
+@class NCLocationWindow;
 @class NCMeasurementManager;
 @class NCNavigationManager;
 @class NCNavigineSdk;
 @class NCNotificationManager;
 @class NCResourceManager;
 @class NCRouteManager;
+@class NCView;
 @class NCZoneManager;
 
 
@@ -159,10 +161,9 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 - (nonnull NSString *)getErrorDescription:(int32_t)errorCode;
 
+- (nullable NCLocationWindow *)createLocationWindow:(nullable NCView *)platformView;
+
 /**
- *
- * createLocationWindow(platform_view: platform_view): location_window;
- *
  * @endcond
  *
  * Returns a manager that allows to manage locations list

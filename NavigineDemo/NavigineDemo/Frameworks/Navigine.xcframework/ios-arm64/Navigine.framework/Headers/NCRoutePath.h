@@ -24,12 +24,29 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Method is used to split route path by distance
- * @param advance distance on the route from the start.
- * @return pair of splitted route paths.
+ * @brief Returns the leading segment of the route.
+ *
+ * Returns the portion of the route from the start up to the specified advance distance along the route.
+ * If advance exceeds the total route length, the entire route is returned.
+ *
+ * @param advance Distance along the route (in meters).
+ * @return The covered (passed) segment of the route (from start to advance), or nil if the segment is empty.
  *
  */
-- (nonnull NSArray<NCRoutePath *> *)split:(float)advance;
+- (nullable NCRoutePath *)head:(float)advance;
+
+/**
+ *
+ * @brief Returns the remaining segment of the route.
+ *
+ * Returns the portion of the route starting from the specified advance distance to the end of the route.
+ * If advance is less than or equal to zero, the entire route is returned.
+ *
+ * @param advance Distance along the route (in meters).
+ * @return The remaining segment of the route (from advance to end), or nil if the segment is empty.
+ *
+ */
+- (nullable NCRoutePath *)tail:(float)advance;
 
 /**
  * @brief Total lenth of the route path in meters.

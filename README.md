@@ -7,6 +7,16 @@ The following sections describe the contents of the Navigine iOS SDK repository.
 - Sources of the Navigine Demo Application for iOS
 - Navigine SDK for iOS - header files and resources
 
+### Useful Links
+
+- [SDK Documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki) : Technical guides, API references, and integration instructions for the iOS SDK.
+- [Navigine Official Docs](https://docs.navigine.com) : Complete list of downloads, product manuals, SDKs, and technical materials.
+- [Start with Navigine](http://locations.navigine.com/login) : Create your account and gain full access to Navigation services, SDKs, CMS, and demo tools.
+- [User Manual](http://docs.navigine.com/) : Step-by-step product usage and system setup instructions.
+- [Contact Navigine](https://navigine.com/contacts/) : Reach our experts for technical or business inquiries.
+- [Talk to an Expert](https://navigine.com/calendly-meet/) : Get personalized guidance from Navigine engineers on SDK setup, calibration, and deployment.
+- [Community Thread for iOS SDK](https://community.navigine.com/t/indoor-navigation-ios-mobile-sdk-2-0/176) : Ask questions, share your implementation, or provide feedback directly in our developer discussion space
+
 ## iOS Demo Application
 
 Navigine demo application for iOS enables you to test indoor navigation that you set up using Navigine CMS.
@@ -126,10 +136,3 @@ extension YourControllerClass: NCPositionListener {
     }
 }
 ```
-## Useful Links
-
-- [SDK documentation](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki)
-- Refer to the [Navigine official documentation](https://docs.navigine.com) for complete list of downloads, useful materials, information about the company, and so on.
-- [Get started](http://locations.navigine.com/login) with Navigine to get full access to Navigation services, SDKs, and applications.
-- Refer to the Navigine [User Manual](http://docs.navigine.com/) for complete product usage guidelines.
-- Find company contact information at the official website under <a href="https://navigine.com/contacts/">Contact</a> tab.

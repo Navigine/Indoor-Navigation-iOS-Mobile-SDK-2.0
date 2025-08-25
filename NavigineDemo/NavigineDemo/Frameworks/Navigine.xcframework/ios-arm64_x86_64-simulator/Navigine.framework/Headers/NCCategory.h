@@ -31,16 +31,43 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief category identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_Category_getId
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_Category_getId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
  * @brief category name.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_Category_getName
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_Category_getName
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
 /**
  * @brief image source. If presented.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_Category_getImageUrl
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_Category_getImageUrl
+ *
+ *
  */
 @property (nonatomic, readonly, nullable) NSString * imageUrl;
 

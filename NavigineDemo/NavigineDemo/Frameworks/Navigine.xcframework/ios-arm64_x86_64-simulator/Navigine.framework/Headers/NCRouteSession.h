@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class.
  *
+ *
+ * Swift code snippet:
+ * @snippet AsyncRouteManagerExample.swift swift_RouteSession_addRouteListener
+ *
+ * Objective C code snippet:
+ * @snippet AsyncRouteManagerExample.m objc_RouteSession_addRouteListener
+ *
+ *
  */
 - (void)addRouteListener:(nullable id<NCAsyncRouteListener>)listener;
 
@@ -31,6 +39,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used for removing previously added @see AsyncRouteListener "AsyncRouteListener" class element.
  * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class to remove.
+ *
+ *
+ * Swift code snippet:
+ * @snippet AsyncRouteManagerExample.swift swift_RouteSession_addRouteListener
+ *
+ * Objective C code snippet:
+ * @snippet AsyncRouteManagerExample.m objc_RouteSession_addRouteListener
+ *
  *
  */
 - (void)removeRouteListener:(nullable id<NCAsyncRouteListener>)listener;

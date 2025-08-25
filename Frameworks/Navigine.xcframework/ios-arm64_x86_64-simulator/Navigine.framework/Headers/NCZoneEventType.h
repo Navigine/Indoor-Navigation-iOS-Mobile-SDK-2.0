@@ -12,6 +12,14 @@
  *
  * Referenced from @see ZoneEvent "ZoneEvent".
  *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEventType_values
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEventType_values
+ *
+ *
  */
 typedef NS_ENUM(NSInteger, NCZoneEventType)
 {

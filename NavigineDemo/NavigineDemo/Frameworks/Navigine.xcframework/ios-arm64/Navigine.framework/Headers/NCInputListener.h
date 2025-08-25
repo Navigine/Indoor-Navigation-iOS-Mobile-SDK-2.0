@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when a tap occurred.
  * @param screenPoint point in screen coordinates.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_InputListener_onViewTap
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_InputListener_onViewTap
+ *
+ *
  */
 - (void)onViewTap:(CGPoint)screenPoint;
 
@@ -32,6 +40,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when a double tap occurred.
  * @param screenPoint point in screen coordinates.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_InputListener_onViewDoubleTap
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_InputListener_onViewDoubleTap
+ *
+ *
  */
 - (void)onViewDoubleTap:(CGPoint)screenPoint;
 
@@ -39,6 +55,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Called when a long tap occurred.
  * @param screenPoint point in screen coordinates.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_InputListener_onViewLongTap
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_InputListener_onViewLongTap
+ *
  *
  */
 - (void)onViewLongTap:(CGPoint)screenPoint;

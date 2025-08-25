@@ -13,7 +13,7 @@
  * @brief Class is used for representing certain point within the location.
  *
  * Referenced from: @ref AsyncRouteListener "AsyncRouteListener", @ref AsyncRouteManager "AsyncRouteManager", @ref CircleMapObject "CircleMapObject",
- * @ref FlatIconMapObject "FlatIconMapObject", @ref IconMapObject "IconMapObject", @ref MapObjectPickResult "MapObjectPickResult",
+ * @ref IconMapObject "IconMapObject", @ref MapObjectPickResult "MapObjectPickResult",
  * @ref NavigationManager "NavigationManager", @ref Notification "Notification", @ref Position "Position", @ref RouteManager "RouteManager",
  * @ref RoutePath "RoutePath", @ref Sublocation "Sublocation", @ref Venue "Venue".
  *

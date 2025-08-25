@@ -20,6 +20,15 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief List of edges that connect two sublocations @see GraphEdge "GraphEdge".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_ElevationGraph_getEdges
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_ElevationGraph_getEdges
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphEdge *> * edges;
 

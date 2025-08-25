@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see ZoneListener "ZoneListener" class.
  *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneManager_addZoneListener
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneManager_addZoneListener
+ *
+ *
  */
 - (void)addZoneListener:(nullable id<NCZoneListener>)listener;
 
@@ -31,6 +39,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used for removing previously added @see ZoneListener "ZoneListener" class element.
  * @param listener Сorresponding @see ZoneListener "ZoneListener" class to remove.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneManager_removeZoneListener
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneManager_removeZoneListener
+ *
  *
  */
 - (void)removeZoneListener:(nullable id<NCZoneListener>)listener;

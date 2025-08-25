@@ -12,6 +12,15 @@
  * @brief Class describing position of the camera.
  *
  * Referenced from @see LocationWindow "LocationWindow".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_Camera_constructor
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_Camera_constructor
+ *
+ *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCCamera : NSObject

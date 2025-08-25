@@ -40,31 +40,85 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief Handled zone event type.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getType
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getType
+ *
+ *
  */
 @property (nonatomic, readonly) NCZoneEventType type;
 
 /**
  * @brief zone's location identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getLocationId
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getLocationId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
  * @brief zone's sublocationId identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getSublocationId
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getSublocationId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
  * @brief zone's identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getId
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
  * @brief zone's name.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getName
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getName
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
 /**
  * @brief zone's alias.
+ *
+ *
+ * Swift code snippet:
+ * @snippet ZoneManagerExample.swift swift_ZoneEvent_getAlias
+ *
+ * Objective C code snippet:
+ * @snippet ZoneManagerExample.m objc_ZoneEvent_getAlias
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NSString * alias;
 

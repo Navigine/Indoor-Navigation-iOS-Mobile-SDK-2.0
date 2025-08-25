@@ -12,6 +12,14 @@
  *
  * Referenced from @see Beacon "Beacon", @see Eddystone "Eddystone", @see Wifi "Wifi".
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_TransmitterStatus_values
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_TransmitterStatus_values
+ *
+ *
  */
 typedef NS_ENUM(NSInteger, NCTransmitterStatus)
 {

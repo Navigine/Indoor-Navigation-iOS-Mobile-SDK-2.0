@@ -32,6 +32,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param advance Distance along the route (in meters).
  * @return The covered (passed) segment of the route (from start to advance), or nil if the segment is empty.
  *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RoutePath_head
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RoutePath_head
+ *
+ *
  */
 - (nullable NCRoutePath *)head:(float)advance;
 
@@ -45,16 +53,42 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param advance Distance along the route (in meters).
  * @return The remaining segment of the route (from advance to end), or nil if the segment is empty.
  *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RoutePath_tail
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RoutePath_tail
+ *
+ *
  */
 - (nullable NCRoutePath *)tail:(float)advance;
 
 /**
  * @brief Total lenth of the route path in meters.
+ *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RoutePath_getLength
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RoutePath_getLength
+ *
+ *
  */
 @property (nonatomic, readonly) float length;
 
 /**
  * @brief List of consecutive incoming events @see RouteEvent "RouteEvent".
+ *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RoutePath_getEvents
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RoutePath_getEvents
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCRouteEvent *> * events;
 
@@ -62,6 +96,15 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief List of consecutive points. @see LocationPoint.
  *
  * @note points could be on different sublocations if target sublocation is different from the starting one
+ *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RoutePath_getPoints
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RoutePath_getPoints
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCLocationPoint *> * points;
 

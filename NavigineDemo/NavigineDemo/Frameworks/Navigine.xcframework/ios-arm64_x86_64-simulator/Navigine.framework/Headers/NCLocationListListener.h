@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when new list of available locations has been downloaded from server
  * @param locationInfos dictionary of @see LocationInfo "LocationInfo"s which represents location id to location general info.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListListener_onLocationListLoaded
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListListener_onLocationListLoaded
+ *
+ *
  */
 - (void)onLocationListLoaded:(nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)locationInfos;
 
@@ -31,6 +39,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Called if unable to download list of available locations
  * @param error handled error.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListListener_onLocationListFailed
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListListener_onLocationListFailed
+ *
  *
  */
 - (void)onLocationListFailed:(nullable NSError *)error;

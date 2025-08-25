@@ -20,21 +20,57 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief notification's unique identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_Notification_getId
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_Notification_getId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
  * @brief notification's title.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_Notification_getTitle
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_Notification_getTitle
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NSString * title;
 
 /**
  * @brief notification's content.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_Notification_getContent
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_Notification_getContent
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NSString * content;
 
 /**
  * @brief notification's image url if specified.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_Notification_getImageUrl
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_Notification_getImageUrl
+ *
+ *
  */
 @property (nonatomic, nullable, readonly) NSString * imageUrl;
 

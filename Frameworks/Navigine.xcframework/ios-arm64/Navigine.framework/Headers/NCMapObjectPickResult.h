@@ -24,12 +24,28 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Location of the picked map object @see LocationPoint "LocationPoint".
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_MapObjectPickResult_getPoint
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_MapObjectPickResult_getPoint
+ *
+ *
  */
 @property (nonatomic, nonnull, readonly) NCLocationPoint * point;
 
 /**
  *
  * @brief Picked map object @see MapObject "MapObject".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_MapObjectPickResult_getMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_MapObjectPickResult_getMapObject
+ *
  *
  */
 @property (nonatomic, nullable, readonly) NCMapObject * mapObject;

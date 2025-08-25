@@ -12,6 +12,14 @@
  *
  * @brief line between two points.
  *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Segment_constructor
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Segment_constructor
+ *
+ *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSegment : NSObject
@@ -30,11 +38,29 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief Start point of the segment.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Segment_getStart
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Segment_getStart
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NCPoint * start;
 
 /**
  * @brief End point of the segment.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Segment_getEnd
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Segment_getEnd
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NCPoint * end;
 

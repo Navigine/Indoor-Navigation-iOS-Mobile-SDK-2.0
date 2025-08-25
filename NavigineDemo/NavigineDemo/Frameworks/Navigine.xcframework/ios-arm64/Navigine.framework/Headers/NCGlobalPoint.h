@@ -13,6 +13,14 @@
  *
  * Referenced from @see GeometryUtils "GeometryUtils", @see NavigationManager "NavigationManager", @see Position "Position", @see Sublocation "Sublocation".
  *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_GlobalPoint_constructor
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_GlobalPoint_constructor
+ *
+ *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGlobalPoint : NSObject
@@ -31,11 +39,29 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief point's latitude.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_GlobalPoint_getLatitude
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_GlobalPoint_getLatitude
+ *
+ *
  */
 @property (nonatomic, readonly) double latitude;
 
 /**
  * @brief point's longitude.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_GlobalPoint_getLongitude
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_GlobalPoint_getLongitude
+ *
+ *
  */
 @property (nonatomic, readonly) double longitude;
 

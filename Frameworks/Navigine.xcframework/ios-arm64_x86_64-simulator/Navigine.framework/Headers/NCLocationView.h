@@ -6,11 +6,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class NCCircleMapObject;
-@class NCFlatIconMapObject;
 @class NCIconMapObject;
 @class NCLocationPoint;
 @class NCLocationPolyline;
 @class NCPolylineMapObject;
+@class NCDottedPolylineMapObject;
 @class NCPoint;
 @class NCCamera;
 

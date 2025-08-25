@@ -18,21 +18,57 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief Edge weight.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_GraphEdge_getWeight
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_GraphEdge_getWeight
+ *
+ *
  */
 @property (nonatomic, readonly) float weight;
 
 /**
  * @brief Destination vertex id @see GraphVertex "GraphVertex"
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_GraphEdge_getDst
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_GraphEdge_getDst
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t dst;
 
 /**
  * @brief Source vertex id @see GraphVertex "GraphVertex"
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_GraphEdge_getSrc
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_GraphEdge_getSrc
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t src;
 
 /**
  * @brief Edge weight coefficient.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_GraphEdge_getWeightCoef
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_GraphEdge_getWeightCoef
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t weightCoef;
 

@@ -11,6 +11,14 @@
  *
  * @brief A point at the specified metrics coordinates.
  *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Point_constructor
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Point_constructor
+ *
+ *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPoint : NSObject
@@ -29,11 +37,29 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief point's `x` coordinate in meters.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Point_getX
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Point_getX
+ *
+ *
  */
 @property (nonatomic, readonly) float x;
 
 /**
  * @brief point's `y` coordinate in meters.
+ *
+ *
+ * Swift code snippet:
+ * @snippet GeometryUtilsExample.swift swift_Point_getY
+ *
+ * Objective C code snippet:
+ * @snippet GeometryUtilsExample.m objc_Point_getY
+ *
+ *
  */
 @property (nonatomic, readonly) float y;
 

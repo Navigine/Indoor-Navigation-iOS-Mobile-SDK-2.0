@@ -29,6 +29,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see NotificationListener "NotificationListener" listener class.
  *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_NotificationManager_addNotificationListener
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_NotificationManager_addNotificationListener
+ *
+ *
  */
 - (void)addNotificationListener:(nullable id<NCNotificationListener>)listener;
 
@@ -36,6 +44,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used for removing previously added @see NotificationListener "NotificationListener" class element.
  * @param listener Сorresponding @see NotificationListener "NotificationListener" class to remove.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_NotificationManager_removeNotificationListener
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_NotificationManager_removeNotificationListener
+ *
  *
  */
 - (void)removeNotificationListener:(nullable id<NCNotificationListener>)listener;

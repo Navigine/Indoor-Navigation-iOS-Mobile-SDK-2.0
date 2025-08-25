@@ -7,7 +7,8 @@
 /**
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_location_view
- * @brief Enum underlying type of map object
+ *
+ * @brief Enum defining the type of map object.
  *
  * Referenced from @see MapObject "MapObject".
  *
@@ -15,32 +16,27 @@
 typedef NS_ENUM(NSInteger, NCMapObjectType)
 {
     /**
-     * @brief icon
-     *
+     * @brief Icon.
      * @see IconMapObject "IconMapObject"
      */
     NCMapObjectTypeICON,
     /**
-     * @brief flat icon
-     *
-     * @see FlatIconMapObject "FlatIconMapObject"
-     */
-    NCMapObjectTypeFLATICON,
-    /**
-     * @brief polygon
-     *
+     * @brief Polygon.
      * @see PolygonMapObject "PolygonMapObject"
      */
     NCMapObjectTypePOLYGON,
     /**
-     * @brief polyline
-     *
+     * @brief Polyline.
      * @see PolylineMapObject "PolylineMapObject"
      */
     NCMapObjectTypePOLYLINE,
     /**
-     * @brief circle
-     *
+     * @brief DottedPolyline.
+     * @see DottedPolylineMapObject "DottedPolylineMapObject"
+     */
+    NCMapObjectTypeDOTTEDPOLYLINE,
+    /**
+     * @brief Circle.
      * @see CircleMapObject "CircleMapObject"
      */
     NCMapObjectTypeCIRCLE,

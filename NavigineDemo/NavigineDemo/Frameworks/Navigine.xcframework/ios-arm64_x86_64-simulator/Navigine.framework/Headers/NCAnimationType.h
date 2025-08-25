@@ -9,7 +9,7 @@
  * @ingroup navigine_objc_location_view
  * @brief Enum described animation functions.
  *
- * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see FlatIconMapObject "FlatIconMapObject", @see LocationWindow "LocationWindow".
+ * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see LocationWindow "LocationWindow".
  *
  */
 typedef NS_ENUM(NSInteger, NCAnimationType)

@@ -26,6 +26,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see PositionListener "PositionListener" class.
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigationManagerExample.swift swift_NavigationManager_addPositionListener
+ *
+ * Objective C code snippet:
+ * @snippet NavigationManagerExample.m objc_NavigationManager_addPositionListener
+ *
+ *
  */
 - (void)addPositionListener:(nullable id<NCPositionListener>)listener;
 
@@ -39,7 +47,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (void)stopLogRecording;
 
 - (void)addLocationMeasurement:(nonnull NCGlobalPoint *)point
-                      accuracy:(double)accuracy
+                      accuracy:(float)accuracy
                       provider:(nonnull NSString *)provider;
 
 /**
@@ -47,6 +55,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used for removing previously added @see PositionListener "PositionListener" class element.
  * @param listener Сorresponding @see PositionListener "PositionListener" class to remove.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigationManagerExample.swift swift_NavigationManager_removePositionListener
+ *
+ * Objective C code snippet:
+ * @snippet NavigationManagerExample.m objc_NavigationManager_removePositionListener
+ *
  *
  */
 - (void)removePositionListener:(nullable id<NCPositionListener>)listener;

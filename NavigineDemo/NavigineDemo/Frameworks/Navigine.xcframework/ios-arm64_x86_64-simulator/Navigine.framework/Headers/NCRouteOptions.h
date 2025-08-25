@@ -12,6 +12,15 @@
  *
  * Referenced from: @see AsyncRouteManager "AsyncRouteManager".
  *
+ *
+ *
+ * Swift code snippet:
+ * @snippet AsyncRouteManagerExample.swift swift_RouteOptions_constructor
+ *
+ * Objective C code snippet:
+ * @snippet AsyncRouteManagerExample.m objc_RouteOptions_constructor
+ *
+ *
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteOptions : NSObject

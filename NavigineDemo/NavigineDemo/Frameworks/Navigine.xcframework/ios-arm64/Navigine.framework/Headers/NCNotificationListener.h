@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when iBeacon signal mathed all parameters in notification
  * @param notification notification instance created in CMS @see Notification "Notification".
  *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_NotificationListener_onNotificationLoaded
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_NotificationListener_onNotificationLoaded
+ *
+ *
  */
 - (void)onNotificationLoaded:(nullable NCNotification *)notification;
 
@@ -31,6 +39,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Called if unable to calculate notification or network errors.
  * @param error handled error.
+ *
+ *
+ * Swift code snippet:
+ * @snippet NotificationManagerExample.swift swift_NotificationListener_onNotificationFailed
+ *
+ * Objective C code snippet:
+ * @snippet NotificationManagerExample.m objc_NotificationListener_onNotificationFailed
+ *
  *
  */
 - (void)onNotificationFailed:(nullable NSError *)error;

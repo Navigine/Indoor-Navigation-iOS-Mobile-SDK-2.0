@@ -23,6 +23,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param data raw image data (could be raw svg string)
  * @return nstance of decoder, which could be used for decoding byte array to bitmap.
  *
+ *
+ * Swift code snippet:
+ * @snippet BitmapRegionDecoderExample.swift swift_BitmapRegionDecoder_newInstance
+ *
+ * Objective C code snippet:
+ * @snippet BitmapRegionDecoderExample.m objc_BitmapRegionDecoder_newInstance
+ *
+ *
  */
 + (nullable NCBitmapRegionDecoder *)newInstance:(nonnull NSData *)data;
 
@@ -33,8 +41,16 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param sampleSize if set to a value > 1, requests the decoder to subsample the original image, returning a smaller image to save memory.
  * @return constructed bitmap
  *
+ *
+ * Swift code snippet:
+ * @snippet BitmapRegionDecoderExample.swift swift_BitmapRegionDecoder_decodeRegion
+ *
+ * Objective C code snippet:
+ * @snippet BitmapRegionDecoderExample.m objc_BitmapRegionDecoder_decodeRegion
+ *
+ *
  */
 - (nullable UIImage *)decodeRegion:(nonnull NCRectangle *)rect
-                        sampleSize:(int32_t)sampleSize;
+                        sampleSize:(float)sampleSize;
 
 @end

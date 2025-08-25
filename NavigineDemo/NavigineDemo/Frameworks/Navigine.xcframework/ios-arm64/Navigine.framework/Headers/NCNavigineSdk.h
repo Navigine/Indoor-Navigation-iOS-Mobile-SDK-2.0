@@ -41,6 +41,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method initializes Navigation library and returns NavigineSdk instance.
  * @return instance of SDK
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getInstance
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getInstance
+ *
+ *
  */
 + (nullable NCNavigineSdk *)getInstance;
 
@@ -48,6 +56,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method returns NavigineSdk SDK Version.
  * @return version of SDK
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getVersion
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getVersion
+ *
  *
  */
 + (nonnull NSString *)getVersion;
@@ -57,6 +73,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method returns persistent device id.
  * @return persistent device id
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getDeviceId
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getDeviceId
+ *
+ *
  */
 + (nonnull NSString *)getDeviceId;
 
@@ -64,6 +88,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method returns current timestamp.
  * @return internal timestamp
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getRelativeTime
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getRelativeTime
+ *
  *
  */
 + (int64_t)getRelativeTime;
@@ -73,6 +105,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method is used to set `USER_HASH` from the user's profile in CMS
  * @param userHash auth token in format XXXX-XXXX-XXXX-XXXX
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_setUserHash
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_setUserHash
+ *
+ *
  */
 - (void)setUserHash:(nonnull NSString *)userHash;
 
@@ -81,6 +121,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method is used to set server url
  * @param server custom server url in format: `http[s]://example.com`
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_setServer
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_setServer
+ *
+ *
  */
 - (void)setServer:(nonnull NSString *)server;
 
@@ -88,6 +136,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief @see LocationManager "LocationManager" instance, which could be used for working with the @see Location "Location".
  * @return @see LocationManager "LocationManager" instance
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getLocationManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getLocationManager
+ *
  *
  */
 - (nullable NCLocationManager *)getLocationManager;
@@ -98,6 +154,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param locationManager @see LocationManager "LocationManager" instance
  * @return @see NavigationManager "NavigationManager" instance
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getNavigationManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getNavigationManager
+ *
+ *
  */
 - (nullable NCNavigationManager *)getNavigationManager:(nullable NCLocationManager *)locationManager;
 
@@ -106,6 +170,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief @see ZoneManager "ZoneManager" instance, which could be used for working with zones and detecting enter and leave events. @see Zone "Zone"
  * @param navigationManager @see NavigationManager "NavigationManager" instance
  * @return @see ZoneManager "ZoneManager" instance
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getZoneManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getZoneManager
+ *
  *
  */
 - (nullable NCZoneManager *)getZoneManager:(nullable NCNavigationManager *)navigationManager;
@@ -116,6 +188,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param locationManager @see LocationManager "LocationManager" instance
  * @param navigationManager @see NavigationManager "NavigationManager" instance
  * @return @see RouteManager "RouteManager" instance
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getRouteManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getRouteManager
+ *
  *
  */
 - (nullable NCRouteManager *)getRouteManager:(nullable NCLocationManager *)locationManager
@@ -128,6 +208,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param navigationManager @see NavigationManager "NavigationManager" instance
  * @return @see AsyncRouteManager "AsyncRouteManager" instance
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getAsyncRouteManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getAsyncRouteManager
+ *
+ *
  */
 - (nullable NCAsyncRouteManager *)getAsyncRouteManager:(nullable NCLocationManager *)locationManager
                                      navigationManager:(nullable NCNavigationManager *)navigationManager;
@@ -138,8 +226,33 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param locationManager @see LocationManager "LocationManager" instance
  * @return @see NotificationManager "NotificationManager" instance
  *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getNotificationManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getNotificationManager
+ *
+ *
  */
 - (nullable NCNotificationManager *)getNotificationManager:(nullable NCLocationManager *)locationManager;
+
+/**
+ *
+ * @brief @see MeasurementManager "MeasurementManager" instance, which could be used for managing measurement generators and handling sensor and signal measurements.
+ * @param locationManager @see LocationManager "LocationManager" instance
+ * @return @see MeasurementManager "MeasurementManager" instance
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getMeasurementManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getMeasurementManager
+ *
+ *
+ */
+- (nullable NCMeasurementManager *)getMeasurementManager:(nullable NCLocationManager *)locationManager;
 
 /**
  * @cond
@@ -155,8 +268,6 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 - (nullable NCLocationEditManager *)getLocationEditManager:(nullable NCLocationManager *)locationManager;
 
-- (nullable NCMeasurementManager *)getMeasurementManager:(nullable NCLocationManager *)locationManager;
-
 - (nullable NCBeaconProximityEstimator *)getBeaconProximityEstimator:(nullable NCLocationManager *)locationManager;
 
 - (nonnull NSString *)getErrorDescription:(int32_t)errorCode;
@@ -168,6 +279,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * Returns a manager that allows to manage locations list
  * @return Location list manager instance @see LocationListManager "LocationListManager"
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getLocationListManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getLocationListManager
+ *
  *
  */
 - (nullable NCLocationListManager *)getLocationListManager;

@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see LocationListener "LocationListener" class.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_LocationManager_addLocationListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_LocationManager_addLocationListener
+ *
+ *
  */
 - (void)addLocationListener:(nullable id<NCLocationListener>)listener;
 
@@ -31,6 +39,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used for removing previously added @see LocationListener "LocationListener" class element.
  * @param listener Сorresponding @see LocationListener "LocationListener" class to remove.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_LocationManager_removeLocationListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_LocationManager_removeLocationListener
+ *
  *
  */
 - (void)removeLocationListener:(nullable id<NCLocationListener>)listener;
@@ -41,6 +57,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * Result will be handled by @see LocationListener "LocationListener"
  * @param locationId location id from CMS
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_LocationManager_setLocationId
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_LocationManager_setLocationId
+ *
+ *
  */
 - (void)setLocationId:(int32_t)locationId;
 
@@ -48,6 +72,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method returns current location unique identifier
  * @return current location unique identifier
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_LocationManager_getLocationId
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_LocationManager_getLocationId
+ *
  *
  */
 - (int32_t)getLocationId;
@@ -65,6 +97,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method is used to change interval in seconds check for new version from server
  * Default: 300s
  * @param interval update interval in seconds
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationManagerExample.swift swift_LocationManager_setLocationUpdateInterval
+ *
+ * Objective C code snippet:
+ * @snippet LocationManagerExample.m objc_LocationManager_setLocationUpdateInterval
+ *
  *
  */
 - (void)setLocationUpdateInterval:(int32_t)interval;

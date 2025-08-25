@@ -25,6 +25,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Сorresponding @see LocationListListener "LocationListListener" class.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListManager_addLocationListListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListManager_addLocationListListener
+ *
+ *
  */
 - (void)addLocationListListener:(nullable id<NCLocationListListener>)listener;
 
@@ -33,12 +41,28 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Method is used for removing previously added @see LocationListListener "LocationListListener" class element.
  * @param listener Сorresponding @see LocationListListener "LocationListListener" class to remove.
  *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListManager_removeLocationListListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListManager_removeLocationListListener
+ *
+ *
  */
 - (void)removeLocationListListener:(nullable id<NCLocationListListener>)listener;
 
 /**
  *
  * @brief Method is used to force reload location list.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListManager_updateLocationList
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListManager_updateLocationList
+ *
  *
  */
 - (void)updateLocationList;
@@ -47,6 +71,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @brief Method is used to get current location list @see LocationInfo "LocationInfo".
  * @return dictionary {location_id -> location_info}
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationListManager_getLocationList
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationListManager_getLocationList
+ *
  *
  */
 - (nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)getLocationList;

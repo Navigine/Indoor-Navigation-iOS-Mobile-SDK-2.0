@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @class NCCircleMapObject;
-@class NCFlatIconMapObject;
+@class NCDottedPolylineMapObject;
 @class NCIconMapObject;
 @class NCPolygonMapObject;
 @class NCPolylineMapObject;
@@ -24,9 +24,9 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_location_view
  *
- * @brief Class is used to interact with the view.
+ * @brief Interface for interacting with the location view.
  *
- * Referenced from: @see LocationView "LocationView",
+ * Referenced from @see LocationView "LocationView".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -34,27 +34,51 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Method is used to switch location view between sublocations (floors).
- * @param id sublocation unique identifier @see Sublocation "Sublocation".
+ * @brief Method is used to switch the location view between sublocations (e.g., floors).
+ * @param id Sublocation unique identifier @see Sublocation "Sublocation".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_setSublocationId
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_setSublocationId
+ *
  *
  */
 - (void)setSublocationId:(int32_t)id;
 
 /**
  *
- * @brief Method is used to convert screen (pixels) coordinates to metrics coordinates.
- * @param point (x,y) point in screen pixels.
- * @return (x,y) point in meters coordinates @see Point "Point".
+ * @brief Converts screen coordinates (pixels) to metrics coordinates (meters).
+ * @param point (x,y) coordinates in screen pixels.
+ * @return (x,y) coordinates in meters @see Point "Point".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_screenPositionToMeters
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_screenPositionToMeters
+ *
  *
  */
 - (nonnull NCPoint *)screenPositionToMeters:(CGPoint)point;
 
 /**
  *
- * @brief Method is used to convert metrics coordinates to screen (pixels) coordinates.
- * @param point (x,y) point in meters coordinates @see Point "Point".
- * @param clipToViewport if true, results that would be outside the viewport are clipped to a position on the edge of the viewport in the direction of the location.
- * @return (x,y) point in screen pixels.
+ * @brief Converts metrics coordinates (meters) to screen coordinates (pixels).
+ * @param point (x,y) coordinates in meters @see Point "Point".
+ * @param clipToViewport If true, coordinates outside the viewport are clipped to the viewport edge.
+ * @return (x,y) coordinates in screen pixels.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_metersToScreenPosition
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_metersToScreenPosition
+ *
  *
  */
 - (CGPoint)metersToScreenPosition:(nonnull NCPoint *)point
@@ -62,175 +86,331 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Method is used to create and add circle map object to the location view.
- * @return CircleMapObject instance @see CircleMapObject "CircleMapObject" if success, null otherwise.
+ * @brief Creates and adds a circle map object to the location view.
+ * @return A CircleMapObject instance @see CircleMapObject "CircleMapObject" if successful, null otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addCircleMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addCircleMapObject
+ *
  *
  */
 - (nullable NCCircleMapObject *)addCircleMapObject;
 
 /**
  *
- * @brief Method is used to remove circle map object from the location view.
- * @param circleMapObject circle map object instance @see CircleMapObject "CircleMapObject".
- * @return true if success, false otherwise.
+ * @brief Removes a circle map object from the location view.
+ * @param circleMapObject The circle map object instance @see CircleMapObject "CircleMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removeCircleMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removeCircleMapObject
+ *
  *
  */
 - (BOOL)removeCircleMapObject:(nullable NCCircleMapObject *)circleMapObject;
 
 /**
  *
- * @brief Method is used to create and add icon map object to the location view.
- * @return IconMapObject instance @see IconMapObject "IconMapObject" if success, null otherwise.
+ * @brief Creates and adds an icon map object to the location view.
+ * @return An IconMapObject instance @see IconMapObject "IconMapObject" if successful, null otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addIconMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addIconMapObject
+ *
  *
  */
 - (nullable NCIconMapObject *)addIconMapObject;
 
 /**
  *
- * @brief Method is used to remove icon map object from the location view.
- * @param iconMapObject icon map object instance @see IconMapObject "IconMapObject".
- * @return true if success, false otherwise.
+ * @brief Removes an icon map object from the location view.
+ * @param iconMapObject The icon map object instance @see IconMapObject "IconMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removeIconMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removeIconMapObject
+ *
  *
  */
 - (BOOL)removeIconMapObject:(nullable NCIconMapObject *)iconMapObject;
 
 /**
  *
- * @brief Method is used to create and add flat icon map object to the location view.
- * @return FlatIconMapObject instance @see FlatIconMapObject "FlatIconMapObject" if success, null otherwise.
+ * @brief Creates and adds a polygon map object to the location view.
+ * @return A PolygonMapObject instance @see PolygonMapObject "PolygonMapObject" if successful, null otherwise.
  *
- */
-- (nullable NCFlatIconMapObject *)addFlatIconMapObject;
-
-/**
  *
- * @brief Method is used to remove flat icon map object from the location view.
- * @param flatIconMapObject flat icon map object instance @see FlatIconMapObject "FlatIconMapObject".
- * @return true if success, false otherwise.
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addPolygonMapObject
  *
- */
-- (BOOL)removeFlatIconMapObject:(nullable NCFlatIconMapObject *)flatIconMapObject;
-
-/**
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addPolygonMapObject
  *
- * @brief Method is used to create and add polygon map object to the location view.
- * @return PolygonMapObject instance @see PolygonMapObject "PolygonMapObject" if success, null otherwise.
  *
  */
 - (nullable NCPolygonMapObject *)addPolygonMapObject;
 
 /**
  *
- * @brief Method is used to remove polygon map object from the location view.
- * @param polygonMapObject polygon map object instance @see PolygonMapObject "PolygonMapObject".
- * @return true if success, false otherwise.
+ * @brief Removes a polygon map object from the location view.
+ * @param polygonMapObject The polygon map object instance @see PolygonMapObject "PolygonMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removePolygonMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removePolygonMapObject
+ *
  *
  */
 - (BOOL)removePolygonMapObject:(nullable NCPolygonMapObject *)polygonMapObject;
 
 /**
  *
- * @brief Method is used to create and add polyline map object to the location view.
- * @return PolylineMapObject instance @see PolylineMapObject "PolylineMapObject" if success, null otherwise.
+ * @brief Creates and adds a polyline map object to the location view.
+ * @return A PolylineMapObject instance @see PolylineMapObject "PolylineMapObject" if successful, null otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addPolylineMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addPolylineMapObject
+ *
  *
  */
 - (nullable NCPolylineMapObject *)addPolylineMapObject;
 
 /**
  *
- * @brief Method is used to remove polyline map object from the location view.
- * @param polylineMapObject polyline map object instance @see PolylineMapObject "PolylineMapObject".
- * @return true if success, false otherwise.
+ * @brief Removes a polyline map object from the location view.
+ * @param polylineMapObject The polyline map object instance @see PolylineMapObject "PolylineMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removePolylineMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removePolylineMapObject
+ *
  *
  */
 - (BOOL)removePolylineMapObject:(nullable NCPolylineMapObject *)polylineMapObject;
 
 /**
  *
- * @brief Method is used to remove all object from the location view.
+ * @brief Creates and adds a polyline points map object to the location view.
+ * @return A DottedPolylineMapObject instance @see DottedPolylineMapObject "DottedPolylineMapObject" if successful, null otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addDottedPolylineMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addDottedPolylineMapObject
+ *
+ *
+ */
+- (nullable NCDottedPolylineMapObject *)addDottedPolylineMapObject;
+
+/**
+ *
+ * @brief Removes a polyline points map object from the location view.
+ * @param dottedPolylineMapObject The polyline points map object instance @see DottedPolylineMapObject "DottedPolylineMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removeDottedPolylineMapObject
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removeDottedPolylineMapObject
+ *
+ *
+ */
+- (BOOL)removeDottedPolylineMapObject:(nullable NCDottedPolylineMapObject *)dottedPolylineMapObject;
+
+/**
+ *
+ * @brief Removes all map objects from the location view.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removeAllMapObjects
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removeAllMapObjects
+ *
  *
  */
 - (void)removeAllMapObjects;
 
 /**
  *
- * @brief Method is used to select a visible map object marked as `interactive` @see MapObject "MapObject".
- * The result will be delivered to the `PickListener` by `onMapObjectPickComplete` @see PickListener "PickListener".
- * @param point position in the view to pick from, in pixels.
+ * @brief Selects a visible, interactive map object at the specified screen position.
+ * @param point Position in screen pixels to pick from.
+ * Results are delivered to the PickListener via onMapObjectPickComplete @see PickListener "PickListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_pickMapObjectAt
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_pickMapObjectAt
+ *
  *
  */
 - (void)pickMapObjectAt:(CGPoint)point;
 
 /**
  *
- * @brief Method is used to select a visible map features, such as venues etc.
- * The result will be delivered to the `PickListener` by `onMapFeaturePickComplete` @see PickListener "PickListener".
- * @param point position in the view to pick from, in pixels.
+ * @brief Selects visible map features (e.g., venues) at the specified screen position.
+ * @param point Position in screen pixels to pick from.
+ * Results are delivered to the PickListener via onMapFeaturePickComplete @see PickListener "PickListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_pickMapFeatureAt
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_pickMapFeatureAt
+ *
  *
  */
 - (void)pickMapFeatureAt:(CGPoint)point;
 
 /**
  *
- * @brief Method is used to add @see PickListener "PickListener" class element which will notify
- * all picking results events.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see PickListener "PickListener" listener class.
+ * @brief Adds a PickListener to receive picking result events.
+ * @param listener The PickListener instance @see PickListener "PickListener".
+ * @note Remove the listener when no longer needed.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_addPickListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_addPickListener
+ *
  *
  */
 - (void)addPickListener:(nullable id<NCPickListener>)listener;
 
 /**
  *
- * @brief Method is used for removing previously added @see PickListener "PickListener" class element.
- * @param listener Сorresponding @see PickListener "PickListener" class to remove.
+ * @brief Removes a previously added PickListener.
+ * @param listener The PickListener instance to remove @see PickListener "PickListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_removePickListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_removePickListener
+ *
  *
  */
 - (void)removePickListener:(nullable id<NCPickListener>)listener;
 
 /**
  *
- * @brief Method is used to add @see InputListener "InputListener" class element which will notify
- * input events.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see InputListener "InputListener" listener class.
+ * @brief Adds an InputListener to receive input events.
+ * @param listener The InputListener instance @see InputListener "InputListener".
+ * @note Remove the listener when no longer needed.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_addInputListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_addInputListener
+ *
  *
  */
 - (void)addInputListener:(nullable id<NCInputListener>)listener;
 
 /**
  *
- * @brief Method is used for removing previously added @see InputListener "InputListener" class element.
- * @param listener Сorresponding @see InputListener "InputListener" class to remove.
+ * @brief Removes a previously added InputListener.
+ * @param listener The InputListener instance to remove @see InputListener "InputListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_removeInputListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_removeInputListener
+ *
  *
  */
 - (void)removeInputListener:(nullable id<NCInputListener>)listener;
 
 /**
  *
- * @brief Method is used to add @see CameraListener "CameraListener" class element which will notify
- * camera movements events.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see CameraListener "CameraListener" listener class.
+ * @brief Adds a CameraListener to receive camera movement events.
+ * @param listener The CameraListener instance @see CameraListener "CameraListener".
+ * @note Remove the listener when no longer needed.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_LocationWindow_addCameraListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_LocationWindow_addCameraListener
+ *
  *
  */
 - (void)addCameraListener:(nullable id<NCCameraListener>)listener;
 
 /**
  *
- * @brief Method is used for removing previously added @see CameraListener "CameraListener" class element.
- * @param listener Сorresponding @see CameraListener "CameraListener" class to remove.
+ * @brief Removes a previously added CameraListener.
+ * @param listener The CameraListener instance to remove @see CameraListener "CameraListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_LocationWindow_removeCameraListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_LocationWindow_removeCameraListener
+ *
  *
  */
 - (void)removeCameraListener:(nullable id<NCCameraListener>)listener;
 
 /**
  *
- * @brief Move the map camera to a new position with an easing animation.
+ * @brief Moves the map camera to a new position with an easing animation.
+ * @param camera The new camera position @see Camera "Camera".
+ * @param duration Animation duration in milliseconds.
+ * @param callback Callback to execute when the animation completes @see CameraCallback "CameraCallback".
  *
- * @param camera The new camera position
- * @param duration The animation duration in milliseconds
- * @param callback completion callback to execute when the animation completes
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_LocationWindow_flyTo
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_LocationWindow_flyTo
+ *
  *
  */
 - (void)flyTo:(nonnull NCCamera *)camera
@@ -239,55 +419,19 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Selects a map feature with the specified featureId.
+ * @brief Moves the map camera to a new position with a smooth pan-and-zoom animation.
+ * @param camera The new camera position @see Camera "Camera".
+ * @param duration Animation duration in milliseconds (-1 for default duration).
+ * @param animationType The type of easing animation @see AnimationType "AnimationType".
+ * @param callback Callback to execute when the animation completes @see CameraCallback "CameraCallback".
  *
- * @param featureId featureId can be extracted from the `mapFeaturePickResult` container by
- * using @see onMapFeaturePickComplete "onMapFeaturePickComplete" callback of @see PickListener "PickListener".
- * @return true if success, false otherwise.
  *
- */
-- (BOOL)selectMapFeature:(nonnull NSString *)featureId;
-
-/**
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_LocationWindow_moveTo
  *
- * @brief Deselects a map feature with the specified featureId.
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_LocationWindow_moveTo
  *
- * @param featureId featureId can be extracted from the `mapFeaturePickResult` container by
- * using @see onMapFeaturePickComplete "onMapFeaturePickComplete" callback of @see PickListener "PickListener".
- * @return true if success, false otherwise.
- *
- */
-- (BOOL)deselectMapFeature:(nonnull NSString *)featureId;
-
-/**
- *
- * @brief Resets the currently selected map features.
- *
- */
-- (void)deselectAllMapFeatures;
-
-/**
- * @cond
- */
-- (void)applyFilter:(nonnull NSString *)filter
-              layer:(nonnull NSString *)layer;
-
-+ (void)setDebugFlag:(NCDebugFlag)flag
-                  on:(BOOL)on;
-
-+ (BOOL)getDebugFlag:(NCDebugFlag)flag;
-
-/**
- * @endcond
- *
- * @brief Move the map camera to a new position with an animation that pans and zooms in a smooth arc.
- *
- * @note The animation duration is calculated based on the distance to the new camera position and the specified speed
- *
- * @param camera The new camera position
- * @param duration Duration of the animation in milliseconds (-1 for default duration)
- * @param animationType The type of easing animation
- * @param callback A callback to execute when the animation completes
  *
  */
 - (void)moveTo:(nonnull NCCamera *)camera
@@ -297,30 +441,140 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  *
- * @brief Parameter is used to change location view zoom.
- * Value indicates count of pixels in 1 meter (default: approx 100m in screen width).
+ * @brief Selects a map feature by its feature ID.
+ * @param featureId The feature ID from the mapFeaturePickResult @see PickListener "PickListener".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_selectMapFeature
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_selectMapFeature
+ *
+ *
+ */
+- (BOOL)selectMapFeature:(nonnull NSString *)featureId;
+
+/**
+ *
+ * @brief Deselects a map feature by its feature ID.
+ * @param featureId The feature ID from the mapFeaturePickResult @see PickListener "PickListener".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_deselectMapFeature
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_deselectMapFeature
+ *
+ *
+ */
+- (BOOL)deselectMapFeature:(nonnull NSString *)featureId;
+
+/**
+ *
+ * @brief Deselects all currently selected map features.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_deselectAllMapFeatures
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_deselectAllMapFeatures
+ *
+ *
+ */
+- (void)deselectAllMapFeatures;
+
+/**
+ *
+ * @brief Applies a filter to a specific map layer.
+ * @param filter The filter stringю
+ * @param layer The map layer to apply the filter to.
+ *
+ */
+- (void)applyFilter:(nonnull NSString *)filter
+              layer:(nonnull NSString *)layer;
+
+/**
+ *
+ * @brief Sets the state of a debug flag.
+ * @param flag The debug flag to set @see DebugFlag "DebugFlag".
+ * @param on Specifies whether the debug flag is enabled (true) or disabled (false).
+ *
+ */
++ (void)setDebugFlag:(NCDebugFlag)flag
+                  on:(BOOL)on;
+
+/**
+ *
+ * @brief Gets the state of a debug flag.
+ * @param flag The debug flag to query @see DebugFlag "DebugFlag".
+ * @return true if the debug flag is enabled, false otherwise.
+ *
+ */
++ (BOOL)getDebugFlag:(NCDebugFlag)flag;
+
+/**
+ *
+ * @brief Specifies the zoom level of the location view, in pixels per meter.
+ * Default: approximately 100 meters across the screen width.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_setZoomFactor
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_setZoomFactor
+ *
  *
  */
 @property (nonatomic) float zoomFactor;
 
 /**
  *
- * @brief Minimum zoomFactor value (ZoomFactor parameter).
+ * @brief Minimum zoom level for the location view (pixels per meter).
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_setMinZoomFactor
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_setMinZoomFactor
+ *
  *
  */
 @property (nonatomic) float minZoomFactor;
 
 /**
  *
- * @brief Maximum zoomFactor value (ZoomFactor parameter).
+ * @brief Maximum zoom level for the location view (pixels per meter).
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_setMaxZoomFactor
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_setMaxZoomFactor
+ *
  *
  */
 @property (nonatomic) float maxZoomFactor;
 
 /**
  *
- * @brief Parameter is used to enable/disable sublocation content sticking to screen borders.
- * If true image sticking to screen bounds, if false sticking to center of screen (Default: true).
+ * @brief Specifies whether sublocation content sticks to screen borders.
+ * If true, content sticks to screen bounds; if false, content is centered. Default: true.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setStickToBorder
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setStickToBorder
+ *
  *
  */
 @property (nonatomic) BOOL stickToBorder;
@@ -328,48 +582,106 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  *
  * @brief Current camera position in meters.
+ * @see Camera "Camera".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCameraExample.swift swift_LocationWindow_setCamera
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCameraExample.m objc_LocationWindow_setCamera
+ *
  *
  */
 @property (nonatomic, nonnull) NCCamera * camera;
 
 /**
  *
- * @brief Parameter is used to enable/disable rotation gestures, such as rotation with two fingers.
+ * @brief Specifies whether rotation gestures (e.g., two-finger rotation) are enabled.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setRotateGestureEnabled
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setRotateGestureEnabled
+ *
  *
  */
 @property (nonatomic) BOOL rotateGestureEnabled;
 
 /**
  *
- * @brief Parameter is used to enable/disable tilt gestures, such as parallel pan with two fingers.
+ * @brief Specifies whether tilt gestures (e.g., two-finger parallel pan) are enabled.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setTiltGesturesEnabled
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setTiltGesturesEnabled
+ *
  *
  */
 @property (nonatomic) BOOL tiltGesturesEnabled;
 
 /**
  *
- * @brief Parameter is used to enable/disable scroll gestures, such as the pan gesture.
+ * @brief Specifies whether scroll gestures (e.g., pan gesture) are enabled.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setScrollGesturesEnabled
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setScrollGesturesEnabled
+ *
  *
  */
 @property (nonatomic) BOOL scrollGesturesEnabled;
 
 /**
  *
- * @brief Parameter is used to enable/disable zoom gestures, such as the pinch with two fingers.
+ * @brief Specifies whether zoom gestures (e.g., two-finger pinch) are enabled.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setZoomGesturesEnabled
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setZoomGesturesEnabled
+ *
  *
  */
 @property (nonatomic) BOOL zoomGesturesEnabled;
 
 /**
  *
- * @brief Radius to use when picking features on the map. The default radius is 0.5 dp (density-independent pixels).
+ * @brief Radius for picking features on the map, in density-independent pixels.
+ * Default: 0.5 dp.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowInteractionExample.swift swift_LocationWindow_setPickRadius
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowInteractionExample.m objc_LocationWindow_setPickRadius
+ *
  *
  */
 @property (nonatomic) float pickRadius;
 
 /**
  *
- * @brief List of currently selected map features.
+ * @brief List of currently selected map feature IDs.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_getSelectedMapFeatures
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_getSelectedMapFeatures
+ *
  *
  */
 @property (nonatomic, nonnull, readonly) NSArray<NSString *> * selectedMapFeatures;

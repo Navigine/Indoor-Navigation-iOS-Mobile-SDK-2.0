@@ -11,6 +11,14 @@
  *
  * Referenced from @see RouteEvent "RouteEvent".
  *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RouteEventType_values
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RouteEventType_values
+ *
+ *
  */
 typedef NS_ENUM(NSInteger, NCRouteEventType)
 {

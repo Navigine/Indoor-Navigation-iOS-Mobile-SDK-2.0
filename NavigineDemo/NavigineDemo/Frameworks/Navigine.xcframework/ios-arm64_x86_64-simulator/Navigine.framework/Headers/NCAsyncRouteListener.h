@@ -1,5 +1,6 @@
 #import "NCExport.h"
 #import "NCLocationPoint.h"
+#import "NCRouteStatus.h"
 #import <Foundation/Foundation.h>
 @class NCRoutePath;
 
@@ -24,10 +25,20 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when new route was built or
  *     old route was rebuilt after missing previouse one.
  *
- * @param currentPath @see RoutePath "RoutePath" from current postion to destination point
+ * @param status @see RouteStatus "RouteStatus" indicating the current router state
+ * @param currentPath @see RoutePath "RoutePath" from current postion to destination point (null if status is not new_route)
+ *
+ *
+ * Swift code snippet:
+ * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteChanged
+ *
+ * Objective C code snippet:
+ * @snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteChanged
+ *
  *
  */
-- (void)onRouteChanged:(nullable NCRoutePath *)currentPath;
+- (void)onRouteChanged:(NCRouteStatus)status
+           currentPath:(nullable NCRoutePath *)currentPath;
 
 /**
  * @brief Called when user has progressed along the route
@@ -35,6 +46,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  * @param distance distance from the beginning or the route (unit meters)
  * @param point current location point on the route
+ *
+ *
+ * Swift code snippet:
+ * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteAdvanced
+ *
+ * Objective C code snippet:
+ * @snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteAdvanced
+ *
  *
  */
 - (void)onRouteAdvanced:(float)distance

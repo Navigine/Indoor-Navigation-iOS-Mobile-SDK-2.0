@@ -24,6 +24,14 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Called when new route has been calculated
  * @param paths calculated list of @see RoutePath "RoutePath"s to added targets.
  *
+ *
+ * Swift code snippet:
+ * @snippet RouteManagerExample.swift swift_RouteListener_onPathsUpdated
+ *
+ * Objective C code snippet:
+ * @snippet RouteManagerExample.m objc_RouteListener_onPathsUpdated
+ *
+ *
  */
 - (void)onPathsUpdated:(nonnull NSArray<NCRoutePath *> *)paths;
 

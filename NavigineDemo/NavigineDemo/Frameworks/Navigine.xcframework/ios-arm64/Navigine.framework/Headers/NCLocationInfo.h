@@ -33,16 +33,43 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @brief Unique location identifier.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationInfo_getId
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationInfo_getId
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
  * @brief Current location version.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationInfo_getVersion
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationInfo_getVersion
+ *
+ *
  */
 @property (nonatomic, readonly) int32_t version;
 
 /**
  * @brief location name.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationListManagerExample.swift swift_LocationInfo_getName
+ *
+ * Objective C code snippet:
+ * @snippet LocationListManagerExample.m objc_LocationInfo_getName
+ *
+ *
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 

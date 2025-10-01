@@ -1,0 +1,55 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_body:
+        description: 'Release description'
+        required: false
+        default: ''
+        type: multiline
+
+jobs:
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Read version from file
+        id: version
+        run: echo "current_version=$(cat VERSION)" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.current_version }}
+          release_name: Release ${{ steps.version.outputs.current_version }}
+          body: ${{ github.event.inputs.release_body || format('v{0}', steps.version.outputs.current_version) }}
+          draft: false
+          prerelease: false
+
+  publish-cocoapods:
+    name: Publish to CocoaPods
+    needs: create-release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install CocoaPods
+        run: |
+          gem install cocoapods
+
+      - name: Lint podspec
+        run: pod lib lint Navigine.podspec --allow-warnings
+
+      - name: Publish to CocoaPods
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          pod trunk push Navigine.podspec --allow-warnings

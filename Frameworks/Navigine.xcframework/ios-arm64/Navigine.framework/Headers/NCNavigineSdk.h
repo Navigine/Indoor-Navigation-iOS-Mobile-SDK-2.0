@@ -12,6 +12,7 @@
 @class NCNotificationManager;
 @class NCResourceManager;
 @class NCRouteManager;
+@class NCStorageManager;
 @class NCView;
 @class NCZoneManager;
 
@@ -290,5 +291,20 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (nullable NCLocationListManager *)getLocationListManager;
+
+/**
+ * Returns a manager that allows to manage user storages
+ * @return Storage manager instance @see StorageManager "StorageManager"
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getStorageManager
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getStorageManager
+ *
+ *
+ */
+- (nullable NCStorageManager *)getStorageManager;
 
 @end

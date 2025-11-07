@@ -29,7 +29,7 @@ jobs:
         with:
           tag_name: v${{ steps.version.outputs.current_version }}
           release_name: Release ${{ steps.version.outputs.current_version }}
-          body: ${{ github.event.inputs.release_body || format('v{0}', steps.version.outputs.current_version) }}
+          body: ${{ github.event.inputs.release_body || format('v.{0}', steps.version.outputs.current_version) }}
           draft: false
           prerelease: false
 

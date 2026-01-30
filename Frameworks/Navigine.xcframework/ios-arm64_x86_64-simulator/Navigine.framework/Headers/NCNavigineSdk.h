@@ -7,12 +7,14 @@
 @class NCLocationManager;
 @class NCLocationWindow;
 @class NCMeasurementManager;
+@class NCMqttSession;
 @class NCNavigationManager;
 @class NCNavigineSdk;
 @class NCNotificationManager;
 @class NCResourceManager;
 @class NCRouteManager;
 @class NCStorageManager;
+@class NCUserLocationLayer;
 @class NCView;
 @class NCZoneManager;
 
@@ -293,6 +295,23 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (nullable NCLocationListManager *)getLocationListManager;
 
 /**
+ *
+ * @brief @see MqttSession "MqttSession" instance, which could be used for working with MQTT sessions.
+ * @param navigationManager @see NavigationManager "NavigationManager" instance
+ * @return @see MqttSession "MqttSession" instance
+ *
+ *
+ * Swift code snippet:
+ * @snippet NavigineSdkExample.swift swift_NavigineSdk_getMqttSession
+ *
+ * Objective C code snippet:
+ * @snippet NavigineSdkExample.m objc_NavigineSdk_getMqttSession
+ *
+ *
+ */
+- (nullable NCMqttSession *)getMqttSession:(nullable NCNavigationManager *)navigationManager;
+
+/**
  * Returns a manager that allows to manage user storages
  * @return Storage manager instance @see StorageManager "StorageManager"
  *
@@ -306,5 +325,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (nullable NCStorageManager *)getStorageManager;
+
+/**
+ *
+ * Create layer with the user location icon.
+ *
+ */
+- (nullable NCUserLocationLayer *)getUserLocationLayer:(nullable NCLocationWindow *)locationWindow;
 
 @end

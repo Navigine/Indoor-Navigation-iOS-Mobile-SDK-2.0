@@ -1,4 +1,5 @@
 #import "NCAnimationType.h"
+#import "NCBoundingBox.h"
 #import "NCCamera.h"
 #import "NCCameraCallback.h"
 #import "NCDebugFlag.h"
@@ -14,6 +15,7 @@
 @protocol NCCameraListener;
 @protocol NCInputListener;
 @protocol NCPickListener;
+@protocol NCSublocationChangeListener;
 
 
 /**
@@ -47,6 +49,37 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (void)setSublocationId:(int32_t)id;
+
+/**
+ *
+ * @brief Returns current sublocation ID if set, otherwise null.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_getSublocationId
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_getSublocationId
+ *
+ *
+ */
+- (nullable NSNumber *)getSublocationId;
+
+/**
+ *
+ * @brief Calculates camera that fits provided bounding box.
+ * @param boundingBox Metrics bounding box to enclose.
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_getEnclosingCamera
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_getEnclosingCamera
+ *
+ *
+ */
+- (nonnull NCCamera *)getEnclosingCamera:(nonnull NCBoundingBox *)boundingBox;
 
 /**
  *
@@ -396,6 +429,38 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (void)removeCameraListener:(nullable id<NCCameraListener>)listener;
+
+/**
+ *
+ * @brief Adds listener for sublocation change events.
+ * @param listener Sublocation change listener @see SublocationChangeListener "SublocationChangeListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_addSublocationChangeListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_addSublocationChangeListener
+ *
+ *
+ */
+- (void)addSublocationChangeListener:(nullable id<NCSublocationChangeListener>)listener;
+
+/**
+ *
+ * @brief Removes previously added sublocation change listener.
+ * @param listener Listener instance to remove @see SublocationChangeListener "SublocationChangeListener".
+ *
+ *
+ * Swift code snippet:
+ * @snippet LocationWindowCommonExample.swift swift_LocationWindow_removeSublocationChangeListener
+ *
+ * Objective C code snippet:
+ * @snippet LocationWindowCommonExample.m objc_LocationWindow_removeSublocationChangeListener
+ *
+ *
+ */
+- (void)removeSublocationChangeListener:(nullable id<NCSublocationChangeListener>)listener;
 
 /**
  *

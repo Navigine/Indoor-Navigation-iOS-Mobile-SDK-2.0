@@ -23,32 +23,32 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCMeasurementListener <NSObject>
 
 /**
- *
  * @brief Called when new sensor measurements are detected.
  * @param sensors A map of sensor types to their corresponding @see SensorMeasurement "SensorMeasurement" values.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementListener_onSensorMeasurementDetected
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementListener_onSensorMeasurementDetected
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementListener_onSensorMeasurementDetected
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementListener_onSensorMeasurementDetected
  *
  *
  */
 - (void)onSensorMeasurementDetected:(nonnull NSDictionary<NSNumber *, NCSensorMeasurement *> *)sensors;
 
 /**
- *
  * @brief Called when new signal measurements are detected.
  * @param signals A map of signal identifiers to their corresponding @see SignalMeasurement "SignalMeasurement" values.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementListener_onSignalMeasurementDetected
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementListener_onSignalMeasurementDetected
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementListener_onSignalMeasurementDetected
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementListener_onSignalMeasurementDetected
  *
  *
  */

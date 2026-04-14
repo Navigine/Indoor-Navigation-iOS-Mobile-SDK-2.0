@@ -34,11 +34,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return platform image.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getImage
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getImage
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getImage
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getImage
  *
  *
  */
@@ -51,11 +52,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return point in metrics coordinates @see LocationPoint "LocationPoint".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_globalToLocal
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_globalToLocal
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_globalToLocal
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_globalToLocal
  *
  *
  */
@@ -68,11 +70,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return point in WGS84 coordinates @see GlobalPoint "GlobalPoint".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_localToGlobal
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_localToGlobal
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_localToGlobal
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_localToGlobal
  *
  *
  */
@@ -85,11 +88,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return found graph or `null` @see Graph "Graph".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getGraph
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getGraph
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getGraph
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getGraph
  *
  *
  */
@@ -102,11 +106,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return found venue object or `null` @see Venue "Venue".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getVenueById
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getVenueById
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getVenueById
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getVenueById
  *
  *
  */
@@ -119,11 +124,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return found zone object or `null` @see Zone "Zone".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getZoneById
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getZoneById
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getZoneById
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getZoneById
  *
  *
  */
@@ -133,11 +139,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief sublocation's identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getId
  *
  *
  */
@@ -146,11 +153,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief location's identifier to which the sublocation belongs.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getLocation
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getLocation
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getLocation
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getLocation
  *
  *
  */
@@ -159,11 +168,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's name.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getName
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getName
  *
  *
  */
@@ -172,11 +183,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's width in meters.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getWidth
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getWidth
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getWidth
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getWidth
  *
  *
  */
@@ -185,11 +198,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's height in meters.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getHeight
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getHeight
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getHeight
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getHeight
  *
  *
  */
@@ -198,11 +213,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's altitude in meters if specified.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getAltitude
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getAltitude
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getAltitude
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getAltitude
  *
  *
  */
@@ -211,11 +228,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's azimuth in degrees clockwise.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getAzimuth
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getAzimuth
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getAzimuth
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getAzimuth
  *
  *
  */
@@ -224,11 +243,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's center point in WGS84 coordinates @see GlobalPoint "GlobalPoint".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getOriginPoint
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getOriginPoint
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getOriginPoint
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getOriginPoint
  *
  *
  */
@@ -237,11 +258,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's levelId.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getLevelId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getLevelId
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getLevelId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getLevelId
  *
  *
  */
@@ -250,24 +273,43 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief sublocation's externalId.
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getExternalId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getExternalId
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getExternalId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getExternalId
  *
  *
  */
 @property (nonatomic, nonnull, readonly) NSString * externalId;
 
 /**
+ * @brief sublocation's building name (e.g. "Outdoor" for overview plan).
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getBuildingName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getBuildingName
+ *
+ *
+ */
+@property (nonatomic, nonnull, readonly) NSString * buildingName;
+
+/**
  * @brief List of beacons, attached to this sublocation @see Beacon "Beacon".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getBeacons
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getBeacons
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getBeacons
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getBeacons
  *
  *
  */
@@ -276,11 +318,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief List of eddystones, attached to this sublocation @see Eddystone "Eddystone".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getEddystones
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getEddystones
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getEddystones
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getEddystones
  *
  *
  */
@@ -289,11 +333,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief List of wifis, attached to this sublocation @see Wifi "Wifi".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getWifis
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getWifis
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getWifis
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getWifis
  *
  *
  */
@@ -306,13 +352,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * @endcond
+ *
  * @brief List of venues, attached to this sublocation @see Venue "Venue".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getVenues
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getVenues
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getVenues
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getVenues
  *
  *
  */
@@ -321,11 +370,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief List of zones, attached to this sublocation @see Zone "Zone".
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Sublocation_getZones
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Sublocation_getZones
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Sublocation_getZones
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Sublocation_getZones
  *
  *
  */

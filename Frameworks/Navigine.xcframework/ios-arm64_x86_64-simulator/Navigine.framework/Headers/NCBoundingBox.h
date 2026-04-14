@@ -13,11 +13,12 @@
  * @brief Axis-aligned bounding box defined by two corner points.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_BoundingBox_constructor
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_BoundingBox_constructor
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_BoundingBox_constructor
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_BoundingBox_constructor
  *
  *
  */
@@ -40,11 +41,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Lower-left corner of the bounding box.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_BoundingBox_getBottomLeft
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_BoundingBox_getBottomLeft
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_BoundingBox_getBottomLeft
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_BoundingBox_getBottomLeft
  *
  *
  */
@@ -54,11 +56,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Upper-right corner of the bounding box.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_BoundingBox_getTopRight
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_BoundingBox_getTopRight
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_BoundingBox_getTopRight
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_BoundingBox_getTopRight
  *
  *
  */

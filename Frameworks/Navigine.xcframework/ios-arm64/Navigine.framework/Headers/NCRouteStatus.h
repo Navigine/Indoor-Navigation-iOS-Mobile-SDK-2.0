@@ -8,16 +8,18 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_secondary_classes
  *
+ *
  * @brief Enum describing possible router states.
  *
  * Referenced from @see AsyncRouteListener "AsyncRouteListener".
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_RouteStatus_values
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_RouteStatus_values
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_RouteStatus_values
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_RouteStatus_values
  *
  *
  */

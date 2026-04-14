@@ -21,17 +21,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPickListener <NSObject>
 
 /**
- *
  * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapObjectAt` method
  * @param mapObjectPickResult @see MapObjectPickResult "MapObjectPickResult" instance or `nil` if no objects was found.
  * @param screenPosition position where the object was picked in pixels.
  *
  *
- * Swift code snippet:
- * @snippet LocationWindowInteractionExample.swift swift_PickListener_onMapObjectPickComplete
  *
- * Objective C code snippet:
- * @snippet LocationWindowInteractionExample.m objc_PickListener_onMapObjectPickComplete
+ *Swift code snippet:
+ *@snippet LocationWindowInteractionExample.swift swift_PickListener_onMapObjectPickComplete
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowInteractionExample.m objc_PickListener_onMapObjectPickComplete
  *
  *
  */
@@ -39,17 +39,17 @@ DEFAULT_EXPORT_ATTRIBUTE
                  screenPosition:(CGPoint)screenPosition;
 
 /**
- *
  * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapFeatureAt`
  * @param mapFeaturePickResult dictionary of properties of the picked feature or `nil` if no objects was found.
  * @param screenPosition position where the object was picked in pixels.
  *
  *
- * Swift code snippet:
- * @snippet LocationWindowInteractionExample.swift swift_PickListener_onMapFeaturePickComplete
  *
- * Objective C code snippet:
- * @snippet LocationWindowInteractionExample.m objc_PickListener_onMapFeaturePickComplete
+ *Swift code snippet:
+ *@snippet LocationWindowInteractionExample.swift swift_PickListener_onMapFeaturePickComplete
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowInteractionExample.m objc_PickListener_onMapFeaturePickComplete
  *
  *
  */

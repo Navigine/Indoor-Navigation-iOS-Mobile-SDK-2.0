@@ -22,11 +22,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return true if a value is stored under the key (regardless of type).
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_contains
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_contains
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_contains
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_contains
  *
  *
  */
@@ -37,11 +38,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return List of keys. Order is implementation-defined (not guaranteed).
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getKeys
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getKeys
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getKeys
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getKeys
  *
  *
  */
@@ -55,11 +57,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored int32 or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getInt
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getInt
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getInt
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getInt
  *
  *
  */
@@ -74,11 +77,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored int64 or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getLong
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getLong
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getLong
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getLong
  *
  *
  */
@@ -93,11 +97,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored bool or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getBool
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getBool
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getBool
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getBool
  *
  *
  */
@@ -112,11 +117,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored float or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getFloat
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getFloat
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getFloat
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getFloat
  *
  *
  */
@@ -131,11 +137,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored double or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getDouble
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getDouble
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getDouble
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getDouble
  *
  *
  */
@@ -150,11 +157,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Stored string or defaultValue.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_getString
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_getString
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_getString
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_getString
  *
  *
  */
@@ -167,11 +175,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putInt
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putInt
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putInt
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putInt
  *
  *
  */
@@ -184,11 +193,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putLong
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putLong
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putLong
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putLong
  *
  *
  */
@@ -201,11 +211,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putBool
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putBool
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putBool
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putBool
  *
  *
  */
@@ -218,11 +229,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putFloat
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putFloat
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putFloat
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putFloat
  *
  *
  */
@@ -235,11 +247,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putDouble
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putDouble
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putDouble
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putDouble
  *
  *
  */
@@ -252,11 +265,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param value Value to store.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_putString
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_putString
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_putString
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_putString
  *
  *
  */
@@ -268,11 +282,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param key Key to remove.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_remove
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_remove
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_remove
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_remove
  *
  *
  */
@@ -282,11 +297,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * Removes all entries from the storage.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_KeyValueStorage_clear
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_KeyValueStorage_clear
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_KeyValueStorage_clear
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_KeyValueStorage_clear
  *
  *
  */

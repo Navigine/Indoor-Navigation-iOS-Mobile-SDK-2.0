@@ -24,11 +24,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief List of connected vertexes @see GraphVertex "GraphVertex"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Graph_getVertices
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Graph_getVertices
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Graph_getVertices
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Graph_getVertices
  *
  *
  */
@@ -37,11 +38,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @brief List of edges that connected vertexes @see GraphEdge "GraphEdge"
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Graph_getEdges
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Graph_getEdges
+ *
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Graph_getEdges
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Graph_getEdges
  *
  *
  */

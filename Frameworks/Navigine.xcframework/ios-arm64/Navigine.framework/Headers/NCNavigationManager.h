@@ -20,18 +20,18 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigationManager : NSObject
 
 /**
- *
  * @brief Method is used to add @see PositionListener "PositionListener" class element
  * which will notify about new user position.
  * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see PositionListener "PositionListener" class.
+ * @param listener Corresponding @see PositionListener "PositionListener" class.
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_NavigationManager_addPositionListener
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_NavigationManager_addPositionListener
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_NavigationManager_addPositionListener
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_NavigationManager_addPositionListener
  *
  *
  */
@@ -53,15 +53,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @endcond
  *
+ *
  * @brief Method is used for removing previously added @see PositionListener "PositionListener" class element.
- * @param listener Сorresponding @see PositionListener "PositionListener" class to remove.
+ * @param listener Corresponding @see PositionListener "PositionListener" class to remove.
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_NavigationManager_removePositionListener
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_NavigationManager_removePositionListener
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_NavigationManager_removePositionListener
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_NavigationManager_removePositionListener
  *
  *
  */

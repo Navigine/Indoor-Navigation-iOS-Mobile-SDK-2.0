@@ -42,11 +42,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Handled zone event type.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getType
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getType
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getType
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getType
  *
  *
  */
@@ -56,11 +57,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getLocationId
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getLocationId
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getLocationId
  *
  *
  */
@@ -70,11 +72,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's sublocationId identifier.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getSublocationId
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getSublocationId
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getSublocationId
  *
  *
  */
@@ -84,11 +87,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's identifier.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getId
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getId
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getId
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getId
  *
  *
  */
@@ -98,11 +102,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's name.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getName
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getName
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getName
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getName
  *
  *
  */
@@ -112,11 +117,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's alias.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneEvent_getAlias
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneEvent_getAlias
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneEvent_getAlias
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneEvent_getAlias
  *
  *
  */

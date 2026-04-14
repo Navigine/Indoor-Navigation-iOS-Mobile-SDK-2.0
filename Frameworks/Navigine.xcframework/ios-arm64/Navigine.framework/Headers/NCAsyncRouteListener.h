@@ -29,11 +29,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param currentPath @see RoutePath "RoutePath" from current postion to destination point (null if status is not new_route)
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteChanged
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteChanged
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteChanged
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteChanged
  *
  *
  */
@@ -48,11 +49,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param point current location point on the route
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteAdvanced
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteAdvanced
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_AsyncRouteListener_onRouteAdvanced
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_AsyncRouteListener_onRouteAdvanced
  *
  *
  */

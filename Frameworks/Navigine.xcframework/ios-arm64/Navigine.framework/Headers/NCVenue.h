@@ -22,11 +22,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getPoint
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getPoint
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getPoint
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getPoint
  *
  *
  */
@@ -36,11 +37,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getLocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getLocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getLocationId
  *
  *
  */
@@ -50,11 +52,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's sublocation identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getSublocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getSublocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getSublocationId
  *
  *
  */
@@ -64,11 +67,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getId
  *
  *
  */
@@ -78,11 +82,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getName
  *
  *
  */
@@ -92,11 +97,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's phone.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getPhone
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getPhone
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getPhone
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getPhone
  *
  *
  */
@@ -106,11 +112,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's description.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getDescript
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getDescript
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getDescript
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getDescript
  *
  *
  */
@@ -120,11 +127,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's alias.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getAlias
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getAlias
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getAlias
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getAlias
  *
  *
  */
@@ -134,11 +142,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's category unique identifier @see Category "Category"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getCategoryId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getCategoryId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getCategoryId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getCategoryId
  *
  *
  */
@@ -148,11 +157,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief venue's image url if specified.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Venue_getImageUrl
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Venue_getImageUrl
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Venue_getImageUrl
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Venue_getImageUrl
  *
  *
  */

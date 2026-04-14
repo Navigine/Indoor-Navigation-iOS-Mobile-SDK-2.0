@@ -20,32 +20,32 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPositionListener <NSObject>
 
 /**
- *
  * @brief Called when new position has been calculated
  * @param position current user @see Position "Position".
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_PositionListener_onPositionUpdated
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_PositionListener_onPositionUpdated
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_PositionListener_onPositionUpdated
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_PositionListener_onPositionUpdated
  *
  *
  */
 - (void)onPositionUpdated:(nonnull NCPosition *)position;
 
 /**
- *
  * @brief Called if unable to calculate user's position
  * @param error handled error.
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_PositionListener_onPositionError
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_PositionListener_onPositionError
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_PositionListener_onPositionError
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_PositionListener_onPositionError
  *
  *
  */

@@ -27,11 +27,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return distance in meters
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_distanceBetweenGlobalPoints
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_distanceBetweenGlobalPoints
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_distanceBetweenGlobalPoints
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_distanceBetweenGlobalPoints
  *
  *
  */
@@ -45,11 +46,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return distance in meters
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_distanceBetweenPoints
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_distanceBetweenPoints
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_distanceBetweenPoints
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_distanceBetweenPoints
  *
  *
  */
@@ -62,11 +64,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return length in meters
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentLength
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_segmentLength
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentLength
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_segmentLength
  *
  *
  */
@@ -78,11 +81,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return area in meters
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonArea
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_polygonArea
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonArea
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_polygonArea
  *
  *
  */
@@ -94,11 +98,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return center point @see Point "Point"
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonCenter
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_polygonCenter
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonCenter
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_polygonCenter
  *
  *
  */
@@ -111,11 +116,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return contains or not
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonContainsPoint
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_polygonContainsPoint
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_polygonContainsPoint
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_polygonContainsPoint
  *
  *
  */
@@ -129,11 +135,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return distance in meters
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentPointDistance
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_segmentPointDistance
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentPointDistance
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_segmentPointDistance
  *
  *
  */
@@ -147,11 +154,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return intersects or not
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentIntersectsSegment
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_segmentIntersectsSegment
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentIntersectsSegment
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_segmentIntersectsSegment
  *
  *
  */
@@ -165,11 +173,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return intersection point @see Point "Point"
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentIntersectionSegment
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_segmentIntersectionSegment
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_segmentIntersectionSegment
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_segmentIntersectionSegment
  *
  *
  */
@@ -183,11 +192,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return division ratio
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_divisionRatioBySegment
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_divisionRatioBySegment
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_divisionRatioBySegment
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_divisionRatioBySegment
  *
  *
  */
@@ -201,11 +211,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return ratio point @see Point "Point"
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_getRatioPoint
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_getRatioPoint
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_getRatioPoint
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_getRatioPoint
  *
  *
  */
@@ -220,11 +231,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return division ratio
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GeometryUtils_getProjectionRatio
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GeometryUtils_getProjectionRatio
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GeometryUtils_getProjectionRatio
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GeometryUtils_getProjectionRatio
  *
  *
  */

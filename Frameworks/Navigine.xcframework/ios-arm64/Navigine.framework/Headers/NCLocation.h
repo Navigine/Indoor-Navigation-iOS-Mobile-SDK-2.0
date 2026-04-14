@@ -30,11 +30,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return @see ElevationGraph "ElevationGraph" of the current location with the specified tag, if it exists. If elevation graph with the specified tag doesn't exist, function returns null.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getElevationGraph
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getElevationGraph
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getElevationGraph
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getElevationGraph
  *
  *
  */
@@ -45,11 +46,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Array of existing tags
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getGraphTags
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getGraphTags
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getGraphTags
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getGraphTags
  *
  *
  */
@@ -61,11 +63,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return The @see Sublocation "Sublocation" of the current location with the specified identifier, if it exists. If sublocation with the specified identifier doesn't exist, function returns null.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getSublocationById
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getSublocationById
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getSublocationById
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getSublocationById
  *
  *
  */
@@ -77,11 +80,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return @see Category "Category" of the current location with the specified identifier, if it exists. If category with the specified identifier doesn't exist, function returns null.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getCategoryById
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getCategoryById
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getCategoryById
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getCategoryById
  *
  *
  */
@@ -91,11 +95,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief location's identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getId
  *
  *
  */
@@ -105,11 +110,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief location's version.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getVersion
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getVersion
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getVersion
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getVersion
  *
  *
  */
@@ -119,11 +125,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief location name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getName
  *
  *
  */
@@ -133,11 +140,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief location's description.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getDescript
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getDescript
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getDescript
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getDescript
  *
  *
  */
@@ -147,11 +155,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief List of venue categories defined for the location @see Category "Category".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getCategories
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getCategories
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getCategories
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getCategories
  *
  *
  */
@@ -161,11 +170,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief List of sublocations @see Sublocation "Sublocation"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getSublocations
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getSublocations
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getSublocations
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getSublocations
  *
  *
  */
@@ -175,11 +185,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Flag indicates if location has been modified by user or not
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Location_getModified
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Location_getModified
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Location_getModified
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Location_getModified
  *
  *
  */

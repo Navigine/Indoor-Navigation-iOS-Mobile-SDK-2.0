@@ -36,11 +36,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Type of the sensor
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SensorMeasurement_getType
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SensorMeasurement_getType
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getType
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getType
  *
  *
  */
@@ -50,11 +51,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief 3D vector containing sensor measurement values
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SensorMeasurement_getValues
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SensorMeasurement_getValues
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getValues
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getValues
  *
  *
  */
@@ -64,11 +66,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Timestamp of the measurement in milliseconds
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SensorMeasurement_getTime
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SensorMeasurement_getTime
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getTime
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getTime
  *
  *
  */

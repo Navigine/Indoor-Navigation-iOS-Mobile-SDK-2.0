@@ -24,11 +24,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getPoint
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getPoint
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getPoint
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getPoint
  *
  *
  */
@@ -38,11 +39,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getLocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getLocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getLocationId
  *
  *
  */
@@ -52,11 +54,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's sublocation identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getSublocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getSublocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getSublocationId
  *
  *
  */
@@ -66,11 +69,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getName
  *
  *
  */
@@ -80,11 +84,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's major. Values [1-65535]
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getMajor
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getMajor
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getMajor
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getMajor
  *
  *
  */
@@ -94,11 +99,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's minor. Values [1-65535]
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getMinor
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getMinor
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getMinor
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getMinor
  *
  *
  */
@@ -108,11 +114,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's uuid. Format [XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX]
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getUuid
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getUuid
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getUuid
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getUuid
  *
  *
  */
@@ -122,11 +129,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief beacon's power.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getPower
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getPower
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getPower
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getPower
  *
  *
  */
@@ -136,11 +144,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief iBeacon status. @see TransmitterStatus "TransmitterStatus"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Beacon_getStatus
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Beacon_getStatus
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Beacon_getStatus
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Beacon_getStatus
  *
  *
  */

@@ -38,4 +38,16 @@ typedef NS_ENUM(NSInteger, NCSensorType)
      * @brief Orientation sensor type
      */
     NCSensorTypeORIENTATION,
+    /**
+     * @brief NMEA GNSS sentence metadata. @see SensorMeasurement "SensorMeasurement" values: x = sentence number, y = satellite count, z unused.
+     */
+    NCSensorTypeNMEA,
+    /**
+     * @brief Odometer / wheel speed. Values: x = speed (m/s), y = accuracy if present else 0, z unused.
+     */
+    NCSensorTypeODOMETER,
+    /**
+     * @brief Raw GNSS vectors (pseudo-ranges, etc.) — summarized for the API. Values: x = pseudoRanges count, y = pseudoRangeRates count, z = satellitesPositions count.
+     */
+    NCSensorTypeGNSS,
 };

@@ -20,16 +20,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCZoneListener <NSObject>
 
 /**
- *
  * @brief Called when user handle particular zone event
  * @param zoneEvent handled @see ZoneEvent "ZoneEvent".
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneListener_onZoneEvent
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneListener_onZoneEvent
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneListener_onZoneEvent
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneListener_onZoneEvent
  *
  *
  */

@@ -1,5 +1,9 @@
 #import "NCExport.h"
 #import "NCRouteEventType.h"
+#import "NCTargetReachedEvent.h"
+#import "NCTransitionEntryEvent.h"
+#import "NCTransitionExitEvent.h"
+#import "NCTurnEvent.h"
 #import <Foundation/Foundation.h>
 
 /**
@@ -10,9 +14,9 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_secondary_classes
  *
- * @brief Class is used for storing the route path events.
+ * @brief Class storing one route event payload.
  *
- * Referenced from: @see RoutePath "RoutePath".
+ * Referenced from @see RoutePath "RoutePath", @see RouteNode "RouteNode".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -22,57 +26,93 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Default constructor for class NCRouteEvent 
  */
 - (nonnull instancetype)initWithType:(NCRouteEventType)type
-                               value:(int32_t)value
-                            distance:(float)distance;
+                           turnEvent:(nullable NCTurnEvent *)turnEvent
+                transitionEntryEvent:(nullable NCTransitionEntryEvent *)transitionEntryEvent
+                 transitionExitEvent:(nullable NCTransitionExitEvent *)transitionExitEvent
+                  targetReachedEvent:(nullable NCTargetReachedEvent *)targetReachedEvent;
 
 /** 
  * @brief Factory method for class NCRouteEvent 
  */
 + (nonnull instancetype)routeEventWithType:(NCRouteEventType)type
-                                     value:(int32_t)value
-                                  distance:(float)distance;
+                                 turnEvent:(nullable NCTurnEvent *)turnEvent
+                      transitionEntryEvent:(nullable NCTransitionEntryEvent *)transitionEntryEvent
+                       transitionExitEvent:(nullable NCTransitionExitEvent *)transitionExitEvent
+                        targetReachedEvent:(nullable NCTargetReachedEvent *)targetReachedEvent;
 
 /**
- * @brief Incoming event type @see RouteEventType "RouteEventType"
+ * @brief Active event variant discriminator.
  *
  *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getType
  *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getType
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteEvent_getType
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteEvent_getType
  *
  *
  */
 @property (nonatomic, readonly) NCRouteEventType type;
 
 /**
- * @brief Indicates angle in degrees for TURN_LEFT/TURN_RIGHT types @see RouteEventType "RouteEventType"
- * and target sublocation unique identifier if type is TRANSITION @see Sublocation "Sublocation"
+ * @brief Payload for turn events, set when type is TURN_EVENT.
  *
  *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getValue
  *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getValue
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteEvent_getTurnEvent
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteEvent_getTurnEvent
  *
  *
  */
-@property (nonatomic, readonly) int32_t value;
+@property (nonatomic, readonly, nullable) NCTurnEvent * turnEvent;
 
 /**
- * @brief distance from the beginning of the route to incoming event in meters.
+ * @brief Payload for transition entry events.
  *
  *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getDistance
  *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getDistance
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteEvent_getTransitionEntryEvent
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteEvent_getTransitionEntryEvent
  *
  *
  */
-@property (nonatomic, readonly) float distance;
+@property (nonatomic, readonly, nullable) NCTransitionEntryEvent * transitionEntryEvent;
+
+/**
+ * @brief Payload for transition exit events.
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteEvent_getTransitionExitEvent
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteEvent_getTransitionExitEvent
+ *
+ *
+ */
+@property (nonatomic, readonly, nullable) NCTransitionExitEvent * transitionExitEvent;
+
+/**
+ * @brief Payload for target reached events.
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteEvent_getTargetReachedEvent
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteEvent_getTargetReachedEvent
+ *
+ *
+ */
+@property (nonatomic, readonly, nullable) NCTargetReachedEvent * targetReachedEvent;
 
 @end

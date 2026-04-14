@@ -16,9 +16,17 @@
  */
 
 /**
- *
  * @brief Called when the move if finished.
  * @param completed determine whether the movement is finished or cancelled
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowCameraExample.swift swift_CameraCallback_onMoveFinished
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowCameraExample.m objc_CameraCallback_onMoveFinished
+ *
  *
  */
 typedef void (^NCCameraCallback)(BOOL completed);

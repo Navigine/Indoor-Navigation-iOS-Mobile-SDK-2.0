@@ -13,11 +13,11 @@
  *
  *
  *
- * Swift code snippet:
- * @snippet BitmapRegionDecoderExample.swift swift_Rectangle_constructor
+ *Swift code snippet:
+ *@snippet BitmapRegionDecoderExample.swift swift_Rectangle_constructor
  *
- * Objective C code snippet:
- * @snippet BitmapRegionDecoderExample.m objc_Rectangle_constructor
+ *Objective C code snippet:
+ *@snippet BitmapRegionDecoderExample.m objc_Rectangle_constructor
  *
  *
  */

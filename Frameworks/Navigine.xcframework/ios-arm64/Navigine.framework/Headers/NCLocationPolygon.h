@@ -10,7 +10,17 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_geometry_classes
  *
+ *
  * @brief Class is used for representing certain polygon within the location @see Polygon "Polygon"
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowMapObjectsExample.swift swift_LocationPolygon_record
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowMapObjectsExample.m objc_LocationPolygon_record
+ *
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE

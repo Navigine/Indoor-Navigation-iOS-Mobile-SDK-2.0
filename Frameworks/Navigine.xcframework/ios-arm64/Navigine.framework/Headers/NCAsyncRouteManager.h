@@ -26,11 +26,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return @see RouteSession "RouteSession" instance.
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_createRouteSession
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_createRouteSession
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_createRouteSession
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_createRouteSession
  *
  *
  */
@@ -51,11 +52,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return A RouteSession instance, which may initially be empty if the tag is not available. @see RouteSession "RouteSession"
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_createRouteSessionWithTag
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_createRouteSessionWithTag
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_createRouteSessionWithTag
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_createRouteSessionWithTag
  *
  *
  */
@@ -68,11 +70,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param session @see RouteSession "RouteSession" object to cancel.
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_cancelRouteSession
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_cancelRouteSession
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_AsyncRouteManager_cancelRouteSession
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_AsyncRouteManager_cancelRouteSession
  *
  *
  */

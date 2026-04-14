@@ -20,16 +20,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationListener <NSObject>
 
 /**
- *
  * @brief Called when new location version has been downloaded from server or load it from the storage
  * @param location @see Location "Location" instance or nil if server url or `USER_HASH` was changed.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_LocationListener_onLocationLoaded
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_LocationListener_onLocationLoaded
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_LocationListener_onLocationLoaded
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_LocationListener_onLocationLoaded
  *
  *
  */
@@ -43,16 +43,18 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * @endcond
  *
+ *
  * @brief Called if unable to download location version from CMS
  * @param locationId location unique identifier in SMC.
  * @param error handled error.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_LocationListener_onLocationFailed
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_LocationListener_onLocationFailed
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_LocationListener_onLocationFailed
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_LocationListener_onLocationFailed
  *
  *
  */

@@ -35,11 +35,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Unique location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationListManagerExample.swift swift_LocationInfo_getId
  *
- * Objective C code snippet:
- * @snippet LocationListManagerExample.m objc_LocationInfo_getId
+ *Swift code snippet:
+ *@snippet LocationListManagerExample.swift swift_LocationInfo_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationListManagerExample.m objc_LocationInfo_getId
  *
  *
  */
@@ -49,11 +50,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Current location version.
  *
  *
- * Swift code snippet:
- * @snippet LocationListManagerExample.swift swift_LocationInfo_getVersion
  *
- * Objective C code snippet:
- * @snippet LocationListManagerExample.m objc_LocationInfo_getVersion
+ *Swift code snippet:
+ *@snippet LocationListManagerExample.swift swift_LocationInfo_getVersion
+ *
+ *Objective C code snippet:
+ *@snippet LocationListManagerExample.m objc_LocationInfo_getVersion
  *
  *
  */
@@ -63,11 +65,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief location name.
  *
  *
- * Swift code snippet:
- * @snippet LocationListManagerExample.swift swift_LocationInfo_getName
  *
- * Objective C code snippet:
- * @snippet LocationListManagerExample.m objc_LocationInfo_getName
+ *Swift code snippet:
+ *@snippet LocationListManagerExample.swift swift_LocationInfo_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationListManagerExample.m objc_LocationInfo_getName
  *
  *
  */

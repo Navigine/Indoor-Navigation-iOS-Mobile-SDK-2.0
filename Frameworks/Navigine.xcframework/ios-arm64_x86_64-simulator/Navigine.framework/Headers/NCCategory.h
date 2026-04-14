@@ -33,11 +33,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief category identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Category_getId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Category_getId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Category_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Category_getId
  *
  *
  */
@@ -47,11 +48,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief category name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Category_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Category_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Category_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Category_getName
  *
  *
  */
@@ -61,11 +63,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief image source. If presented.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Category_getImageUrl
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Category_getImageUrl
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Category_getImageUrl
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Category_getImageUrl
  *
  *
  */

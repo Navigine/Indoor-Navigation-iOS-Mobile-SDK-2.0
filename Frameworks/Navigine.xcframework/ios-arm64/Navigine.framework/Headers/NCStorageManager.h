@@ -22,11 +22,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return List of storage names (implementation currently returns them in alphabetical order).
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_StorageManager_getStorageList
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_StorageManager_getStorageList
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_StorageManager_getStorageList
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_StorageManager_getStorageList
  *
  *
  */
@@ -38,11 +39,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Key–value storage instance @see KeyValueStorage "KeyValueStorage"
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_StorageManager_getStorage
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_StorageManager_getStorage
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_StorageManager_getStorage
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_StorageManager_getStorage
  *
  *
  */
@@ -54,11 +56,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @note Existing handles to this storage become invalid after removal and further operations may fail.
  *
  *
- * Swift code snippet:
- * @snippet StorageManagerExample.swift swift_StorageManager_removeStorage
  *
- * Objective C code snippet:
- * @snippet StorageManagerExample.m objc_StorageManager_removeStorage
+ *Swift code snippet:
+ *@snippet StorageManagerExample.swift swift_StorageManager_removeStorage
+ *
+ *Objective C code snippet:
+ *@snippet StorageManagerExample.m objc_StorageManager_removeStorage
  *
  *
  */

@@ -25,11 +25,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param sublocationId New active sublocation identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationWindowCommonExample.swift swift_SublocationChangeListener_onActiveSublocationChanged
  *
- * Objective C code snippet:
- * @snippet LocationWindowCommonExample.m objc_SublocationChangeListener_onActiveSublocationChanged
+ *Swift code snippet:
+ *@snippet LocationWindowCommonExample.swift swift_SublocationChangeListener_onActiveSublocationChanged
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowCommonExample.m objc_SublocationChangeListener_onActiveSublocationChanged
  *
  *
  */

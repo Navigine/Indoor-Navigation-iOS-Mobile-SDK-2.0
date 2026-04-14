@@ -8,17 +8,18 @@
 /**
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_secondary_classes
+ *
  * @brief Class is used for describing routing options of @see AsyncRouteManager "AsyncRouteManager".
  *
  * Referenced from: @see AsyncRouteManager "AsyncRouteManager".
  *
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_RouteOptions_constructor
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_RouteOptions_constructor
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_RouteOptions_constructor
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_RouteOptions_constructor
  *
  *
  */

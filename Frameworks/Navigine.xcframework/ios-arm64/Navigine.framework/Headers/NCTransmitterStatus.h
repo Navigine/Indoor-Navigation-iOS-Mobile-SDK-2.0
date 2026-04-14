@@ -8,16 +8,18 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_secondary_classes
  *
+ *
  * @brief enum described possible transmitter state.
  *
  * Referenced from @see Beacon "Beacon", @see Eddystone "Eddystone", @see Wifi "Wifi".
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_TransmitterStatus_values
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_TransmitterStatus_values
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_TransmitterStatus_values
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_TransmitterStatus_values
  *
  *
  */

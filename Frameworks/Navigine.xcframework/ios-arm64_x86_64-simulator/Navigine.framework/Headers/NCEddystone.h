@@ -24,11 +24,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getPoint
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getPoint
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getPoint
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getPoint
  *
  *
  */
@@ -38,11 +39,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getLocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getLocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getLocationId
  *
  *
  */
@@ -52,11 +54,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's sublocation identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getSublocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getSublocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getSublocationId
  *
  *
  */
@@ -66,11 +69,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getName
  *
  *
  */
@@ -80,11 +84,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's namespaceId.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getNamespaceId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getNamespaceId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getNamespaceId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getNamespaceId
  *
  *
  */
@@ -94,11 +99,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's instanceId.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getInstanceId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getInstanceId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getInstanceId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getInstanceId
  *
  *
  */
@@ -108,11 +114,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone's power.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getPower
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getPower
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getPower
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getPower
  *
  *
  */
@@ -122,11 +129,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief eddystone status. @see TransmitterStatus "TransmitterStatus"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Eddystone_getStatus
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Eddystone_getStatus
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Eddystone_getStatus
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Eddystone_getStatus
  *
  *
  */

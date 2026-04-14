@@ -18,41 +18,56 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMeasurementManager : NSObject
 
 /**
- *
  * @brief Method is used to add @see MeasurementListener "MeasurementListener" class element
  * which will notify about new sensor or signal measurements.
  * @note Do not forget to remove listener if it is no longer needed!
  * @param listener Corresponding @see MeasurementListener "MeasurementListener" class.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addMeasurementListener
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addMeasurementListener
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addMeasurementListener
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addMeasurementListener
  *
  *
  */
 - (void)addMeasurementListener:(nullable id<NCMeasurementListener>)listener;
 
 /**
- *
  * @brief Method is used for removing previously added @see MeasurementListener "MeasurementListener" class element.
  * @param listener Corresponding @see MeasurementListener "MeasurementListener" class to remove.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeMeasurementListener
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeMeasurementListener
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeMeasurementListener
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeMeasurementListener
  *
  *
  */
 - (void)removeMeasurementListener:(nullable id<NCMeasurementListener>)listener;
 
 /**
+ * @brief Sets the interval in milliseconds between measurement batches delivered to @see MeasurementListener "MeasurementListener". Default is 1000 ms. Values less than or equal to zero are treated as the default.
+ * @param intervalMs wait time in milliseconds before the next publish cycle
  *
+ *
+ *
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_setPublishIntervalMs
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_setPublishIntervalMs
+ *
+ *
+ */
+- (void)setPublishIntervalMs:(int32_t)intervalMs;
+
+/**
  * @brief Method adds a beacon generator for simulating BLE beacon signals.
  * @param uuid UUID of the beacon.
  * @param major Major value of the beacon.
@@ -64,11 +79,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Unique identifier of the created beacon generator.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addBeaconGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addBeaconGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addBeaconGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addBeaconGenerator
  *
  *
  */
@@ -81,7 +97,6 @@ DEFAULT_EXPORT_ATTRIBUTE
                                  rssiMax:(int32_t)rssiMax;
 
 /**
- *
  * @brief Method adds an Eddystone generator for simulating Eddystone beacon signals.
  * @param namespaceId Namespace ID of the Eddystone beacon.
  * @param instanceId Instance ID of the Eddystone beacon.
@@ -92,11 +107,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Unique identifier of the created Eddystone generator.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addEddystoneGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addEddystoneGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addEddystoneGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addEddystoneGenerator
  *
  *
  */
@@ -108,38 +124,37 @@ DEFAULT_EXPORT_ATTRIBUTE
                                     rssiMax:(int32_t)rssiMax;
 
 /**
- *
  * @brief Method removes all BLE beacon generators.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerators
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerators
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerators
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerators
  *
  *
  */
 - (void)removeBleGenerators;
 
 /**
- *
  * @brief Method removes a specific BLE beacon generator by its identifier.
  * @param id Unique identifier of the BLE generator to remove.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerator
  *
  *
  */
 - (void)removeBleGenerator:(nonnull NSString *)id;
 
 /**
- *
  * @brief Method adds a Wi-Fi generator for simulating Wi-Fi signals.
  * @param mac MAC address of the Wi-Fi access point.
  * @param timeout Duration of the generator in milliseconds.
@@ -148,11 +163,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Unique identifier of the created Wi-Fi generator.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiGenerator
  *
  *
  */
@@ -162,38 +178,37 @@ DEFAULT_EXPORT_ATTRIBUTE
                                rssiMax:(int32_t)rssiMax;
 
 /**
- *
  * @brief Method removes a specific Wi-Fi generator by its identifier.
  * @param id Unique identifier of the Wi-Fi generator to remove.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerator
  *
  *
  */
 - (void)removeWifiGenerator:(nonnull NSString *)id;
 
 /**
- *
  * @brief Method removes all Wi-Fi generators.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerators
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerators
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerators
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerators
  *
  *
  */
 - (void)removeWifiGenerators;
 
 /**
- *
  * @brief Method adds a Wi-Fi RTT generator for simulating Wi-Fi Round-Trip Time signals.
  * @param mac MAC address of the Wi-Fi access point.
  * @param timeout Duration of the generator in milliseconds.
@@ -206,11 +221,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Unique identifier of the created Wi-Fi RTT generator.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiRttGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiRttGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiRttGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiRttGenerator
  *
  *
  */
@@ -224,38 +240,37 @@ DEFAULT_EXPORT_ATTRIBUTE
                                   rssiMax:(int32_t)rssiMax;
 
 /**
- *
  * @brief Method removes a specific Wi-Fi RTT generator by its identifier.
  * @param hash Unique identifier of the Wi-Fi RTT generator to remove.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerator
  *
  *
  */
 - (void)removeWifiRttGenerator:(nonnull NSString *)hash;
 
 /**
- *
  * @brief Method removes all Wi-Fi RTT generators.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerators
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerators
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerators
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerators
  *
  *
  */
 - (void)removeWifiRttGenerators;
 
 /**
- *
  * @brief Method adds a location generator for simulating location measurements.
  * @param latMin Minimum latitude for the simulated location.
  * @param latMax Maximum latitude for the simulated location.
@@ -267,11 +282,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @return Unique identifier of the created location generator.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_addLocationGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_addLocationGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addLocationGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_addLocationGenerator
  *
  *
  */
@@ -284,31 +300,31 @@ DEFAULT_EXPORT_ATTRIBUTE
                                    timeout:(int32_t)timeout;
 
 /**
- *
  * @brief Method removes a specific location generator by its identifier.
  * @param id Unique identifier of the location generator to remove.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerator
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerator
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerator
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerator
  *
  *
  */
 - (void)removeLocationGenerator:(nonnull NSString *)id;
 
 /**
- *
  * @brief Method removes all location generators.
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerators
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerators
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerators
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerators
  *
  *
  */

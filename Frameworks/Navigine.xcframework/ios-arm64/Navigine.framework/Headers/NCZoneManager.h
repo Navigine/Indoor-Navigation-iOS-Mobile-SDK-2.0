@@ -18,34 +18,34 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneManager : NSObject
 
 /**
- *
  * @brief Method is used to add @see ZoneListener "ZoneListener" class element
  * which will notify entering or leaving @see Zone "Zone"s.
  * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see ZoneListener "ZoneListener" class.
+ * @param listener Corresponding @see ZoneListener "ZoneListener" class.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneManager_addZoneListener
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneManager_addZoneListener
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneManager_addZoneListener
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneManager_addZoneListener
  *
  *
  */
 - (void)addZoneListener:(nullable id<NCZoneListener>)listener;
 
 /**
- *
  * @brief Method is used for removing previously added @see ZoneListener "ZoneListener" class element.
- * @param listener Сorresponding @see ZoneListener "ZoneListener" class to remove.
+ * @param listener Corresponding @see ZoneListener "ZoneListener" class to remove.
  *
  *
- * Swift code snippet:
- * @snippet ZoneManagerExample.swift swift_ZoneManager_removeZoneListener
  *
- * Objective C code snippet:
- * @snippet ZoneManagerExample.m objc_ZoneManager_removeZoneListener
+ *Swift code snippet:
+ *@snippet ZoneManagerExample.swift swift_ZoneManager_removeZoneListener
+ *
+ *Objective C code snippet:
+ *@snippet ZoneManagerExample.m objc_ZoneManager_removeZoneListener
  *
  *
  */

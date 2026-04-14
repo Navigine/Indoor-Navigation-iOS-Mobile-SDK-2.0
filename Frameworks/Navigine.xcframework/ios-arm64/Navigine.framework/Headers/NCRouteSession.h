@@ -18,34 +18,34 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteSession : NSObject
 
 /**
- *
  * @brief Method is used to add @see AsyncRouteListener "AsyncRouteListener" class element
  * which will notify async route events.
  * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class.
+ * @param listener Corresponding @see AsyncRouteListener "AsyncRouteListener" class.
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_RouteSession_addRouteListener
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_RouteSession_addRouteListener
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_RouteSession_addRouteListener
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_RouteSession_addRouteListener
  *
  *
  */
 - (void)addRouteListener:(nullable id<NCAsyncRouteListener>)listener;
 
 /**
- *
  * @brief Method is used for removing previously added @see AsyncRouteListener "AsyncRouteListener" class element.
- * @param listener Сorresponding @see AsyncRouteListener "AsyncRouteListener" class to remove.
+ * @param listener Corresponding @see AsyncRouteListener "AsyncRouteListener" class to remove.
  *
  *
- * Swift code snippet:
- * @snippet AsyncRouteManagerExample.swift swift_RouteSession_addRouteListener
  *
- * Objective C code snippet:
- * @snippet AsyncRouteManagerExample.m objc_RouteSession_addRouteListener
+ *Swift code snippet:
+ *@snippet AsyncRouteManagerExample.swift swift_RouteSession_removeRouteListener
+ *
+ *Objective C code snippet:
+ *@snippet AsyncRouteManagerExample.m objc_RouteSession_removeRouteListener
  *
  *
  */

@@ -20,16 +20,16 @@ DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCRouteListener <NSObject>
 
 /**
- *
  * @brief Called when new route has been calculated
  * @param paths calculated list of @see RoutePath "RoutePath"s to added targets.
  *
  *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteListener_onPathsUpdated
  *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteListener_onPathsUpdated
+ *Swift code snippet:
+ *@snippet RouteManagerExample.swift swift_RouteListener_onPathsUpdated
+ *
+ *Objective C code snippet:
+ *@snippet RouteManagerExample.m objc_RouteListener_onPathsUpdated
  *
  *
  */

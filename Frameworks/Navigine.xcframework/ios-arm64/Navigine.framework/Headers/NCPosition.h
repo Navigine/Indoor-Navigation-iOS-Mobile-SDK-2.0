@@ -43,11 +43,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief position in WGS84 coordinates.
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getPoint
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getPoint
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getPoint
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getPoint
  *
  *
  */
@@ -57,11 +58,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * Position accuracy in meters
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getAccuracy
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getAccuracy
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getAccuracy
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getAccuracy
  *
  *
  */
@@ -77,11 +79,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * values is [-pi, pi].
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getHeading
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getHeading
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getHeading
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getHeading
  *
  *
  */
@@ -91,11 +94,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Heading accuracy in radians
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getHeadingAccuracy
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getHeadingAccuracy
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getHeadingAccuracy
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getHeadingAccuracy
  *
  *
  */
@@ -105,11 +109,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief position in metrics coordinates at calculated location and sublocation @see LocationPoint
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getLocationPoint
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getLocationPoint
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getLocationPoint
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getLocationPoint
  *
  *
  */
@@ -119,11 +124,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Similiar to `heading` but with respect to `sublocation north` (top of the image)
  *
  *
- * Swift code snippet:
- * @snippet NavigationManagerExample.swift swift_Position_getLocationHeading
  *
- * Objective C code snippet:
- * @snippet NavigationManagerExample.m objc_Position_getLocationHeading
+ *Swift code snippet:
+ *@snippet NavigationManagerExample.swift swift_Position_getLocationHeading
+ *
+ *Objective C code snippet:
+ *@snippet NavigationManagerExample.m objc_Position_getLocationHeading
  *
  *
  */

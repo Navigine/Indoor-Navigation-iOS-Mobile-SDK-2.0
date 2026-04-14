@@ -10,7 +10,17 @@
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_geometry_classes
  *
+ *
  * @brief Class is used for representing certain polyline within the location @see Polyline "Polyline"
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowMapObjectsExample.swift swift_LocationPolyline_record
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowMapObjectsExample.m objc_LocationPolyline_record
+ *
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE

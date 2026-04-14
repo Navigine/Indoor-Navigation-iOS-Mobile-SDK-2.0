@@ -17,30 +17,30 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCUserLocationView : NSObject
 
 /**
- *
  * @brief Icon map object representing user arrow.
  *
  *
- * Swift code snippet:
- * @snippet LocationWindowCommonExample.swift swift_UserLocationView_getArrow
  *
- * Objective C code snippet:
- * @snippet LocationWindowCommonExample.m objc_UserLocationView_getArrow
+ *Swift code snippet:
+ *@snippet LocationWindowCommonExample.swift swift_UserLocationView_getArrow
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowCommonExample.m objc_UserLocationView_getArrow
  *
  *
  */
 @property (nonatomic, nullable, readonly) NCIconMapObject * arrow;
 
 /**
- *
  * @brief Accuracy circle around user position.
  *
  *
- * Swift code snippet:
- * @snippet LocationWindowCommonExample.swift swift_UserLocationView_getAccuracyCircle
  *
- * Objective C code snippet:
- * @snippet LocationWindowCommonExample.m objc_UserLocationView_getAccuracyCircle
+ *Swift code snippet:
+ *@snippet LocationWindowCommonExample.swift swift_UserLocationView_getAccuracyCircle
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowCommonExample.m objc_UserLocationView_getAccuracyCircle
  *
  *
  */

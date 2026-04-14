@@ -14,11 +14,12 @@
  * Referenced from @see GeometryUtils "GeometryUtils", @see NavigationManager "NavigationManager", @see Position "Position", @see Sublocation "Sublocation".
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GlobalPoint_constructor
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GlobalPoint_constructor
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GlobalPoint_constructor
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GlobalPoint_constructor
  *
  *
  */
@@ -41,11 +42,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief point's latitude.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GlobalPoint_getLatitude
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GlobalPoint_getLatitude
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GlobalPoint_getLatitude
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GlobalPoint_getLatitude
  *
  *
  */
@@ -55,11 +57,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief point's longitude.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_GlobalPoint_getLongitude
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_GlobalPoint_getLongitude
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_GlobalPoint_getLongitude
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_GlobalPoint_getLongitude
  *
  *
  */

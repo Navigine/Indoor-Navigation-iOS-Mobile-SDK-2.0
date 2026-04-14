@@ -24,11 +24,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getPoint
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getPoint
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getPoint
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getPoint
  *
  *
  */
@@ -38,11 +39,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getLocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getLocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getLocationId
  *
  *
  */
@@ -52,11 +54,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's sublocation identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getSublocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getSublocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getSublocationId
  *
  *
  */
@@ -66,11 +69,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getName
  *
  *
  */
@@ -80,11 +84,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's mac.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getMac
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getMac
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getMac
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getMac
  *
  *
  */
@@ -94,11 +99,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief wifi's status. @see TransmitterStatus "TransmitterStatus"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Wifi_getStatus
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Wifi_getStatus
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Wifi_getStatus
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Wifi_getStatus
  *
  *
  */

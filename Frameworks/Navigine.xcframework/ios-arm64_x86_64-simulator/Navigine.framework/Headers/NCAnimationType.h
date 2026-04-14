@@ -7,9 +7,19 @@
 /**
  * @ingroup navigine_objc_classes
  * @ingroup navigine_objc_location_view
+ *
  * @brief Enum described animation functions.
  *
  * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see LocationWindow "LocationWindow".
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowCameraExample.swift swift_AnimationType_enum
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowCameraExample.m objc_AnimationType_enum
+ *
  *
  */
 typedef NS_ENUM(NSInteger, NCAnimationType)

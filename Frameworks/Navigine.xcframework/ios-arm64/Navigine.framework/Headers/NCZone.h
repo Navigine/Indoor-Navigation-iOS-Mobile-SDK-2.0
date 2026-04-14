@@ -22,11 +22,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's list of points composing the polygonal zone @see Polygon "Polygon"
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getPolygon
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getPolygon
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getPolygon
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getPolygon
  *
  *
  */
@@ -36,11 +37,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's location identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getLocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getLocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getLocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getLocationId
  *
  *
  */
@@ -50,11 +52,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's sublocationId identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getSublocationId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getSublocationId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getSublocationId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getSublocationId
  *
  *
  */
@@ -64,11 +67,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's identifier.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getId
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getId
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getId
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getId
  *
  *
  */
@@ -78,11 +82,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's name.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getName
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getName
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getName
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getName
  *
  *
  */
@@ -92,11 +97,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's color.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getColor
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getColor
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getColor
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getColor
  *
  *
  */
@@ -106,11 +112,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief zone's alias.
  *
  *
- * Swift code snippet:
- * @snippet LocationManagerExample.swift swift_Zone_getAlias
  *
- * Objective C code snippet:
- * @snippet LocationManagerExample.m objc_Zone_getAlias
+ *Swift code snippet:
+ *@snippet LocationManagerExample.swift swift_Zone_getAlias
+ *
+ *Objective C code snippet:
+ *@snippet LocationManagerExample.m objc_Zone_getAlias
  *
  *
  */

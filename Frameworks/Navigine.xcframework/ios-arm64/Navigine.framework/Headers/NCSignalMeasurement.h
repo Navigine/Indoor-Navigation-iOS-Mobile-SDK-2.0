@@ -39,11 +39,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Type of the signal
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SignalMeasurement_getType
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SignalMeasurement_getType
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getType
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getType
  *
  *
  */
@@ -53,11 +54,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Unique identifier of the signal (e.g., MAC address or UUID)
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SignalMeasurement_getId
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SignalMeasurement_getId
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getId
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getId
  *
  *
  */
@@ -67,11 +69,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Received Signal Strength Indicator (RSSI) in dBm
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SignalMeasurement_getRssi
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SignalMeasurement_getRssi
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getRssi
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getRssi
  *
  *
  */
@@ -81,11 +84,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Estimated distance to the signal source in meters
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SignalMeasurement_getDistance
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SignalMeasurement_getDistance
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getDistance
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getDistance
  *
  *
  */
@@ -95,11 +99,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Timestamp of the measurement in milliseconds
  *
  *
- * Swift code snippet:
- * @snippet MeasurementManagerExample.swift swift_SignalMeasurement_getTime
  *
- * Objective C code snippet:
- * @snippet MeasurementManagerExample.m objc_SignalMeasurement_getTime
+ *Swift code snippet:
+ *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getTime
+ *
+ *Objective C code snippet:
+ *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getTime
  *
  *
  */

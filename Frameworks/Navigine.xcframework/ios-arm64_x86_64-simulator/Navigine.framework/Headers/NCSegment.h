@@ -13,11 +13,12 @@
  * @brief line between two points.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_Segment_constructor
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_Segment_constructor
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_Segment_constructor
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_Segment_constructor
  *
  *
  */
@@ -40,11 +41,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief Start point of the segment.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_Segment_getStart
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_Segment_getStart
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_Segment_getStart
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_Segment_getStart
  *
  *
  */
@@ -54,11 +56,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @brief End point of the segment.
  *
  *
- * Swift code snippet:
- * @snippet GeometryUtilsExample.swift swift_Segment_getEnd
  *
- * Objective C code snippet:
- * @snippet GeometryUtilsExample.m objc_Segment_getEnd
+ *Swift code snippet:
+ *@snippet GeometryUtilsExample.swift swift_Segment_getEnd
+ *
+ *Objective C code snippet:
+ *@snippet GeometryUtilsExample.m objc_Segment_getEnd
  *
  *
  */

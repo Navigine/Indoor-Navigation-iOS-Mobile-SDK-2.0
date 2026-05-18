@@ -11,6 +11,7 @@
 @class NCCircleMapObject;
 @class NCDottedPolylineMapObject;
 @class NCIconMapObject;
+@class NCModelMapObject;
 @class NCPolygonMapObject;
 @class NCPolylineMapObject;
 @protocol NCBuildingListener;
@@ -283,6 +284,39 @@ DEFAULT_EXPORT_ATTRIBUTE
  *
  */
 - (BOOL)removeDottedPolylineMapObject:(nullable NCDottedPolylineMapObject *)dottedPolylineMapObject;
+
+/**
+ * @brief Creates and adds a 3D model map object (Wavefront OBJ + texture via ModelProvider).
+ * @return A ModelMapObject instance @see ModelMapObject "ModelMapObject" if successful, null otherwise.
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_addModelMapObject
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowMapObjectsExample.m objc_LocationWindow_addModelMapObject
+ *
+ *
+ */
+- (nullable NCModelMapObject *)addModelMapObject;
+
+/**
+ * @brief Removes a model map object from the location view.
+ * @param modelMapObject The model instance to remove @see ModelMapObject "ModelMapObject".
+ * @return true if the operation is successful, false otherwise.
+ *
+ *
+ *
+ *Swift code snippet:
+ *@snippet LocationWindowMapObjectsExample.swift swift_LocationWindow_removeModelMapObject
+ *
+ *Objective C code snippet:
+ *@snippet LocationWindowMapObjectsExample.m objc_LocationWindow_removeModelMapObject
+ *
+ *
+ */
+- (BOOL)removeModelMapObject:(nullable NCModelMapObject *)modelMapObject;
 
 /**
  * @brief Removes all map objects from the location view.

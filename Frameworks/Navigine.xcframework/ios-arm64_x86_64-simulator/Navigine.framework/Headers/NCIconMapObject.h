@@ -63,8 +63,8 @@ DEFAULT_EXPORT_ATTRIBUTE
                        type:(NCAnimationType)type;
 
 /**
- * @brief Method is used to specify the bitmap image for the icon.
- * @param bitmap Platform bitmap object.
+ * @brief Method is used to specify the decoded raster for the icon.
+ * @param bitmap Image provider: Android com.navigine.image.ImageProvider; iOS UIImage via binding; Flutter navigine_sdk ImageProvider.
  * @return true if the operation is successful, false otherwise.
  *
  *
@@ -173,7 +173,7 @@ DEFAULT_EXPORT_ATTRIBUTE
            height:(float)height;
 
 /**
- * @brief Method is used to specify an offset for the circle’s position.
+ * @brief Method is used to specify an offset for the icon’s anchor on screen.
  * @param width Horizontal offset in pixels.
  * @param height Vertical offset in pixels.
  * @return true if the operation is successful, false otherwise.

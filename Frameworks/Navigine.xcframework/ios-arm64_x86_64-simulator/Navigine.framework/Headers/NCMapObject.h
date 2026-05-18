@@ -16,7 +16,7 @@
  * Used to manage objects in @see LocationWindow "LocationWindow".
  * Can be handled in the `pickMapObjectAt` method @see LocationWindow "LocationWindow".
  *
- * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see PolylineMapObject "PolylineMapObject", @see PolygonMapObject "PolygonMapObject", @see DottedPolylineMapObject "DottedPolylineMapObject".
+ * Referenced from @see CircleMapObject "CircleMapObject", @see IconMapObject "IconMapObject", @see PolylineMapObject "PolylineMapObject", @see PolygonMapObject "PolygonMapObject", @see DottedPolylineMapObject "DottedPolylineMapObject", @see ModelMapObject "ModelMapObject".
  *
  */
 DEFAULT_EXPORT_ATTRIBUTE

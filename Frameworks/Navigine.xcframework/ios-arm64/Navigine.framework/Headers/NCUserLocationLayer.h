@@ -8,6 +8,9 @@
  * @brief @copybrief NCUserLocationLayer
  */
 /**
+ * @ingroup navigine_objc_classes
+ * @ingroup navigine_objc_location_view
+ *
  *
  * @brief Layer that automatically renders current user position (arrow and accuracy circle) on the map.
  *        Provides visibility and anchoring controls.

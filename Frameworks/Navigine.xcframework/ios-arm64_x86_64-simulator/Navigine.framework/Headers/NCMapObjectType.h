@@ -40,4 +40,9 @@ typedef NS_ENUM(NSInteger, NCMapObjectType)
      * @see CircleMapObject "CircleMapObject"
      */
     NCMapObjectTypeCIRCLE,
+    /**
+     * @brief Model.
+     * @see ModelMapObject "ModelMapObject"
+     */
+    NCMapObjectTypeMODEL,
 };

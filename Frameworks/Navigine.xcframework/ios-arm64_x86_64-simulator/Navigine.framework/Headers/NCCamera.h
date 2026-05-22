@@ -32,14 +32,16 @@ DEFAULT_EXPORT_ATTRIBUTE
  */
 - (nonnull instancetype)initWithPoint:(nonnull NCPoint *)point
                                  zoom:(float)zoom
-                             rotation:(float)rotation;
+                             rotation:(float)rotation
+                                 tilt:(float)tilt;
 
 /** 
  * @brief Factory method for class NCCamera 
  */
 + (nonnull instancetype)cameraWithPoint:(nonnull NCPoint *)point
                                    zoom:(float)zoom
-                               rotation:(float)rotation;
+                               rotation:(float)rotation
+                                   tilt:(float)tilt;
 
 /**
  * @brief point the camera is looking at @see Point "Point"
@@ -52,9 +54,15 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, readonly) float zoom;
 
 /**
- * @brief angle between `Location North` (top of the image) and the direction of interest on the view plane
- * in degrees in the range [0, 360).
+ * @brief Map azimuth in degrees: angle between `Location North` (top of the image) and the direction of interest
+ * on the view plane, in the range [0, 360).
  */
 @property (nonatomic, readonly) float rotation;
+
+/**
+ * @brief Camera tilt in degrees. 0 means vertical downward (map seen from above).
+ * Positive values tilt the eye toward the horizon; the renderer clamps tilt to device limits when applying.
+ */
+@property (nonatomic, readonly) float tilt;
 
 @end

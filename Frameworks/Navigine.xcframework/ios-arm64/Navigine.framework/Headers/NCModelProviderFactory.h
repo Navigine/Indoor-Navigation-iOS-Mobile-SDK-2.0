@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <NCModelProvider.h>
+#import "NCModelProvider.h"
 
 /// :nodoc:
 @interface NCModelProviderFactory : NSObject

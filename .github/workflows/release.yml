@@ -9,29 +9,54 @@ on:
         default: ''
         type: multiline
 
+permissions:
+  contents: write
+
 jobs:
   create-release:
     name: Create Release
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Read version from file
         id: version
         run: echo "current_version=$(cat VERSION)" >> $GITHUB_OUTPUT
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Create release assets and update Package.swift
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: v.${{ steps.version.outputs.current_version }}
-          release_name: Release ${{ steps.version.outputs.current_version }}
-          body: ${{ github.event.inputs.release_body || format('v.{0}', steps.version.outputs.current_version) }}
-          draft: false
-          prerelease: false
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.version.outputs.current_version }}"
+          BODY="${{ github.event.inputs.release_body }}"
+          if [ -z "$BODY" ]; then
+            BODY="v.${VERSION}"
+          fi
+
+          cd Frameworks
+          zip -r -q ../Navigine.xcframework.zip Navigine.xcframework
+          cd ..
+
+          CHECKSUM=$(swift package compute-checksum Navigine.xcframework.zip)
+          sed -i '' "s/CHECKSUM_PLACEHOLDER/${CHECKSUM}/" Package.swift
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Package.swift
+          git commit -m "Update Package.swift checksum for ${VERSION}"
+          git push origin HEAD
+
+          gh release create "v.${VERSION}" \
+            --title "Release ${VERSION}" \
+            --notes "$BODY" \
+            Navigine.xcframework.zip
+
+          git tag "${VERSION}"
+          git push origin "${VERSION}"
 
   publish-cocoapods:
     name: Publish to CocoaPods
@@ -53,3 +78,25 @@ jobs:
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         run: |
           pod trunk push Navigine.podspec --allow-warnings
+
+  publish-spm:
+    name: Validate Swift Package
+    needs: create-release
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from file
+        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
+
+      - name: Checkout release tag
+        run: git checkout "${VERSION}"
+
+      - name: Validate Package.swift
+        run: swift package dump-package
+
+      - name: Resolve package
+        run: swift package resolve

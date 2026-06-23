@@ -3,61 +3,49 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCLocationPolyline.h
- * @brief @copybrief NCLocationPolyline
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_geometry_classes
+ * Class is used for representing certain polyline within the location ``NCPolyline``
  *
- *
- * @brief Class is used for representing certain polyline within the location @see Polyline "Polyline"
- *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowMapObjectsExample.swift swift_LocationPolyline_record
- *
- *Objective C code snippet:
- *@snippet LocationWindowMapObjectsExample.m objc_LocationPolyline_record
- *
- *
+ * @discussion Example:
+ * @code
+ * NSArray<NCPoint *> *linePts = @[
+ *    [[NCPoint alloc] initWithX:0.0 y:0.0],
+ *    [[NCPoint alloc] initWithX:10.0 y:10.0],
+ * ];
+ * NCPolyline *metricPolyline = [[NCPolyline alloc] initWithPoints:linePts];
+ * NCLocationPolyline *locationPolyline = [[NCLocationPolyline alloc] initWithPolyline:metricPolyline locationId:42 sublocationId:7];
+ * NCPolyline *polylineBack = locationPolyline.polyline;
+ * NSLog(@"LocationPolyline points %lu", (unsigned long)polylineBack.points.count);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolyline : NSObject
 
 /** 
- * @brief Default constructor for class NCLocationPolyline 
+ * Default constructor for class NCLocationPolyline 
  */
 - (nonnull instancetype)initWithPolyline:(nonnull NCPolyline *)polyline
                               locationId:(int32_t)locationId
                            sublocationId:(int32_t)sublocationId;
 
 /** 
- * @brief Factory method for class NCLocationPolyline 
+ * Factory method for class NCLocationPolyline 
  */
 + (nonnull instancetype)locationPolylineWithPolyline:(nonnull NCPolyline *)polyline
                                           locationId:(int32_t)locationId
                                        sublocationId:(int32_t)sublocationId;
 
 /**
- *
- * @brief Metrics polyline @see Polyline.
- *
+ * Metrics polyline @see Polyline.
  */
 @property (nonatomic, readonly, nonnull) NCPolyline * polyline;
 
 /**
- *
- * @brief location polyline location identifier.
- *
+ * location polyline location identifier.
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- *
- * @brief location polyline sublocation identifier.
- *
+ * location polyline sublocation identifier.
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 

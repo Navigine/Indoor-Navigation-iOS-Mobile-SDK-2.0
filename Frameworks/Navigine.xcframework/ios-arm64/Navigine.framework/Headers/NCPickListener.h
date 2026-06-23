@@ -5,53 +5,55 @@
 
 
 /**
- * @file NCPickListener.h
- * @brief @copybrief NCPickListener-p
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- *
- * @brief Class is used to handle for picking objects on the location view
- *
- * Referenced from @see LocationWindow "LocationWindow".
- *
+ * Class is used to handle for picking objects on the location view
+ * Referenced from ``NCLocationWindow``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPickListener <NSObject>
 
 /**
- * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapObjectAt` method
- * @param mapObjectPickResult @see MapObjectPickResult "MapObjectPickResult" instance or `nil` if no objects was found.
+ * Receive the result from ``NCLocationWindow`` `pickMapObjectAt` method
+ * @param mapObjectPickResult ``NCMapObjectPickResult`` instance or `nil` if no objects was found.
  * @param screenPosition position where the object was picked in pixels.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowInteractionExample.swift swift_PickListener_onMapObjectPickComplete
- *
- *Objective C code snippet:
- *@snippet LocationWindowInteractionExample.m objc_PickListener_onMapObjectPickComplete
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onMapObjectPickCompleteWithMapObjectPickResult:(NCMapObjectPickResult *)mapObjectPickResult screenPosition:(NCPoint *)screenPosition {
+ *    if (mapObjectPickResult != nil) {
+ *        // [objc_MapObjectPickResult_getPoint]
+ *        NCLocationPoint *point = mapObjectPickResult.point;
+ *        NSLog(@"Map object picked at screen position (%.1f, %.1f)", screenPosition.x, screenPosition.y);
+ *        NSLog(@"  Object location: (%.1f, %.1f)", point.x, point.y);
+ *        // [objc_MapObjectPickResult_getPoint]
+ *        // [objc_MapObjectPickResult_getMapObject]
+ *        NCMapObject *mapObject = mapObjectPickResult.mapObject;
+ *        NSLog(@"  Object type: %@", NSStringFromClass([mapObject class]));
+ *        // [objc_MapObjectPickResult_getMapObject]
+ *    } else {
+ *        NSLog(@"No map object found at screen position (%.1f, %.1f)", screenPosition.x, screenPosition.y);
+ *    }
+ * }
+ * @endcode
  */
 - (void)onMapObjectPickComplete:(nullable NCMapObjectPickResult *)mapObjectPickResult
                  screenPosition:(CGPoint)screenPosition;
 
 /**
- * @brief Receive the result from @see LocationWindow "LocationWindow" `pickMapFeatureAt`
+ * Receive the result from ``NCLocationWindow`` `pickMapFeatureAt`
  * @param mapFeaturePickResult dictionary of properties of the picked feature or `nil` if no objects was found.
  * @param screenPosition position where the object was picked in pixels.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowInteractionExample.swift swift_PickListener_onMapFeaturePickComplete
- *
- *Objective C code snippet:
- *@snippet LocationWindowInteractionExample.m objc_PickListener_onMapFeaturePickComplete
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onMapFeaturePickCompleteWithMapFeaturePickResult:(NSDictionary<NSString *, NSString *> *)mapFeaturePickResult screenPosition:(NCPoint *)screenPosition {
+ *    if (mapFeaturePickResult != nil) {
+ *        NSLog(@"Map feature picked at screen position (%.1f, %.1f)", screenPosition.x, screenPosition.y);
+ *        NSLog(@"  Feature properties: %@", mapFeaturePickResult);
+ *    } else {
+ *        NSLog(@"No map feature found at screen position (%.1f, %.1f)", screenPosition.x, screenPosition.y);
+ *    }
+ * }
+ * @endcode
  */
 - (void)onMapFeaturePickComplete:(nonnull NSDictionary<NSString *, NSString *> *)mapFeaturePickResult
                   screenPosition:(CGPoint)screenPosition;

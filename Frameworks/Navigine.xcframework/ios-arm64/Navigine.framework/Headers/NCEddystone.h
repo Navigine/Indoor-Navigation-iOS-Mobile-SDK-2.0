@@ -5,139 +5,118 @@
 
 
 /**
- * @file NCEddystone.h
- * @brief @copybrief NCEddystone
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @ingroup navigine_objc_transmitters
- * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/Eddystone_(Google)">Eddystone</a>.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing <a href="https://en.wikipedia.org/wiki/Eddystone_(Google)">Eddystone</a>.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCEddystone : NSObject
 
 /**
- * @brief eddystone's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ * eddystone's X and Y coordinates in meters as ``NCPoint`` (within the sublocation).
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone point
+ * NCPoint *point = [eddystone getPoint];
+ * if (point != nil) {
+ *    [self demonstratePointUsage:point];
+ * }
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
 /**
- * @brief eddystone's location identifier.
+ * eddystone's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getLocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone location ID
+ * int32_t locationId = [eddystone getLocationId];
+ * NSLog(@"Eddystone location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief eddystone's sublocation identifier.
+ * eddystone's sublocation identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getSublocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone sublocation ID
+ * int32_t sublocationId = [eddystone getSublocationId];
+ * NSLog(@"Eddystone sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief eddystone's name.
+ * eddystone's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone name
+ * NSString *eddystoneName = [eddystone getName];
+ * NSLog(@"Eddystone name: %@", eddystoneName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief eddystone's namespaceId.
+ * eddystone's namespaceId.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getNamespaceId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getNamespaceId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone namespace ID
+ * NSString *namespaceId = [eddystone getNamespaceId];
+ * NSLog(@"Eddystone namespace ID: %@", namespaceId);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * namespaceId;
 
 /**
- * @brief eddystone's instanceId.
+ * eddystone's instanceId.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getInstanceId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getInstanceId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone instance ID
+ * NSString *instanceId = [eddystone getInstanceId];
+ * NSLog(@"Eddystone instance ID: %@", instanceId);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * instanceId;
 
 /**
- * @brief eddystone's power.
+ * eddystone's power.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getPower
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getPower
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone power
+ * NSNumber *power = [eddystone getPower];
+ * if (power != nil) {
+ *    NSLog(@"Eddystone power: %d", [power intValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NSNumber * power;
 
 /**
- * @brief eddystone status. @see TransmitterStatus "TransmitterStatus"
+ * eddystone status. ``NCTransmitterStatus``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Eddystone_getStatus
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Eddystone_getStatus
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone status
+ * NCTransmitterStatus status = [eddystone getStatus];
+ * NSLog(@"Eddystone status: %ld", (long)status);
+ * @endcode
  */
 @property (nonatomic, readonly) NCTransmitterStatus status;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

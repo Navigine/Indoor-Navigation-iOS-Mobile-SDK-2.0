@@ -1,26 +1,25 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCTurnType.h
- * @brief @copybrief NCTurnType
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
+ * Enum describing turn direction/severity for ``NCTurnEvent``.
+ * Referenced from ``NCTurnEvent``.
  *
- * @brief Enum describing turn direction/severity for @see TurnEvent "TurnEvent".
- *
- * Referenced from @see TurnEvent "TurnEvent".
- *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_TurnType_values
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_TurnType_values
- *
- *
+ * @discussion Example:
+ * @code
+ * NSArray<NSNumber *> *types = @[
+ *    @(NCTurnTypeLeftSlight),
+ *    @(NCTurnTypeLeftNormal),
+ *    @(NCTurnTypeLeftSharp),
+ *    @(NCTurnTypeRightSlight),
+ *    @(NCTurnTypeRightNormal),
+ *    @(NCTurnTypeRightSharp),
+ *    @(NCTurnTypeComplete)
+ * ];
+ * NSLog(@"Available turn types:");
+ * for (NSNumber *type in types) {
+ *    NSLog(@"  - %ld", (long)[type integerValue]);
+ * }
+ * @endcode
  */
 typedef NS_ENUM(NSInteger, NCTurnType)
 {

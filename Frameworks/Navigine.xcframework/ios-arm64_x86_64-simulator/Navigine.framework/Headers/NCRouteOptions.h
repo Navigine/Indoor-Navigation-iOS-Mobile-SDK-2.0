@@ -2,46 +2,36 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCRouteOptions.h
- * @brief @copybrief NCRouteOptions
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
+ * Class is used for describing routing options of ``NCAsyncRouteManager``.
+ * Referenced from: ``NCAsyncRouteManager``.
  *
- * @brief Class is used for describing routing options of @see AsyncRouteManager "AsyncRouteManager".
- *
- * Referenced from: @see AsyncRouteManager "AsyncRouteManager".
- *
- *
- *
- *Swift code snippet:
- *@snippet AsyncRouteManagerExample.swift swift_RouteOptions_constructor
- *
- *Objective C code snippet:
- *@snippet AsyncRouteManagerExample.m objc_RouteOptions_constructor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Create route options with custom parameters
+ * NCRouteOptions *routeOptions = [[NCRouteOptions alloc] initWithSmoothRadius:3.0 maxProjectionDistance:7.0 maxAdvance:2.5];
+ * NSLog(@"Created route options with smoothRadius: %f, maxProjectionDistance: %f, maxAdvance: %f",
+ *      [routeOptions getSmoothRadius], [routeOptions getMaxProjectionDistance], [routeOptions getMaxAdvance]);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteOptions : NSObject
 
 /** 
- * @brief Default constructor for class NCRouteOptions 
+ * Default constructor for class NCRouteOptions 
  */
 - (nonnull instancetype)initWithSmoothRadius:(nullable NSNumber *)smoothRadius
                        maxProjectionDistance:(nullable NSNumber *)maxProjectionDistance
                                   maxAdvance:(nullable NSNumber *)maxAdvance;
 
 /** 
- * @brief Factory method for class NCRouteOptions 
+ * Factory method for class NCRouteOptions 
  */
 + (nonnull instancetype)routeOptionsWithSmoothRadius:(nullable NSNumber *)smoothRadius
                                maxProjectionDistance:(nullable NSNumber *)maxProjectionDistance
                                           maxAdvance:(nullable NSNumber *)maxAdvance;
 
 /**
- * @brief This parameter controls if the resulting route should be smoothed for better
+ * This parameter controls if the resulting route should be smoothed for better
  * user experience. It can be considered as the maximum distance (in meters)
  * by which the smoothed route can deviate from the original route. The original
  * route follows exactly the edges of the route graph. If you don't want the route
@@ -50,7 +40,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, readonly, nullable) NSNumber * smoothRadius;
 
 /**
- * @brief This parameter controls the router behaviour in case if the position essentially
+ * This parameter controls the router behaviour in case if the position essentially
  * deviates from the proposed route. If the position deviates more than the specified
  * distance (in meters), then the route will be rebuilt. You should not set the
  * maxProjectionDistance value too low. The reasonable interval of values is [3, 10].
@@ -59,7 +49,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, readonly, nullable) NSNumber * maxProjectionDistance;
 
 /**
- * @brief This parameter controls the maximum distance (in meters) that a position can advance
+ * This parameter controls the maximum distance (in meters) that a position can advance
  * along the route between the two consecutive navigation solutions separated in time
  * by 1 second. If this constraint is broken, the route will be completely rebuilt.
  * The reasonable interval of values is [1, 3]. Default value is 2.

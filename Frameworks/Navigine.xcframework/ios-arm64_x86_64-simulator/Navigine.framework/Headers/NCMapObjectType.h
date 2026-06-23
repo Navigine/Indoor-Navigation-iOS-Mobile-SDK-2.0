@@ -1,48 +1,44 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCMapObjectType.h
- * @brief @copybrief NCMapObjectType
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- *
- * @brief Enum defining the type of map object.
- *
- * Referenced from @see MapObject "MapObject".
- *
+ * Enum defining the type of map object.
+ * Referenced from ``NCMapObject``.
  */
 typedef NS_ENUM(NSInteger, NCMapObjectType)
 {
     /**
-     * @brief Icon.
-     * @see IconMapObject "IconMapObject"
+     * Icon.
+     * See also: ``NCIconMapObject``.
      */
     NCMapObjectTypeICON,
     /**
-     * @brief Polygon.
-     * @see PolygonMapObject "PolygonMapObject"
+     * Polygon.
+     * See also: ``NCPolygonMapObject``.
      */
     NCMapObjectTypePOLYGON,
     /**
-     * @brief Polyline.
-     * @see PolylineMapObject "PolylineMapObject"
+     * Polyline.
+     * See also: ``NCPolylineMapObject``.
      */
     NCMapObjectTypePOLYLINE,
     /**
-     * @brief DottedPolyline.
-     * @see DottedPolylineMapObject "DottedPolylineMapObject"
+     * DottedPolyline.
+     * See also: ``NCDottedPolylineMapObject``.
      */
     NCMapObjectTypeDOTTEDPOLYLINE,
     /**
-     * @brief Circle.
-     * @see CircleMapObject "CircleMapObject"
+     * Circle.
+     * See also: ``NCCircleMapObject``.
      */
     NCMapObjectTypeCIRCLE,
     /**
-     * @brief Model.
-     * @see ModelMapObject "ModelMapObject"
+     * Model.
+     * See also: ``NCModelMapObject``.
      */
     NCMapObjectTypeMODEL,
+    /**
+     * Icon cluster.
+     * See also: ``NCClusterMapObject``.
+     */
+    NCMapObjectTypeCLUSTERMAPOBJECT,
 };

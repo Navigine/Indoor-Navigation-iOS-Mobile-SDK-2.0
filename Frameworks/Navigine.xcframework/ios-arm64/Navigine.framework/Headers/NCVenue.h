@@ -4,168 +4,142 @@
 
 
 /**
- * @file NCVenue.h
- * @brief @copybrief NCVenue
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @brief Class is used for storing venue.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing venue.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCVenue : NSObject
 
 /**
- * @brief venue's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ * venue's X and Y coordinates in meters as ``NCPoint`` (within the sublocation).
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue point
+ * NCPoint *point = [venue getPoint];
+ * if (point != nil) {
+ *    [self demonstratePointUsage:point];
+ * }
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
 /**
- * @brief venue's location identifier.
+ * venue's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getLocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue location ID
+ * int32_t locationId = [venue getLocationId];
+ * NSLog(@"Venue location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief venue's sublocation identifier.
+ * venue's sublocation identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getSublocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue sublocation ID
+ * int32_t sublocationId = [venue getSublocationId];
+ * NSLog(@"Venue sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief venue's identifier.
+ * venue's identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue ID
+ * int32_t venueId = [venue getId];
+ * NSLog(@"Venue ID: %d", venueId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief venue's name.
+ * venue's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue name
+ * NSString *venueName = [venue getName];
+ * NSLog(@"Venue name: %@", venueName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief venue's phone.
+ * venue's phone.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getPhone
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getPhone
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue phone
+ * NSString *phone = [venue getPhone];
+ * NSLog(@"Venue phone: %@", phone);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * phone;
 
 /**
- * @brief venue's description.
+ * venue's description.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getDescript
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getDescript
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue description
+ * NSString *venueDescription = [venue getDescript];
+ * NSLog(@"Venue description: %@", venueDescription);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * descript;
 
 /**
- * @brief venue's alias.
+ * venue's alias.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getAlias
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getAlias
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue alias
+ * NSString *alias = [venue getAlias];
+ * NSLog(@"Venue alias: %@", alias);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * alias;
 
 /**
- * @brief venue's category unique identifier @see Category "Category"
+ * venue's category unique identifier ``NCCategory``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getCategoryId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getCategoryId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get category ID
+ * int32_t categoryId = [venue getCategoryId];
+ * NSLog(@"Venue category ID: %d", categoryId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t categoryId;
 
 /**
- * @brief venue's image url if specified.
+ * venue's image url if specified.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Venue_getImageUrl
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Venue_getImageUrl
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue image URL
+ * NSString *imageUrl = [venue getImageUrl];
+ * if (imageUrl != nil) {
+ *    NSLog(@"Venue image URL: %@", imageUrl);
+ * }
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NSString * imageUrl;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

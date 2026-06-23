@@ -4,34 +4,25 @@
 
 
 /**
- * @file NCZoneListener.h
- * @brief @copybrief NCZoneListener-p
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_listeners
- * @brief Class provides a callback to be invoked when @see ZoneManager "ZoneManager"
+ * Class provides a callback to be invoked when ``NCZoneManager``
  * detects entering/leaving zone events.
- *
- * Referenced from @see ZoneManager "ZoneManager".
- * @note The callback is invoked in the UI thread.
+ * Referenced from ``NCZoneManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCZoneListener <NSObject>
 
 /**
- * @brief Called when user handle particular zone event
- * @param zoneEvent handled @see ZoneEvent "ZoneEvent".
+ * Called when user handle particular zone event
+ * @param zoneEvent handled ``NCZoneEvent``.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneListener_onZoneEvent
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneListener_onZoneEvent
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onZoneEvent:(NCZoneEvent *)zoneEvent {
+ *    NSLog(@"Zone event detected");
+ *    [self.example demonstrateZoneEventUsage:zoneEvent];
+ * }
+ * @endcode
  */
 - (void)onZoneEvent:(nonnull NCZoneEvent *)zoneEvent;
 

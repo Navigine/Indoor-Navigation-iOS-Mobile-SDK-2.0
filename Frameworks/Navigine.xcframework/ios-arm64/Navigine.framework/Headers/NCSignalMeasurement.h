@@ -3,22 +3,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCSignalMeasurement.h
- * @brief @copybrief NCSignalMeasurement
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- * @brief Structure representing a signal measurement with type, identifier, RSSI, distance, and timestamp.
- *
- * Referenced from @see MeasurementListener "MeasurementListener".
- *
+ * Structure representing a signal measurement with type, identifier, RSSI, distance, and timestamp.
+ * Referenced from ``NCMeasurementListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSignalMeasurement : NSObject
 
 /** 
- * @brief Default constructor for class NCSignalMeasurement 
+ * Default constructor for class NCSignalMeasurement 
  */
 - (nonnull instancetype)initWithType:(NCSignalType)type
                                   id:(nonnull NSString *)id
@@ -27,7 +19,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                                 time:(int64_t)time;
 
 /** 
- * @brief Factory method for class NCSignalMeasurement 
+ * Factory method for class NCSignalMeasurement 
  */
 + (nonnull instancetype)signalMeasurementWithType:(NCSignalType)type
                                                id:(nonnull NSString *)id
@@ -36,77 +28,62 @@ DEFAULT_EXPORT_ATTRIBUTE
                                              time:(int64_t)time;
 
 /**
- * @brief Type of the signal
+ * Type of the signal
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getType
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getType
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get signal type
+ * NCSignalType type = measurement.type;
+ * NSLog(@"Signal type: %ld", (long)type);
+ * @endcode
  */
 @property (nonatomic, readonly) NCSignalType type;
 
 /**
- * @brief Unique identifier of the signal (e.g., MAC address or UUID)
+ * Unique identifier of the signal (e.g., MAC address or UUID)
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getId
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get signal identifier
+ * NSString *id = measurement.id;
+ * NSLog(@"Signal ID: %@", id);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
 /**
- * @brief Received Signal Strength Indicator (RSSI) in dBm
+ * Received Signal Strength Indicator (RSSI) in dBm
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getRssi
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getRssi
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get RSSI value
+ * double rssi = measurement.rssi;
+ * NSLog(@"Signal RSSI: %f dBm", rssi);
+ * @endcode
  */
 @property (nonatomic, readonly) float rssi;
 
 /**
- * @brief Estimated distance to the signal source in meters
+ * Estimated distance to the signal source in meters
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getDistance
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getDistance
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get estimated distance
+ * double distance = measurement.distance;
+ * NSLog(@"Signal distance: %f meters", distance);
+ * @endcode
  */
 @property (nonatomic, readonly) float distance;
 
 /**
- * @brief Timestamp of the measurement in milliseconds
+ * Timestamp of the measurement in milliseconds
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SignalMeasurement_getTime
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SignalMeasurement_getTime
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get measurement timestamp
+ * long long time = measurement.time;
+ * NSLog(@"Signal measurement time: %lld ms", time);
+ * @endcode
  */
 @property (nonatomic, readonly) int64_t time;
 

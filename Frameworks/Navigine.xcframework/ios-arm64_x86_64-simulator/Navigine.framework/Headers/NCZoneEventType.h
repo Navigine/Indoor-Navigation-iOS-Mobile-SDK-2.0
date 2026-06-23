@@ -1,36 +1,25 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCZoneEventType.h
- * @brief @copybrief NCZoneEventType
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
+ * enum described zone event types
+ * Referenced from ``NCZoneEvent``.
  *
- *
- * @brief enum described zone event types
- *
- * Referenced from @see ZoneEvent "ZoneEvent".
- *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEventType_values
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEventType_values
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get all zone event type values
+ * NSLog(@"Available zone event types:");
+ * NSLog(@"  - NCZoneEventTypeEnter: %ld", (long)NCZoneEventTypeEnter);
+ * NSLog(@"  - NCZoneEventTypeExit: %ld", (long)NCZoneEventTypeExit);
+ * @endcode
  */
 typedef NS_ENUM(NSInteger, NCZoneEventType)
 {
     /**
-     * @brief Happens when user enters paticular zone;
+     * Happens when user enters particular zone;
      */
     NCZoneEventTypeEnter,
     /**
-     * @brief Happens when user leaves paticular zone, sublocation has been changed or zone has been removed;
+     * Happens when user leaves particular zone, sublocation has been changed or zone has been removed;
      */
     NCZoneEventTypeExit,
 };

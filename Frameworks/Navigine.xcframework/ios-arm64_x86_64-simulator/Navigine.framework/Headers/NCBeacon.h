@@ -5,154 +5,130 @@
 
 
 /**
- * @file NCBeacon.h
- * @brief @copybrief NCBeacon
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @ingroup navigine_objc_transmitters
- * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/IBeacon">iBeacon</a>.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing <a href="https://en.wikipedia.org/wiki/IBeacon">iBeacon</a>.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCBeacon : NSObject
 
 /**
- * @brief beacon's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ * beacon's X and Y coordinates in meters as ``NCPoint`` (within the sublocation).
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon point
+ * NCPoint *point = [beacon getPoint];
+ * if (point != nil) {
+ *    [self demonstratePointUsage:point];
+ * }
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
 /**
- * @brief beacon's location identifier.
+ * beacon's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getLocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon location ID
+ * int32_t locationId = [beacon getLocationId];
+ * NSLog(@"Beacon location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief beacon's sublocation identifier.
+ * beacon's sublocation identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getSublocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon sublocation ID
+ * int32_t sublocationId = [beacon getSublocationId];
+ * NSLog(@"Beacon sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief beacon's name.
+ * beacon's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon name
+ * NSString *beaconName = [beacon getName];
+ * NSLog(@"Beacon name: %@", beaconName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief beacon's major. Values [1-65535]
+ * beacon's major. Values [1-65535]
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getMajor
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getMajor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon major
+ * int32_t major = [beacon getMajor];
+ * NSLog(@"Beacon major: %d", major);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t major;
 
 /**
- * @brief beacon's minor. Values [1-65535]
+ * beacon's minor. Values [1-65535]
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getMinor
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getMinor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon minor
+ * int32_t minor = [beacon getMinor];
+ * NSLog(@"Beacon minor: %d", minor);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t minor;
 
 /**
- * @brief beacon's uuid. Format [XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX]
+ * beacon's uuid. Format [XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX]
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getUuid
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getUuid
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon UUID
+ * NSString *uuid = [beacon getUuid];
+ * NSLog(@"Beacon UUID: %@", uuid);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * uuid;
 
 /**
- * @brief beacon's power.
+ * beacon's power.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getPower
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getPower
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon power
+ * NSNumber *power = [beacon getPower];
+ * if (power != nil) {
+ *    NSLog(@"Beacon power: %d", [power intValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NSNumber * power;
 
 /**
- * @brief iBeacon status. @see TransmitterStatus "TransmitterStatus"
+ * iBeacon status. ``NCTransmitterStatus``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Beacon_getStatus
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Beacon_getStatus
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacon status
+ * NCTransmitterStatus status = [beacon getStatus];
+ * NSLog(@"Beacon status: %ld", (long)status);
+ * @endcode
  */
 @property (nonatomic, readonly) NCTransmitterStatus status;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

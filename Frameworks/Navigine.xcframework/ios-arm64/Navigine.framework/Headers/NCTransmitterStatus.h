@@ -1,44 +1,33 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCTransmitterStatus.h
- * @brief @copybrief NCTransmitterStatus
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
+ * enum described possible transmitter state.
+ * Referenced from ``NCBeacon``, ``NCEddystone``, ``NCWifi``.
  *
- *
- * @brief enum described possible transmitter state.
- *
- * Referenced from @see Beacon "Beacon", @see Eddystone "Eddystone", @see Wifi "Wifi".
- *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_TransmitterStatus_values
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_TransmitterStatus_values
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get all transmitter status values
+ * NSLog(@"Available transmitter statuses:");
+ * NSLog(@"  - NCTransmitterStatusActive: %ld", (long)NCTransmitterStatusActive);
+ * NSLog(@"  - NCTransmitterStatusInactive: %ld", (long)NCTransmitterStatusInactive);
+ * @endcode
  */
 typedef NS_ENUM(NSInteger, NCTransmitterStatus)
 {
     /**
-     * @brief Syncronized with CMS.
+     * Synchronized with CMS.
      */
     NCTransmitterStatusNone,
     /**
-     * @brief Added in SDK but not syncronized with CMS.
+     * Added in SDK but not synchronized with CMS.
      */
     NCTransmitterStatusNew,
     /**
-     * @brief Deleted in SDK but not syncronized with CMS.
+     * Deleted in SDK but not synchronized with CMS.
      */
     NCTransmitterStatusDeleted,
     /**
-     * @brief Changed in SDK but not syncronized with CMS.
+     * Changed in SDK but not synchronized with CMS.
      */
     NCTransmitterStatusModified,
 };

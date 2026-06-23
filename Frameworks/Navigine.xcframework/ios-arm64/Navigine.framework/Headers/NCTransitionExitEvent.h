@@ -2,60 +2,43 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCTransitionExitEvent.h
- * @brief @copybrief NCTransitionExitEvent
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief Event describing exiting a level/sublocation transition.
- *
- * Referenced from @see RouteEvent "RouteEvent".
- *
+ * Event describing exiting a level/sublocation transition.
+ * Referenced from ``NCRouteEvent``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCTransitionExitEvent : NSObject
 
 /** 
- * @brief Default constructor for class NCTransitionExitEvent 
+ * Default constructor for class NCTransitionExitEvent 
  */
 - (nonnull instancetype)initWithFrom:(int64_t)from
                                   to:(int64_t)to;
 
 /** 
- * @brief Factory method for class NCTransitionExitEvent 
+ * Factory method for class NCTransitionExitEvent 
  */
 + (nonnull instancetype)transitionExitEventWithFrom:(int64_t)from
                                                  to:(int64_t)to;
 
 /**
- * @brief Source level identifier.
+ * Source level identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_TransitionExitEvent_getFrom
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_TransitionExitEvent_getFrom
- *
- *
+ * @discussion Example:
+ * @code
+ * int64_t from = [event getFrom];
+ * NSLog(@"Transition exit from: %lld", from);
+ * @endcode
  */
 @property (nonatomic, readonly) int64_t from;
 
 /**
- * @brief Destination level identifier.
+ * Destination level identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_TransitionExitEvent_getTo
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_TransitionExitEvent_getTo
- *
- *
+ * @discussion Example:
+ * @code
+ * int64_t to = [event getTo];
+ * NSLog(@"Transition exit to: %lld", to);
+ * @endcode
  */
 @property (nonatomic, readonly) int64_t to;
 

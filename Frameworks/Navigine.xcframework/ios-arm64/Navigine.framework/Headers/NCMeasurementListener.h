@@ -6,51 +6,39 @@
 
 
 /**
- * @file NCMeasurementListener.h
- * @brief @copybrief NCMeasurementListener-p
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_listeners
- * @brief Class provides callbacks to be invoked when @see MeasurementManager "MeasurementManager"
+ * Class provides callbacks to be invoked when ``NCMeasurementManager``
  * detects new sensor or signal measurements.
- *
- * Referenced from @see MeasurementManager "MeasurementManager".
- *
- * @note The callbacks are invoked in the UI thread.
+ * Referenced from ``NCMeasurementManager``.
+ * @discussion Note: The callbacks are invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCMeasurementListener <NSObject>
 
 /**
- * @brief Called when new sensor measurements are detected.
- * @param sensors A map of sensor types to their corresponding @see SensorMeasurement "SensorMeasurement" values.
+ * Called when new sensor measurements are detected.
+ * @param sensors A map of sensor types to their corresponding ``NCSensorMeasurement`` values.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementListener_onSensorMeasurementDetected
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementListener_onSensorMeasurementDetected
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onSensorMeasurementDetected:(NSDictionary<NSNumber *, NCSensorMeasurement *> *)sensors {
+ *    NSLog(@"Sensor measurements detected");
+ *    [self.example demonstrateSensorMeasurements:sensors];
+ * }
+ * @endcode
  */
 - (void)onSensorMeasurementDetected:(nonnull NSDictionary<NSNumber *, NCSensorMeasurement *> *)sensors;
 
 /**
- * @brief Called when new signal measurements are detected.
- * @param signals A map of signal identifiers to their corresponding @see SignalMeasurement "SignalMeasurement" values.
+ * Called when new signal measurements are detected.
+ * @param signals A map of signal identifiers to their corresponding ``NCSignalMeasurement`` values.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementListener_onSignalMeasurementDetected
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementListener_onSignalMeasurementDetected
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onSignalMeasurementDetected:(NSDictionary<NSString *, NCSignalMeasurement *> *)signals {
+ *    NSLog(@"Signal measurements detected");
+ *    [self.example demonstrateSignalMeasurements:signals];
+ * }
+ * @endcode
  */
 - (void)onSignalMeasurementDetected:(nonnull NSDictionary<NSString *, NCSignalMeasurement *> *)signals;
 

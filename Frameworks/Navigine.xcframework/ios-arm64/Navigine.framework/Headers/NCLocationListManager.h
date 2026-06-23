@@ -5,81 +5,63 @@
 
 
 /**
- * @file NCLocationListManager.h
- * @brief @copybrief NCLocationListManager
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_managers
- * @brief Class is used for downloading locations list from the server and providing it to the user.
- *
- * Referenced from @see NavigineSdk "NavigineSdk".
+ * Class is used for downloading locations list from the server and providing it to the user.
+ * Referenced from ``NCNavigineSdk``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationListManager : NSObject
 
 /**
- * @brief Method is used to add @see LocationListListener "LocationListListener" element
+ * Method is used to add ``NCLocationListListener`` element
  * which will notify about newly downloaded list of available locations.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Corresponding @see LocationListListener "LocationListListener" class.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCLocationListListener`` class.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationListManager_addLocationListListener
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationListManager_addLocationListListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add location list listener
+ * [self.locationListManager addLocationListListener:self.locationListListener];
+ * NSLog(@"Added location list listener");
+ * @endcode
  */
 - (void)addLocationListListener:(nullable id<NCLocationListListener>)listener;
 
 /**
- * @brief Method is used for removing previously added @see LocationListListener "LocationListListener" class element.
- * @param listener Corresponding @see LocationListListener "LocationListListener" class to remove.
+ * Method is used for removing previously added ``NCLocationListListener`` class element.
+ * @param listener Corresponding ``NCLocationListListener`` class to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationListManager_removeLocationListListener
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationListManager_removeLocationListListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove location list listener
+ * [self.locationListManager removeLocationListListener:self.locationListListener];
+ * NSLog(@"Removed location list listener");
+ * @endcode
  */
 - (void)removeLocationListListener:(nullable id<NCLocationListListener>)listener;
 
 /**
- * @brief Method is used to force reload location list.
+ * Method is used to force reload location list.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationListManager_updateLocationList
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationListManager_updateLocationList
- *
- *
+ * @discussion Example:
+ * @code
+ * // Force reload location list
+ * [self.locationListManager updateLocationList];
+ * NSLog(@"Requested location list update");
+ * @endcode
  */
 - (void)updateLocationList;
 
 /**
- * @brief Method is used to get current location list @see LocationInfo "LocationInfo".
+ * Method is used to get current location list ``NCLocationInfo``.
  * @return dictionary {location_id -> location_info}
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationListManager_getLocationList
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationListManager_getLocationList
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get current location list
+ * NSDictionary<NSNumber *, NCLocationInfo *> *currentLocationList = [self.locationListManager getLocationList];
+ * NSLog(@"Current location list contains %lu locations", (unsigned long)currentLocationList.count);
+ * [self demonstrateLocationList:currentLocationList];
+ * @endcode
  */
 - (nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)getLocationList;
 

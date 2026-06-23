@@ -2,77 +2,59 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCLocationInfo.h
- * @brief @copybrief NCLocationInfo
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief General information about location
- *
- * Referenced from: @see LocationListListener "LocationListListener", @see LocationListListener "LocationListListener"
- *
+ * General information about location
+ * Referenced from: ``NCLocationListListener``, ``NCLocationListListener``
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationInfo : NSObject
 
 /** 
- * @brief Default constructor for class NCLocationInfo 
+ * Default constructor for class NCLocationInfo 
  */
 - (nonnull instancetype)initWithId:(int32_t)id
                            version:(int32_t)version
                               name:(nonnull NSString *)name;
 
 /** 
- * @brief Factory method for class NCLocationInfo 
+ * Factory method for class NCLocationInfo 
  */
 + (nonnull instancetype)locationInfoWithId:(int32_t)id
                                    version:(int32_t)version
                                       name:(nonnull NSString *)name;
 
 /**
- * @brief Unique location identifier.
+ * Unique location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationInfo_getId
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationInfo_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location ID
+ * int32_t id = locationInfo.id;
+ * NSLog(@"Location ID: %d", id);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief Current location version.
+ * Current location version.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationInfo_getVersion
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationInfo_getVersion
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location version
+ * int32_t version = locationInfo.version;
+ * NSLog(@"Location version: %d", version);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t version;
 
 /**
- * @brief location name.
+ * location name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationListManagerExample.swift swift_LocationInfo_getName
- *
- *Objective C code snippet:
- *@snippet LocationListManagerExample.m objc_LocationInfo_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location name
+ * NSString *name = locationInfo.name;
+ * NSLog(@"Location name: %@", name);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 

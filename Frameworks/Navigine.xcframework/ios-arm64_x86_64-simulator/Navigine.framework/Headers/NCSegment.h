@@ -3,67 +3,54 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCSegment.h
- * @brief @copybrief NCSegment
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_geometry_classes
+ * line between two points.
  *
- * @brief line between two points.
- *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Segment_constructor
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Segment_constructor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Create segments
+ * NCSegment *segment1 = [[NCSegment alloc] initWithStart:start1 end:end1];
+ * NCSegment *segment2 = [[NCSegment alloc] initWithStart:start2 end:end2];
+ * NSLog(@"Created segments: S1((%.1f, %.1f) -> (%.1f, %.1f)), S2((%.1f, %.1f) -> (%.1f, %.1f))",
+ *      segment1.start.x, segment1.start.y, segment1.end.x, segment1.end.y,
+ *      segment2.start.x, segment2.start.y, segment2.end.x, segment2.end.y);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSegment : NSObject
 
 /** 
- * @brief Default constructor for class NCSegment 
+ * Default constructor for class NCSegment 
  */
 - (nonnull instancetype)initWithStart:(nonnull NCPoint *)start
                                   end:(nonnull NCPoint *)end;
 
 /** 
- * @brief Factory method for class NCSegment 
+ * Factory method for class NCSegment 
  */
 + (nonnull instancetype)segmentWithStart:(nonnull NCPoint *)start
                                      end:(nonnull NCPoint *)end;
 
 /**
- * @brief Start point of the segment.
+ * Start point of the segment.
  *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Segment_getStart
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Segment_getStart
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get start point
+ * NCPoint *segment1Start = segment1.start;
+ * NSLog(@"Segment1 start point: (%.1f, %.1f)", segment1Start.x, segment1Start.y);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NCPoint * start;
 
 /**
- * @brief End point of the segment.
+ * End point of the segment.
  *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Segment_getEnd
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Segment_getEnd
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get end point
+ * NCPoint *segment1End = segment1.end;
+ * NSLog(@"Segment1 end point: (%.1f, %.1f)", segment1End.x, segment1End.y);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NCPoint * end;
 

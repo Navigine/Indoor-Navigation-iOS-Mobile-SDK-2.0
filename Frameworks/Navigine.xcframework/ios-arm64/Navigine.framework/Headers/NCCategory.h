@@ -2,75 +2,61 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCCategory.h
- * @brief @copybrief NCCategory
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @brief class is used for storing venue categories.
- *
- * Referenced from @see Location "Location" @see Venue "Venue".
+ * class is used for storing venue categories.
+ * Referenced from ``NCLocation`` ``NCVenue``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCCategory : NSObject
 
 /** 
- * @brief Default constructor for class NCCategory 
+ * Default constructor for class NCCategory 
  */
 - (nonnull instancetype)initWithId:(int32_t)id
                               name:(nonnull NSString *)name
                           imageUrl:(nullable NSString *)imageUrl;
 
 /** 
- * @brief Factory method for class NCCategory 
+ * Factory method for class NCCategory 
  */
 + (nonnull instancetype)categoryWithId:(int32_t)id
                                   name:(nonnull NSString *)name
                               imageUrl:(nullable NSString *)imageUrl;
 
 /**
- * @brief category identifier.
+ * category identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Category_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Category_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get category ID
+ * int32_t categoryId = [category getId];
+ * NSLog(@"Category ID: %d", categoryId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief category name.
+ * category name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Category_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Category_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get category name
+ * NSString *categoryName = [category getName];
+ * NSLog(@"Category name: %@", categoryName);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
 /**
- * @brief image source. If presented.
+ * image source. If presented.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Category_getImageUrl
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Category_getImageUrl
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get category image URL
+ * NSString *imageUrl = [category getImageUrl];
+ * if (imageUrl != nil) {
+ *    NSLog(@"Category image URL: %@", imageUrl);
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nullable) NSString * imageUrl;
 

@@ -6,40 +6,26 @@
 
 
 /**
- * @file NCNavigationManager.h
- * @brief @copybrief NCNavigationManager
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_managers
- * @brief Class is used for evaluating navigation and calculating users' @see Position "Position"
- *
- * Referenced from @see NavigineSdk "NavigineSdk".
+ * Class is used for evaluating navigation and calculating users' ``NCPosition``
+ * Referenced from ``NCNavigineSdk``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigationManager : NSObject
 
 /**
- * @brief Method is used to add @see PositionListener "PositionListener" class element
+ * Method is used to add ``NCPositionListener`` class element
  * which will notify about new user position.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Corresponding @see PositionListener "PositionListener" class.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCPositionListener`` class.
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_NavigationManager_addPositionListener
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_NavigationManager_addPositionListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add position listener
+ * [self.navigationManager addPositionListener:self];
+ * @endcode
  */
 - (void)addPositionListener:(nullable id<NCPositionListener>)listener;
 
-/**
- * @cond
- */
 - (void)startLogRecording;
 
 - (void)addCheckPoint:(nonnull NCLocationPoint *)point;
@@ -51,21 +37,14 @@ DEFAULT_EXPORT_ATTRIBUTE
                       provider:(nonnull NSString *)provider;
 
 /**
- * @endcond
+ * Method is used for removing previously added ``NCPositionListener`` class element.
+ * @param listener Corresponding ``NCPositionListener`` class to remove.
  *
- *
- * @brief Method is used for removing previously added @see PositionListener "PositionListener" class element.
- * @param listener Corresponding @see PositionListener "PositionListener" class to remove.
- *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_NavigationManager_removePositionListener
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_NavigationManager_removePositionListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove position listener
+ * [self.navigationManager removePositionListener:self];
+ * @endcode
  */
 - (void)removePositionListener:(nullable id<NCPositionListener>)listener;
 

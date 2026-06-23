@@ -4,76 +4,59 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCSensorMeasurement.h
- * @brief @copybrief NCSensorMeasurement
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- * @brief Structure representing a sensor measurement with type, values, and timestamp.
- *
- * Referenced from @see MeasurementListener "MeasurementListener".
- *
+ * Structure representing a sensor measurement with type, values, and timestamp.
+ * Referenced from ``NCMeasurementListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSensorMeasurement : NSObject
 
 /** 
- * @brief Default constructor for class NCSensorMeasurement 
+ * Default constructor for class NCSensorMeasurement 
  */
 - (nonnull instancetype)initWithType:(NCSensorType)type
                               values:(nonnull NCVector3d *)values
                                 time:(int64_t)time;
 
 /** 
- * @brief Factory method for class NCSensorMeasurement 
+ * Factory method for class NCSensorMeasurement 
  */
 + (nonnull instancetype)sensorMeasurementWithType:(NCSensorType)type
                                            values:(nonnull NCVector3d *)values
                                              time:(int64_t)time;
 
 /**
- * @brief Type of the sensor
+ * Type of the sensor
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getType
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getType
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sensor type
+ * NCSensorType type = measurement.type;
+ * NSLog(@"Sensor type: %ld", (long)type);
+ * @endcode
  */
 @property (nonatomic, readonly) NCSensorType type;
 
 /**
- * @brief 3D vector containing sensor measurement values
+ * 3D vector containing sensor measurement values
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getValues
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getValues
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sensor values
+ * NCVector3d *values = measurement.values;
+ * NSLog(@"Sensor values - X: %f, Y: %f, Z: %f", values.x, values.y, values.z);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NCVector3d * values;
 
 /**
- * @brief Timestamp of the measurement in milliseconds
+ * Timestamp of the measurement in milliseconds
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_SensorMeasurement_getTime
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_SensorMeasurement_getTime
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get measurement timestamp
+ * long long time = measurement.time;
+ * NSLog(@"Measurement time: %lld ms", time);
+ * @endcode
  */
 @property (nonatomic, readonly) int64_t time;
 

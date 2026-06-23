@@ -3,23 +3,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCZoneEvent.h
- * @brief @copybrief NCZoneEvent
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief Class described user zone event.
- *
- * Referenced from @see ZoneListener "ZoneListener".
- *
+ * Class described user zone event.
+ * Referenced from ``NCZoneListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneEvent : NSObject
 
 /** 
- * @brief Default constructor for class NCZoneEvent 
+ * Default constructor for class NCZoneEvent 
  */
 - (nonnull instancetype)initWithType:(NCZoneEventType)type
                           locationId:(int32_t)locationId
@@ -29,7 +20,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                                alias:(nonnull NSString *)alias;
 
 /** 
- * @brief Factory method for class NCZoneEvent 
+ * Factory method for class NCZoneEvent 
  */
 + (nonnull instancetype)zoneEventWithType:(NCZoneEventType)type
                                locationId:(int32_t)locationId
@@ -39,92 +30,74 @@ DEFAULT_EXPORT_ATTRIBUTE
                                     alias:(nonnull NSString *)alias;
 
 /**
- * @brief Handled zone event type.
+ * Handled zone event type.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getType
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getType
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get event type
+ * NCZoneEventType type = zoneEvent.type;
+ * NSLog(@"Zone event type: %ld", (long)type);
+ * @endcode
  */
 @property (nonatomic, readonly) NCZoneEventType type;
 
 /**
- * @brief zone's location identifier.
+ * zone's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getLocationId
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location ID
+ * int32_t locationId = zoneEvent.locationId;
+ * NSLog(@"Zone location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief zone's sublocationId identifier.
+ * zone's sublocationId identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getSublocationId
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation ID
+ * int32_t sublocationId = zoneEvent.sublocationId;
+ * NSLog(@"Zone sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief zone's identifier.
+ * zone's identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getId
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone ID
+ * int32_t id = zoneEvent.id;
+ * NSLog(@"Zone ID: %d", id);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief zone's name.
+ * zone's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getName
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone name
+ * NSString *name = zoneEvent.name;
+ * NSLog(@"Zone name: %@", name);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSString * name;
 
 /**
- * @brief zone's alias.
+ * zone's alias.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneEvent_getAlias
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneEvent_getAlias
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone alias
+ * NSString *alias = zoneEvent.alias;
+ * NSLog(@"Zone alias: %@", alias);
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSString * alias;
 

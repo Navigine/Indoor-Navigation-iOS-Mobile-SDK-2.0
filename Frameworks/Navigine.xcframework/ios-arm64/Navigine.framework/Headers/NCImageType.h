@@ -1,29 +1,21 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCImageType.h
- * @brief @copybrief NCImageType
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- * @brief Enum described supported image types
- *
- * Referenced from @see Image "Image".
- *
+ * Enum described supported image types
+ * Referenced from ``NCImage``.
  */
 typedef NS_ENUM(NSInteger, NCImageType)
 {
     /**
-     * @brief PNG format
+     * PNG format
      */
     NCImageTypePNG,
     /**
-     * @brief SVG format
+     * SVG format
      */
     NCImageTypeSVG,
     /**
-     * @brief JPG format
+     * JPG format
      */
     NCImageTypeJPG,
 };

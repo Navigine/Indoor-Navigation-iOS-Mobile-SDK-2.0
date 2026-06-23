@@ -6,194 +6,173 @@
 
 
 /**
- * @file NCLocation.h
- * @brief @copybrief NCLocation
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @brief Class is used for storing location parameters: identifier, version, name, a list of sublocations, etc.
- *
- * Location instance can be obtained from @see LocationManager "LocationManager" using @see LocationListener "LocationListener" callback,
+ * Class is used for storing location parameters: identifier, version, name, a list of sublocations, etc.
+ * Location instance can be obtained from ``NCLocationManager`` using ``NCLocationListener`` callback,
  * when the location is loaded.
- *
- * Referenced from @see LocationManager "LocationManager" @see LocationListener "LocationListener".
+ * Referenced from ``NCLocationManager`` ``NCLocationListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocation : NSObject
 
 /**
- * @brief Method returns location elevation graph @see ElevationGraph "ElevationGraph"
+ * Method returns location elevation graph ``NCElevationGraph``
  * for specified tag
  * @param tag Graph tag in CMS
  * @return Elevation graph instance or `null`.
- * @return @see ElevationGraph "ElevationGraph" of the current location with the specified tag, if it exists. If elevation graph with the specified tag doesn't exist, function returns null.
+ * @return ``NCElevationGraph`` of the current location with the specified tag, if it exists. If elevation graph with the specified tag doesn't exist, function returns null.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getElevationGraph
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getElevationGraph
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get elevation graph by tag
+ * if (graphTags.count > 0) {
+ *    NCElevationGraph *elevationGraph = [location getElevationGraph:graphTags[0]];
+ *    if (elevationGraph != nil) {
+ *        [self demonstrateElevationGraphUsage:elevationGraph];
+ *    }
+ * }
+ * @endcode
  */
 - (nullable NCElevationGraph *)getElevationGraph:(nonnull NSString *)tag;
 
 /**
- * @brief Method returns list of available graph tags.
+ * Method returns list of available graph tags.
  * @return Array of existing tags
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getGraphTags
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getGraphTags
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get available graph tags
+ * NSArray<NSString *> *graphTags = [location getGraphTags];
+ * NSLog(@"Available graph tags: %@", graphTags);
+ * @endcode
  */
 - (nonnull NSArray<NSString *> *)getGraphTags;
 
 /**
- * @brief Method is used for obtaining a sublocation with the specified identifier from the current location.
+ * Method is used for obtaining a sublocation with the specified identifier from the current location.
  * @param id sublocation identifier.
- * @return The @see Sublocation "Sublocation" of the current location with the specified identifier, if it exists. If sublocation with the specified identifier doesn't exist, function returns null.
+ * @return The ``NCSublocation`` of the current location with the specified identifier, if it exists. If sublocation with the specified identifier doesn't exist, function returns null.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getSublocationById
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getSublocationById
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation by ID
+ * if (sublocations.count > 0) {
+ *    NCSublocation *sublocation = [location getSublocationById:[sublocations[0] getId]];
+ *    if (sublocation != nil) {
+ *        [self demonstrateSublocationUsage:sublocation];
+ *    }
+ * }
+ * @endcode
  */
 - (nullable NCSublocation *)getSublocationById:(int32_t)id;
 
 /**
- * @brief Method is used for obtaining a category with the specified identifier from the current location.
+ * Method is used for obtaining a category with the specified identifier from the current location.
  * @param id category identifier.
- * @return @see Category "Category" of the current location with the specified identifier, if it exists. If category with the specified identifier doesn't exist, function returns null.
+ * @return ``NCCategory`` of the current location with the specified identifier, if it exists. If category with the specified identifier doesn't exist, function returns null.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getCategoryById
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getCategoryById
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get category by ID
+ * if (categories.count > 0) {
+ *    NCCategory *category = [location getCategoryById:[categories[0] getId]];
+ *    if (category != nil) {
+ *        [self demonstrateCategoryUsage:category];
+ *    }
+ * }
+ * @endcode
  */
 - (nullable NCCategory *)getCategoryById:(int32_t)id;
 
 /**
- * @brief location's identifier.
+ * location's identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location ID
+ * int32_t locationId = [location getId];
+ * NSLog(@"Location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief location's version.
+ * location's version.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getVersion
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getVersion
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location version
+ * int32_t version = [location getVersion];
+ * NSLog(@"Location version: %d", version);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t version;
 
 /**
- * @brief location name.
+ * location name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location name
+ * NSString *name = [location getName];
+ * NSLog(@"Location name: %@", name);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief location's description.
+ * location's description.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getDescript
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getDescript
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location description
+ * NSString *description = [location getDescript];
+ * NSLog(@"Location description: %@", description);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * descript;
 
 /**
- * @brief List of venue categories defined for the location @see Category "Category".
+ * List of venue categories defined for the location ``NCCategory``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getCategories
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getCategories
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get all categories
+ * NSArray<NCCategory *> *categories = [location getCategories];
+ * NSLog(@"Number of categories: %lu", (unsigned long)categories.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCCategory *> * categories;
 
 /**
- * @brief List of sublocations @see Sublocation "Sublocation"
+ * List of sublocations ``NCSublocation``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getSublocations
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getSublocations
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get all sublocations
+ * NSArray<NCSublocation *> *sublocations = [location getSublocations];
+ * NSLog(@"Number of sublocations: %lu", (unsigned long)sublocations.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCSublocation *> * sublocations;
 
 /**
- * @brief Flag indicates if location has been modified by user or not
+ * Flag indicates if location has been modified by user or not
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Location_getModified
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Location_getModified
- *
- *
+ * @discussion Example:
+ * @code
+ * // Check if location is modified
+ * BOOL isModified = [location getModified];
+ * NSLog(@"Location modified: %@", isModified ? @"YES" : @"NO");
+ * @endcode
  */
 @property (nonatomic, readonly) BOOL modified;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

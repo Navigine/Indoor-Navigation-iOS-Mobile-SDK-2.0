@@ -4,22 +4,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCRouteNode.h
- * @brief @copybrief NCRouteNode
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- * @brief Class describing one node of the evaluated route.
- *
- * Referenced from @see RoutePath "RoutePath".
- *
+ * Class describing one node of the evaluated route.
+ * Referenced from ``NCRoutePath``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteNode : NSObject
 
 /** 
- * @brief Default constructor for class NCRouteNode 
+ * Default constructor for class NCRouteNode 
  */
 - (nonnull instancetype)initWithPoint:(nonnull NCLocationPoint *)point
                                weight:(float)weight
@@ -27,7 +19,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                                events:(nonnull NSArray<NCRouteEvent *> *)events;
 
 /** 
- * @brief Factory method for class NCRouteNode 
+ * Factory method for class NCRouteNode 
  */
 + (nonnull instancetype)routeNodeWithPoint:(nonnull NCLocationPoint *)point
                                     weight:(float)weight
@@ -35,62 +27,49 @@ DEFAULT_EXPORT_ATTRIBUTE
                                     events:(nonnull NSArray<NCRouteEvent *> *)events;
 
 /**
- * @brief Location point of this node.
+ * Location point of this node.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteNode_getPoint
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteNode_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * NCLocationPoint *point = [node getPoint];
+ * [self demonstrateLocationPointUsage:point];
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NCLocationPoint * point;
 
 /**
- * @brief Route cost/weight value at this node.
+ * Route cost/weight value at this node.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteNode_getWeight
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteNode_getWeight
- *
- *
+ * @discussion Example:
+ * @code
+ * float weight = [node getWeight];
+ * NSLog(@"Node weight: %f", weight);
+ * @endcode
  */
 @property (nonatomic, readonly) float weight;
 
 /**
- * @brief Distance from route start to this node (meters).
+ * Distance from route start to this node (meters).
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteNode_getDistance
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteNode_getDistance
- *
- *
+ * @discussion Example:
+ * @code
+ * float distance = [node getDistance];
+ * NSLog(@"Node distance: %f meters", distance);
+ * @endcode
  */
 @property (nonatomic, readonly) float distance;
 
 /**
- * @brief Events associated with this node.
+ * Events associated with this node.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteNode_getEvents
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteNode_getEvents
- *
- *
+ * @discussion Example:
+ * @code
+ * NSArray<NCRouteEvent *> *events = [node getEvents];
+ * NSLog(@"Node has %lu events", (unsigned long)events.count);
+ * for (NCRouteEvent *event in events) {
+ *    [self demonstrateRouteEventUsage:event];
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NSArray<NCRouteEvent *> * events;
 

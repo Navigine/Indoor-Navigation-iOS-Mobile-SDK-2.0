@@ -1,15 +1,11 @@
 #import "NCExport.h"
 #import <Foundation/Foundation.h>
 
-/**
- * @file NCBeaconProximityEntry.h
- * @brief @copybrief NCBeaconProximityEntry
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCBeaconProximityEntry : NSObject
 
 /** 
- * @brief Default constructor for class NCBeaconProximityEntry 
+ * Default constructor for class NCBeaconProximityEntry 
  */
 - (nonnull instancetype)initWithMajor:(int32_t)major
                                 minor:(int32_t)minor
@@ -20,7 +16,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                              distance:(nullable NSNumber *)distance;
 
 /** 
- * @brief Factory method for class NCBeaconProximityEntry 
+ * Factory method for class NCBeaconProximityEntry 
  */
 + (nonnull instancetype)beaconProximityEntryWithMajor:(int32_t)major
                                                 minor:(int32_t)minor

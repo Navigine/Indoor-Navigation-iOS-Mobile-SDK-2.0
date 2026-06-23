@@ -3,10 +3,6 @@
 #import <Foundation/Foundation.h>
 
 
-/**
- * @file NCBeaconProximityEstimatorListener.h
- * @brief @copybrief NCBeaconProximityEstimatorListener-p
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCBeaconProximityEstimatorListener <NSObject>
 

@@ -3,10 +3,6 @@
 @class NCLocation;
 
 
-/**
- * @file NCLocationEditListener.h
- * @brief @copybrief NCLocationEditListener-p
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationEditListener <NSObject>
 

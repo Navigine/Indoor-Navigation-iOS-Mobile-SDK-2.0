@@ -3,79 +3,70 @@
 
 
 /**
- * @file NCNotification.h
- * @brief @copybrief NCNotification
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief Class is used for working with the notifications and storing its data.
- *
- * Referenced from: @see NotificationListener "NotificationListener".
- *
+ * Class is used for working with the notifications and storing its data.
+ * Referenced from: ``NCNotificationListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNotification : NSObject
 
 /**
- * @brief notification's unique identifier.
+ * notification's unique identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_Notification_getId
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_Notification_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get notification ID
+ * int32_t id = notification.id;
+ * NSLog(@"Notification ID: %d", id);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief notification's title.
+ * notification's title.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_Notification_getTitle
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_Notification_getTitle
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get notification title
+ * NSString *title = notification.title;
+ * NSLog(@"Notification title: %@", title);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * title;
 
 /**
- * @brief notification's content.
+ * notification's content.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_Notification_getContent
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_Notification_getContent
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get notification content
+ * NSString *content = notification.content;
+ * NSLog(@"Notification content: %@", content);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * content;
 
 /**
- * @brief notification's image url if specified.
+ * notification's image url if specified.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_Notification_getImageUrl
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_Notification_getImageUrl
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get notification image URL
+ * NSString *imageUrl = notification.imageUrl;
+ * if (imageUrl != nil && imageUrl.length > 0) {
+ *    NSLog(@"Notification image URL: %@", imageUrl);
+ * } else {
+ *    NSLog(@"Notification has no image URL");
+ * }
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NSString * imageUrl;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

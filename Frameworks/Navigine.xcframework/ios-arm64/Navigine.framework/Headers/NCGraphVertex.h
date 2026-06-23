@@ -4,87 +4,79 @@
 
 
 /**
- * @file NCGraphVertex.h
- * @brief @copybrief NCGraphVertex
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- *
- * @brief Class is used for storing graph vertex.
- *
+ * Class is used for storing graph vertex.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGraphVertex : NSObject
 
 /**
- * @brief graph vertex unique identifier.
+ * graph vertex unique identifier.
  *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_GraphVertex_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_GraphVertex_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get vertex ID
+ * int32_t vertexId = [vertex getId];
+ * NSLog(@"Vertex ID: %d", vertexId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief graph vertex position in meters @see Point "Point".
+ * graph vertex position in meters ``NCPoint``.
  *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_GraphVertex_getPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_GraphVertex_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get vertex point
+ * NCPoint *point = [vertex getPoint];
+ * if (point != nil) {
+ *    [self demonstratePointUsage:point];
+ * }
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
 /**
- * @brief graph vertex name.
+ * graph vertex name.
  *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_GraphVertex_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_GraphVertex_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get vertex name
+ * NSString *name = [vertex getName];
+ * NSLog(@"Vertex name: %@", name);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief graph vertex can be used to communicate with external graphs or not.
+ * graph vertex can be used to communicate with external graphs or not.
  *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_GraphVertex_getIsExternal
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_GraphVertex_getIsExternal
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get vertex external flag
+ * BOOL isExternal = [vertex getIsExternal];
+ * NSLog(@"Vertex is external: %@", isExternal ? @"YES" : @"NO");
+ * @endcode
  */
 @property (nonatomic, readonly) BOOL isExternal;
 
 /**
- * @brief graph vertex used in elevation graph @see ElevationGraph "ElevationGraph" or not.
+ * graph vertex used in elevation graph ``NCElevationGraph`` or not.
  *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_GraphVertex_getIsElevation
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_GraphVertex_getIsElevation
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get vertex elevation flag
+ * BOOL isElevation = [vertex getIsElevation];
+ * NSLog(@"Vertex is elevation: %@", isElevation ? @"YES" : @"NO");
+ * @endcode
  */
 @property (nonatomic, readonly) BOOL isElevation;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

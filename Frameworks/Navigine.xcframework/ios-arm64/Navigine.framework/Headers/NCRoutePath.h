@@ -5,96 +5,81 @@
 
 
 /**
- * @file NCRoutePath.h
- * @brief @copybrief NCRoutePath
- */
-/**
- *
- * @brief Class is used for storing the route path between two points in location.
- *
- * Referenced from: @see AsyncRouteListener "AsyncRouteListener", @see AsyncRouteManager "AsyncRouteManager", @see Location "Location",
- * @see RouteListener "RouteListener", @see RouteManager "RouteManager"
- *
+ * Class is used for storing the route path between two points in location.
+ * Referenced from: ``NCAsyncRouteListener``, ``NCAsyncRouteManager``, ``NCLocation``,
+ * ``NCRouteListener``, ``NCRouteManager``
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRoutePath : NSObject
 
 /**
- * @brief Returns the leading segment of the route up to advance meters.
+ * Returns the leading segment of the route up to advance meters.
  * @param advance distance along route (meters).
  * @return route head segment.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RoutePath_head
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RoutePath_head
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get head of route (first 10 meters)
+ * NCRoutePath *headPath = [path head:10.0];
+ * if (headPath != nil) {
+ *    NSLog(@"Head path length: %f meters", [headPath getLength]);
+ * }
+ * @endcode
  */
 - (nullable NCRoutePath *)head:(float)advance;
 
 /**
- * @brief Returns the route segment after advance meters.
+ * Returns the route segment after advance meters.
  * @param advance distance along route (meters).
  * @return route tail segment.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RoutePath_tail
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RoutePath_tail
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get tail of route (remaining after 10 meters)
+ * NCRoutePath *tailPath = [path tail:10.0];
+ * if (tailPath != nil) {
+ *    NSLog(@"Tail path length: %f meters", [tailPath getLength]);
+ * }
+ * @endcode
  */
 - (nullable NCRoutePath *)tail:(float)advance;
 
 /**
- * @brief Returns route nodes with points and events.
+ * Returns route nodes with points and events.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RoutePath_getNodes
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RoutePath_getNodes
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get route nodes
+ * NSArray<NCRouteNode *> *nodes = [path getNodes];
+ * NSLog(@"Route has %lu nodes", (unsigned long)nodes.count);
+ * for (int j = 0; j < nodes.count; j++) {
+ *    [self demonstrateRouteNodeUsage:nodes[j]];
+ * }
+ * @endcode
  */
 - (nonnull NSArray<NCRouteNode *> *)nodes;
 
 /**
- * @brief Total route length in meters.
+ * Total route length in meters.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RoutePath_getLength
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RoutePath_getLength
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get route length
+ * double length = [path getLength];
+ * NSLog(@"Route length: %f meters", length);
+ * @endcode
  */
 @property (nonatomic, readonly) float length;
 
 /**
- * @brief Total route weight/cost.
+ * Total route weight/cost.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RoutePath_getWeight
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RoutePath_getWeight
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get total route weight
+ * double weight = [path getWeight];
+ * NSLog(@"Route weight: %f", weight);
+ * @endcode
  */
 @property (nonatomic, readonly) float weight;
 

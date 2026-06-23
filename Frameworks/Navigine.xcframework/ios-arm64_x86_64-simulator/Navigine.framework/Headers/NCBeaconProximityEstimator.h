@@ -3,10 +3,6 @@
 @protocol NCBeaconProximityEstimatorListener;
 
 
-/**
- * @file NCBeaconProximityEstimator.h
- * @brief @copybrief NCBeaconProximityEstimator
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCBeaconProximityEstimator : NSObject
 

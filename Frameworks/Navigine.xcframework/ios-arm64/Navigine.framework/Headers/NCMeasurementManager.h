@@ -4,71 +4,54 @@
 
 
 /**
- * @file NCMeasurementManager.h
- * @brief @copybrief NCMeasurementManager
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_managers
- * @brief Class is used for managing measurement generators and notifying about sensor and signal measurements.
- *
- * Referenced from @see NavigineSdk "NavigineSdk".
+ * Class is used for managing measurement generators and notifying about sensor and signal measurements.
+ * Referenced from ``NCNavigineSdk``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMeasurementManager : NSObject
 
 /**
- * @brief Method is used to add @see MeasurementListener "MeasurementListener" class element
+ * Method is used to add ``NCMeasurementListener`` class element
  * which will notify about new sensor or signal measurements.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Corresponding @see MeasurementListener "MeasurementListener" class.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCMeasurementListener`` class.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addMeasurementListener
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addMeasurementListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add measurement listener
+ * [self.measurementManager addMeasurementListener:self.measurementListener];
+ * NSLog(@"Added measurement listener");
+ * @endcode
  */
 - (void)addMeasurementListener:(nullable id<NCMeasurementListener>)listener;
 
 /**
- * @brief Method is used for removing previously added @see MeasurementListener "MeasurementListener" class element.
- * @param listener Corresponding @see MeasurementListener "MeasurementListener" class to remove.
+ * Method is used for removing previously added ``NCMeasurementListener`` class element.
+ * @param listener Corresponding ``NCMeasurementListener`` class to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeMeasurementListener
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeMeasurementListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove measurement listener
+ * [self.measurementManager removeMeasurementListener:self.measurementListener];
+ * NSLog(@"Removed measurement listener");
+ * @endcode
  */
 - (void)removeMeasurementListener:(nullable id<NCMeasurementListener>)listener;
 
 /**
- * @brief Sets the interval in milliseconds between measurement batches delivered to @see MeasurementListener "MeasurementListener". Default is 1000 ms. Values less than or equal to zero are treated as the default.
+ * Sets the interval in milliseconds between measurement batches delivered to ``NCMeasurementListener``. Default is 1000 ms. Values less than or equal to zero are treated as the default.
  * @param intervalMs wait time in milliseconds before the next publish cycle
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_setPublishIntervalMs
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_setPublishIntervalMs
- *
- *
+ * @discussion Example:
+ * @code
+ * // Optional: interval between measurement batches sent to listeners (ms)
+ * [self.measurementManager setPublishIntervalMs:1000];
+ * @endcode
  */
 - (void)setPublishIntervalMs:(int32_t)intervalMs;
 
 /**
- * @brief Method adds a beacon generator for simulating BLE beacon signals.
+ * Method adds a beacon generator for simulating BLE beacon signals.
  * @param uuid UUID of the beacon.
  * @param major Major value of the beacon.
  * @param minor Minor value of the beacon.
@@ -78,15 +61,18 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param rssiMax Maximum RSSI value for the simulated signal.
  * @return Unique identifier of the created beacon generator.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addBeaconGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addBeaconGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add beacon generator
+ * NSString *beaconId = [self.measurementManager addBeaconGeneratorWithUuid:@"12345678-1234-1234-1234-123456789012"
+ *                                                                   major:100
+ *                                                                   minor:200
+ *                                                                   power:-60
+ *                                                                 timeout:5000
+ *                                                                rssiMin:-80
+ *                                                                rssiMax:-40];
+ * NSLog(@"Added beacon generator with ID: %@", beaconId);
+ * @endcode
  */
 - (nonnull NSString *)addBeaconGenerator:(nonnull NSString *)uuid
                                    major:(int32_t)major
@@ -97,7 +83,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                                  rssiMax:(int32_t)rssiMax;
 
 /**
- * @brief Method adds an Eddystone generator for simulating Eddystone beacon signals.
+ * Method adds an Eddystone generator for simulating Eddystone beacon signals.
  * @param namespaceId Namespace ID of the Eddystone beacon.
  * @param instanceId Instance ID of the Eddystone beacon.
  * @param power Transmission power of the beacon (dBm).
@@ -106,15 +92,17 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param rssiMax Maximum RSSI value for the simulated signal.
  * @return Unique identifier of the created Eddystone generator.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addEddystoneGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addEddystoneGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add Eddystone generator
+ * NSString *eddystoneId = [self.measurementManager addEddystoneGeneratorWithNamespaceId:@"12345678901234567890"
+ *                                                                           instanceId:@"1234567890123456"
+ *                                                                               power:-65
+ *                                                                             timeout:3000
+ *                                                                            rssiMin:-85
+ *                                                                            rssiMax:-45];
+ * NSLog(@"Added Eddystone generator with ID: %@", eddystoneId);
+ * @endcode
  */
 - (nonnull NSString *)addEddystoneGenerator:(nonnull NSString *)namespaceId
                                  instanceId:(nonnull NSString *)instanceId
@@ -124,53 +112,47 @@ DEFAULT_EXPORT_ATTRIBUTE
                                     rssiMax:(int32_t)rssiMax;
 
 /**
- * @brief Method removes all BLE beacon generators.
+ * Method removes all BLE beacon generators.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerators
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerators
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove all BLE generators
+ * [self.measurementManager removeBleGenerators];
+ * NSLog(@"Removed all BLE generators");
+ * @endcode
  */
 - (void)removeBleGenerators;
 
 /**
- * @brief Method removes a specific BLE beacon generator by its identifier.
+ * Method removes a specific BLE beacon generator by its identifier.
  * @param id Unique identifier of the BLE generator to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeBleGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeBleGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove specific BLE generator
+ * [self.measurementManager removeBleGeneratorWithId:beaconId];
+ * NSLog(@"Removed BLE generator: %@", beaconId);
+ * @endcode
  */
 - (void)removeBleGenerator:(nonnull NSString *)id;
 
 /**
- * @brief Method adds a Wi-Fi generator for simulating Wi-Fi signals.
+ * Method adds a Wi-Fi generator for simulating Wi-Fi signals.
  * @param mac MAC address of the Wi-Fi access point.
  * @param timeout Duration of the generator in milliseconds.
  * @param rssiMin Minimum RSSI value for the simulated signal.
  * @param rssiMax Maximum RSSI value for the simulated signal.
  * @return Unique identifier of the created Wi-Fi generator.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add Wi-Fi generator
+ * NSString *wifiId = [self.measurementManager addWifiGeneratorWithMac:@"AA:BB:CC:DD:EE:FF"
+ *                                                             timeout:4000
+ *                                                            rssiMin:-90
+ *                                                            rssiMax:-50];
+ * NSLog(@"Added Wi-Fi generator with ID: %@", wifiId);
+ * @endcode
  */
 - (nonnull NSString *)addWifiGenerator:(nonnull NSString *)mac
                                timeout:(int32_t)timeout
@@ -178,38 +160,32 @@ DEFAULT_EXPORT_ATTRIBUTE
                                rssiMax:(int32_t)rssiMax;
 
 /**
- * @brief Method removes a specific Wi-Fi generator by its identifier.
+ * Method removes a specific Wi-Fi generator by its identifier.
  * @param id Unique identifier of the Wi-Fi generator to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove specific Wi-Fi generator
+ * [self.measurementManager removeWifiGeneratorWithId:wifiId];
+ * NSLog(@"Removed Wi-Fi generator: %@", wifiId);
+ * @endcode
  */
 - (void)removeWifiGenerator:(nonnull NSString *)id;
 
 /**
- * @brief Method removes all Wi-Fi generators.
+ * Method removes all Wi-Fi generators.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiGenerators
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiGenerators
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove all Wi-Fi generators
+ * [self.measurementManager removeWifiGenerators];
+ * NSLog(@"Removed all Wi-Fi generators");
+ * @endcode
  */
 - (void)removeWifiGenerators;
 
 /**
- * @brief Method adds a Wi-Fi RTT generator for simulating Wi-Fi Round-Trip Time signals.
+ * Method adds a Wi-Fi RTT generator for simulating Wi-Fi Round-Trip Time signals.
  * @param mac MAC address of the Wi-Fi access point.
  * @param timeout Duration of the generator in milliseconds.
  * @param distMin Minimum distance for the simulated signal (in meters).
@@ -220,15 +196,19 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param rssiMax Maximum RSSI value for the simulated signal.
  * @return Unique identifier of the created Wi-Fi RTT generator.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addWifiRttGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addWifiRttGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add Wi-Fi RTT generator
+ * NSString *wifiRttId = [self.measurementManager addWifiRttGeneratorWithMac:@"11:22:33:44:55:66"
+ *                                                                  timeout:6000
+ *                                                                 distMin:1
+ *                                                                 distMax:10
+ *                                                              stdDevMin:0
+ *                                                              stdDevMax:2
+ *                                                                rssiMin:-70
+ *                                                                rssiMax:-30];
+ * NSLog(@"Added Wi-Fi RTT generator with ID: %@", wifiRttId);
+ * @endcode
  */
 - (nonnull NSString *)addWifiRttGenerator:(nonnull NSString *)mac
                                   timeout:(int32_t)timeout
@@ -240,38 +220,32 @@ DEFAULT_EXPORT_ATTRIBUTE
                                   rssiMax:(int32_t)rssiMax;
 
 /**
- * @brief Method removes a specific Wi-Fi RTT generator by its identifier.
+ * Method removes a specific Wi-Fi RTT generator by its identifier.
  * @param hash Unique identifier of the Wi-Fi RTT generator to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove specific Wi-Fi RTT generator
+ * [self.measurementManager removeWifiRttGeneratorWithHash:wifiRttId];
+ * NSLog(@"Removed Wi-Fi RTT generator: %@", wifiRttId);
+ * @endcode
  */
 - (void)removeWifiRttGenerator:(nonnull NSString *)hash;
 
 /**
- * @brief Method removes all Wi-Fi RTT generators.
+ * Method removes all Wi-Fi RTT generators.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeWifiRttGenerators
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeWifiRttGenerators
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove all Wi-Fi RTT generators
+ * [self.measurementManager removeWifiRttGenerators];
+ * NSLog(@"Removed all Wi-Fi RTT generators");
+ * @endcode
  */
 - (void)removeWifiRttGenerators;
 
 /**
- * @brief Method adds a location generator for simulating location measurements.
+ * Method adds a location generator for simulating location measurements.
  * @param latMin Minimum latitude for the simulated location.
  * @param latMax Maximum latitude for the simulated location.
  * @param lonMin Minimum longitude for the simulated location.
@@ -281,15 +255,18 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @param timeout Duration of the generator in milliseconds.
  * @return Unique identifier of the created location generator.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_addLocationGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_addLocationGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add location generator
+ * NSString *locationId = [self.measurementManager addLocationGeneratorWithLatMin:55.7558
+ *                                                                       latMax:55.7559
+ *                                                                       lonMin:37.6176
+ *                                                                       lonMax:37.6177
+ *                                                                      accMin:1.0
+ *                                                                      accMax:5.0
+ *                                                                     timeout:7000];
+ * NSLog(@"Added location generator with ID: %@", locationId);
+ * @endcode
  */
 - (nonnull NSString *)addLocationGenerator:(double)latMin
                                     latMax:(double)latMax
@@ -300,33 +277,27 @@ DEFAULT_EXPORT_ATTRIBUTE
                                    timeout:(int32_t)timeout;
 
 /**
- * @brief Method removes a specific location generator by its identifier.
+ * Method removes a specific location generator by its identifier.
  * @param id Unique identifier of the location generator to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerator
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerator
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove specific location generator
+ * [self.measurementManager removeLocationGeneratorWithId:locationId];
+ * NSLog(@"Removed location generator: %@", locationId);
+ * @endcode
  */
 - (void)removeLocationGenerator:(nonnull NSString *)id;
 
 /**
- * @brief Method removes all location generators.
+ * Method removes all location generators.
  *
- *
- *
- *Swift code snippet:
- *@snippet MeasurementManagerExample.swift swift_MeasurementManager_removeLocationGenerators
- *
- *Objective C code snippet:
- *@snippet MeasurementManagerExample.m objc_MeasurementManager_removeLocationGenerators
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove all location generators
+ * [self.measurementManager removeLocationGenerators];
+ * NSLog(@"Removed all location generators");
+ * @endcode
  */
 - (void)removeLocationGenerators;
 

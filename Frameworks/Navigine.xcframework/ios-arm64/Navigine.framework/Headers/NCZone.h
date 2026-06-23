@@ -4,123 +4,102 @@
 
 
 /**
- * @file NCZone.h
- * @brief @copybrief NCZone
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @brief Class is used for storing location polygonal zones.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing location polygonal zones.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZone : NSObject
 
 /**
- * @brief zone's list of points composing the polygonal zone @see Polygon "Polygon"
+ * zone's list of points composing the polygonal zone ``NCPolygon``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getPolygon
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getPolygon
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone polygon
+ * NSArray<NCPoint *> *polygon = [zone getPolygon];
+ * NSLog(@"Zone polygon points: %lu", (unsigned long)polygon.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPolygon * polygon;
 
 /**
- * @brief zone's location identifier.
+ * zone's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getLocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone location ID
+ * int32_t locationId = [zone getLocationId];
+ * NSLog(@"Zone location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief zone's sublocationId identifier.
+ * zone's sublocationId identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getSublocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone sublocation ID
+ * int32_t sublocationId = [zone getSublocationId];
+ * NSLog(@"Zone sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief zone's identifier.
+ * zone's identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone ID
+ * int32_t zoneId = [zone getId];
+ * NSLog(@"Zone ID: %d", zoneId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief zone's name.
+ * zone's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone name
+ * NSString *zoneName = [zone getName];
+ * NSLog(@"Zone name: %@", zoneName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief zone's color.
+ * zone's color.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getColor
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getColor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone color
+ * NSString *color = [zone getColor];
+ * NSLog(@"Zone color: %@", color);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * color;
 
 /**
- * @brief zone's alias.
+ * zone's alias.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Zone_getAlias
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Zone_getAlias
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone alias
+ * NSString *alias = [zone getAlias];
+ * NSLog(@"Zone alias: %@", alias);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * alias;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

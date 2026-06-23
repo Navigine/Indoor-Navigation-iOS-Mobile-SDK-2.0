@@ -13,373 +13,322 @@
 
 
 /**
- * @file NCSublocation.h
- * @brief @copybrief NCSublocation
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @brief Class is used for storing sublocation parameters: identifier, name, width, heigth, etc.
- *
- * The list of sublocations for the current location can be obtained from @see Location "Location" class using public method getSublocations.
- *
- * Referenced from @see Location "Location".
+ * Class is used for storing sublocation parameters: identifier, name, width, height, etc.
+ * The list of sublocations for the current location can be obtained from ``NCLocation`` class using public method getSublocations.
+ * Referenced from ``NCLocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCSublocation : NSObject
 
 /**
- * @brief Method is used to obtain origin sublocation image with specified maxTextureSize.
- * @param maxTextureSize maximum texure size to render.
+ * Method is used to obtain origin sublocation image with specified maxTextureSize.
+ * @param maxTextureSize maximum texture size to render.
  * @return platform image.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getImage
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getImage
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation image
+ * NCImageWrapper *image = [sublocation getImage:@1024]; // max texture size 1024
+ * if (image != nil) {
+ *    NSLog(@"Sublocation image obtained with max texture size 1024");
+ * }
+ * @endcode
  */
 - (nullable UIImage *)getImage:(nullable NSNumber *)maxTextureSize;
 
 /**
  * Method is used for converting the global geographic coordinates (latitude and longitude) to the local sublocation coordinates (x and y)
  * using the geographic binding of the sublocation
- * @param globalPoint point in WGS84 coordinates @see GlobalPoint "GlobalPoint"
- * @return point in metrics coordinates @see LocationPoint "LocationPoint".
+ * @param globalPoint point in WGS84 coordinates ``NCGlobalPoint``
+ * @return point in metrics coordinates ``NCLocationPoint``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_globalToLocal
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_globalToLocal
- *
- *
+ * @discussion Example:
+ * @code
+ * // Convert global coordinates to local coordinates
+ * NCGlobalPoint *globalPoint = [[NCGlobalPoint alloc] initWithLat:55.7558 lon:37.6176]; // Moscow coordinates
+ * NCLocationPoint *localPoint = [sublocation globalToLocal:globalPoint];
+ * NSLog(@"Global point %.6f, %.6f converted to local: %.2f, %.2f",
+ *      [globalPoint getLat], [globalPoint getLon], [localPoint getX], [localPoint getY]);
+ * @endcode
  */
 - (nonnull NCLocationPoint *)globalToLocal:(nonnull NCGlobalPoint *)globalPoint;
 
 /**
- * @brief Method is used for converting the local sublocation coordinates to the global geographic coordinates (latitude and longitude)
+ * Method is used for converting the local sublocation coordinates to the global geographic coordinates (latitude and longitude)
  * using the geographic binding of the sublocation.
- * @param localPoint point in metrics coordinates @see LocationPoint "LocationPoint"
- * @return point in WGS84 coordinates @see GlobalPoint "GlobalPoint".
+ * @param localPoint point in metrics coordinates ``NCLocationPoint``
+ * @return point in WGS84 coordinates ``NCGlobalPoint``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_localToGlobal
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_localToGlobal
- *
- *
+ * @discussion Example:
+ * @code
+ * // Convert local coordinates to global coordinates
+ * NCLocationPoint *localPoint2 = [[NCLocationPoint alloc] initWithX:100.0 y:200.0];
+ * NCGlobalPoint *globalPoint2 = [sublocation localToGlobal:localPoint2];
+ * NSLog(@"Local point %.2f, %.2f converted to global: %.6f, %.6f",
+ *      [localPoint2 getX], [localPoint2 getY], [globalPoint2 getLat], [globalPoint2 getLon]);
+ * @endcode
  */
 - (nonnull NCGlobalPoint *)localToGlobal:(nonnull NCLocationPoint *)localPoint;
 
 /**
- * @brief Method is used to obtain graph (within the current sublocation)
+ * Method is used to obtain graph (within the current sublocation)
  * with the specified identifier or `null` if no such graph.
  * @param tag graph tag.
- * @return found graph or `null` @see Graph "Graph".
+ * @return found graph or `null` ``NCGraph``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getGraph
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getGraph
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get graph
+ * NCGraph *graph = [sublocation getGraph];
+ * if (graph != nil) {
+ *    [self demonstrateGraphUsage:graph];
+ * }
+ * @endcode
  */
 - (nullable NCGraph *)getGraph:(nonnull NSString *)tag;
 
 /**
- * @brief Method returns the venue (within the current sublocation)
+ * Method returns the venue (within the current sublocation)
  * with the specified identifier or `null` if no such venue exists.
  * @param id venue unique identifier.
- * @return found venue object or `null` @see Venue "Venue".
+ * @return found venue object or `null` ``NCVenue``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getVenueById
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getVenueById
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venue by ID
+ * if (venues.count > 0) {
+ *    NCVenue *venueById = [sublocation getVenueById:[venues.firstObject getId]];
+ *    if (venueById != nil) {
+ *        NSLog(@"Found venue by ID: %d", [venueById getId]);
+ *        [self demonstrateVenueUsage:venueById];
+ *    }
+ * }
+ * @endcode
  */
 - (nullable NCVenue *)getVenueById:(int32_t)id;
 
 /**
- * @brief Method returns the zone (within the current sublocation)
+ * Method returns the zone (within the current sublocation)
  * with the specified identifier or `null` if no such zone exists.
  * @param id zone unique identifier.
- * @return found zone object or `null` @see Zone "Zone".
+ * @return found zone object or `null` ``NCZone``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getZoneById
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getZoneById
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zone by ID
+ * if (zones.count > 0) {
+ *    NCZone *zoneById = [sublocation getZoneById:[zones.firstObject getId]];
+ *    if (zoneById != nil) {
+ *        NSLog(@"Found zone by ID: %d", [zoneById getId]);
+ *        [self demonstrateZoneUsage:zoneById];
+ *    }
+ * }
+ * @endcode
  */
 - (nullable NCZone *)getZoneById:(int32_t)id;
 
 /**
- * @brief sublocation's identifier.
+ * sublocation's identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation ID
+ * int32_t sublocationId = [sublocation getId];
+ * NSLog(@"Sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t id;
 
 /**
- * @brief location's identifier to which the sublocation belongs.
+ * location's identifier to which the sublocation belongs.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getLocation
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getLocation
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location ID
+ * int32_t locationId = [sublocation getLocation];
+ * NSLog(@"Sublocation location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t location;
 
 /**
- * @brief sublocation's name.
+ * sublocation's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation name
+ * NSString *sublocationName = [sublocation getName];
+ * NSLog(@"Sublocation name: %@", sublocationName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief sublocation's width in meters.
+ * sublocation's width in meters.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getWidth
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getWidth
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation width in meters
+ * double width = [sublocation getWidth];
+ * NSLog(@"Sublocation width: %.2f meters", width);
+ * @endcode
  */
 @property (nonatomic, readonly) float width;
 
 /**
- * @brief sublocation's height in meters.
+ * sublocation's height in meters.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getHeight
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getHeight
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation height in meters
+ * double height = [sublocation getHeight];
+ * NSLog(@"Sublocation height: %.2f meters", height);
+ * @endcode
  */
 @property (nonatomic, readonly) float height;
 
 /**
- * @brief sublocation's altitude in meters if specified.
+ * sublocation's altitude in meters if specified.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getAltitude
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getAltitude
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation altitude in meters
+ * NSNumber *altitude = [sublocation getAltitude];
+ * if (altitude != nil) {
+ *    NSLog(@"Sublocation altitude: %.2f meters", [altitude doubleValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NSNumber * altitude;
 
 /**
- * @brief sublocation's azimuth in degrees clockwise.
+ * sublocation's azimuth in degrees clockwise.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getAzimuth
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getAzimuth
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation azimuth in degrees
+ * double azimuth = [sublocation getAzimuth];
+ * NSLog(@"Sublocation azimuth: %.2f degrees", azimuth);
+ * @endcode
  */
 @property (nonatomic, readonly) float azimuth;
 
 /**
- * @brief sublocation's center point in WGS84 coordinates @see GlobalPoint "GlobalPoint".
+ * sublocation's center point in WGS84 coordinates ``NCGlobalPoint``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getOriginPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getOriginPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation origin point in WGS84 coordinates
+ * NCGlobalPoint *originPoint = [sublocation getOriginPoint];
+ * NSLog(@"Sublocation origin point: %.6f, %.6f", [originPoint getLat], [originPoint getLon]);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCGlobalPoint * originPoint;
 
 /**
- * @brief sublocation's levelId.
+ * sublocation's levelId.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getLevelId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getLevelId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation level ID
+ * NSString *levelId = [sublocation getLevelId];
+ * NSLog(@"Sublocation level ID: %@", levelId);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * levelId;
 
 /**
- * @brief sublocation's externalId.
+ * sublocation's externalId.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getExternalId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getExternalId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation external ID
+ * NSString *externalId = [sublocation getExternalId];
+ * NSLog(@"Sublocation external ID: %@", externalId);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * externalId;
 
 /**
- * @brief sublocation's building name (e.g. "Outdoor" for overview plan).
+ * sublocation's building name (e.g. "Outdoor" for overview plan).
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getBuildingName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getBuildingName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get sublocation building name
+ * NSString *buildingName = [sublocation getBuildingName];
+ * NSLog(@"Sublocation building name: %@", buildingName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * buildingName;
 
 /**
- * @brief List of beacons, attached to this sublocation @see Beacon "Beacon".
+ * List of beacons, attached to this sublocation ``NCBeacon``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getBeacons
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getBeacons
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get beacons
+ * NSArray<NCBeacon *> *beacons = [sublocation getBeacons];
+ * NSLog(@"Number of beacons: %lu", (unsigned long)beacons.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCBeacon *> * beacons;
 
 /**
- * @brief List of eddystones, attached to this sublocation @see Eddystone "Eddystone".
+ * List of eddystones, attached to this sublocation ``NCEddystone``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getEddystones
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getEddystones
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Eddystone beacons
+ * NSArray<NCEddystone *> *eddystones = [sublocation getEddystones];
+ * NSLog(@"Number of Eddystone beacons: %lu", (unsigned long)eddystones.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCEddystone *> * eddystones;
 
 /**
- * @brief List of wifis, attached to this sublocation @see Wifi "Wifi".
+ * List of wifis, attached to this sublocation ``NCWifi``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getWifis
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getWifis
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi access points
+ * NSArray<NCWifi *> *wifis = [sublocation getWifis];
+ * NSLog(@"Number of WiFi access points: %lu", (unsigned long)wifis.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCWifi *> * wifis;
 
-/**
- * @cond
- */
 @property (nonatomic, nonnull, readonly) NSArray<NCReferencePoint *> * referencePoints;
 
 /**
- * @endcond
+ * List of venues, attached to this sublocation ``NCVenue``.
  *
- * @brief List of venues, attached to this sublocation @see Venue "Venue".
- *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getVenues
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getVenues
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get venues
+ * NSArray<NCVenue *> *venues = [sublocation getVenues];
+ * NSLog(@"Number of venues: %lu", (unsigned long)venues.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCVenue *> * venues;
 
 /**
- * @brief List of zones, attached to this sublocation @see Zone "Zone".
+ * List of zones, attached to this sublocation ``NCZone``.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Sublocation_getZones
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Sublocation_getZones
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get zones
+ * NSArray<NCZone *> *zones = [sublocation getZones];
+ * NSLog(@"Number of zones: %lu", (unsigned long)zones.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCZone *> * zones;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

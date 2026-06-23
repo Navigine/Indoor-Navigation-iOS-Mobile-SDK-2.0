@@ -2,67 +2,54 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCPoint.h
- * @brief @copybrief NCPoint
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_geometry_classes
+ * A point at the specified metrics coordinates.
  *
- * @brief A point at the specified metrics coordinates.
- *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Point_constructor
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Point_constructor
- *
- *
+ * @discussion Example:
+ * @code
+ * // Create points with x, y coordinates
+ * NCPoint *point1 = [[NCPoint alloc] initWithX:10.0 y:20.0];
+ * NCPoint *point2 = [[NCPoint alloc] initWithX:30.0 y:40.0];
+ * NCPoint *point3 = [[NCPoint alloc] initWithX:50.0 y:60.0];
+ * NSLog(@"Created points: P1(%.1f, %.1f), P2(%.1f, %.1f), P3(%.1f, %.1f)",
+ *      point1.x, point1.y, point2.x, point2.y, point3.x, point3.y);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPoint : NSObject
 
 /** 
- * @brief Default constructor for class NCPoint 
+ * Default constructor for class NCPoint 
  */
 - (nonnull instancetype)initWithX:(float)x
                                 y:(float)y;
 
 /** 
- * @brief Factory method for class NCPoint 
+ * Factory method for class NCPoint 
  */
 + (nonnull instancetype)pointWithX:(float)x
                                  y:(float)y;
 
 /**
- * @brief point's `x` coordinate in meters.
+ * point's `x` coordinate in meters.
  *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Point_getX
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Point_getX
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get X coordinate
+ * double x1 = point1.x;
+ * NSLog(@"Point1 X coordinate: %.1f", x1);
+ * @endcode
  */
 @property (nonatomic, readonly) float x;
 
 /**
- * @brief point's `y` coordinate in meters.
+ * point's `y` coordinate in meters.
  *
- *
- *
- *Swift code snippet:
- *@snippet GeometryUtilsExample.swift swift_Point_getY
- *
- *Objective C code snippet:
- *@snippet GeometryUtilsExample.m objc_Point_getY
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get Y coordinate
+ * double y1 = point1.y;
+ * NSLog(@"Point1 Y coordinate: %.1f", y1);
+ * @endcode
  */
 @property (nonatomic, readonly) float y;
 

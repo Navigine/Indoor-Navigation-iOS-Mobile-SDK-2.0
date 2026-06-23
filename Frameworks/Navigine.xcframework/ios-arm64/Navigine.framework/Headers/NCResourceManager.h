@@ -5,10 +5,6 @@
 @protocol NCResourceUploadListener;
 
 
-/**
- * @file NCResourceManager.h
- * @brief @copybrief NCResourceManager
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCResourceManager : NSObject
 

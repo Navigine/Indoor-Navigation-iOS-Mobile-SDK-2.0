@@ -4,23 +4,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCPosition.h
- * @brief @copybrief NCPosition
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief Class describing user's position.
- *
- * Referenced from: @see NavigationManager "NavigationManager", @see PositionListener "PositionListener".
- *
+ * Class describing user's position.
+ * Referenced from: ``NCNavigationManager``, ``NCPositionListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCPosition : NSObject
 
 /** 
- * @brief Default constructor for class NCPosition 
+ * Default constructor for class NCPosition 
  */
 - (nonnull instancetype)initWithPoint:(nonnull NCGlobalPoint *)point
                              accuracy:(double)accuracy
@@ -30,7 +21,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                       locationHeading:(nullable NSNumber *)locationHeading;
 
 /** 
- * @brief Factory method for class NCPosition 
+ * Factory method for class NCPosition 
  */
 + (nonnull instancetype)positionWithPoint:(nonnull NCGlobalPoint *)point
                                  accuracy:(double)accuracy
@@ -40,37 +31,33 @@ DEFAULT_EXPORT_ATTRIBUTE
                           locationHeading:(nullable NSNumber *)locationHeading;
 
 /**
- * @brief position in WGS84 coordinates.
+ * position in WGS84 coordinates.
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getPoint
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get global point (WGS84 coordinates)
+ * NCGlobalPoint *globalPoint = [position getPoint];
+ * if (globalPoint != nil) {
+ *    [self demonstrateGlobalPointUsage:globalPoint];
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nonnull) NCGlobalPoint * point;
 
 /**
  * Position accuracy in meters
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getAccuracy
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getAccuracy
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get position accuracy
+ * double accuracy = [position getAccuracy];
+ * NSLog(@"Position accuracy: %f meters", accuracy);
+ * @endcode
  */
 @property (nonatomic, readonly) double accuracy;
 
 /**
- * @brief Heading, angle of rotation about the -Z axis (in radians).
+ * Heading, angle of rotation about the -Z axis (in radians).
  * This value represents the angle between the device's Y
  * axis and the magnetic north pole. When facing north, this
  * angle is 0, when facing south, this angle is pi.
@@ -78,60 +65,56 @@ DEFAULT_EXPORT_ATTRIBUTE
  * when facing west, this angle is -pi/2. The range of
  * values is [-pi, pi].
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getHeading
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getHeading
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get heading (angle of rotation about the -Z axis in radians)
+ * NSNumber *heading = [position getHeading];
+ * if (heading != nil) {
+ *    NSLog(@"Heading: %f radians", [heading doubleValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nullable) NSNumber * heading;
 
 /**
- * @brief Heading accuracy in radians
+ * Heading accuracy in radians
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getHeadingAccuracy
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getHeadingAccuracy
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get heading accuracy
+ * NSNumber *headingAccuracy = [position getHeadingAccuracy];
+ * if (headingAccuracy != nil) {
+ *    NSLog(@"Heading accuracy: %f radians", [headingAccuracy doubleValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nullable) NSNumber * headingAccuracy;
 
 /**
- * @brief position in metrics coordinates at calculated location and sublocation @see LocationPoint
+ * position in metrics coordinates at calculated location and sublocation @see LocationPoint
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getLocationPoint
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getLocationPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location point (metrics coordinates)
+ * NCLocationPoint *locationPoint = [position getLocationPoint];
+ * if (locationPoint != nil) {
+ *    [self demonstrateLocationPointUsage:locationPoint];
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nullable) NCLocationPoint * locationPoint;
 
 /**
- * @brief Similiar to `heading` but with respect to `sublocation north` (top of the image)
+ * Similar to `heading` but with respect to `sublocation north` (top of the image)
  *
- *
- *
- *Swift code snippet:
- *@snippet NavigationManagerExample.swift swift_Position_getLocationHeading
- *
- *Objective C code snippet:
- *@snippet NavigationManagerExample.m objc_Position_getLocationHeading
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get location heading (with respect to sublocation north)
+ * NSNumber *locationHeading = [position getLocationHeading];
+ * if (locationHeading != nil) {
+ *    NSLog(@"Location heading: %f radians", [locationHeading doubleValue]);
+ * }
+ * @endcode
  */
 @property (nonatomic, readonly, nullable) NSNumber * locationHeading;
 

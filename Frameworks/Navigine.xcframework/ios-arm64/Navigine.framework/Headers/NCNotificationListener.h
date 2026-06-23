@@ -4,50 +4,39 @@
 
 
 /**
- * @file NCNotificationListener.h
- * @brief @copybrief NCNotificationListener-p
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_listeners
- * @brief Class provides a callback to be invoked when @see NotificationManager "NotificationManager"
+ * Class provides a callback to be invoked when ``NCNotificationManager``
  * detects local notification events.
- *
- * Referenced from @see NotificationManager "NotificationManager".
- * @note The callback is invoked in the UI thread.
+ * Referenced from ``NCNotificationManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCNotificationListener <NSObject>
 
 /**
- * @brief Called when iBeacon signal mathed all parameters in notification
- * @param notification notification instance created in CMS @see Notification "Notification".
+ * Called when iBeacon signal matched all parameters in notification
+ * @param notification notification instance created in CMS ``NCNotification``.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_NotificationListener_onNotificationLoaded
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_NotificationListener_onNotificationLoaded
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onNotificationLoaded:(NCNotification *)notification {
+ *    NSLog(@"Notification loaded");
+ *    [self.example demonstrateNotificationUsage:notification];
+ * }
+ * @endcode
  */
 - (void)onNotificationLoaded:(nullable NCNotification *)notification;
 
 /**
- * @brief Called if unable to calculate notification or network errors.
+ * Called if unable to calculate notification or network errors.
  * @param error handled error.
  *
- *
- *
- *Swift code snippet:
- *@snippet NotificationManagerExample.swift swift_NotificationListener_onNotificationFailed
- *
- *Objective C code snippet:
- *@snippet NotificationManagerExample.m objc_NotificationListener_onNotificationFailed
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onNotificationFailed:(NSError *)error {
+ *    NSLog(@"Notification failed");
+ *    [self.example demonstrateErrorHandling:error];
+ * }
+ * @endcode
  */
 - (void)onNotificationFailed:(nullable NSError *)error;
 

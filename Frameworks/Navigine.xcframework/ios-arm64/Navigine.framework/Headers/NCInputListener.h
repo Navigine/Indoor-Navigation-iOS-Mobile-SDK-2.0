@@ -4,66 +4,48 @@
 
 
 /**
- * @file NCInputListener.h
- * @brief @copybrief NCInputListener-p
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- *
- * @brief Class is used to listen for interactions with location view
- *
- * Referenced from @see LocationWindow "LocationWindow".
- *
+ * Class is used to listen for interactions with location view
+ * Referenced from ``NCLocationWindow``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCInputListener <NSObject>
 
 /**
- * @brief Called when a tap occurred.
+ * Called when a tap occurred.
  * @param screenPoint point in screen coordinates.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowInteractionExample.swift swift_InputListener_onViewTap
- *
- *Objective C code snippet:
- *@snippet LocationWindowInteractionExample.m objc_InputListener_onViewTap
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onViewTapWithScreenPoint:(NCPoint *)screenPoint {
+ *    NSLog(@"View tapped at screen position (%.1f, %.1f)", screenPoint.x, screenPoint.y);
+ * }
+ * @endcode
  */
 - (void)onViewTap:(CGPoint)screenPoint;
 
 /**
- * @brief Called when a double tap occurred.
+ * Called when a double tap occurred.
  * @param screenPoint point in screen coordinates.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowInteractionExample.swift swift_InputListener_onViewDoubleTap
- *
- *Objective C code snippet:
- *@snippet LocationWindowInteractionExample.m objc_InputListener_onViewDoubleTap
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onViewDoubleTapWithScreenPoint:(NCPoint *)screenPoint {
+ *    NSLog(@"View double tapped at screen position (%.1f, %.1f)", screenPoint.x, screenPoint.y);
+ * }
+ * @endcode
  */
 - (void)onViewDoubleTap:(CGPoint)screenPoint;
 
 /**
- * @brief Called when a long tap occurred.
+ * Called when a long tap occurred.
  * @param screenPoint point in screen coordinates.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowInteractionExample.swift swift_InputListener_onViewLongTap
- *
- *Objective C code snippet:
- *@snippet LocationWindowInteractionExample.m objc_InputListener_onViewLongTap
- *
- *
+ * @discussion Example:
+ * @code
+ * - (void)onViewLongTapWithScreenPoint:(NCPoint *)screenPoint {
+ *    NSLog(@"View long tapped at screen position (%.1f, %.1f)", screenPoint.x, screenPoint.y);
+ * }
+ * @endcode
  */
 - (void)onViewLongTap:(CGPoint)screenPoint;
 

@@ -4,50 +4,37 @@
 
 
 /**
- * @file NCZoneManager.h
- * @brief @copybrief NCZoneManager
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_managers
- * @brief Class is used for notifying about entering or leaving @see Zone "Zone"s.
- *
- * Referenced from @see NavigineSdk "NavigineSdk".
+ * Class is used for notifying about entering or leaving ``NCZone``s.
+ * Referenced from ``NCNavigineSdk``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneManager : NSObject
 
 /**
- * @brief Method is used to add @see ZoneListener "ZoneListener" class element
- * which will notify entering or leaving @see Zone "Zone"s.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Corresponding @see ZoneListener "ZoneListener" class.
+ * Method is used to add ``NCZoneListener`` class element
+ * which will notify entering or leaving ``NCZone``s.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCZoneListener`` class.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneManager_addZoneListener
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneManager_addZoneListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add zone listener
+ * [self.zoneManager addZoneListener:self.zoneListener];
+ * NSLog(@"Added zone listener");
+ * @endcode
  */
 - (void)addZoneListener:(nullable id<NCZoneListener>)listener;
 
 /**
- * @brief Method is used for removing previously added @see ZoneListener "ZoneListener" class element.
- * @param listener Corresponding @see ZoneListener "ZoneListener" class to remove.
+ * Method is used for removing previously added ``NCZoneListener`` class element.
+ * @param listener Corresponding ``NCZoneListener`` class to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet ZoneManagerExample.swift swift_ZoneManager_removeZoneListener
- *
- *Objective C code snippet:
- *@snippet ZoneManagerExample.m objc_ZoneManager_removeZoneListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove zone listener
+ * [self.zoneManager removeZoneListener:self.zoneListener];
+ * NSLog(@"Removed zone listener");
+ * @endcode
  */
 - (void)removeZoneListener:(nullable id<NCZoneListener>)listener;
 

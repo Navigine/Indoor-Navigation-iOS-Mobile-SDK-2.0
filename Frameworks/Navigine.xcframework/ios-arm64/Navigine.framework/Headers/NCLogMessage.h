@@ -2,15 +2,11 @@
 #import "NCLogLevel.h"
 #import <Foundation/Foundation.h>
 
-/**
- * @file NCLogMessage.h
- * @brief @copybrief NCLogMessage
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLogMessage : NSObject
 
 /** 
- * @brief Default constructor for class NCLogMessage 
+ * Default constructor for class NCLogMessage 
  */
 - (nonnull instancetype)initWithTime:(int64_t)time
                                level:(NCLogLevel)level
@@ -19,7 +15,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                          verboseInfo:(nonnull NSString *)verboseInfo;
 
 /** 
- * @brief Factory method for class NCLogMessage 
+ * Factory method for class NCLogMessage 
  */
 + (nonnull instancetype)logMessageWithTime:(int64_t)time
                                      level:(NCLogLevel)level

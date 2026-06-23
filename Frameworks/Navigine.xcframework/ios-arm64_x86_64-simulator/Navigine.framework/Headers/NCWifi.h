@@ -5,109 +5,92 @@
 
 
 /**
- * @file NCWifi.h
- * @brief @copybrief NCWifi
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- * @ingroup navigine_objc_transmitters
- * @brief Class is used for storing <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a>.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing <a href="https://en.wikipedia.org/wiki/Wi-Fi">WiFi</a>.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCWifi : NSObject
 
 /**
- * @brief wifi's X and Y coordinates in meters as @see Point "Point" (within the sublocation).
+ * wifi's X and Y coordinates in meters as ``NCPoint`` (within the sublocation).
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getPoint
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi point
+ * NCPoint *point = [wifi getPoint];
+ * if (point != nil) {
+ *    [self demonstratePointUsage:point];
+ * }
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NCPoint * point;
 
 /**
- * @brief wifi's location identifier.
+ * wifi's location identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getLocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getLocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi location ID
+ * int32_t locationId = [wifi getLocationId];
+ * NSLog(@"WiFi location ID: %d", locationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- * @brief wifi's sublocation identifier.
+ * wifi's sublocation identifier.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getSublocationId
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getSublocationId
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi sublocation ID
+ * int32_t sublocationId = [wifi getSublocationId];
+ * NSLog(@"WiFi sublocation ID: %d", sublocationId);
+ * @endcode
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 
 /**
- * @brief wifi's name.
+ * wifi's name.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getName
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getName
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi name
+ * NSString *wifiName = [wifi getName];
+ * NSLog(@"WiFi name: %@", wifiName);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * name;
 
 /**
- * @brief wifi's mac.
+ * wifi's mac.
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getMac
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getMac
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi MAC address
+ * NSString *mac = [wifi getMac];
+ * NSLog(@"WiFi MAC: %@", mac);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSString * mac;
 
 /**
- * @brief wifi's status. @see TransmitterStatus "TransmitterStatus"
+ * wifi's status. ``NCTransmitterStatus``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Wifi_getStatus
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Wifi_getStatus
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get WiFi status
+ * NCTransmitterStatus status = [wifi getStatus];
+ * NSLog(@"WiFi status: %ld", (long)status);
+ * @endcode
  */
 @property (nonatomic, readonly) NCTransmitterStatus status;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

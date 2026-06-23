@@ -3,61 +3,51 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCLocationPolygon.h
- * @brief @copybrief NCLocationPolygon
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_geometry_classes
+ * Class is used for representing certain polygon within the location ``NCPolygon``
  *
- *
- * @brief Class is used for representing certain polygon within the location @see Polygon "Polygon"
- *
- *
- *
- *Swift code snippet:
- *@snippet LocationWindowMapObjectsExample.swift swift_LocationPolygon_record
- *
- *Objective C code snippet:
- *@snippet LocationWindowMapObjectsExample.m objc_LocationPolygon_record
- *
- *
+ * @discussion Example:
+ * @code
+ * NSArray<NCPoint *> *ring = @[
+ *    [[NCPoint alloc] initWithX:1.0 y:2.0],
+ *    [[NCPoint alloc] initWithX:3.0 y:4.0],
+ *    [[NCPoint alloc] initWithX:5.0 y:2.0],
+ * ];
+ * NCPolygon *metricPolygon = [[NCPolygon alloc] initWithPoints:ring];
+ * NCLocationPolygon *locationPolygon = [[NCLocationPolygon alloc] initWithPolygon:metricPolygon locationId:42 sublocationId:7];
+ * NCPolygon *polygonBack = locationPolygon.polygon;
+ * NSLog(@"LocationPolygon location %d sublocation %d vertices %lu",
+ *      (int)locationPolygon.locationId, (int)locationPolygon.sublocationId, (unsigned long)polygonBack.points.count);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationPolygon : NSObject
 
 /** 
- * @brief Default constructor for class NCLocationPolygon 
+ * Default constructor for class NCLocationPolygon 
  */
 - (nonnull instancetype)initWithPolygon:(nonnull NCPolygon *)polygon
                              locationId:(int32_t)locationId
                           sublocationId:(int32_t)sublocationId;
 
 /** 
- * @brief Factory method for class NCLocationPolygon 
+ * Factory method for class NCLocationPolygon 
  */
 + (nonnull instancetype)locationPolygonWithPolygon:(nonnull NCPolygon *)polygon
                                         locationId:(int32_t)locationId
                                      sublocationId:(int32_t)sublocationId;
 
 /**
- *
- * @brief Metrics polygon @see Polygon "Polygon".
- *
+ * Metrics polygon ``NCPolygon``.
  */
 @property (nonatomic, readonly, nonnull) NCPolygon * polygon;
 
 /**
- *
- * @brief location polygon location identifier.
- *
+ * location polygon location identifier.
  */
 @property (nonatomic, readonly) int32_t locationId;
 
 /**
- *
- * @brief location polygon sublocation identifier.
- *
+ * location polygon sublocation identifier.
  */
 @property (nonatomic, readonly) int32_t sublocationId;
 

@@ -3,10 +3,6 @@
 #import <Foundation/Foundation.h>
 
 
-/**
- * @file NCLogListener.h
- * @brief @copybrief NCLogListener-p
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLogListener <NSObject>
 

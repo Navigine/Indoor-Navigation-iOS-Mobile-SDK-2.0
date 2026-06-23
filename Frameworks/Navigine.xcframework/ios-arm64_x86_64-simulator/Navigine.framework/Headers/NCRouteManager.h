@@ -6,198 +6,156 @@
 
 
 /**
- * @file NCRouteManager.h
- * @brief @copybrief NCRouteManager
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_managers
- * @brief Class is used for evaluating @see RoutePath "RoutePath" from point to point.
- *
- * Referenced from @see NavigineSdk "NavigineSdk".
+ * Class is used for evaluating ``NCRoutePath`` from point to point.
+ * Referenced from ``NCNavigineSdk``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteManager : NSObject
 
 /**
- * @brief Method is used to build a route between points
- * about evaluated @see RoutePath "RoutePath" from your position to target point.
- * @param from starting @see LocationPoint "LocationPoint".
- * @param to destination @see LocationPoint "LocationPoint".
- * @return @see RoutePath "RoutePath" from starting to destination point.
+ * Method is used to build a route between points
+ * about evaluated ``NCRoutePath`` from your position to target point.
+ * @param from starting ``NCLocationPoint``.
+ * @param to destination ``NCLocationPoint``.
+ * @return ``NCRoutePath`` from starting to destination point.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_makeRoute
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_makeRoute
- *
- *
+ * @discussion Example:
+ * @code
+ * // Make route from point to point
+ * NCRoutePath *routePath = [self.routeManager makeRoute:startLocationPoint to:endLocationPoint];
+ * NSLog(@"Route created with length: %f meters", [routePath getLength]);
+ * @endcode
  */
 - (nullable NCRoutePath *)makeRoute:(nonnull NCLocationPoint *)from
                                  to:(nonnull NCLocationPoint *)to;
 
 /**
- * @brief Method is used to build a route between the starting point and several destination points
- * @param from starting @see LocationPoint "LocationPoint".
- * @param to destination list of @see LocationPoint "LocationPoint"s.
- * @return vector of @see RoutePath "RoutePath"s from starting to destination point.
+ * Method is used to build a route between the starting point and several destination points
+ * @param from starting ``NCLocationPoint``.
+ * @param to destination list of ``NCLocationPoint``s.
+ * @return vector of ``NCRoutePath``s from starting to destination point.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_makeRoutes
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_makeRoutes
- *
- *
+ * @discussion Example:
+ * @code
+ * // Make routes to multiple destinations
+ * NSArray<NCLocationPoint *> *destinations = @[
+ *    [[NCLocationPoint alloc] initWithPoint:[[NCPoint alloc] initWithX:30.0 y:40.0] locationId:12345 sublocationId:1],
+ *    [[NCLocationPoint alloc] initWithPoint:[[NCPoint alloc] initWithX:70.0 y:80.0] locationId:12345 sublocationId:1]
+ * ];
+ * NSArray<NCRoutePath *> *routePaths = [self.routeManager makeRoutes:startLocationPoint to:destinations];
+ * NSLog(@"Created %lu routes", (unsigned long)routePaths.count);
+ * @endcode
  */
 - (nonnull NSArray<NCRoutePath *> *)makeRoutes:(nonnull NCLocationPoint *)from
                                             to:(nonnull NSArray<NCLocationPoint *> *)to;
 
 /**
- * @brief Method is used to set target point in your location.
- * Through @see RouteListener "RouteListener" you will be notified about new paths to target point.
- * @param target finish @see LocationPoint "LocationPoint".
+ * Method is used to set target point in your location.
+ * Through ``NCRouteListener`` you will be notified about new paths to target point.
+ * @param target finish ``NCLocationPoint``.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_setTarget
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_setTarget
- *
- *
+ * @discussion Example:
+ * @code
+ * // Set target point
+ * [self.routeManager setTarget:endLocationPoint];
+ * @endcode
  */
 - (void)setTarget:(nonnull NCLocationPoint *)target;
 
 /**
- * @brief Method is used to add target point in your location.
- * Through @see RouteListener "RouteListener" you will be notified about new paths to target point.
- * @param target finish @see LocationPoint "LocationPoint".
+ * Method is used to add target point in your location.
+ * Through ``NCRouteListener`` you will be notified about new paths to target point.
+ * @param target finish ``NCLocationPoint``.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_addTarget
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_addTarget
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add additional target point
+ * NCLocationPoint *additionalTarget = [[NCLocationPoint alloc] initWithPoint:[[NCPoint alloc] initWithX:90.0 y:100.0] locationId:12345 sublocationId:1];
+ * [self.routeManager addTarget:additionalTarget];
+ * @endcode
  */
 - (void)addTarget:(nonnull NCLocationPoint *)target;
 
 /**
- * @brief Method is used for removing current target points to where the routes were built.
+ * Method is used for removing current target points to where the routes were built.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_cancelTarget
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_cancelTarget
- *
- *
+ * @discussion Example:
+ * @code
+ * // Cancel current target
+ * [self.routeManager cancelTarget];
+ * @endcode
  */
 - (void)cancelTarget;
 
 /**
- * @brief Method is used for removing all target points to where the routes were built.
+ * Method is used for removing all target points to where the routes were built.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_clearTargets
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_clearTargets
- *
- *
+ * @discussion Example:
+ * @code
+ * // Clear all targets
+ * [self.routeManager clearTargets];
+ * @endcode
  */
 - (void)clearTargets;
 
 /**
- * @brief Method is used to select graph tag (Default: "default").
+ * Method is used to select graph tag (Default: "default").
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_setGraphTag
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_setGraphTag
- *
- *
+ * @discussion Example:
+ * @code
+ * // Set graph tag
+ * [self.routeManager setGraphTag:@"main"];
+ * @endcode
  */
 - (void)setGraphTag:(nonnull NSString *)tag;
 
 /**
- * @brief Method is used to get current graph tag (Default: "default").
+ * Method is used to get current graph tag (Default: "default").
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_getGraphTag
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_getGraphTag
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get current graph tag
+ * NSString *currentGraphTag = [self.routeManager getGraphTag];
+ * NSLog(@"Current graph tag: %@", currentGraphTag);
+ * @endcode
  */
 - (nonnull NSString *)getGraphTag;
 
 /**
- * @brief Method is used to get all graph tags,
+ * Method is used to get all graph tags,
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_getGraphTags
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_getGraphTags
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get all graph tags
+ * NSArray<NSString *> *graphTags = [self.routeManager getGraphTags];
+ * NSLog(@"Available graph tags: %@", graphTags);
+ * @endcode
  */
 - (nonnull NSArray<NSString *> *)getGraphTags;
 
 /**
- * @brief Method is used to add @see RouteListener "RouteListener" class element
+ * Method is used to add ``NCRouteListener`` class element
  * which will notify about evaluated route path from your position to target point.
- * @note Do not forget to remove listener if it is no longer needed!
- * @param listener Corresponding @see RouteListener "RouteListener" class.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCRouteListener`` class.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_addRouteListener
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_addRouteListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Add route listener
+ * [self.routeManager addRouteListener:self];
+ * @endcode
  */
 - (void)addRouteListener:(nullable id<NCRouteListener>)listener;
 
 /**
- * @brief Method is used for removing previously added @see RouteListener "RouteListener" class element.
- * @param listener Corresponding @see RouteListener "RouteListener" class to remove.
+ * Method is used for removing previously added ``NCRouteListener`` class element.
+ * @param listener Corresponding ``NCRouteListener`` class to remove.
  *
- *
- *
- *Swift code snippet:
- *@snippet RouteManagerExample.swift swift_RouteManager_removeRouteListener
- *
- *Objective C code snippet:
- *@snippet RouteManagerExample.m objc_RouteManager_removeRouteListener
- *
- *
+ * @discussion Example:
+ * @code
+ * // Remove route listener
+ * [self.routeManager removeRouteListener:self];
+ * @endcode
  */
 - (void)removeRouteListener:(nullable id<NCRouteListener>)listener;
 

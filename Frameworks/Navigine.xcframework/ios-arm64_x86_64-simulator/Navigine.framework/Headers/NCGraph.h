@@ -5,49 +5,42 @@
 
 
 /**
- * @file NCGraph.h
- * @brief @copybrief NCGraph
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_elements
- *
- * @brief Class is used for storing graph.
- *
- * Referenced from @see Sublocation "Sublocation".
- *
+ * Class is used for storing graph.
+ * Referenced from ``NCSublocation``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCGraph : NSObject
 
 /**
- * @brief List of connected vertexes @see GraphVertex "GraphVertex"
+ * List of connected vertexes ``NCGraphVertex``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Graph_getVertices
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Graph_getVertices
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get graph vertices
+ * NSArray<NCGraphVertex *> *vertices = [graph getVertices];
+ * NSLog(@"Number of graph vertices: %lu", (unsigned long)vertices.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphVertex *> * vertexes;
 
 /**
- * @brief List of edges that connected vertexes @see GraphEdge "GraphEdge"
+ * List of edges that connected vertexes ``NCGraphEdge``
  *
- *
- *
- *Swift code snippet:
- *@snippet LocationManagerExample.swift swift_Graph_getEdges
- *
- *Objective C code snippet:
- *@snippet LocationManagerExample.m objc_Graph_getEdges
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get graph edges
+ * NSArray<NCGraphEdge *> *edges = [graph getEdges];
+ * NSLog(@"Number of graph edges: %lu", (unsigned long)edges.count);
+ * @endcode
  */
 @property (nonatomic, nonnull, readonly) NSArray<NCGraphEdge *> * edges;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

@@ -1,22 +1,20 @@
 #import "NCExport.h"
-#import "NCPolygon.h"
+#import "NCGlobalPoint.h"
 #import <Foundation/Foundation.h>
 
 /**
- * Class is used for representing certain polygon within the location ``NCPolygon``
+ * Polygon on the location view in WGS84 coordinates.
  *
  * @discussion Example:
  * @code
- * NSArray<NCPoint *> *ring = @[
- *    [[NCPoint alloc] initWithX:1.0 y:2.0],
- *    [[NCPoint alloc] initWithX:3.0 y:4.0],
- *    [[NCPoint alloc] initWithX:5.0 y:2.0],
+ * NSArray<NCGlobalPoint *> *ring = @[
+ *    [[NCGlobalPoint alloc] initWithLatitude:55.751 longitude:37.617],
+ *    [[NCGlobalPoint alloc] initWithLatitude:55.752 longitude:37.618],
+ *    [[NCGlobalPoint alloc] initWithLatitude:55.751 longitude:37.619],
  * ];
- * NCPolygon *metricPolygon = [[NCPolygon alloc] initWithPoints:ring];
- * NCLocationPolygon *locationPolygon = [[NCLocationPolygon alloc] initWithPolygon:metricPolygon locationId:42 sublocationId:7];
- * NCPolygon *polygonBack = locationPolygon.polygon;
- * NSLog(@"LocationPolygon location %d sublocation %d vertices %lu",
- *      (int)locationPolygon.locationId, (int)locationPolygon.sublocationId, (unsigned long)polygonBack.points.count);
+ * NCLocationPolygon *locationPolygon = [[NCLocationPolygon alloc] initWithPoints:ring sublocationId:@(7)];
+ * NSLog(@"LocationPolygon: sublocation %@, vertices %lu",
+ *      locationPolygon.sublocationId, (unsigned long)locationPolygon.points.count);
  * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -25,30 +23,23 @@ DEFAULT_EXPORT_ATTRIBUTE
 /** 
  * Default constructor for class NCLocationPolygon 
  */
-- (nonnull instancetype)initWithPolygon:(nonnull NCPolygon *)polygon
-                             locationId:(int32_t)locationId
-                          sublocationId:(int32_t)sublocationId;
+- (nonnull instancetype)initWithPoints:(nonnull NSArray<NCGlobalPoint *> *)points
+                         sublocationId:(nullable NSNumber *)sublocationId;
 
 /** 
  * Factory method for class NCLocationPolygon 
  */
-+ (nonnull instancetype)locationPolygonWithPolygon:(nonnull NCPolygon *)polygon
-                                        locationId:(int32_t)locationId
-                                     sublocationId:(int32_t)sublocationId;
++ (nonnull instancetype)locationPolygonWithPoints:(nonnull NSArray<NCGlobalPoint *> *)points
+                                    sublocationId:(nullable NSNumber *)sublocationId;
 
 /**
- * Metrics polygon ``NCPolygon``.
+ * Ring vertices in WGS84 ``NCGlobalPoint``.
  */
-@property (nonatomic, readonly, nonnull) NCPolygon * polygon;
+@property (nonatomic, readonly, nonnull) NSArray<NCGlobalPoint *> * points;
 
 /**
- * location polygon location identifier.
+ * Floor this polygon is attached to, or null for the outdoor map.
  */
-@property (nonatomic, readonly) int32_t locationId;
-
-/**
- * location polygon sublocation identifier.
- */
-@property (nonatomic, readonly) int32_t sublocationId;
+@property (nonatomic, readonly, nullable) NSNumber * sublocationId;
 
 @end

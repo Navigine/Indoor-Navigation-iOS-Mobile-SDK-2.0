@@ -3,6 +3,7 @@
 #import "NCMapObject.h"
 #import "NCPlacement.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -20,14 +21,13 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Set dotted polyline geometry
- * NSArray<NCPoint *> *dottedPoints = @[
- *    [[NCPoint alloc] initWithX:160.0 y:170.0],
- *    [[NCPoint alloc] initWithX:165.0 y:175.0],
- *    [[NCPoint alloc] initWithX:170.0 y:180.0],
- *    [[NCPoint alloc] initWithX:175.0 y:185.0],
+ * NSArray<NCGlobalPoint *> *dottedPoints = @[
+ *    [[NCGlobalPoint alloc] initWithLatitude:160.0 longitude:170.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:165.0 longitude:175.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:170.0 longitude:180.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:175.0 longitude:185.0],
  * ];
- * NCPolyline *dottedPl = [[NCPolyline alloc] initWithPoints:dottedPoints];
- * NCLocationPolyline *dottedPolyline = [[NCLocationPolyline alloc] initWithPolyline:dottedPl locationId:1 sublocationId:0];
+ *    NCLocationPolyline *dottedPolyline = [[NCLocationPolyline alloc] initWithPoints:dottedPoints sublocationId:@(0)];
  * BOOL dottedSuccess = [dottedPolylineObject setPolyline:dottedPolyline];
  * NSLog(@"Set dotted polyline with %lu points: %@", (unsigned long)dottedPoints.count, dottedSuccess ? @"YES" : @"NO");
  * @endcode
@@ -36,23 +36,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the color of the object.
- * @param red Red RGBA component.
- * @param green Green RGBA component.
- * @param blue Blue RGBA component.
- * @param alpha Opacity multiplier. Values below 0 will be set to 0. Default: 1.
+ * @param color Fill color.
  * @return true if success, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set dotted polyline color
- * BOOL colorSuccess = [dottedPolylineObject setColorWithRed:0.5 green:0.0 blue:1.0 alpha:0.8];
+ * BOOL colorSuccess = [dottedPolylineObject setColor:[UIColor colorWithRed:0.5 green:0.0 blue:1.0 alpha:0.8]];
  * NSLog(@"Set dotted polyline color to purple with 80%% opacity: %@", colorSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setColor:(float)red
-           green:(float)green
-            blue:(float)blue
-           alpha:(float)alpha;
+- (BOOL)setColor:(nonnull UIColor *)color;
 
 /**
  * Method is used to specify the size of the points.

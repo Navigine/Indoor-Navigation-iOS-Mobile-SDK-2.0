@@ -1,5 +1,6 @@
 #import "NCExport.h"
 #import "NCMapObjectType.h"
+#import "NCTitleStyle.h"
 #import <Foundation/Foundation.h>
 
 
@@ -106,6 +107,22 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (BOOL)setTitle:(nonnull NSString *)title;
+
+/**
+ * Method is used to set the title and its style for the map object.
+ * @param title The title to display on the location view.
+ * @param style Title style parameters ``NCTitleStyle``.
+ * @return true if the operation is successful, false otherwise.
+ *
+ * @discussion Example:
+ * @code
+ * // Set title with style
+ * BOOL titleStyleSuccess = [circleObject setTitleWithStyle:@"Styled Circle" style:titleStyle];
+ * NSLog(@"Set circle title with style: %@", titleStyleSuccess ? @"YES" : @"NO");
+ * @endcode
+ */
+- (BOOL)setTitleWithStyle:(nonnull NSString *)title
+                    style:(nonnull NCTitleStyle *)style;
 
 /**
  * Method is used to set the opacity of the map object.

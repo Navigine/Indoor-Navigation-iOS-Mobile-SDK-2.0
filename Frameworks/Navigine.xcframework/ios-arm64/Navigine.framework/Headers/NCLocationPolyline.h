@@ -1,20 +1,18 @@
 #import "NCExport.h"
-#import "NCPolyline.h"
+#import "NCGlobalPoint.h"
 #import <Foundation/Foundation.h>
 
 /**
- * Class is used for representing certain polyline within the location ``NCPolyline``
+ * Polyline on the location view in WGS84 coordinates.
  *
  * @discussion Example:
  * @code
- * NSArray<NCPoint *> *linePts = @[
- *    [[NCPoint alloc] initWithX:0.0 y:0.0],
- *    [[NCPoint alloc] initWithX:10.0 y:10.0],
+ * NSArray<NCGlobalPoint *> *linePts = @[
+ *    [[NCGlobalPoint alloc] initWithLatitude:55.751 longitude:37.617],
+ *    [[NCGlobalPoint alloc] initWithLatitude:55.753 longitude:37.620],
  * ];
- * NCPolyline *metricPolyline = [[NCPolyline alloc] initWithPoints:linePts];
- * NCLocationPolyline *locationPolyline = [[NCLocationPolyline alloc] initWithPolyline:metricPolyline locationId:42 sublocationId:7];
- * NCPolyline *polylineBack = locationPolyline.polyline;
- * NSLog(@"LocationPolyline points %lu", (unsigned long)polylineBack.points.count);
+ * NCLocationPolyline *locationPolyline = [[NCLocationPolyline alloc] initWithPoints:linePts sublocationId:@(7)];
+ * NSLog(@"LocationPolyline points %lu", (unsigned long)locationPolyline.points.count);
  * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -23,30 +21,23 @@ DEFAULT_EXPORT_ATTRIBUTE
 /** 
  * Default constructor for class NCLocationPolyline 
  */
-- (nonnull instancetype)initWithPolyline:(nonnull NCPolyline *)polyline
-                              locationId:(int32_t)locationId
-                           sublocationId:(int32_t)sublocationId;
+- (nonnull instancetype)initWithPoints:(nonnull NSArray<NCGlobalPoint *> *)points
+                         sublocationId:(nullable NSNumber *)sublocationId;
 
 /** 
  * Factory method for class NCLocationPolyline 
  */
-+ (nonnull instancetype)locationPolylineWithPolyline:(nonnull NCPolyline *)polyline
-                                          locationId:(int32_t)locationId
-                                       sublocationId:(int32_t)sublocationId;
++ (nonnull instancetype)locationPolylineWithPoints:(nonnull NSArray<NCGlobalPoint *> *)points
+                                     sublocationId:(nullable NSNumber *)sublocationId;
 
 /**
- * Metrics polyline @see Polyline.
+ * Vertices in WGS84 ``NCGlobalPoint``.
  */
-@property (nonatomic, readonly, nonnull) NCPolyline * polyline;
+@property (nonatomic, readonly, nonnull) NSArray<NCGlobalPoint *> * points;
 
 /**
- * location polyline location identifier.
+ * Floor this polyline is attached to, or null for the outdoor map.
  */
-@property (nonatomic, readonly) int32_t locationId;
-
-/**
- * location polyline sublocation identifier.
- */
-@property (nonatomic, readonly) int32_t sublocationId;
+@property (nonatomic, readonly, nullable) NSNumber * sublocationId;
 
 @end

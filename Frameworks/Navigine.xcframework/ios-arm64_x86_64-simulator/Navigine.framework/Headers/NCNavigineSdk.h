@@ -69,6 +69,11 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * Method returns current User-Agent string.
  * @return User-Agent string
+ *
+ * @discussion Example:
+ * @code
+ * NSLog(@"User-Agent: %@", [NCNavigineSdk getUserAgent]);
+ * @endcode
  */
 + (nonnull NSString *)getUserAgent;
 
@@ -110,6 +115,12 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Resets SDK to the initial connection state: default production server URL, empty user hash, and a new session propagated to managers (same effect on session-aware managers as changing server or user hash). Call from the UI thread.
+ *
+ * @discussion Example:
+ * @code
+ * [_sdk reset];
+ * NSLog(@"SDK reset to initial state");
+ * @endcode
  */
 - (void)reset;
 

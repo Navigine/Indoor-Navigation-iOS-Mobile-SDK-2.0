@@ -4,6 +4,7 @@
 #import "NCLocationPolyline.h"
 #import "NCMapObject.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -21,14 +22,13 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Set polyline geometry
- * NSArray<NCPoint *> *polylinePoints = @[
- *    [[NCPoint alloc] initWithX:100.0 y:200.0],
- *    [[NCPoint alloc] initWithX:150.0 y:250.0],
- *    [[NCPoint alloc] initWithX:200.0 y:300.0],
- *    [[NCPoint alloc] initWithX:250.0 y:350.0],
+ * NSArray<NCGlobalPoint *> *polylinePoints = @[
+ *    [[NCGlobalPoint alloc] initWithLatitude:100.0 longitude:200.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:150.0 longitude:250.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:200.0 longitude:300.0],
+ *    [[NCGlobalPoint alloc] initWithLatitude:250.0 longitude:350.0],
  * ];
- * NCPolyline *metricPl = [[NCPolyline alloc] initWithPoints:polylinePoints];
- * NCLocationPolyline *polyline = [[NCLocationPolyline alloc] initWithPolyline:metricPl locationId:1 sublocationId:0];
+ *        NCLocationPolyline *polyline = [[NCLocationPolyline alloc] initWithPoints:polylinePoints sublocationId:@(0)];
  * BOOL polylineSuccess = [polylineObject setPolyLine:polyline];
  * NSLog(@"Set polyline with %lu points: %@", (unsigned long)polylinePoints.count, polylineSuccess ? @"YES" : @"NO");
  * @endcode
@@ -51,23 +51,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the fill color of the polyline.
- * @param red Red RGBA component (0 to 1).
- * @param green Green RGBA component (0 to 1).
- * @param blue Blue RGBA component (0 to 1).
- * @param alpha Opacity multiplier (0 to 1). Values below 0 are set to 0. Default: 1.
+ * @param color Fill color.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set polyline color
- * BOOL polylineColorSuccess = [polylineObject setColorWithRed:0.0 green:1.0 blue:0.0 alpha:0.8];
+ * BOOL polylineColorSuccess = [polylineObject setColor:[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.8]];
  * NSLog(@"Set polyline color to green with 80%% opacity: %@", polylineColorSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setColor:(float)red
-           green:(float)green
-            blue:(float)blue
-           alpha:(float)alpha;
+- (BOOL)setColor:(nonnull UIColor *)color;
 
 /**
  * Method is used to specify the rendering order of the polyline.
@@ -127,23 +121,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the color of the polyline’s outline.
- * @param red Red RGBA component (0 to 1).
- * @param green Green RGBA component (0 to 1).
- * @param blue Blue RGBA component (0 to 1).
- * @param alpha Opacity multiplier (0 to 1). Values below 0 are set to 0. Default: 1.
+ * @param color Outline color.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set polyline outline color
- * BOOL outlineColorSuccess = [polylineObject setOutlineColorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
+ * BOOL outlineColorSuccess = [polylineObject setOutlineColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]];
  * NSLog(@"Set polyline outline color to black: %@", outlineColorSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setOutlineColor:(float)red
-                  green:(float)green
-                   blue:(float)blue
-                  alpha:(float)alpha;
+- (BOOL)setOutlineColor:(nonnull UIColor *)color;
 
 /**
  * Method is used to specify the width of the polyline’s outline.

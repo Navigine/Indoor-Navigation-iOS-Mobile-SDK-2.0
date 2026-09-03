@@ -1,6 +1,7 @@
 #import "NCExport.h"
 #import "NCPolygon.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -59,6 +60,20 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, readonly) int32_t id;
 
 /**
+ * Optional stable zone GUID used by live tracking (MQTT zone_guids).
+ * Distinct from id; may be missing in older location archives.
+ *
+ * @discussion Example:
+ * @code
+ * NSNumber *zoneGuid = [zone getGuid];
+ * if (zoneGuid != nil) {
+ *    NSLog(@"Zone GUID: %@", zoneGuid);
+ * }
+ * @endcode
+ */
+@property (nonatomic, nullable, readonly) NSNumber * guid;
+
+/**
  * zone's name.
  *
  * @discussion Example:
@@ -76,11 +91,11 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Get zone color
- * NSString *color = [zone getColor];
+ * UIColor *color = [zone getColor];
  * NSLog(@"Zone color: %@", color);
  * @endcode
  */
-@property (nonatomic, nonnull, readonly) NSString * color;
+@property (nonatomic, nonnull, readonly) UIColor * color;
 
 /**
  * zone's alias.

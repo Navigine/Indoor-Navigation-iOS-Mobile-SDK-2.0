@@ -1,5 +1,5 @@
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import <Foundation/Foundation.h>
 @class NCMapObject;
 
@@ -12,7 +12,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMapObjectPickResult : NSObject
 
 /**
- * Location of the picked map object ``NCLocationPoint``.
+ * WGS84 location of the picked map object ``NCGlobalPoint``.
  *
  * @discussion Example:
  * @code
@@ -21,7 +21,12 @@ DEFAULT_EXPORT_ATTRIBUTE
  * NSLog(@"  Object location: (%.1f, %.1f)", point.x, point.y);
  * @endcode
  */
-@property (nonatomic, nonnull, readonly) NCLocationPoint * point;
+@property (nonatomic, nonnull, readonly) NCGlobalPoint * point;
+
+/**
+ * Floor the picked object is attached to, or null for the outdoor map.
+ */
+@property (nonatomic, nullable, readonly) NSNumber * sublocationId;
 
 /**
  * Picked map object ``NCMapObject``.

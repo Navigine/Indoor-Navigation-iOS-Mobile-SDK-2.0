@@ -4,8 +4,9 @@
 #import "NCCameraCallback.h"
 #import "NCDebugFlag.h"
 #import "NCExport.h"
+#import "NCGlobalPoint.h"
 #import "NCMapFilterCondition.h"
-#import "NCPoint.h"
+#import "NCOperatingMode.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @class NCCircleMapObject;
@@ -58,13 +59,36 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (nullable NSNumber *)getSublocationId;
 
 /**
- * Calculates camera that fits provided bounding box.
- * @param boundingBox Metrics bounding box to enclose.
+ * Sets the operating mode of the location view ``NCOperatingMode``.
+ * Default: indoor_only.
  *
  * @discussion Example:
  * @code
- * NCBoundingBox *boundingBox = [[NCBoundingBox alloc] initWithBottomLeft:[[NCPoint alloc] initWithX:0.0 y:0.0]
- *                                                              topRight:[[NCPoint alloc] initWithX:20.0 y:30.0]];
+ * [_locationWindow setOperatingMode:NCOperatingModeOutdoorIndoor];
+ * NSLog(@"Set operating mode to OUTDOOR_INDOOR");
+ * @endcode
+ */
+- (void)setOperatingMode:(NCOperatingMode)mode;
+
+/**
+ * Returns the current operating mode ``NCOperatingMode``.
+ *
+ * @discussion Example:
+ * @code
+ * NCOperatingMode currentMode = [_locationWindow getOperatingMode];
+ * NSLog(@"Current operating mode: %ld", (long)currentMode);
+ * @endcode
+ */
+- (NCOperatingMode)getOperatingMode;
+
+/**
+ * Calculates camera that fits provided bounding box.
+ * @param boundingBox WGS84 bounding box to enclose.
+ *
+ * @discussion Example:
+ * @code
+ * NCBoundingBox *boundingBox = [[NCBoundingBox alloc] initWithBottomLeft:[[NCGlobalPoint alloc] initWithLatitude:55.75 longitude:37.61]
+ *                                                              topRight:[[NCGlobalPoint alloc] initWithLatitude:55.76 longitude:37.63]];
  * NCCamera *camera = [_locationWindow getEnclosingCamera:boundingBox];
  * NSLog(@"Camera that fits bounding box: %@", camera);
  * @endcode
@@ -72,37 +96,35 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (nonnull NCCamera *)getEnclosingCamera:(nonnull NCBoundingBox *)boundingBox;
 
 /**
- * Converts screen coordinates (pixels) to metrics coordinates (meters).
+ * Converts screen coordinates (pixels) to WGS84 coordinates.
  * @param point (x,y) coordinates in screen pixels.
- * @return (x,y) coordinates in meters ``NCPoint``.
+ * @return WGS84 coordinates ``NCGlobalPoint``.
  *
  * @discussion Example:
  * @code
- * // Convert screen position to meters
- * NCPoint *screenPoint = [[NCPoint alloc] initWithX:100.0 y:200.0];
- * NCPoint *metersPoint = [_locationWindow screenPositionToMeters:screenPoint];
- * NSLog(@"Screen position (%.1f, %.1f) converted to meters: (%.1f, %.1f)",
- *      screenPoint.x, screenPoint.y, metersPoint.x, metersPoint.y);
+ * NCScreenPoint *screenPoint = [[NCScreenPoint alloc] initWithX:100.0 y:200.0];
+ * NCGlobalPoint *globalPoint = [_locationWindow screenPositionToGlobal:screenPoint];
+ * NSLog(@"Screen position (%.1f, %.1f) converted to WGS84: (%.6f, %.6f)",
+ *      screenPoint.x, screenPoint.y, globalPoint.latitude, globalPoint.longitude);
  * @endcode
  */
-- (nonnull NCPoint *)screenPositionToMeters:(CGPoint)point;
+- (nonnull NCGlobalPoint *)screenPositionToGlobal:(CGPoint)point;
 
 /**
- * Converts metrics coordinates (meters) to screen coordinates (pixels).
- * @param point (x,y) coordinates in meters ``NCPoint``.
+ * Converts WGS84 coordinates to screen coordinates (pixels).
+ * @param point WGS84 coordinates ``NCGlobalPoint``.
  * @param clipToViewport If true, coordinates outside the viewport are clipped to the viewport edge.
  * @return (x,y) coordinates in screen pixels.
  *
  * @discussion Example:
  * @code
- * // Convert meters to screen position with clipping
- * NCPoint *metersPoint3 = [[NCPoint alloc] initWithX:50.0 y:75.0];
- * NCPoint *screenPoint3 = [_locationWindow metersToScreenPosition:metersPoint3 clipToViewport:YES];
- * NSLog(@"Meters position (%.1f, %.1f) converted to screen with clipping: (%.1f, %.1f)",
- *      metersPoint3.x, metersPoint3.y, screenPoint3.x, screenPoint3.y);
+ * NCGlobalPoint *globalPoint2 = [[NCGlobalPoint alloc] initWithLatitude:55.7558 longitude:37.6176];
+ * NCScreenPoint *screenPoint2 = [_locationWindow globalToScreenPosition:globalPoint2 clipToViewport:YES];
+ * NSLog(@"WGS84 (%.6f, %.6f) converted to screen with clipping: (%.1f, %.1f)",
+ *      globalPoint2.latitude, globalPoint2.longitude, screenPoint2.x, screenPoint2.y);
  * @endcode
  */
-- (CGPoint)metersToScreenPosition:(nonnull NCPoint *)point
+- (CGPoint)globalToScreenPosition:(nonnull NCGlobalPoint *)point
                    clipToViewport:(BOOL)clipToViewport;
 
 /**
@@ -487,11 +509,11 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Fly to position with smooth animation
- * NCPoint *targetPoint = [[NCPoint alloc] initWithX:150.0 y:250.0];
+ * NCGlobalPoint *targetPoint = [[NCGlobalPoint alloc] initWithLatitude:150.0 longitude:250.0];
  * NCCamera *targetCamera = [[NCCamera alloc] initWithPoint:targetPoint zoom:75.0 rotation:45.0 tilt:30.0];
  * CameraCallbackImpl *callback = [[CameraCallbackImpl alloc] init];
  * [_locationWindow flyToWithCamera:targetCamera duration:2000 callback:callback];
- * NSLog(@"Started fly to animation to point (%.2f, %.2f)", targetPoint.x, targetPoint.y);
+ * NSLog(@"Started fly to animation to point (%.2f, %.2f)", targetPoint.latitude, targetPoint.longitude);
  * @endcode
  */
 - (void)flyTo:(nonnull NCCamera *)camera
@@ -508,7 +530,7 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Move to position with linear animation
- * NCPoint *targetPoint = [[NCPoint alloc] initWithX:200.0 y:300.0];
+ * NCGlobalPoint *targetPoint = [[NCGlobalPoint alloc] initWithLatitude:200.0 longitude:300.0];
  * NCCamera *targetCamera = [[NCCamera alloc] initWithPoint:targetPoint zoom:100.0 rotation:90.0 tilt:0.0];
  * CameraCallbackImpl *callback = [[CameraCallbackImpl alloc] init];
  * [_locationWindow moveToWithCamera:targetCamera duration:1500 animationType:NCAnimationTypeLinear callback:callback];
@@ -656,14 +678,14 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic) BOOL stickToBorder;
 
 /**
- * Current camera position in meters.
+ * Current camera position (look-at in WGS84).
  * See also: ``NCCamera``.
  *
  * @discussion Example:
  * @code
  * // Set camera position without animation
  * _locationWindow.camera = newCamera;
- * NSLog(@"Set camera position to (%.2f, %.2f) with zoom 50.0, rotation 0°, tilt 0°", newPoint.x, newPoint.y);
+ * NSLog(@"Set camera position to (%.2f, %.2f) with zoom 50.0, rotation 0°, tilt 0°", newPoint.latitude, newPoint.longitude);
  * @endcode
  */
 @property (nonatomic, nonnull) NCCamera * camera;
@@ -717,8 +739,9 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic) BOOL zoomGesturesEnabled;
 
 /**
- * Radius for picking features on the map, in density-independent pixels.
- * Default: 0.5 dp.
+ * Extra slop around the hit target, in density-independent pixels.
+ * Applied as a screen-pixel radius for points/lines and as a margin around
+ * a label's real AABB. Default: 5 dp (MapKit tap threshold).
  *
  * @discussion Example:
  * @code

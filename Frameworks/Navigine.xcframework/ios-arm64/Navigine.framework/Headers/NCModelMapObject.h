@@ -1,6 +1,6 @@
 #import "NCAnimationType.h"
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import "NCMapObject.h"
 #import "NCModelProvider.h"
 #import <Foundation/Foundation.h>
@@ -15,34 +15,38 @@ DEFAULT_EXPORT_ATTRIBUTE
 @interface NCModelMapObject : NCMapObject
 
 /**
- * Sets the anchor position of the model in metric coordinates.
- * @param point Center / placement point ``NCLocationPoint``.
+ * Sets the anchor position of the model in WGS84 coordinates.
+ * @param point Center / placement point ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * NCLocationPoint *modelPoint = [[NCLocationPoint alloc] initWithX:12.0 y:34.0];
- * BOOL posOk = [modelObject setPosition:modelPoint];
+ * NCGlobalPoint *modelPoint = [[NCGlobalPoint alloc] initWithLatitude:12.0 longitude:34.0];
+ * BOOL posOk = [modelObject setPosition:modelPoint sublocationId:@(7)];
  * NSLog(@"Model setPosition: %@", posOk ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPosition:(nonnull NCLocationPoint *)point;
+- (BOOL)setPosition:(nonnull NCGlobalPoint *)point
+      sublocationId:(nullable NSNumber *)sublocationId;
 
 /**
  * Animates the model anchor to a new position.
- * @param point Target metrics coordinates ``NCLocationPoint``.
+ * @param point Target WGS84 coordinates ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @param duration Animation duration in seconds.
  * @param type Animation easing ``NCAnimationType``.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * NCLocationPoint *animatedModelPoint = [[NCLocationPoint alloc] initWithX:15.0 y:40.0];
+ * NCGlobalPoint *animatedModelPoint = [[NCGlobalPoint alloc] initWithLatitude:15.0 longitude:40.0];
  * BOOL posAnimOk = [modelObject setPositionAnimated:animatedModelPoint duration:0.5 animationType:AnimationTypeSine];
  * NSLog(@"Model setPositionAnimated: %@", posAnimOk ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPositionAnimated:(nonnull NCLocationPoint *)point
+- (BOOL)setPositionAnimated:(nonnull NCGlobalPoint *)point
+              sublocationId:(nullable NSNumber *)sublocationId
                    duration:(float)duration
                        type:(NCAnimationType)type;
 
@@ -89,24 +93,28 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (BOOL)setCollisionEnabled:(BOOL)enabled;
 
 /**
- * Sets rotation angle in degrees (around the placement axis used by the engine).
+ * Sets rotation angle in radians (around the placement axis used by the engine).
+ * @param angle Rotation angle in radians. Default: 0.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * BOOL angleOk = [modelObject setAngle:45.0];
+ * BOOL angleOk = [modelObject setAngle:(float)(M_PI / 4.0)];
  * NSLog(@"Model setAngle: %@", angleOk ? @"YES" : @"NO");
  * @endcode
  */
 - (BOOL)setAngle:(float)angle;
 
 /**
- * Animates rotation to the given angle.
+ * Animates rotation to the given angle in radians.
+ * @param angle Rotation angle in radians.
+ * @param duration Animation duration in seconds.
+ * @param type Animation type ``NCAnimationType``.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * BOOL angleAnimOk = [modelObject setAngleAnimated:90.0 duration:0.5 animationType:AnimationTypeQuint];
+ * BOOL angleAnimOk = [modelObject setAngleAnimated:(float)(M_PI / 2.0) duration:0.5 animationType:AnimationTypeQuint];
  * NSLog(@"Model setAngleAnimated: %@", angleAnimOk ? @"YES" : @"NO");
  * @endcode
  */

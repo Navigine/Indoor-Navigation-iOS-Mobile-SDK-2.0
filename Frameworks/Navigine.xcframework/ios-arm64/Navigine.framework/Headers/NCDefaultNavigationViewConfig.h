@@ -5,10 +5,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NCDefaultNavigineViewConfig.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * @brief Visibility options for built-in widgets.
+ * @brief Visibility options for built-in navigation widgets.
  */
 typedef NS_OPTIONS(NSUInteger, NCNavigationWidgetVisibility) {
     NCNavigationWidgetVisibilityZoomControls = 1 << 0,
@@ -31,7 +33,7 @@ typedef NS_OPTIONS(NSUInteger, NCNavigationWidgetVisibility) {
  * @snippet DefaultNavigationView/objc/DefaultNavigationViewExample.m objc_DefaultNavigationView_config
  *
  */
-@interface NCDefaultNavigationViewConfig : NSObject
+@interface NCDefaultNavigationViewConfig : NCDefaultNavigineViewConfig
 
 /** @brief Bitmask of visible widgets (default: NCNavigationWidgetVisibilityAll) */
 @property (nonatomic, assign) NCNavigationWidgetVisibility visibleWidgets;

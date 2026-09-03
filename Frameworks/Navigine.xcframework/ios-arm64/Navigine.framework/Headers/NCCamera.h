@@ -1,5 +1,5 @@
 #import "NCExport.h"
-#import "NCPoint.h"
+#import "NCGlobalPoint.h"
 #import <Foundation/Foundation.h>
 
 /**
@@ -9,9 +9,9 @@
  * @discussion Example:
  * @code
  * // Create camera with constructor
- * NCPoint *newPoint = [[NCPoint alloc] initWithX:100.0 y:200.0];
+ * NCGlobalPoint *newPoint = [[NCGlobalPoint alloc] initWithLatitude:100.0 longitude:200.0];
  * NCCamera *newCamera = [[NCCamera alloc] initWithPoint:newPoint zoom:50.0 rotation:0.0 tilt:0.0];
- * NSLog(@"Created camera with point (%.2f, %.2f), zoom 50.0, rotation 0°, tilt 0°", newPoint.x, newPoint.y);
+ * NSLog(@"Created camera with point (%.2f, %.2f), zoom 50.0, rotation 0°, tilt 0°", newPoint.latitude, newPoint.longitude);
  * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
@@ -20,7 +20,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 /** 
  * Default constructor for class NCCamera 
  */
-- (nonnull instancetype)initWithPoint:(nonnull NCPoint *)point
+- (nonnull instancetype)initWithPoint:(nonnull NCGlobalPoint *)point
                                  zoom:(float)zoom
                              rotation:(float)rotation
                                  tilt:(float)tilt;
@@ -28,15 +28,15 @@ DEFAULT_EXPORT_ATTRIBUTE
 /** 
  * Factory method for class NCCamera 
  */
-+ (nonnull instancetype)cameraWithPoint:(nonnull NCPoint *)point
++ (nonnull instancetype)cameraWithPoint:(nonnull NCGlobalPoint *)point
                                    zoom:(float)zoom
                                rotation:(float)rotation
                                    tilt:(float)tilt;
 
 /**
- * point the camera is looking at ``NCPoint``
+ * Point the camera is looking at, WGS84 ``NCGlobalPoint``.
  */
-@property (nonatomic, readonly, nonnull) NCPoint * point;
+@property (nonatomic, readonly, nonnull) NCGlobalPoint * point;
 
 /**
  * zoom level.

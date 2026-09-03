@@ -1,5 +1,5 @@
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import "NCMapObject.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -56,9 +56,14 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (void)removeListener:(nullable id<NCClusterMapObjectListener>)listener;
 
 /**
- * Cluster center in metrics coordinates.
+ * Cluster center in WGS84 coordinates ``NCGlobalPoint``.
  */
-@property (nonatomic, nonnull, readonly) NCLocationPoint * position;
+@property (nonatomic, nonnull, readonly) NCGlobalPoint * point;
+
+/**
+ * Floor this cluster is attached to, or null for the outdoor map.
+ */
+@property (nonatomic, nullable, readonly) NSNumber * sublocationId;
 
 /**
  * Number of icon map objects in the cluster (at least 2 while the cluster is visible).

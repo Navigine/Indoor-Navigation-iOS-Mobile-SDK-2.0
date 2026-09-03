@@ -250,7 +250,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, nonnull, readonly) NSString * externalId;
 
 /**
- * sublocation's building name (e.g. "Outdoor" for overview plan).
+ * sublocation's building name.
  *
  * @discussion Example:
  * @code

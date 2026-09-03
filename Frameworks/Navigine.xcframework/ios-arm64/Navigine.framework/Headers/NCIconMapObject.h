@@ -1,6 +1,6 @@
 #import "NCAnimationType.h"
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import "NCMapObject.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -16,22 +16,25 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the center of the icon.
- * @param point Metrics coordinates of the center ``NCLocationPoint``.
+ * @param point WGS84 coordinates of the center ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set icon position
- * NCLocationPoint *newPosition = [[NCLocationPoint alloc] initWithX:35.0 y:45.0];
- * BOOL positionSuccess = [iconObject setPosition:newPosition];
- * NSLog(@"Set icon position to (%.1f, %.1f): %@", newPosition.x, newPosition.y, positionSuccess ? @"YES" : @"NO");
+ * NCGlobalPoint *newPosition = [[NCGlobalPoint alloc] initWithLatitude:35.0 longitude:45.0];
+ * BOOL positionSuccess = [iconObject setPosition:newPosition sublocationId:@(7)];
+ * NSLog(@"Set icon position to (%.1f, %.1f): %@", newPosition.latitude, newPosition.longitude, positionSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPosition:(nonnull NCLocationPoint *)point;
+- (BOOL)setPosition:(nonnull NCGlobalPoint *)point
+      sublocationId:(nullable NSNumber *)sublocationId;
 
 /**
  * Method is used to move the center of the icon with the specified animation.
- * @param point Metrics coordinates of the center ``NCLocationPoint``.
+ * @param point WGS84 coordinates of the center ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @param duration Animation duration in seconds.
  * @param type Animation type ``NCAnimationType``.
  * @return true if the operation is successful, false otherwise.
@@ -39,12 +42,13 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Set icon position with animation
- * NCLocationPoint *animatedPosition = [[NCLocationPoint alloc] initWithX:40.0 y:50.0];
+ * NCGlobalPoint *animatedPosition = [[NCGlobalPoint alloc] initWithLatitude:40.0 longitude:50.0];
  * BOOL animatedSuccess = [iconObject setPositionAnimated:animatedPosition duration:2.0 animationType:NCLinear];
- * NSLog(@"Set icon position with animation to (%.1f, %.1f): %@", animatedPosition.x, animatedPosition.y, animatedSuccess ? @"YES" : @"NO");
+ * NSLog(@"Set icon position with animation to (%.1f, %.1f): %@", animatedPosition.latitude, animatedPosition.longitude, animatedSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPositionAnimated:(nonnull NCLocationPoint *)point
+- (BOOL)setPositionAnimated:(nonnull NCGlobalPoint *)point
+              sublocationId:(nullable NSNumber *)sublocationId
                    duration:(float)duration
                        type:(NCAnimationType)type;
 
@@ -95,30 +99,30 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the rotation angle of the icon.
- * @param angle Rotation angle in degrees. Default: 0.
+ * @param angle Rotation angle in radians. Default: 0.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * // Set icon rotation angle
- * BOOL angleSuccess = [iconObject setAngle:45.0];
- * NSLog(@"Set icon rotation angle to 45 degrees: %@", angleSuccess ? @"YES" : @"NO");
+ * // Set icon rotation angle (radians)
+ * BOOL angleSuccess = [iconObject setAngle:(float)(M_PI / 4.0)];
+ * NSLog(@"Set icon rotation angle to π/4: %@", angleSuccess ? @"YES" : @"NO");
  * @endcode
  */
 - (BOOL)setAngle:(float)angle;
 
 /**
  * Method is used to rotate the icon with the specified animation.
- * @param angle Rotation angle in degrees.
+ * @param angle Rotation angle in radians.
  * @param duration Animation duration in seconds.
  * @param type Animation type ``NCAnimationType``.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
- * // Set icon rotation with animation
- * BOOL angleAnimatedSuccess = [iconObject setAngleAnimated:90.0 duration:2.0 animationType:NCSine];
- * NSLog(@"Set icon rotation with animation to 90 degrees: %@", angleAnimatedSuccess ? @"YES" : @"NO");
+ * // Set icon rotation with animation (radians)
+ * BOOL angleAnimatedSuccess = [iconObject setAngleAnimated:(float)(M_PI / 2.0) duration:2.0 animationType:NCSine];
+ * NSLog(@"Set icon rotation with animation to π/2: %@", angleAnimatedSuccess ? @"YES" : @"NO");
  * @endcode
  */
 - (BOOL)setAngleAnimated:(float)angle

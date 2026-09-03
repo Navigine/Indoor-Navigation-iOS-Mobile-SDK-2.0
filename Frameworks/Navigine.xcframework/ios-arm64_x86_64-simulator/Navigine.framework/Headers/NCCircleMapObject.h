@@ -1,8 +1,9 @@
 #import "NCAnimationType.h"
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import "NCMapObject.h"
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 
 /**
@@ -14,22 +15,25 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the center of the circle.
- * @param point Metrics coordinates of the center ``NCLocationPoint``.
+ * @param point WGS84 coordinates of the center ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set circle position
- * NCLocationPoint *centerPoint = [[NCLocationPoint alloc] initWithX:100.0 y:200.0];
- * BOOL success = [circleObject setPosition:centerPoint];
- * NSLog(@"Set circle position to (%f, %f): %@", centerPoint.x, centerPoint.y, success ? @"YES" : @"NO");
+ * NCGlobalPoint *centerPoint = [[NCGlobalPoint alloc] initWithLatitude:100.0 longitude:200.0];
+ * BOOL success = [circleObject setPosition:centerPoint sublocationId:@(7)];
+ * NSLog(@"Set circle position to (%f, %f): %@", centerPoint.latitude, centerPoint.longitude, success ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPosition:(nonnull NCLocationPoint *)point;
+- (BOOL)setPosition:(nonnull NCGlobalPoint *)point
+      sublocationId:(nullable NSNumber *)sublocationId;
 
 /**
  * Method is used to move the center of the circle with the specified animation.
- * @param point Metrics coordinates of the center ``NCLocationPoint``.
+ * @param point WGS84 coordinates of the center ``NCGlobalPoint``.
+ * @param sublocationId Floor this object is attached to, or null for the outdoor map.
  * @param duration Animation duration in seconds.
  * @param type Animation type ``NCAnimationType``. Default: CENTER.
  * @return true if the operation is successful, false otherwise.
@@ -37,34 +41,29 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Set circle position with animation
- * NCLocationPoint *animatedPoint = [[NCLocationPoint alloc] initWithX:150.0 y:250.0];
+ * NCGlobalPoint *animatedPoint = [[NCGlobalPoint alloc] initWithLatitude:150.0 longitude:250.0];
  * BOOL animatedSuccess = [circleObject setPositionAnimated:animatedPoint duration:2.0 animationType:AnimationTypeLinear];
- * NSLog(@"Set circle position with animation to (%f, %f): %@", animatedPoint.x, animatedPoint.y, animatedSuccess ? @"YES" : @"NO");
+ * NSLog(@"Set circle position with animation to (%f, %f): %@", animatedPoint.latitude, animatedPoint.longitude, animatedSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setPositionAnimated:(nonnull NCLocationPoint *)point
+- (BOOL)setPositionAnimated:(nonnull NCGlobalPoint *)point
+              sublocationId:(nullable NSNumber *)sublocationId
                    duration:(float)duration
                        type:(NCAnimationType)type;
 
 /**
  * Method is used to specify the fill color of the circle.
- * @param red Red RGBA component (0 to 1).
- * @param green Green RGBA component (0 to 1).
- * @param blue Blue RGBA component (0 to 1).
- * @param alpha Opacity multiplier (0 to 1). Values below 0 are set to 0. Default: 1.
+ * @param color Fill color.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set circle color
- * BOOL colorSuccess = [circleObject setColorWithRed:1.0 green:0.0 blue:0.0 alpha:0.8];
+ * BOOL colorSuccess = [circleObject setColor:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.8]];
  * NSLog(@"Set circle color to red with 80%% opacity: %@", colorSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setColor:(float)red
-           green:(float)green
-            blue:(float)blue
-           alpha:(float)alpha;
+- (BOOL)setColor:(nonnull UIColor *)color;
 
 /**
  * Method is used to specify the size of the circle.
@@ -119,7 +118,7 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @discussion Example:
  * @code
  * // Set position offset
- * BOOL offsetSuccess = [circleObject setOffsetWithX:2.0 y:3.0];
+ * BOOL offsetSuccess = [circleObject setOffsetWithX:2.0 longitude:3.0];
  * NSLog(@"Set position offset to (2.0, 3.0) pixels: %@", offsetSuccess ? @"YES" : @"NO");
  * @endcode
  */
@@ -142,23 +141,17 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Method is used to specify the color of the circle’s outline.
- * @param red Red RGBA component (0 to 1).
- * @param green Green RGBA component (0 to 1).
- * @param blue Blue RGBA component (0 to 1).
- * @param alpha Opacity multiplier (0 to 1). Values below 0 are set to 0. Default: 1.
+ * @param color Outline color.
  * @return true if the operation is successful, false otherwise.
  *
  * @discussion Example:
  * @code
  * // Set outline color
- * BOOL outlineColorSuccess = [circleObject setOutlineColorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+ * BOOL outlineColorSuccess = [circleObject setOutlineColor:[UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0]];
  * NSLog(@"Set circle outline color to blue: %@", outlineColorSuccess ? @"YES" : @"NO");
  * @endcode
  */
-- (BOOL)setOutlineColor:(float)red
-                  green:(float)green
-                   blue:(float)blue
-                  alpha:(float)alpha;
+- (BOOL)setOutlineColor:(nonnull UIColor *)color;
 
 /**
  * Method is used to specify the thickness of the circle’s outline.

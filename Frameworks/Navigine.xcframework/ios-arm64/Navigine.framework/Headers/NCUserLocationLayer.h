@@ -68,6 +68,31 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (BOOL)anchorEnabled;
 
 /**
+ * Enables or disables heading-up mode while the user location layer is anchored.
+ * When enabled and a location heading is available, the map camera rotates to keep
+ * the user's heading pointed toward the top of the screen. Without an anchor the
+ * location icon keeps rotating independently.
+ *
+ * @discussion Example:
+ * @code
+ * [_userLocationLayer setHeadingModeActive:YES];
+ * NSLog(@"Heading-up mode enabled");
+ * @endcode
+ */
+- (void)setHeadingModeActive:(BOOL)active;
+
+/**
+ * Returns true if heading-up mode is enabled.
+ *
+ * @discussion Example:
+ * @code
+ * BOOL headingModeActive = [_userLocationLayer headingModeActive];
+ * NSLog(@"Heading-up mode active: %@", headingModeActive ? @"YES" : @"NO");
+ * @endcode
+ */
+- (BOOL)headingModeActive;
+
+/**
  * Tells if this object is valid or not. Any method called on an invalid
  * object will throw an exception. The object becomes invalid only on UI
  * thread, and only when its implementation depends on objects already

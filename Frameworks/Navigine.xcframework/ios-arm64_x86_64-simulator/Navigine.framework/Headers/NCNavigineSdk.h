@@ -12,6 +12,7 @@
 @class NCNavigineSdk;
 @class NCNotificationManager;
 @class NCResourceManager;
+@class NCRouteLayer;
 @class NCRouteManager;
 @class NCStorageManager;
 @class NCUserLocationLayer;
@@ -237,6 +238,24 @@ DEFAULT_EXPORT_ATTRIBUTE
  * Create layer with the user location icon.
  */
 - (nullable NCUserLocationLayer *)getUserLocationLayer:(nullable NCLocationWindow *)locationWindow;
+
+/**
+ * Create layer that builds and renders routes on the location window.
+ * Location / position are obtained from LocationManager and NavigationManager.
+ * @param locationWindow Map window used for drawing.
+ *
+ * @discussion Example:
+ * @code
+ * // Create RouteLayer for building and drawing routes on the map
+ * if (self.locationWindow) {
+ *    self.routeLayer = [self.sdk getRouteLayer:self.locationWindow];
+ *    if (self.routeLayer) {
+ *        NSLog(@"RouteLayer successfully initialized");
+ *    }
+ * }
+ * @endcode
+ */
+- (nullable NCRouteLayer *)getRouteLayer:(nullable NCLocationWindow *)locationWindow;
 
 /**
  * ``NCRouteManager`` instance, which could be used for working making routes, setting target points. ``NCRoutePath``

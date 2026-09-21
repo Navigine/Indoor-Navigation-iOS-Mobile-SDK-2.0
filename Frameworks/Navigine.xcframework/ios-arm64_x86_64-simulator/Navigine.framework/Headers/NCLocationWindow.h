@@ -1,4 +1,5 @@
 #import "NCAnimationType.h"
+#import "NCAttributionAlignment.h"
 #import "NCBoundingBox.h"
 #import "NCCamera.h"
 #import "NCCameraCallback.h"
@@ -6,7 +7,11 @@
 #import "NCExport.h"
 #import "NCGlobalPoint.h"
 #import "NCMapFilterCondition.h"
+#import "NCMapTheme.h"
 #import "NCOperatingMode.h"
+#import "NCScreenRect.h"
+#import "NCTileProvider.h"
+#import "NCVisibleRegion.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @class NCCircleMapObject;
@@ -82,7 +87,21 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (NCOperatingMode)getOperatingMode;
 
 /**
- * Calculates camera that fits provided bounding box.
+ * OSM attribution text shown when the outdoor vector basemap is active.
+ * Comes from `tileProvider.attribution` when set, otherwise the OSM default.
+ *
+ * @discussion Example:
+ * @code
+ * NSString *attribution = [_locationWindow getAttribution];
+ * NSLog(@"Attribution: %@", attribution);
+ * @endcode
+ */
+- (nonnull NSString *)getAttribution;
+
+/**
+ * Camera that fits boundingBox into the current focus rect.
+ * Uses `focusRect` when set, otherwise the full viewport. Keeps the current
+ * azimuth and tilt (tilt fit is approximate).
  * @param boundingBox WGS84 bounding box to enclose.
  *
  * @discussion Example:
@@ -94,6 +113,26 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (nonnull NCCamera *)getEnclosingCamera:(nonnull NCBoundingBox *)boundingBox;
+
+/**
+ * Camera that fits boundingBox, with optional overrides.
+ * Null `focusRect` / `azimuth` / `tilt` keep the current window values
+ * (`focusRect` property, current camera). Azimuth and tilt are degrees,
+ * same units as ``NCCamera``.
+ *
+ * @discussion Example:
+ * @code
+ * NCCamera *padded = [_locationWindow getEnclosingCameraWithFocus:boundingBox
+ *                                                     focusRect:focus
+ *                                                       azimuth:nil
+ *                                                          tilt:nil];
+ * NSLog(@"Camera that fits bounding box in focus rect: %@", padded);
+ * @endcode
+ */
+- (nonnull NCCamera *)getEnclosingCameraWithFocus:(nonnull NCBoundingBox *)boundingBox
+                                        focusRect:(nullable NCScreenRect *)focusRect
+                                          azimuth:(nullable NSNumber *)azimuth
+                                             tilt:(nullable NSNumber *)tilt;
 
 /**
  * Converts screen coordinates (pixels) to WGS84 coordinates.
@@ -628,6 +667,43 @@ DEFAULT_EXPORT_ATTRIBUTE
 + (BOOL)getDebugFlag:(NCDebugFlag)flag;
 
 /**
+ * Outdoor vector basemap color theme ``NCMapTheme``.
+ * Indoor rasters, venues, and user map objects are unchanged. Default: light.
+ *
+ * @discussion Example:
+ * @code
+ * [_locationWindow setMapTheme:NCMapThemeDark];
+ * NSLog(@"Set map theme to DARK");
+ * @endcode
+ */
+@property (nonatomic) NCMapTheme mapTheme;
+
+/**
+ * Outdoor vector tile source ``NCTileProvider``.
+ * Null (default) uses OSM Shortbread at vector.openstreetmap.org.
+ * When `mbtiles` is set, tiles are read only from that file.
+ * `schema` must match the remote tiles or MBTiles pack.
+ *
+ * @discussion Example:
+ * @code
+ * [_locationWindow setTileProvider:osmHttp];
+ * [_locationWindow setTileProvider:nil];
+ * @endcode
+ */
+@property (nonatomic, nullable) NCTileProvider * tileProvider;
+
+/**
+ * Screen placement of the OSM attribution overlay ``NCAttributionAlignment``.
+ * Default: right + bottom. Visible only in outdoor / outdoor_indoor modes.
+ *
+ * @discussion Example:
+ * @code
+ * [_locationWindow setAttributionAlignment:alignment];
+ * @endcode
+ */
+@property (nonatomic, nonnull) NCAttributionAlignment * attributionAlignment;
+
+/**
  * Specifies the zoom level of the location view, in pixels per meter.
  * Default: approximately 100 meters across the screen width.
  *
@@ -691,6 +767,47 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, nonnull) NCCamera * camera;
 
 /**
+ * Area of the viewport used when fitting a bounding box.
+ * Null (default) is the full view. Set this for a floor selector, follow-me
+ * button, or POI card so `getEnclosingCamera` keeps geometry in the remaining
+ * rectangle. Coordinates are screen pixels ``NCScreenRect``.
+ *
+ * @discussion Example:
+ * @code
+ * NCScreenRect *focus = [[NCScreenRect alloc] initWithTopLeft:[[NCScreenPoint alloc] initWithX:0 y:0]
+ *                                                bottomRight:[[NCScreenPoint alloc] initWithX:1000 y:1600]];
+ * [_locationWindow setFocusRect:focus];
+ * @endcode
+ */
+@property (nonatomic, nullable) NCScreenRect * focusRect;
+
+/**
+ * Four corners of `focusRect` in WGS84, or `visibleRegion` when
+ * `focusRect` is null ``NCVisibleRegion``.
+ *
+ * @discussion Example:
+ * @code
+ * NCVisibleRegion *focusRegion = [_locationWindow focusRegion];
+ * NSLog(@"Focus-rect top-left: %@", focusRegion.topLeft);
+ * @endcode
+ */
+@property (nonatomic, nonnull, readonly) NCVisibleRegion * focusRegion;
+
+/**
+ * Four corners of the current viewport in WGS84
+ * See also: ``NCVisibleRegion``.
+ * Corners are ray-cast onto the ground plane, same as `screenPositionToGlobal`.
+ * With tilt the shape is a trapezoid.
+ *
+ * @discussion Example:
+ * @code
+ * NCVisibleRegion *visibleRegion = [_locationWindow visibleRegion];
+ * NSLog(@"Viewport top-left: %@", visibleRegion.topLeft);
+ * @endcode
+ */
+@property (nonatomic, nonnull, readonly) NCVisibleRegion * visibleRegion;
+
+/**
  * Specifies whether rotation gestures (e.g., two-finger rotation) are enabled.
  *
  * @discussion Example:
@@ -741,7 +858,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 /**
  * Extra slop around the hit target, in density-independent pixels.
  * Applied as a screen-pixel radius for points/lines and as a margin around
- * a label's real AABB. Default: 5 dp (MapKit tap threshold).
+ * a label's real AABB. Default: 5 dp.
  *
  * @discussion Example:
  * @code

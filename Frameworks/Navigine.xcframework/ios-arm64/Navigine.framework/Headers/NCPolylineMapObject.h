@@ -64,6 +64,58 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (BOOL)setColor:(nonnull UIColor *)color;
 
 /**
+ * Method is used to specify dash segment length.
+ * @param dashLength Dash segment length in line texture units. Default: 0 (dashing is disabled).
+ * @return true if the operation is successful, false otherwise.
+ *
+ * @discussion Example:
+ * @code
+ * // Set dash segment length
+ * BOOL dashSuccess = [polylineObject setDashLength:3.0];
+ * NSLog(@"Set polyline dash length: %@", dashSuccess ? @"YES" : @"NO");
+ * @endcode
+ */
+- (BOOL)setDashLength:(float)dashLength;
+
+/**
+ * Returns dash segment length.
+ *
+ * @discussion Example:
+ * @code
+ * // Get dash segment length
+ * float dashLength = [polylineObject dashLength];
+ * NSLog(@"Polyline dash length: %.1f", dashLength);
+ * @endcode
+ */
+- (float)dashLength;
+
+/**
+ * Method is used to specify gap length between two dashes.
+ * @param gapLength Gap length in line texture units. Default: 0 (dashing is disabled).
+ * @return true if the operation is successful, false otherwise.
+ *
+ * @discussion Example:
+ * @code
+ * // Set gap length between dashes
+ * BOOL gapSuccess = [polylineObject setGapLength:1.0];
+ * NSLog(@"Set polyline gap length: %@", gapSuccess ? @"YES" : @"NO");
+ * @endcode
+ */
+- (BOOL)setGapLength:(float)gapLength;
+
+/**
+ * Returns gap length between two dashes.
+ *
+ * @discussion Example:
+ * @code
+ * // Get gap length between dashes
+ * float gapLength = [polylineObject gapLength];
+ * NSLog(@"Polyline gap length: %.1f", gapLength);
+ * @endcode
+ */
+- (float)gapLength;
+
+/**
  * Method is used to specify the rendering order of the polyline.
  * @param order The rendering order value. Default: 0.
  * @return true if the operation is successful, false otherwise.

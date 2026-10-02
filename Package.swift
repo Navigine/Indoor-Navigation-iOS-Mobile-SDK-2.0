@@ -30,8 +30,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "Navigine",
-            url: "https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/releases/download/v.2.28.0/Navigine.xcframework.zip",
-            checksum: "ff0203edab2aafad8329c9dec81e0b77e4a9093c7551b5c1cc461f68d8a6575a"
+            url: "https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/releases/download/v.2.29.0/Navigine.xcframework.zip",
+            checksum: "CHECKSUM_PLACEHOLDER"
         ),
         .target(
             name: "NavigineDependencies",

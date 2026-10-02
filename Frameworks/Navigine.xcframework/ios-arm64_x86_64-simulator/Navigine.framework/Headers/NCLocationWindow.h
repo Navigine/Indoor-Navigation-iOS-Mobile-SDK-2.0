@@ -17,8 +17,10 @@
 @class NCCircleMapObject;
 @class NCClusterMapObjectController;
 @class NCDottedPolylineMapObject;
+@class NCGeoJsonImport;
 @class NCIconMapObject;
 @class NCModelMapObject;
+@class NCPointBatch;
 @class NCPolygonMapObject;
 @class NCPolylineMapObject;
 @protocol NCBuildingListener;
@@ -87,8 +89,9 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (NCOperatingMode)getOperatingMode;
 
 /**
- * OSM attribution text shown when the outdoor vector basemap is active.
- * Comes from `tileProvider.attribution` when set, otherwise the OSM default.
+ * Attribution text for the outdoor tiles.
+ * Comes from `tileProvider.attribution` when set. A null vector source uses
+ * the OSM default.
  *
  * @discussion Example:
  * @code
@@ -293,6 +296,55 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (nullable NCPolylineMapObject *)addPolylineMapObject;
+
+/**
+ * Adds polygons and lines from one GeoJSON document on a floor.
+ * Accepts a FeatureCollection, a Feature, or one geometry, the same inputs
+ * as a GeoJSON source. Polygon holes become
+ * `LocationPolygon.innerRings`. Points are skipped. Returns null when the
+ * document is not JSON. The host styles the returned objects.
+ * @param geoJson GeoJSON text.
+ * @param sublocationId Floor for every object, or null for the outdoor map.
+ *
+ * @discussion Example:
+ * @code
+ * NSString *geoJson = @"{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[37.617,55.751],[37.619,55.751],[37.619,55.752],[37.617,55.751]],[[37.6174,55.7512],[37.6176,55.7512],[37.6176,55.7514],[37.6174,55.7512]]]}},{\"type\":\"Feature\",\"geometry\":{\"type\":\"LineString\",\"coordinates\":[[37.617,55.751],[37.620,55.753]]}}]}";
+ * NCGeoJsonImport *imported = [self.locationWindow addGeoJson:geoJson sublocationId:@(7)];
+ * NSLog(@"GeoJSON polygons %lu, lines %lu",
+ *      (unsigned long)imported.polygons.count, (unsigned long)imported.polylines.count);
+ * @endcode
+ */
+- (nullable NCGeoJsonImport *)addGeoJson:(nonnull NSString *)geoJson
+                           sublocationId:(nullable NSNumber *)sublocationId;
+
+/**
+ * Creates one arrow cloud. Replace its points each frame.
+ * @return A PointBatch ``NCPointBatch``, or null on failure.
+ *
+ * @discussion Example:
+ * @code
+ * NCPointBatch *batch = [self.locationWindow addPointBatch];
+ * [batch setPoints:@[
+ *    [[NCPointSprite alloc] initWithPosition:[[NCGlobalPoint alloc] initWithLatitude:55.751 longitude:37.617]
+ *                                    heading:0
+ *                                      color:[UIColor orangeColor]
+ *                                       size:5],
+ *    [[NCPointSprite alloc] initWithPosition:[[NCGlobalPoint alloc] initWithLatitude:55.752 longitude:37.618]
+ *                                    heading:90
+ *                                      color:[UIColor blueColor]
+ *                                       size:5],
+ * ] sublocationId:@(7)];
+ * NSNumber *hit = [batch hitTest:CGPointMake(12, 8) radius:8];
+ * NSLog(@"PointBatch hit %@", hit);
+ * @endcode
+ */
+- (nullable NCPointBatch *)addPointBatch;
+
+/**
+ * Removes an arrow cloud.
+ * @return true when the batch was on the map.
+ */
+- (BOOL)removePointBatch:(nullable NCPointBatch *)pointBatch;
 
 /**
  * Removes a polyline map object from the location view.
@@ -540,9 +592,9 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (void)removeBuildingListener:(nullable id<NCBuildingListener>)listener;
 
 /**
- * Moves the map camera to a new position with an easing animation.
+ * Moves the map camera to a new position with a smooth pan-and-zoom (fly) animation.
  * @param camera The new camera position ``NCCamera``.
- * @param duration Animation duration in milliseconds.
+ * @param duration Animation duration in milliseconds (-1 derives it from the distance).
  * @param callback Callback to execute when the animation completes ``NCCameraCallback``.
  *
  * @discussion Example:
@@ -560,7 +612,7 @@ DEFAULT_EXPORT_ATTRIBUTE
      callback:(nullable NCCameraCallback)callback;
 
 /**
- * Moves the map camera to a new position with a smooth pan-and-zoom animation.
+ * Moves the map camera to a new position with an easing animation.
  * @param camera The new camera position ``NCCamera``.
  * @param duration Animation duration in milliseconds (-1 for default duration).
  * @param animationType The type of easing animation ``NCAnimationType``.
@@ -679,15 +731,31 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic) NCMapTheme mapTheme;
 
 /**
- * Outdoor vector tile source ``NCTileProvider``.
- * Null (default) uses OSM Shortbread at vector.openstreetmap.org.
- * When `mbtiles` is set, tiles are read only from that file.
- * `schema` must match the remote tiles or MBTiles pack.
+ * Outdoor tile source ``NCTileProvider``.
+ * `kind` `vector` draws MVT (`schema` must match the tiles).
+ * `kind` `raster` draws PNG, JPEG, or WebP imagery and hides outdoor
+ * vector geometry and labels. `schema` is ignored for raster.
+ * Indoor floors stay on top. Null (default) uses OSM Shortbread at
+ * vector.openstreetmap.org. When `mbtiles` is set, tiles are read only
+ * from that file.
  *
  * @discussion Example:
  * @code
  * [_locationWindow setTileProvider:osmHttp];
  * [_locationWindow setTileProvider:nil];
+ * NCHttpTileSource *imageryHttp = [[NCHttpTileSource alloc]
+ *    initWithUrlTemplate:@"https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+ *                headers:nil
+ *       queryParameters:nil];
+ * NCTileProvider *imagery = [[NCTileProvider alloc]
+ *    initWithSchema:NCTileSchemaShortbread
+ *              http:imageryHttp
+ *           mbtiles:nil
+ *           minZoom:0
+ *           maxZoom:19
+ *      attribution:@"© OpenStreetMap contributors"
+ *              kind:NCTileKindRaster];
+ * [_locationWindow setTileProvider:imagery];
  * @endcode
  */
 @property (nonatomic, nullable) NCTileProvider * tileProvider;

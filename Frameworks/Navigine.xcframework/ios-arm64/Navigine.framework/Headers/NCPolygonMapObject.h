@@ -26,7 +26,7 @@ DEFAULT_EXPORT_ATTRIBUTE
  *    [[NCGlobalPoint alloc] initWithLatitude:200.0 longitude:200.0],
  *    [[NCGlobalPoint alloc] initWithLatitude:150.0 longitude:150.0],
  * ];
- * NCLocationPolygon *polygon = [[NCLocationPolygon alloc] initWithPoints:points sublocationId:@(0)];
+ * NCLocationPolygon *polygon = [[NCLocationPolygon alloc] initWithPoints:points sublocationId:@(0) innerRings:@[]];
  * BOOL success = [polygonObject setPolygon:polygon];
  * NSLog(@"Set polygon with %lu points: %@", (unsigned long)points.count, success ? @"YES" : @"NO");
  * @endcode

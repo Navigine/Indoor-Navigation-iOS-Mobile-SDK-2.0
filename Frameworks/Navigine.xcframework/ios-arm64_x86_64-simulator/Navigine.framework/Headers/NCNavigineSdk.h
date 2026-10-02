@@ -2,6 +2,7 @@
 #import <Foundation/Foundation.h>
 @class NCAsyncRouteManager;
 @class NCBeaconProximityEstimator;
+@class NCGuidanceCamera;
 @class NCLocationEditManager;
 @class NCLocationListManager;
 @class NCLocationManager;
@@ -14,6 +15,7 @@
 @class NCResourceManager;
 @class NCRouteLayer;
 @class NCRouteManager;
+@class NCRouteSimulator;
 @class NCStorageManager;
 @class NCUserLocationLayer;
 @class NCView;
@@ -256,6 +258,72 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (nullable NCRouteLayer *)getRouteLayer:(nullable NCLocationWindow *)locationWindow;
+
+/**
+ * Create a guidance camera bound to a route layer on the same window.
+ * The controller follows route progress and publishes the next instruction.
+ * It does not draw the route.
+ * @param locationWindow Map window whose camera is driven.
+ * @param routeLayer Route layer created for that window.
+ *
+ * @discussion Example:
+ * @code
+ * if (self.locationWindow && self.routeLayer) {
+ *    self.guidanceCamera = [self.sdk getGuidanceCamera:self.locationWindow routeLayer:self.routeLayer];
+ *    // [objc_GuidanceCamera_setMode]
+ *    [self.guidanceCamera setMode:NCGuidanceCameraModeFOLLOWING];
+ *    // [objc_GuidanceCamera_setMode]
+ *    // [objc_GuidanceCamera_set2DMode]
+ *    [self.guidanceCamera set2DMode:NO];
+ *    // [objc_GuidanceCamera_set2DMode]
+ *    // [objc_GuidanceCamera_mode]
+ *    NSLog(@"Guidance mode: %ld", (long)[self.guidanceCamera mode]);
+ *    // [objc_GuidanceCamera_mode]
+ *    // [objc_GuidanceCamera_instruction]
+ *    NCRouteInstruction *next = [self.guidanceCamera instruction];
+ *    if (next) {
+ *        NSLog(@"Next instruction: %@ %.0f m", next.title, next.distance);
+ *    }
+ *    // [objc_GuidanceCamera_instruction]
+ * }
+ * @endcode
+ */
+- (nullable NCGuidanceCamera *)getGuidanceCamera:(nullable NCLocationWindow *)locationWindow
+                                      routeLayer:(nullable NCRouteLayer *)routeLayer;
+
+/**
+ * Walk a polyline at a constant pedestrian speed. Does not move the user
+ * location layer and does not replace MeasurementManager signal simulation.
+ * @param locationWindow Map window whose frame clock drives the walk.
+ *
+ * @discussion Example:
+ * @code
+ * if (self.locationWindow) {
+ *    NCRouteSimulator *routeSimulator = [self.sdk getRouteSimulator:self.locationWindow];
+ *    // [objc_RouteSimulator_setGeometry]
+ *    NCLocationPolyline *walk = [[NCLocationPolyline alloc] initWithPoints:@[
+ *        [[NCGlobalPoint alloc] initWithLatitude:55.751 longitude:37.618],
+ *        [[NCGlobalPoint alloc] initWithLatitude:55.752 longitude:37.618],
+ *    ] sublocationId:nil];
+ *    [routeSimulator setGeometry:@[walk]];
+ *    // [objc_RouteSimulator_setGeometry]
+ *    // [objc_RouteSimulator_setSpeed]
+ *    [routeSimulator setSpeed:1.4f];
+ *    // [objc_RouteSimulator_setSpeed]
+ *    // [objc_RouteSimulator_start]
+ *    BOOL started = [routeSimulator start];
+ *    NSLog(@"Route walk started: %@", started ? @"YES" : @"NO");
+ *    // [objc_RouteSimulator_start]
+ *    // [objc_RouteSimulator_sample]
+ *    NCRouteSimulatorSample *sample = [routeSimulator sample];
+ *    if (sample) {
+ *        NSLog(@"Walk advance: %f m", sample.advance);
+ *    }
+ *    // [objc_RouteSimulator_sample]
+ * }
+ * @endcode
+ */
+- (nullable NCRouteSimulator *)getRouteSimulator:(nullable NCLocationWindow *)locationWindow;
 
 /**
  * ``NCRouteManager`` instance, which could be used for working making routes, setting target points. ``NCRoutePath``

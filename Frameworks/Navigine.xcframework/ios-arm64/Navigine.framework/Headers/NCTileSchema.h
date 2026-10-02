@@ -2,8 +2,10 @@
 
 /**
  * Vector tile schema of the outdoor basemap.
- * The renderer stylesheet is built for these schemas only. The MVT layers
- * and properties must match the chosen schema.
+ * The built-in stylesheet covers Shortbread fully. OpenMapTiles and Mapbox
+ * Streets share the same programmatic rules with schema-aware filters (source
+ * layers, site/transit partition, extrude keys, admin levels). Verify new tile
+ * sets visually; see TILE_SCHEMA_FOLLOWUP.md.
  */
 typedef NS_ENUM(NSInteger, NCTileSchema)
 {
@@ -14,15 +16,15 @@ typedef NS_ENUM(NSInteger, NCTileSchema)
      * NSArray<NSNumber *> *schemas = @[@(NCTileSchemaShortbread), @(NCTileSchemaOpenMapTiles), @(NCTileSchemaMapboxStreets)];
      * NSLog(@"Tile schemas: %lu", (unsigned long)schemas.count);
      * @endcode
-     * OSM Shortbread (versatiles / vector.openstreetmap.org).
+     * OSM Shortbread (versatiles / vector.openstreetmap.org). Default.
      */
     NCTileSchemaShortbread,
     /**
-     * OpenMapTiles (MapTiler / Planetiler self-host).
+     * OpenMapTiles (MapTiler / Planetiler self-host). Schema-aware filters.
      */
     NCTileSchemaOpenMapTiles,
     /**
-     * Mapbox Streets v8 (`mapbox.mapbox-streets-v8`).
+     * Mapbox Streets v8 (`mapbox.mapbox-streets-v8`). Schema-aware filters.
      */
     NCTileSchemaMapboxStreets,
 };

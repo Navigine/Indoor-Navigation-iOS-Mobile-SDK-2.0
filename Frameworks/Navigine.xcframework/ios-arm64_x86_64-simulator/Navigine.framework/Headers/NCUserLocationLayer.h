@@ -1,4 +1,5 @@
 #import "NCExport.h"
+#import "NCUserLocationFollowMode.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -83,6 +84,7 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 /**
  * Returns true if heading-up mode is enabled.
+ * Same as followMode() == HEADING.
  *
  * @discussion Example:
  * @code
@@ -91,6 +93,59 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (BOOL)headingModeActive;
+
+/**
+ * Sets how the camera follows the user.
+ * NONE stops following and keeps a previously set anchor point.
+ * POSITION, HEADING and COURSE follow even without setAnchor (screen center).
+ * setAnchor() from NONE switches to POSITION. resetAnchor() switches to NONE.
+ * setHeadingModeActive(true) switches to HEADING.
+ *
+ * @discussion Example:
+ * @code
+ * [_userLocationLayer setFollowMode:NCUserLocationFollowModeHEADING];
+ * NSLog(@"Follow mode set to heading");
+ * @endcode
+ */
+- (void)setFollowMode:(NCUserLocationFollowMode)mode;
+
+/**
+ * Returns the current follow mode.
+ *
+ * @discussion Example:
+ * @code
+ * NCUserLocationFollowMode followMode = [_userLocationLayer followMode];
+ * NSLog(@"Follow mode: %ld", (long)followMode);
+ * @endcode
+ */
+- (NCUserLocationFollowMode)followMode;
+
+/**
+ * Replaces the heading arrow bitmap.
+ * Null restores the built-in heading fan.
+ *
+ * @discussion Example:
+ * @code
+ * UIImage *arrow = [UIImage imageWithContentsOfFile:@"/path/to/arrow.png"];
+ * if (arrow != nil) {
+ *    [_userLocationLayer setArrowBitmap:arrow];
+ * }
+ * [_userLocationLayer setArrowBitmap:nil];
+ * NSLog(@"Custom arrow bitmap cleared");
+ * @endcode
+ */
+- (void)setArrowBitmap:(nullable UIImage *)bitmap;
+
+/**
+ * Sets the accuracy-circle fill. Default is a translucent blue.
+ *
+ * @discussion Example:
+ * @code
+ * [_userLocationLayer setAccuracyColor:[UIColor colorWithRed:0.19 green:0.67 blue:0.85 alpha:0.26]];
+ * NSLog(@"Accuracy circle color updated");
+ * @endcode
+ */
+- (void)setAccuracyColor:(nonnull UIColor *)color;
 
 /**
  * Tells if this object is valid or not. Any method called on an invalid

@@ -1,3 +1,4 @@
+#import "NCAnimationType.h"
 #import "NCCapType.h"
 #import "NCExport.h"
 #import "NCJoinType.h"
@@ -34,6 +35,47 @@ DEFAULT_EXPORT_ATTRIBUTE
  * @endcode
  */
 - (BOOL)setPolyLine:(nonnull NCLocationPolyline *)polyline;
+
+/**
+ * Fraction of the polyline drawn from its start, in [0, 1].
+ * 0 keeps only the first point. 1 draws the whole line. Default: 1.
+ * Animated with the same easing and timing as a point move. The mesh is
+ * updated before the frame is drawn, so the end of the line does not pop
+ * in later than the point.
+ *
+ * @discussion Example:
+ * @code
+ * [polylineObject setDrawnFraction:0];
+ * @endcode
+ */
+- (BOOL)setDrawnFraction:(float)fraction;
+
+/**
+ * Returns the drawn fraction.
+ *
+ * @discussion Example:
+ * @code
+ * NSLog(@"Drawn fraction: %f", [polylineObject drawnFraction]);
+ * @endcode
+ */
+- (float)drawnFraction;
+
+/**
+ * Grows or shrinks the drawn fraction.
+ * @param fraction Target fraction in [0, 1].
+ * @param duration Duration in seconds. 0 snaps.
+ * @param type Animation type ``NCAnimationType``.
+ * @return true if the operation is successful, false otherwise.
+ *
+ * @discussion Example:
+ * @code
+ * BOOL grew = [polylineObject setDrawnFractionAnimated:1 duration:1.0 animationType:AnimationTypeLinear];
+ * NSLog(@"Polyline grow started: %@", grew ? @"YES" : @"NO");
+ * @endcode
+ */
+- (BOOL)setDrawnFractionAnimated:(float)fraction
+                        duration:(float)duration
+                            type:(NCAnimationType)type;
 
 /**
  * Method is used to specify the width of the polyline.

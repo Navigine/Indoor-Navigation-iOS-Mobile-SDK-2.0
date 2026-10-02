@@ -12,6 +12,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                         sublocationId:(nullable NSNumber *)sublocationId
                               advance:(float)advance
                     remainingDistance:(float)remainingDistance
+                        remainingTime:(float)remainingTime
                              legIndex:(int32_t)legIndex;
 
 /** 
@@ -21,6 +22,7 @@ DEFAULT_EXPORT_ATTRIBUTE
                                  sublocationId:(nullable NSNumber *)sublocationId
                                        advance:(float)advance
                              remainingDistance:(float)remainingDistance
+                                 remainingTime:(float)remainingTime
                                       legIndex:(int32_t)legIndex;
 
 @property (nonatomic, readonly, nonnull) NCGlobalPoint * point;
@@ -30,6 +32,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, readonly) float advance;
 
 @property (nonatomic, readonly) float remainingDistance;
+
+/**
+ * Pedestrian ETA in seconds for the part of the route still ahead.
+ * Outdoor legs use the OSRM duration scaled by the remaining fraction.
+ * Indoor legs use a fixed walking speed (1.4 m/s). Not a traffic ETA.
+ */
+@property (nonatomic, readonly) float remainingTime;
 
 @property (nonatomic, readonly) int32_t legIndex;
 

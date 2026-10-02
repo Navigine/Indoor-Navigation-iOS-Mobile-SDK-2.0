@@ -41,4 +41,9 @@ typedef NS_ENUM(NSInteger, NCMapObjectType)
      * See also: ``NCClusterMapObject``.
      */
     NCMapObjectTypeCLUSTERMAPOBJECT,
+    /**
+     * Screen-space arrow cloud.
+     * See also: ``NCPointBatch``.
+     */
+    NCMapObjectTypePOINTBATCH,
 };

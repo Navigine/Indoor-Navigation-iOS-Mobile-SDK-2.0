@@ -2,6 +2,116 @@
 All notable changes to this project will be documented in this file
 adheres to [Semantic Versioning](http://semver.org/).
 
+## 2.29.1
+* Hotfix shaders type alignment on new Android simulators
+
+## 2.29.0
+* Added raster outdoor tiles: **TileProvider.kind** (**TileKind** `vector` / `raster`). A raster source draws PNG, JPEG, or WebP imagery from HTTP XYZ or an MBTiles pack, hides outdoor vector geometry and labels, and keeps indoor floors on top; `schema` is ignored for raster.
+* Improved **TileSchema** support: OpenMapTiles and Mapbox Streets now use schema-aware filters (source layers, site / transit partition, 3D extrude keys, admin levels).
+* Added **GuidanceCamera** (`NavigineSdk.getGuidanceCamera`): follows route progress and publishes the next **RouteInstruction** (**GuidanceCameraMode** Free / Following / Overview, **GuidanceListener**). It does not draw the route. Outdoor legs of hybrid routes now carry OSRM maneuver steps.
+* Added **RouteProgress.remainingTime**: pedestrian ETA in seconds (outdoor legs scale the OSRM duration, indoor legs use 1.4 m/s).
+* Added **RouteSimulator** (`NavigineSdk.getRouteSimulator`): walks a polyline at a constant pedestrian speed and reports samples and completion; it does not move the user location layer.
+* Added **LocationWindow.addGeoJson** (**GeoJsonImport**): polygons and polylines from a FeatureCollection, a Feature, or one geometry, on a floor or outdoors. **LocationPolygon** gained **innerRings** (holes).
+* Added **PointBatch** (`LocationWindow.addPointBatch` / `removePointBatch`, **PointSprite**, **MapObjectType.POINT_BATCH**): a cloud of screen-space arrows with `setPoints` and `hitTest`.
+* Added **UserLocationLayer.setFollowMode** / **followMode** (**UserLocationFollowMode** `NONE` / `POSITION` / `HEADING` / `COURSE`; a map gesture returns the mode to `NONE`), **setArrowBitmap**, and **setAccuracyColor**.
+* Added **PolylineMapObject.setDrawnFraction**, **drawnFraction**, and **setDrawnFractionAnimated** for animated growth of a polyline.
+* Improved dashed polyline rendering (dash atlas with SDF edges).
+* Fixed **LocationWindow.flyTo**: `duration` is in milliseconds as documented (it was treated as seconds), and the rotation animation follows the animation progress. The **flyTo** / **moveTo** documentation now describes both methods correctly.
+* Fixed a lost tap: the first tap of a tap followed by a drag or a long press was dropped.
+* Fixed iOS touch forwarding for a non-interactive map view (`touchesMoved`, `touchesEnded`, and `touchesCancelled` called the wrong super method).
+* Fixed gestures staying open across a pause: an unfinished touch sequence is cancelled when the view is paused.
+* Fixed the Android map staying blank after the OpenGL context is lost: tiles, map objects, textures, and glyph atlases are rebuilt.
+* Fixed data races in asynchronous tile deletion (shutdown and context loss), texture pixel updates, and glyph atlas growth.
+* Added a benchmark suite for rendering, overlays, queries, and memory (`mobile/benchmark`).
+
+## 2.28.0
+* Outdoor tiles stay on screen while zooming: parent or child tiles keep covering a cell until the ideal tile is laid out (empty tiles still occupy the cell), so the map no longer flickers or shows mixed LODs.
+* Billboard POI icons, captions, and labels stay glued to the map during inertial pan and zoom by reprojecting world anchors with the live camera.
+* Selected POI pin grows upward from the ground contact point; the user-location 3D model draws above the accuracy circle and heading indicator.
+* Added OSM map **attribution** on **LocationWindow** (`attribution`, `attributionAlignment`) and MSAA antialiasing for the map view.
+* Added **LocationWindow.tileProvider** (`TileProvider`, `HttpTileSource`, `MbtilesTileSource`, `TileSchema`) for outdoor vector tiles: HTTP XYZ or a local MBTiles pack; `null` keeps the default OSM Shortbread endpoint.
+* Added **LocationWindow.mapTheme** (`MapTheme` light / dark) for the outdoor basemap palette.
+* Added **LocationWindow.focusRect**, **visibleRegion**, **focusRegion**, and **getEnclosingCameraWithFocus** so chrome can leave a viewport inset for fitted geometry.
+
+## 2.27.1
+* Added public **RouteLayer** API (`NavigineSdk.getRouteLayer`): `setTarget(RouteEndpoint)` for live guidance and `setRoute(from, to)` for a static path; location/position are taken from the SDK automatically, while nullable endpoint sublocation ids allow indoor ↔ outdoor routes.
+* Added **RouteLayer** remaining styles (`SOLID` / `DASHED` / `DOTTED`) with dotted placement controls (`setRemainingPointSize`, `setRemainingPlacement`, spacing / min ratio / collision).
+* Added public **UserLocationLayer.setHeadingModeActive** / **headingModeActive** API for anchored heading-up navigation mode.
+* Added public **PolylineMapObject.setDashLength** / **dashLength** and **setGapLength** / **gapLength** APIs for dashed polyline rendering.
+* Flutter SDK: published package now includes generated Dart helpers (`containers__conversion.dart`, `weak_interfaces_meta.dart`, `com.navigine.dart`).
+* Flutter SDK: tracking sources (`lib/tracking`) are no longer shipped in the public Flutter package.
+* Replaced placeholder text on the documentation index with an SDK overview and community links.
+* Fixed Android SDK build after the 2.27.0 view split.
+
+## 2.27.0
+* Added **TrackingSdk** (optional `BUILD_TRACKING`): **AuthManager**, **ApplicationManager**, **ObjectListManager**, **LiveDataManager**, **LiveNotificationsManager**, and **LiveObjectsLayer** (live pins, clustering, footprint tracks, zone polygons/badges, filters, tap listeners).
+* Added **DefaultTrackingView** (Android, iOS, Flutter, Qt) and **DefaultNavigineView** chrome base (zoom controls, floor selector); **DefaultNavigationView** now subclasses it.
+* Added **LocationWindow.setOperatingMode** (`indoor_only` / `outdoor` / `outdoor_indoor`) with OSM MVT outdoor basemap, curved labels, and MVT POI icons.
+* Reworked the **LocationWindow** renderer: typed GPU meshes and a fixed frame order (outdoor buildings overlay, indoor tiles, models, map objects, labels). Tile **Style** tessellates only and no longer owns the frame.
+* iOS map rendering defaults to **Vulkan** via MoltenVK (`NCVulkanView`); system OpenGL ES (`NCGLView`) is the fallback. Android and desktop stay on OpenGL. MetalANGLE is no longer linked.
+* **pickMapObjectAt** / **pickMapFeatureAt** use CPU hit-test (map objects, tile geometry, labels). The GPU selection framebuffer is gone.
+* Extruded outdoor buildings are drawn opaque+depth offscreen and composited over the basemap; depth is cleared so indoor floors do not inherit leftover outdoor Z.
+* Added **MapObject.setTitleWithStyle** (**TitleStyle** / **TitleAnchor**) and polygon outline APIs (**setOutlineColor**, **setOutlineWidth**, **setOutlineAlpha**, **setOutlineOrder**).
+* Added Djinni **color** type replacing per-channel `setColor(r,g,b,a)`; **Zone.color** is now **color**. Record fields support default values (**RouteOptions**, **TitleStyle**).
+* Breaking: map coordinates are WGS84 **GlobalPoint** (camera, icons, circles, models, polygons, polylines). **screenPositionToMeters** / **metersToScreenPosition** renamed to **screenPositionToGlobal** / **globalToScreenPosition**. **setPosition** takes `(GlobalPoint, optional sublocationId)` (`null` = outdoor).
+* Added **Zone.guid** for live tracking zone membership.
+* Added AoA positioning support in the navigation pipeline.
+* Improved Android Maven publication (local + GitLab, signing) and tracking CI builds.
+
+## 2.26.2
+* Fixed DefaultNavigationLayer direction blinking
+* Improved OpenGL/Vulkan functions loading
+
+## 2.26.1
+* Replaced **djinni_support_lib** with a new **`common`** library that owns platform binding infrastructure (Android JNI, iOS ObjC++, Flutter FFI).
+* Rewrote Djinni generators (JNI, ObjC++, FFI, C++) to emit code against **navigine::android**, **navigine::ios**, and **navigine::bindings::flutter** instead of legacy **navigine::platform::*** / **djinni::*** APIs.
+* Removed vendored Djinni support-lib (JNI/ObjC/FFI helpers, **NativeLibLoader**, **djinni_main**, etc.).
+* Added Android binding runtime: **NativeObject**, **Subscription** (`com.navigine.common`), JNI helpers in **navigine/android/**.
+* Added iOS binding runtime: **NCSubscription**, object/cast helpers in **navigine/ios/**.
+* Added Flutter binding runtime under **navigine/bindings/flutter/** (opaque handles, interface wrappers, finalizable storage, main isolate helpers).
+* Extracted shared geometry/error types into a separate **common.djinni** IDL module (Point, Polygon, Error, etc.).
+
+## 2.26.0
+* Added **ClusterMapObject** and **ClusterMapObjectController** for icon map object clustering.
+* Added Swift Package Manager support for iOS and Flutter iOS SDK (**Package.swift**, install guide).
+* Added Android SDK publication to Maven Central and Javadoc artifacts to JitPack.
+* Improved listener lifetime: auto-unsubscribe expired listeners in generated bindings (Djinni).
+* Improved platform-specific API documentation generation (Java, Objective-C, Dart doc snippets).
+
+## 2.25.2
+* Added **Camera.tilt** (degrees; 0 = top-down) to the public API; **flyTo**, **setCameraEased**, and **getEnclosingCamera** now animate and preserve tilt.
+* Fixed **Camera.rotation** units: values are now consistently degrees in the API layer (including **UserLocationLayer** heading mode); previously some paths mixed radians and degrees.
+* Reworked **TileManager** tile loading and proxy resolution (including grandparent tile fallback); extracted **BuildingsPayload** / **buildBuildingsFromLocation**; added **building_manager** unit tests.
+* Improved gesture and inertial scrolling: kinetic zoom uses screen center as pivot; simplified **InertialScalar** interval model; scroll bounds with rubber-band effect applied inline in **GestureHandler** (removed **scroll_bounds**, **rubber_band**, and **setScrollBoundsScale**).
+* Improved **ImageProvider** decoded RGBA handling on Android.
+
+## 2.25.1
+# Fix crash in SDK reset method
+
+## 2.25.0
+* Added **ModelMapObject** and **ModelProvider** (Wavefront OBJ + texture): C++ rendering (**model_asset** / **model_style**, shaders), sample POI mesh assets, bindings for Android, iOS (**NCModelProviderFactory**, file/data providers), and Flutter (**model_provider.dart**).
+* Reworked **ImageProvider** and platform bitmap handling for decoded RGBA (**icon_downloader**, markers, sprites); **IconMapObject** and related pipelines now use **ImageProvider**; Flutter **image_provider.dart** extended (**image_provider_result**, **raw_image**, slimmer **image_wrapper**); removed the legacy standalone bitmap shim from bundled IDL.
+* Improved **scroll bounds**, kinetic/gesture panning, and **DefaultNavigationView** behavior on Android and iOS (floor selector, zoom controls); minor projection/header cleanup.
+
+## 2.24.5
+* Added Android light and iOS lite mobile binary builds.
+* Added `sdk reset` API and `setPublishIntervalMs` for `MeasurementManager`.
+* Added public logger support and user agent forwarding in requests.
+* Added outdoor scenario support and in `DefaultNavigationView`.
+* Improved gesture handling and map filter state updates while rebuilding tiles.
+* Cleanup and dependency optimization in mobile builds and contribs.
+
+## 2.24.4
+* Fix flutter android initialization
+
+## 2.24.3
+* Added MqttSession
+* Fixed ble scanning
+
+## 2.24.2
+* Added DefaultNavigationView
+* Added UserLocationLayer
+
 ## 2.24.1
 * Fixed gl resource deletion.
 * Added 3d barriers support

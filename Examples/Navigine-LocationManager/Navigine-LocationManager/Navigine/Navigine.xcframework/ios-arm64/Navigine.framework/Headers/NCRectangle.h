@@ -2,47 +2,52 @@
 #import <Foundation/Foundation.h>
 
 /**
- *
  * A rectangle with specified origin and size.
  *
+ * @discussion Example:
+ * @code
+ * // Create rectangle with x, y, width, height
+ * NCRectangle *rect1 = [[NCRectangle alloc] initWithX:10 y:20 width:100 height:150];
+ * NSLog(@"Created rectangle: x=%d, y=%d, width=%d, height=%d", rect1.x, rect1.y, rect1.width, rect1.height);
+ * @endcode
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRectangle : NSObject
-- (nonnull instancetype)initWithX:(float)x
-                                y:(float)y
-                            width:(float)width
-                           height:(float)height;
-+ (nonnull instancetype)rectangleWithX:(float)x
-                                     y:(float)y
-                                 width:(float)width
-                                height:(float)height;
+
+/** 
+ * Default constructor for class NCRectangle 
+ */
+- (nonnull instancetype)initWithX:(int32_t)x
+                                y:(int32_t)y
+                            width:(int32_t)width
+                           height:(int32_t)height;
+
+/** 
+ * Factory method for class NCRectangle 
+ */
++ (nonnull instancetype)rectangleWithX:(int32_t)x
+                                     y:(int32_t)y
+                                 width:(int32_t)width
+                                height:(int32_t)height;
 
 /**
- *
- * Rectangle's origin `x` coordinate.
- *
+ * rectangle's origin `x` coordinate.
  */
-@property (nonatomic, readonly) float x;
+@property (nonatomic, readonly) int32_t x;
 
 /**
- *
- * Rectangle's origin `y` coordinate.
- *
+ * rectangle's origin `y` coordinate.
  */
-@property (nonatomic, readonly) float y;
+@property (nonatomic, readonly) int32_t y;
 
 /**
- *
- * Rectangle's width.
- *
+ * rectangle's width.
  */
-@property (nonatomic, readonly) float width;
+@property (nonatomic, readonly) int32_t width;
 
 /**
- *
- * Rectangle's height.
- *
+ * rectangle's height.
  */
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) int32_t height;
 
 @end

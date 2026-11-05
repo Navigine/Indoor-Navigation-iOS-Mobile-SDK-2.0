@@ -43,7 +43,7 @@ class SearchLocationsController : UISearchController {
     }
     
     filteredLocations =
-      dataSource.locations.filter { (location: NCLocationInfo) -> Bool in
+      dataSource.mLocationsList.filter { (location: NCLocationInfo) -> Bool in
         let searchText = searchBar.text!
         return location.name.lowercased().contains(searchText.lowercased())
     }

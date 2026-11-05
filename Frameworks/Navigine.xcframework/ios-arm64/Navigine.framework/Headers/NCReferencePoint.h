@@ -5,10 +5,6 @@
 @class NCReferenceEntry;
 
 
-/**
- * @file NCReferencePoint.h
- * @brief @copybrief NCReferencePoint
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCReferencePoint : NSObject
 
@@ -35,5 +31,13 @@ DEFAULT_EXPORT_ATTRIBUTE
 @property (nonatomic, nonnull, readonly) NSArray<NCReferenceEntry *> * entries;
 
 @property (nonatomic, readonly) NCTransmitterStatus status;
+
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
 
 @end

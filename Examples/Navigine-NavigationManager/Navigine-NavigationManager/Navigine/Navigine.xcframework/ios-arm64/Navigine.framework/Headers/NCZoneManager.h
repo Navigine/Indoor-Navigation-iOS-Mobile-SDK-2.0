@@ -3,22 +3,38 @@
 @protocol NCZoneListener;
 
 
-/** Class is used to manage enter/exit zone events */
+/**
+ * Class is used for notifying about entering or leaving ``NCZone``s.
+ * Referenced from ``NCNavigineSdk``.
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCZoneManager : NSObject
 
 /**
+ * Method is used to add ``NCZoneListener`` class element
+ * which will notify entering or leaving ``NCZone``s.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCZoneListener`` class.
  *
- * Method is used to add listener to handle new enter/exit zone events (@see ZoneListener).
- * Do not forget to remove listener if it is no longer needed!
- *
+ * @discussion Example:
+ * @code
+ * // Add zone listener
+ * [self.zoneManager addZoneListener:self.zoneListener];
+ * NSLog(@"Added zone listener");
+ * @endcode
  */
 - (void)addZoneListener:(nullable id<NCZoneListener>)listener;
 
 /**
+ * Method is used for removing previously added ``NCZoneListener`` class element.
+ * @param listener Corresponding ``NCZoneListener`` class to remove.
  *
- * Method is used to remove listener.
- *
+ * @discussion Example:
+ * @code
+ * // Remove zone listener
+ * [self.zoneManager removeZoneListener:self.zoneListener];
+ * NSLog(@"Removed zone listener");
+ * @endcode
  */
 - (void)removeZoneListener:(nullable id<NCZoneListener>)listener;
 

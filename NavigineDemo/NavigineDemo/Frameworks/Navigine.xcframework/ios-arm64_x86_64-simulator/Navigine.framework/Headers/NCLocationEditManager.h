@@ -4,10 +4,6 @@
 @protocol NCLocationEditListener;
 
 
-/**
- * @file NCLocationEditManager.h
- * @brief @copybrief NCLocationEditManager
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLocationEditManager : NSObject
 

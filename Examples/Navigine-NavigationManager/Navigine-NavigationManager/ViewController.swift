@@ -23,14 +23,22 @@ class ViewController: UIViewController {
     
     private var mLocation: NCLocation?
     private var mSublocation: NCSublocation?
+    private var selectedSublocation: NCSublocation? {
+        guard let mLocation,
+              let selectedId = mLocationView.locationWindow.getSublocationId()?.int32Value else { return mSublocation }
+        return mLocation.sublocations.first { $0.id == selectedId }
+    }
     
-    private var mUserPositionIcon: NCFlatIconMapObject!
+    private var mUserPositionIcon: NCIconMapObject!
     private var mUserPoint : NCLocationPoint?
     
-    @IBOutlet weak var mLocationView: NCLocationView!
+    @IBOutlet weak var mLocationView: NCDefaultNavigationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewConfig = NCDefaultNavigationViewConfig.default()
+        viewConfig.visibleWidgets = [.followMeButton, .floorSelector]
+        mLocationView.viewConfig = viewConfig
         initSDK()
         setLocation()
         setupUserPosition()
@@ -72,29 +80,21 @@ class ViewController: UIViewController {
 // set sublocation id to load the map to location view on your screen
         mLocationView.locationWindow.setSublocationId(mSublocation!.id)
         
-//resize map by screen size
-        setupZoomFactor()
         view.layoutIfNeeded()
-    }
-    
-    func setupZoomFactor() {
-        mLocationView.locationWindow.maxZoomFactor = Float(mLocationView.frame.width * 20 / CGFloat(mSublocation!.width))
-        mLocationView.locationWindow.minZoomFactor = Float(mLocationView.frame.width / 20 / CGFloat(mSublocation!.width))
-        mLocationView.locationWindow.zoomFactor = Float(mLocationView.frame.width / CGFloat(mSublocation!.width))
     }
 
 //setup user position icon style
     func setupUserPosition() {
-      mUserPositionIcon = mLocationView.locationWindow.addFlatIconMapObject()
+      mUserPositionIcon = mLocationView.locationWindow.addIconMapObject()
       mUserPositionIcon.setBitmap(UIImage(named: "curLocation"))
       mUserPositionIcon.setSize(22.0, height: 22.0)
       mUserPositionIcon.setVisible(true)
-      mUserPositionIcon.setStyle("{ order: 1, collide: false}")
+      mUserPositionIcon.setPriority(1)
     }
     
     func updateUserPosition(locationPoint: NCLocationPoint) {
         if let iconObj = mUserPositionIcon {
-            iconObj.setPosition(locationPoint)
+            iconObj.setLocationPosition(locationPoint, in: mLocation, window: mLocationView.locationWindow)
             iconObj.setVisible(true)
             mUserPoint = locationPoint
         }
@@ -184,16 +184,22 @@ extension ViewController : NCInputListener {
   
   func onViewLongTap(_ screenPoint: CGPoint) {
 //func to convert screen point to location point on the map
-      let point = mLocationView.locationWindow.screenPosition(toMeters: screenPoint)
-      let locPoint = NCLocationPoint(point: point, locationId: mLocation!.id , sublocationId: mLocation!.sublocations[floor].id)
+      guard let sublocation = mLocation?.sublocations.first(where: { $0.id == (mLocationView.locationWindow.getSublocationId()?.int32Value ?? 0) }) else { return }
+      let locPoint = sublocation.global(toLocal: mLocationView.locationWindow.screenPosition(toGlobal: screenPoint))
   }
 
   func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeLongPressGesture location: CGPoint) {
 //func to convert screen point to location point on the map
-    let point = mLocationView.locationWindow.screenPosition(toMeters: location)
-    let locPoint = NCLocationPoint(point: point, locationId: mLocation!.id , sublocationId: mLocation!.sublocations[floor].id)
+    guard let sublocation = mLocation?.sublocations.first(where: { $0.id == (mLocationView.locationWindow.getSublocationId()?.int32Value ?? 0) }) else { return }
+    let locPoint = sublocation.global(toLocal: mLocationView.locationWindow.screenPosition(toGlobal: location))
 
   }
 }
 
-
+private extension NCIconMapObject {
+    func setLocationPosition(_ point: NCLocationPoint, in location: NCLocation?, window: NCLocationWindow) {
+        guard let sublocation = location?.sublocations.first(where: { $0.id == point.sublocationId }) else { return }
+        let selectedSublocationId = window.getOperatingMode() == .indoorOnly ? NSNumber(value: sublocation.id) : nil
+        setPosition(sublocation.local(toGlobal: point), sublocationId: selectedSublocationId)
+    }
+}

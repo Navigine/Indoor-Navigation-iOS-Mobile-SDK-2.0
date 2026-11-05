@@ -4,17 +4,25 @@
 
 
 /**
- * Class is used to handle events coming from RouteManager (@see RouteManager).
- * Methods invoked in UI
+ * Class provides a callback to be invoked when ``NCRouteManager``
+ * updates routes to the target point or from point to point.
+ * Referenced from ``NCRouteManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCRouteListener <NSObject>
 
 /**
+ * Called when new route has been calculated
+ * @param paths calculated list of ``NCRoutePath``s to added targets.
  *
- * @method onPathsUpdated - called when new route has been calculated
- * @parameter paths - calculated list of paths to added targets (@see RoutePath).
- *
+ * @discussion Example:
+ * @code
+ * - (void)onPathsUpdated:(NSArray<NCRoutePath *> *)paths {
+ *    NSLog(@"Routes updated successfully");
+ *    [self demonstrateRoutePathUsage:paths];
+ * }
+ * @endcode
  */
 - (void)onPathsUpdated:(nonnull NSArray<NCRoutePath *> *)paths;
 

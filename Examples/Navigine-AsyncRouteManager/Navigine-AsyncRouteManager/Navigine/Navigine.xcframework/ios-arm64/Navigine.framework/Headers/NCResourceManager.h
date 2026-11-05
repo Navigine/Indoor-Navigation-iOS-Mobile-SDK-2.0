@@ -1,4 +1,5 @@
 #import "NCExport.h"
+#import "NCLogInfo.h"
 #import <Foundation/Foundation.h>
 @protocol NCResourceListener;
 @protocol NCResourceUploadListener;
@@ -10,8 +11,10 @@ DEFAULT_EXPORT_ATTRIBUTE
 - (void)loadImage:(nonnull NSString *)imageUrl
          listener:(nullable id<NCResourceListener>)listener;
 
-/** working with logs */
-- (nonnull NSArray<NSString *> *)getLogsList;
+/**
+ * working with logs
+ */
+- (nonnull NSArray<NCLogInfo *> *)getLogsList;
 
 - (void)removeLogFile:(nonnull NSString *)fileName;
 

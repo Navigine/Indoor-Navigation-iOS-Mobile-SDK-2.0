@@ -2,10 +2,6 @@
 #import <Foundation/Foundation.h>
 
 
-/**
- * @file NCResourceUploadListener.h
- * @brief @copybrief NCResourceUploadListener-p
- */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCResourceUploadListener <NSObject>
 

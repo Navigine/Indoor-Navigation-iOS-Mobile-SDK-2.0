@@ -40,6 +40,10 @@ The SDK file resides in the libs folder.
 
 Find formal description of Navigine-SDK API including the list of classes and their public fields and methods at [Navigine SDK wiki](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/wiki).
 
+## iOS SDK Examples
+
+The [`Examples`](Examples/README.md) directory contains focused Xcode projects for location lists, location loading, navigation, asynchronous routing, and direct `NCLocationView` use. Start with the [examples guide](Examples/README.md) for setup instructions and links to each project.
+
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like Navigine in your projects. See the ["Getting Started" guide for more information](https://github.com/Navigine/Indoor-Navigation-iOS-Mobile-SDK-2.0/Getting-Started). You can install it with the following command:

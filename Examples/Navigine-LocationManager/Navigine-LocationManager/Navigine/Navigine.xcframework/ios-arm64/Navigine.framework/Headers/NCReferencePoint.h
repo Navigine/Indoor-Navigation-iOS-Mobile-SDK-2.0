@@ -32,4 +32,12 @@ DEFAULT_EXPORT_ATTRIBUTE
 
 @property (nonatomic, readonly) NCTransmitterStatus status;
 
+/**
+ * Tells if this object is valid or not. Any method called on an invalid
+ * object will throw an exception. The object becomes invalid only on UI
+ * thread, and only when its implementation depends on objects already
+ * destroyed by now.
+ */
+@property (nonatomic, readonly, getter=isValid) BOOL valid;
+
 @end

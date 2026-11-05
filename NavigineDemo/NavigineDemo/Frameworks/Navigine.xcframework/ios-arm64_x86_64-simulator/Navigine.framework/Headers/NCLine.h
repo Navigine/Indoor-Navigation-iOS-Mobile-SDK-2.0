@@ -3,28 +3,19 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCLine.h
- * @brief @copybrief NCLine
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_geometry_classes
- *
- * @brief A polyline with specified list of segments @see Segment "Segment"
- *
- * Referenced from @see PolylineMapObject "PolylineMapObject".
- *
+ * A polyline with specified list of segments ``NCSegment``
+ * Referenced from ``NCPolylineMapObject``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCLine : NSObject
 
 /** 
- * @brief Default constructor for class NCLine 
+ * Default constructor for class NCLine 
  */
 - (nonnull instancetype)initWithSegments:(nonnull NSArray<NCSegment *> *)segments;
 
 /** 
- * @brief Factory method for class NCLine 
+ * Factory method for class NCLine 
  */
 + (nonnull instancetype)lineWithSegments:(nonnull NSArray<NCSegment *> *)segments;
 

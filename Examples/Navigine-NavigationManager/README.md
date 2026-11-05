@@ -1,136 +1,39 @@
+# NavigationManager example
 
-NCNavigationManager class is used for evaluating navigation and calculating users' position.
+This example shows how to load a location, receive the user's position, and display it on an indoor map. It also demonstrates selecting a venue feature and converting a long-press on the map to a location point. The map uses `NCDefaultNavigationView` with the floor selector and follow-me button.
 
-You can download [example project](Examples/Navigine-NavigationManager) to try it on your location.
+## Setup
 
-# Step 1
-Replace all user data with your own
+1. Open `Navigine-NavigationManager.xcodeproj` in Xcode.
+2. In `Navigine-NavigationManager/ViewController.swift`, set `userHash` and `locationId` to values from your Navigine account. The server URL defaults to `https://ips.navigine.com`.
+3. Build and run the `Navigine-NavigationManager` scheme on an iOS device with a valid location.
 
-```swift
-    let serverUrl = "https://ips.navigine.com"
-    let userHash = "0000-0000-0000-0000"
-    let locationId: Int32 = 0
-```
+## Receive position updates
 
-# Step 2
-Initialize SDK by following methods
+The example creates `NCLocationManager` and `NCNavigationManager`, then subscribes to `NCPositionListener`. On each position update, it converts the location point to the map's global coordinate system and moves an `NCIconMapObject` to that position:
 
 ```swift
-    var mNavigineSdk: NCNavigineSdk?
-    var mLocationManager: NCLocationManager?
-    var mNavigationManager: NCNavigationManager?
+func onPositionUpdated(_ position: NCPosition) {
+    guard let point = position.locationPoint,
+          let sublocation = location.sublocations.first(where: { $0.id == point.sublocationId }) else { return }
 
-    func initSDK() {
-        //the main funcions to init Navigine SDK
-        mNavigineSdk = NCNavigineSdk.getInstance()
-        mNavigineSdk?.setServer(serverUrl)
-        mNavigineSdk?.setUserHash(userHash)
-        
-        //get Location manager and add your class to listen updates of location manager
-        mLocationManager = mNavigineSdk?.getLocationManager()
-        mLocationManager?.add(self)
-        
-        //get Navigation manager and add listener to update user position
-        mNavigationManager = mNavigineSdk?.getNavigationManager(mLocationManager)
-        mNavigationManager?.add(self)
-        
-        //call func of  touches on map (NCPickListener)
-        mLocationView.locationWindow.add(self as NCPickListener)
-        mLocationView.locationWindow.add(self as NCInputListener)
-        mLocationView.locationWindow.stickToBorder = true
-    }
-```
-
-# Step 3 
-Set your location ID
-
-```swift
-mLocationManager?.setLocationId(locationId)
-```
-
-# Step 4
-Subscribe your class to the NCLocationListener
-
-```swift
-extension ViewController: NCLocationListener {
-    
-    //this func called when new location loaded or updated from server, **don't forget to set floor** to update map on the screen
-    func onLocationLoaded(_ location: NCLocation?) {
-    }
-    
-    //when location loading failed you can check why
-    func onLocationFailed(_ locationId: Int32, error: Error?) {
-    }
-    
-    //when you change location and update it on the server called this func
-    func onLocationUploaded(_ locationId: Int32) {
-    }
+    let globalPoint = sublocation.local(toGlobal: point)
+    userIcon.setPosition(globalPoint, sublocationId: NSNumber(value: sublocation.id))
 }
 ```
 
-# Step 5
-Subscribe your class to NCPositionListener
+The example hides the user icon when `onPositionError(_:)` is called.
 
-```swift
-extension ViewController: NCPositionListener {
-  func onPositionUpdated(_ position: NCPosition) {
-      //here you should update position of user icon on map (NCFlatIconMapObject)
-  }
-  
-  
-  func onPositionError(_ error: Error?) {
-    //usually we remove user position icon from map if we have position error
-  }
-}
-```
+## Map interaction
 
-# Step 6
-Subscribe to NCInputListener to use gestures on the map.
+- Tap a map feature to receive its attributes through `NCPickListener`.
+- Long-press the map to convert the screen position into a local point using `screenPosition(toGlobal:)` and `NCSublocation.global(toLocal:)`.
+- Change floors with the view's built-in floor selector.
 
-```swift
-extension ViewController : NCInputListener {
-  func onViewTap(_ screenPoint: CGPoint) {
-      //here you redirect to Step 7 if user taped on venue
-      mLocationView.locationWindow.pickMapFeature(at: screenPoint)
-  }
-  
-  func onViewDoubleTap(_ screenPoint: CGPoint) {
-   
-  }
-  
-  func onViewLongTap(_ screenPoint: CGPoint) {
+## SDK components used
 
-  }
-
-  func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeLongPressGesture location: CGPoint) {
-
-  }
-}
-```
-
-# Step 7
-You can get all info about venue if user tap it on map.
-Just subscribe to NCPickListener
-
-```swift
-extension ViewController: NCPickListener {
-  func onMapObjectPickComplete(_ mapObjectPickResult: NCMapObjectPickResult?, screenPosition: CGPoint) {
-    
-  }
-  
-  func onMapFeaturePickComplete(_ mapFeaturePickResult: [String : String], screenPosition: CGPoint) {
-//get all info from mapFeaturePickResult and create struct for further use
-    guard let name = mapFeaturePickResult["name"],
-          let description = mapFeaturePickResult["description"],
-          let image = mapFeaturePickResult["image"],
-          let phone = mapFeaturePickResult["phone"],
-          let kind = mapFeaturePickResult["kind"],
-          let alias = mapFeaturePickResult["alias"] else {
-      return
-    }
-    
-  }
-}
-```
-
-You will find a full example of use NCNavigationManager, in this small [project](Examples/Navigine-NavigationManager) we showed how we use the NCNavigationManager in our application
+- `NCLocationManager` and `NCLocationListener` to load the location.
+- `NCNavigationManager` and `NCPositionListener` to receive position updates.
+- `NCIconMapObject` to display the user position.
+- `NCInputListener` and `NCPickListener` for map gestures and feature picking.
+- `NCDefaultNavigationView` to provide the map and built-in navigation controls.

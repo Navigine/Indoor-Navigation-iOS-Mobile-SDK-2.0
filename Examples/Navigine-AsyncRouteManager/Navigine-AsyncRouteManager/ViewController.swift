@@ -25,8 +25,13 @@ class ViewController: UIViewController {
     
     private var mLocation: NCLocation?
     private var mSublocation: NCSublocation?
+    private var selectedSublocation: NCSublocation? {
+        guard let mLocation,
+              let selectedId = mLocationView.locationWindow.getSublocationId()?.int32Value else { return mSublocation }
+        return mLocation.sublocations.first { $0.id == selectedId }
+    }
     
-    private var mUserPositionIcon: NCFlatIconMapObject!
+    private var mUserPositionIcon: NCIconMapObject!
     private var mUserPoint : NCLocationPoint?
     
     private var mFinishPoint: NCLocationPoint!
@@ -37,10 +42,13 @@ class ViewController: UIViewController {
     private var mRoutingAvailable = false
     private var mUserPositionKnown = false
     
-    @IBOutlet weak var mLocationView: NCLocationView!
+    @IBOutlet weak var mLocationView: NCDefaultNavigationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewConfig = NCDefaultNavigationViewConfig.default()
+        viewConfig.visibleWidgets = [.followMeButton, .floorSelector]
+        mLocationView.viewConfig = viewConfig
         initSDK()
         setLocation()
         setupUserPosition()
@@ -87,35 +95,28 @@ class ViewController: UIViewController {
         mLocationView.locationWindow.setSublocationId(mSublocation!.id)
         
         //resize map by screen size
-        setupZoomFactor()
         view.layoutIfNeeded()
-    }
-    
-    func setupZoomFactor() {
-        mLocationView.locationWindow.maxZoomFactor = Float(mLocationView.frame.width * 20 / CGFloat(mSublocation!.width))
-        mLocationView.locationWindow.minZoomFactor = Float(mLocationView.frame.width / 20 / CGFloat(mSublocation!.width))
-        mLocationView.locationWindow.zoomFactor = Float(mLocationView.frame.width / CGFloat(mSublocation!.width))
     }
     
     //setup user position icon style
     func setupUserPosition() {
-        mUserPositionIcon = mLocationView.locationWindow.addFlatIconMapObject()
+        mUserPositionIcon = mLocationView.locationWindow.addIconMapObject()
         mUserPositionIcon.setBitmap(UIImage(named: "curLocation"))
         mUserPositionIcon.setSize(22.0, height: 22.0)
         mUserPositionIcon.setVisible(true)
-        mUserPositionIcon.setStyle("{ order: 1, collide: false}")
+        mUserPositionIcon.setCollisionEnabled(false)
     }
     
     func setupRoutePin() {
       mRoutingIcon = mLocationView.locationWindow.addIconMapObject()
       mRoutingIcon.setBitmap(UIImage(named: "pin"))
       mRoutingIcon.setSize(36.0, height: 108.0)
-      mRoutingIcon.setStyle("{ order: 1, collide: false}")
+      mRoutingIcon.setCollisionEnabled(false)
     }
     
     func updateUserPosition(locationPoint: NCLocationPoint) {
         if let iconObj = mUserPositionIcon {
-            iconObj.setPosition(locationPoint)
+            iconObj.setLocationPosition(locationPoint, in: mLocation, window: mLocationView.locationWindow)
             iconObj.setVisible(true)
             mUserPoint = locationPoint
         }
@@ -229,8 +230,8 @@ extension ViewController : NCInputListener {
             return
         }
         //func to convert screen point to location point on the map
-        let point = mLocationView.locationWindow.screenPosition(toMeters: screenPoint)
-        let locPoint = NCLocationPoint(point: point, locationId: mLocation!.id , sublocationId: mLocation!.sublocations[floor].id)
+        guard let sublocation = selectedSublocation else { return }
+        let locPoint = sublocation.global(toLocal: mLocationView.locationWindow.screenPosition(toGlobal: screenPoint))
         
         //here is an example how to start routing by long tap
         mFinishPoint = locPoint
@@ -239,15 +240,15 @@ extension ViewController : NCInputListener {
     
     func locationView(_ view: NCLocationView!, recognizer: UIGestureRecognizer!, didRecognizeLongPressGesture location: CGPoint) {
         //func to convert screen point to location point on the map
-        let point = mLocationView.locationWindow.screenPosition(toMeters: location)
-        let locPoint = NCLocationPoint(point: point, locationId: mLocation!.id , sublocationId: mLocation!.sublocations[floor].id)
+        guard let sublocation = selectedSublocation else { return }
+        let locPoint = sublocation.global(toLocal: mLocationView.locationWindow.screenPosition(toGlobal: location))
         
     }
 }
 
 //MARK: NCAsyncRouteListener
 extension ViewController: NCAsyncRouteListener {
-    func onRouteChanged(_ currentPath: NCRoutePath?) {
+    func onRouteChanged(_ status: NCRouteStatus, currentPath: NCRoutePath?) {
         if !mRoutingAvailable {
             return
         }
@@ -269,8 +270,7 @@ extension ViewController: NCAsyncRouteListener {
             mLocationView.locationWindow.remove(polyline)
         }
         //route path drawing
-        let paths = mRoutePath?.split(distance)
-        if let drawingPath = paths?[1] {
+        if let drawingPath = mRoutePath?.tail(distance) {
             drawNewPath(path: drawingPath)
         }
     }
@@ -285,49 +285,51 @@ extension ViewController: NCAsyncRouteListener {
     }
     
     func setRoutePin(point: NCPoint) {
-        mRoutingIcon.setPosition(NCLocationPoint.init(point: point, locationId:mLocation?.id ?? 0, sublocationId: mSublocation?.id ?? 0))
+        guard let location = mLocation, let sublocation = selectedSublocation else { return }
+        mRoutingIcon.setLocationPosition(NCLocationPoint(point: point, locationId: location.id, sublocationId: sublocation.id), in: location, window: mLocationView.locationWindow)
         mRoutingIcon.setVisible(true)
     }
     
     func drawNewPath(path: NCRoutePath) {
-        var curSublocID:Int32 = 0
-        
-        var curPoints: [NCPoint] = []
-        var curPolyline = createNewPolyline()
-        
-        for point in path.points.reversed() {
-            if point.sublocationId != curSublocID {
-                if !curPoints.isEmpty {
-                    let locationPolyline = NCLocationPolyline.init(polyline: NCPolyline.init(points: curPoints), locationId: mSublocation?.location ?? 0, sublocationId: curSublocID)
-                    
-                    curPolyline = createNewPolyline()
-                    curPolyline.setPolyLine(locationPolyline)
-                    curPolyline.setVisible(true)
-                    mPolylines.append(curPolyline)
-                }
-                
-                curPoints.removeAll()
-                curSublocID = point.sublocationId
-            }
-            curPoints.append(point.point)
-        }
-        
-        if !curPoints.isEmpty {
-            let locationPolyline = NCLocationPolyline.init(polyline: NCPolyline.init(points: curPoints), locationId: mSublocation?.location ?? 0, sublocationId: curSublocID)
-            
-            curPolyline = createNewPolyline()
-            curPolyline.setPolyLine(locationPolyline)
-            curPolyline.setVisible(true)
-            mPolylines.append(curPolyline)
+        guard let location = mLocation else { return }
+        for segment in globalRouteSegments(for: path, in: location) where segment.points.count > 1 {
+            let polyline = createNewPolyline()
+            let sublocationId: NSNumber? = mLocationView.locationWindow.getOperatingMode() == .indoorOnly
+                ? NSNumber(value: segment.sublocationId)
+                : nil
+            polyline.setPolyLine(NCLocationPolyline(points: segment.points, sublocationId: sublocationId))
+            polyline.setVisible(true)
+            mPolylines.append(polyline)
         }
     }
     
     func createNewPolyline() -> NCPolylineMapObject {
         let polyline = mLocationView.locationWindow.addPolylineMapObject()
-        polyline?.setColor(76/255, green: 217/255, blue: 100/255, alpha: 1)
+        polyline?.setColor(UIColor(red: 0.298, green: 0.851, blue: 0.392, alpha: 1))
         polyline?.setVisible(false)
         polyline?.setWidth(4)
-        polyline?.setStyle("{style: 'points', placement_min_length_ratio: 0, placement_spacing: 8px, size: [8px, 8px], placement: 'spaced', collide: false}")
         return polyline!
     }
+}
+
+private extension NCIconMapObject {
+    func setLocationPosition(_ point: NCLocationPoint, in location: NCLocation?, window: NCLocationWindow) {
+        guard let sublocation = location?.sublocations.first(where: { $0.id == point.sublocationId }) else { return }
+        let selectedSublocationId = window.getOperatingMode() == .indoorOnly ? NSNumber(value: sublocation.id) : nil
+        setPosition(sublocation.local(toGlobal: point), sublocationId: selectedSublocationId)
+    }
+}
+
+private func globalRouteSegments(for path: NCRoutePath, in location: NCLocation) -> [(sublocationId: Int32, points: [NCGlobalPoint])] {
+    var segments: [(sublocationId: Int32, points: [NCGlobalPoint])] = []
+    for node in path.nodes().reversed() {
+        guard let sublocation = location.sublocations.first(where: { $0.id == node.point.sublocationId }) else { continue }
+        let globalPoint = sublocation.local(toGlobal: node.point)
+        if segments.last?.sublocationId == sublocation.id {
+            segments[segments.count - 1].points.append(globalPoint)
+        } else {
+            segments.append((sublocation.id, [globalPoint]))
+        }
+    }
+    return segments
 }

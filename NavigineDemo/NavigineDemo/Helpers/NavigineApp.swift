@@ -10,6 +10,7 @@ class NavigineApp {
     static var mMeasurementManager: NCMeasurementManager?
     static var mInspectManager: NCLocationEditManager?
     static var mRouteManager: NCRouteManager?
+    static var mAsyncRouteManager: NCAsyncRouteManager?
     static var locationState = NCLocationState.none
     
     static func initWith(userHash: String, serverUrl: String) {
@@ -24,5 +25,6 @@ class NavigineApp {
         mInspectManager = mNavigineSdk?.getLocationEdit(mLocationManager)
         mRouteManager = mNavigineSdk?.getRouteManager(mLocationManager, navigationManager: mNavigationManager)
         mZoneManager = mNavigineSdk?.getZoneManager(mNavigationManager)
+        mAsyncRouteManager = mNavigineSdk?.getAsyncRouteManager(mLocationManager, navigationManager: mNavigationManager)
     }
 }

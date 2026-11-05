@@ -1,9 +1,21 @@
 #import <Foundation/Foundation.h>
 
-/** Supported image types */
+/**
+ * Enum described supported image types
+ * Referenced from ``NCImage``.
+ */
 typedef NS_ENUM(NSInteger, NCImageType)
 {
+    /**
+     * PNG format
+     */
     NCImageTypePNG,
+    /**
+     * SVG format
+     */
     NCImageTypeSVG,
+    /**
+     * JPG format
+     */
     NCImageTypeJPG,
 };

@@ -1,11 +1,8 @@
 import Foundation
 
 class NavigationViewController: UIViewController {
-    @IBOutlet weak var mLocationView: NCLocationView!
+    @IBOutlet weak var mLocationView: NCDefaultNavigationView!
     @IBOutlet weak var mRecLogs: UIButton!
-    
-    @IBOutlet weak var mZoomInBtn: UIButton!
-    @IBOutlet weak var mZoomOutBtn: UIButton!
 
     var mBottomSheet: FloatingPanelController!
     
@@ -20,20 +17,26 @@ class NavigationViewController: UIViewController {
     let reuseIdentifier = "subloc"
     
     var subLoc: NCSublocation!
-    
-    var mSublocationsList: [NCSublocation] = []
-    
-    var mSublocationPicker: SublocationPicker?
+
+    private var selectedSublocation: NCSublocation? {
+        guard let mLocation,
+              let selectedId = mLocationView.locationWindow.getSublocationId()?.int32Value else { return subLoc }
+        return mLocation.sublocations.first { $0.id == selectedId }
+    }
     
     var currentFloor = 0
     
-    var mPosition: NCFlatIconMapObject!
+    var mPosition: NCIconMapObject!
     var mCirclePosition: NCCircleMapObject!
-    var mPolyline: NCPolylineMapObject!
-    
+    var mAsyncRouteSession: NCRouteSession?
+    var mPolylines: [NCDottedPolylineMapObject] = []
+    var mRoutePath: NCRoutePath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let viewConfig = NCDefaultNavigationViewConfig.default()
+        viewConfig.visibleWidgets = [.followMeButton, .floorSelector]
+        mLocationView.viewConfig = viewConfig
         
         NavigineApp.mNavigationManager?.add(self)
         NavigineApp.mZoneManager?.add(self)
@@ -44,39 +47,10 @@ class NavigationViewController: UIViewController {
 
         mLocationView.locationWindow.add(self as NCPickListener)
         mLocationView.locationWindow.add(self as NCInputListener)
-        
-        mSublocationPicker = SublocationPicker(frame: CGRect(x: 0, y: 0, width: 180, height: 22))
-        mSublocationPicker!.sublocationPickerDelegate = self
-        self.navigationItem.titleView = mSublocationPicker
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.isUserInteractionEnabled = true
-        //.titleView?.isUserInteractionEnabled = true
         NavigineApp.mLocationManager?.add(self)
         
-//        NavigineApp.mMeasurementManager?.addWifiGenerator("C83A353BFF20", timeout: 1000, rssiMin: -75, rssiMax: -55)
-//
-//        NavigineApp.mMeasurementManager?.addBeaconGenerator(
-//            "F7826DA6-4FA2-4E98-8024-BC5B71E0893E",
-//            major: 1,
-//            minor: 1,
-//            power: 32, timeout: 100, rssiMin: -89, rssiMax: -55);
-//
-//        NavigineApp.mMeasurementManager?.addBeaconGenerator(
-//            "00A10979-B448-3314-2059-DC5DEB6A1005",
-//            major: 2968,
-//            minor: 26457,
-//            power: 32, timeout: 100, rssiMin: -89, rssiMax: -55);
+        NavigineApp.mMeasurementManager?.addWifiGenerator("C83A353BFF20", timeout: 1000, rssiMin: -75, rssiMax: -55)
         
-        mPosition = mLocationView.locationWindow.addFlatIconMapObject()
-        mPosition.setBitmap(UIImage(named: "UserLocation"))
-        mPosition.setSize(Float(30), height: Float(30))
-        mPosition.setVisible(false)
-        mPosition.setStyle("{ order: 1, collide: false}")
-        
-        mPolyline = mLocationView.locationWindow.addPolylineMapObject()
-        mPolyline.setColor(0.0, green: 0.5, blue: 0.5, alpha: 1)
-        mPolyline.setWidth(3)
-        mPolyline.setVisible(false)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,31 +71,27 @@ class NavigationViewController: UIViewController {
         }
         mRecording = !mRecording
     }
-    
-    @IBAction func zoomIn(_ sender: Any) {
-        let zoomFactor = mLocationView.locationWindow.zoomFactor
-        mLocationView.locationWindow.zoomFactor = zoomFactor * 2
-    }
-    
-    
-    @IBAction func zoomOut(_ sender: Any) {
-        let zoomFactor = mLocationView.locationWindow.zoomFactor
-        mLocationView.locationWindow.zoomFactor = zoomFactor / 2
-    }
 }
 
 extension NavigationViewController : NCInputListener {
     func onViewTap(_ screenPoint: CGPoint) {
         mLocationView.locationWindow.pickMapObject(at: screenPoint)
+        mLocationView.locationWindow.pickMapFeature(at: screenPoint)
     }
     
     func onViewDoubleTap(_ screenPoint: CGPoint) {}
     
     func onViewLongTap(_ screenPoint: CGPoint) {
-        NavigineApp.mRouteManager?.clearTargets()
 
-        let point = NCLocationPoint(point: mLocationView.locationWindow.screenPosition(toMeters: screenPoint), locationId: mLocation.id , sublocationId: subLoc.id)
-        NavigineApp.mRouteManager?.setTarget(point);
+        guard let sublocation = selectedSublocation else { return }
+        let point = sublocation.global(toLocal: mLocationView.locationWindow.screenPosition(toGlobal: screenPoint))
+        
+        if let asyncRouteSession = mAsyncRouteSession {
+            NavigineApp.mAsyncRouteManager?.cancel(asyncRouteSession)
+        }
+        let options =  NCRouteOptions(smoothRadius: 0, maxProjectionDistance: 3, maxAdvance: 2)
+        mAsyncRouteSession = NavigineApp.mAsyncRouteManager?.createRouteSession(point, routeOptions: options)
+        mAsyncRouteSession?.add(self)
     }
 }
 
@@ -135,15 +105,11 @@ extension NavigationViewController: NCPickListener {
     }
 }
 
-extension NavigationViewController: SublocationPickerDelegate {
+extension NavigationViewController {
     func setupFloor(_ floor: Int) {
         currentFloor = floor
         subLoc = mLocation?.sublocations[floor]
         mLocationView.locationWindow.setSublocationId(subLoc.id)
-        
-        mLocationView.locationWindow.maxZoomFactor = Float(mLocationView.frame.width * 20 / CGFloat(subLoc.width))
-        mLocationView.locationWindow.zoomFactor = Float(mLocationView.frame.width / 20 / CGFloat(subLoc.width))
-        
         view.layoutIfNeeded()
     }
 }
@@ -155,68 +121,63 @@ extension NavigationViewController: NCLocationListener {
     func onLocationUploaded(_ locationId: Int32) { }
     
     func onLocationLoaded(_ location: NCLocation?) {
-        if mLocation == nil || mLocation?.id != location?.id {
+        guard let location else { return }
+        if mLocation == nil || mLocation?.id != location.id {
             currentFloor = 0
-            self.mSublocationsList.removeAll()
             mLocation = location
+            generateBeaconsIfNeeded()
             mCirclePosition = mLocationView.locationWindow.addCircleMapObject();
-            mCirclePosition.setColor(0.5, green: 0, blue: 0, alpha: 1)
+            mCirclePosition.setColor(UIColor(red: 0.5, green: 0, blue: 0, alpha: 1))
             mCirclePosition.setRadius(5)
             
-            mSublocationPicker?.setLocation(location!)
-            mSublocationPicker?.updateUI(currentFloor)
             
             setupFloor(currentFloor)
             
-            for subloc in location!.sublocations {
-                self.mSublocationsList.append(subloc)
-            }
         }
     }
     
 }
 
+private extension NavigationViewController {
+    func generateBeaconsIfNeeded() {
+        NavigineApp.mMeasurementManager?.addBeaconGenerator(
+            "F7826DA6-4FA2-4E98-8024-BC5B71E0893E",
+            major: 11223,
+            minor: 1,
+            power: 32,
+            timeout: 100,
+            rssiMin: -89,
+            rssiMax: -55
+        )
+        NavigineApp.mMeasurementManager?.addBeaconGenerator(
+            "F7826DA6-4FA2-4E98-8024-BC5B71E0893E",
+            major: 22334,
+            minor: 2,
+            power: 100,
+            timeout: 100,
+            rssiMin: -89,
+            rssiMax: -55
+        )
+    }
+}
+
 extension NavigationViewController: NCRouteListener {
     func onPathsUpdated(_ paths: [NCRoutePath]) {
-        var points: [NCPoint] = []
-        for point in paths[0].points {
-            points.append(point.point)
+        guard let path = paths.first else { return }
+        for polyline in mPolylines {
+            mLocationView.locationWindow.remove(polyline)
         }
-
-        let polyline = NCLocationPolyline.init(polyline: NCPolyline.init(points: points), locationId: subLoc.location, sublocationId: subLoc.id)
-        mPolyline.setPolyLine(polyline)
-        mPolyline.setVisible(true)
+        mPolylines.removeAll()
+        drawNewPath(path: path)
+        
     }
 }
 
 extension NavigationViewController: NCPositionListener {
     func onPositionUpdated(_ position: NCPosition) {
-        if (position.locationHeading != nil) {
-            if (!mOrientationPointState) {
-                mOrientationPointState = true
-                mPosition.setBitmap(UIImage(named: "curDirection"))
-                mPosition.setSize(Float(68), height: Float(68))
-                mPosition.setAngle(position.locationHeading!.doubleValue)
-            }
-            mPosition.setAngleAnimated(position.locationHeading!.doubleValue, duration: 1, type: NCAnimationType.cubic)
-        } else {
-            if (mOrientationPointState) {
-                mOrientationPointState = false
-                mPosition.setBitmap(UIImage(named: "UserLocation"))
-                mPosition.setSize(Float(30), height: Float(30))
-            }
-        }
-        
-        if (mPosition != nil && position.locationPoint != nil) {
-            mPosition.setPositionAnimated(position.locationPoint!, duration: 1.0, type: NCAnimationType.cubic)
-            mPosition.setVisible(true)
-        }
     }
 
     func onPositionError(_ error: Error?) {
-        if mCirclePosition != nil {
-            mCirclePosition.setVisible(false)
-        }
     }
 }
 
@@ -351,3 +312,153 @@ class RemovablePanelLayout: FloatingPanelIntrinsicLayout {
     }
 }
 
+extension NavigationViewController: NCAsyncRouteListener {
+    func onRouteChanged(_ status: NCRouteStatus, currentPath: NCRoutePath?) {
+        switch status {
+            
+        case .newRoute:
+            guard let path = currentPath else { return }
+            for polyline in mPolylines {
+                if polyline.isValid {
+                    mLocationView.locationWindow.remove(polyline)
+                }
+            }
+            mPolylines.removeAll()
+            mRoutePath = path
+            
+        case .missingRoute:
+            print("No route")
+        case .missingPosition:
+            print("Missing user position")
+        case .missingProjection:
+            print("Current position is off the route graph")
+        default:
+            break
+        }
+    }
+    
+    
+    
+    func onRouteAdvanced(_ distance: Float, point: NCLocationPoint) {
+        let locationPoint = NCLocationPoint.init(point: point.point, locationId: point.locationId, sublocationId: point.sublocationId)
+        
+        for polyline in mPolylines {
+            if polyline.isValid {
+                mLocationView.locationWindow.remove(polyline)
+            }
+        }
+        mPolylines.removeAll()
+        
+        let paths = mRoutePath?.tail(distance)
+        if let drawingPath = paths {
+            drawNewPath(path: drawingPath)
+            if drawingPath.length <= 1 {
+                finishRoute()
+            }
+        }
+        
+        guard let currentPath = paths, currentPath.nodes().count > 0, let event = extractEvent(from: currentPath)  else { return }
+        print("\(event)")
+    }
+    
+    func extractEvent(from path: NCRoutePath) -> String? {
+        let nodes = path.nodes()
+        
+        guard
+            let firstNodeWithEvent = nodes.first(where: { !$0.events.isEmpty }),
+            let event = firstNodeWithEvent.events.first
+        else {
+            return nil
+        }
+        
+        let distance = Int(firstNodeWithEvent.distance.rounded())
+        
+        switch event.type {
+            
+        case .TURNEVENT:
+            guard let turnEvent = event.turnEvent else { return nil }
+            
+            switch turnEvent.type {
+            case .LEFTSLIGHT:
+                return "Turn slightly left after \(distance) meters"
+                
+            case .LEFTNORMAL:
+                return "Turn left after \(distance) meters"
+                
+            case .LEFTSHARP:
+                return "Turn sharply left after \(distance) meters"
+                
+            case .RIGHTSLIGHT:
+                return "Turn slightly right after \(distance) meters"
+                
+            case .RIGHTNORMAL:
+                return "Turn right after \(distance) meters"
+                
+            case .RIGHTSHARP:
+                return "Turn sharply right after \(distance) meters"
+                
+            case .COMPLETE:
+                return "Continue to the destination"
+                
+            @unknown default:
+                return nil
+            }
+            
+        case .TRANSITIONENTRYEVENT:
+            guard let transitionEntryEvent = event.transitionEntryEvent else { return nil }
+            
+            return "Change floor after \(distance) meters"
+            
+        case .TRANSITIONEXITEVENT:
+            guard let transitionExitEvent = event.transitionExitEvent else { return nil }
+            
+            return "Exit to the outside after \(distance) meters"
+            
+        case .TARGETREACHEDEVENT:
+            return "You have arrived at your destination"
+            
+        @unknown default:
+            return nil
+        }
+    }
+    
+    func finishRoute() {
+        mRoutePath = nil
+        mAsyncRouteSession?.remove(self)
+        NavigineApp.mAsyncRouteManager?.cancel(mAsyncRouteSession)
+        
+        for polilyne in mPolylines {
+            polilyne.setVisible(false)
+            mLocationView.locationWindow.remove(polilyne)
+        }
+        mPolylines.removeAll()
+        
+    }
+    
+    func drawNewPath(path: NCRoutePath) {
+        guard let location = mLocation else { return }
+        for segment in globalRouteSegments(for: path, in: location) where segment.points.count > 1 {
+            let polyline = createNewPolyline()
+            let sublocationId: NSNumber? = mLocationView.locationWindow.getOperatingMode() == .indoorOnly
+                ? NSNumber(value: segment.sublocationId)
+                : nil
+            polyline.setPolyLine(NCLocationPolyline(points: segment.points, sublocationId: sublocationId))
+            polyline.setVisible(true)
+            mPolylines.append(polyline)
+        }
+        
+    }
+    
+    func createNewPolyline() -> NCDottedPolylineMapObject {
+        let polyline = mLocationView.locationWindow.addDottedPolylineMapObject()!
+        polyline.setColor(UIColor(red: 0.298, green: 0.851, blue: 0.392, alpha: 1))
+        polyline.setVisible(false)
+        polyline.setPlacement(.SPACED)
+        polyline.setPlacementMinRatio(0)
+        polyline.setPlacementSpacing(8)
+        polyline.setSize(8, height: 8)
+        polyline.setCollisionEnabled(false)
+        return polyline
+    }
+    
+}

@@ -3,23 +3,20 @@
 
 
 /**
- * @file NCCameraCallback.h
- * @brief @copybrief NCCameraCallback
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- *
- * @brief Callback specified after the camera movement is stopped
- *
- * Referenced from: @ref LocationWindow "LocationWindow".
+ * Callback specified after the camera movement is stopped
+ * Referenced from: ``NCLocationWindow``.
  */
 
 /**
- *
- * @brief Called when the move if finished.
+ * Called when the move if finished.
  * @param completed determine whether the movement is finished or cancelled
  *
+ * @discussion Example:
+ * @code
+ * - (void)onMoveFinishedWithCompleted:(BOOL)completed {
+ *    NSLog(@"Camera move animation %@", completed ? @"completed" : @"cancelled");
+ * }
+ * @endcode
  */
 typedef void (^NCCameraCallback)(BOOL completed);
 

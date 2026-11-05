@@ -1,29 +1,29 @@
 #import "NCExport.h"
+#import "NCZoneEvent.h"
 #import <Foundation/Foundation.h>
-@class NCZone;
 
 
 /**
- * Class is used to handle events coming from ZoneManager (@see ZoneManager).
- * Methods invoked in UI
+ * Class provides a callback to be invoked when ``NCZoneManager``
+ * detects entering/leaving zone events.
+ * Referenced from ``NCZoneManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCZoneListener <NSObject>
 
 /**
+ * Called when user handle particular zone event
+ * @param zoneEvent handled ``NCZoneEvent``.
  *
- * @method onEnterZone - called when user enter particular zone
- * @parameter zone - zone instance drawn in CMS (@see Zone).
- *
+ * @discussion Example:
+ * @code
+ * - (void)onZoneEvent:(NCZoneEvent *)zoneEvent {
+ *    NSLog(@"Zone event detected");
+ *    [self.example demonstrateZoneEventUsage:zoneEvent];
+ * }
+ * @endcode
  */
-- (void)onEnterZone:(nullable NCZone *)zone;
-
-/**
- *
- * @method onLeaveZone - called when user leave particular zone
- * @parameter zone - zone instance drawn in CMS (@see Zone).
- *
- */
-- (void)onLeaveZone:(nullable NCZone *)zone;
+- (void)onZoneEvent:(nonnull NCZoneEvent *)zoneEvent;
 
 @end

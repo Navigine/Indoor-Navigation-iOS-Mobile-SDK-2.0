@@ -5,37 +5,47 @@
 @protocol NCPositionListener;
 
 
-/** Class is used to manage navigation routine */
+/**
+ * Class is used for evaluating navigation and calculating users' ``NCPosition``
+ * Referenced from ``NCNavigineSdk``.
+ */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCNavigationManager : NSObject
 
 /**
+ * Method is used to add ``NCPositionListener`` class element
+ * which will notify about new user position.
+ * @discussion Note: Do not forget to remove listener if it is no longer needed!
+ * @param listener Corresponding ``NCPositionListener`` class.
  *
- * Method is used to add listener to handle position updates (@see PositionListener).
- * Do not forget to remove listener if it is no longer needed!
- *
+ * @discussion Example:
+ * @code
+ * // Add position listener
+ * [self.navigationManager addPositionListener:self];
+ * @endcode
  */
 - (void)addPositionListener:(nullable id<NCPositionListener>)listener;
 
-/**
- *
- * Method is used to remove listener.
- *
- */
-- (void)removePositionListener:(nullable id<NCPositionListener>)listener;
-
-/** @internal */
 - (void)startLogRecording;
 
-/** @internal */
 - (void)addCheckPoint:(nonnull NCLocationPoint *)point;
 
-/** @internal */
 - (void)stopLogRecording;
 
-/** @internal */
 - (void)addLocationMeasurement:(nonnull NCGlobalPoint *)point
-                      accuracy:(double)accuracy
+                      accuracy:(float)accuracy
                       provider:(nonnull NSString *)provider;
+
+/**
+ * Method is used for removing previously added ``NCPositionListener`` class element.
+ * @param listener Corresponding ``NCPositionListener`` class to remove.
+ *
+ * @discussion Example:
+ * @code
+ * // Remove position listener
+ * [self.navigationManager removePositionListener:self];
+ * @endcode
+ */
+- (void)removePositionListener:(nullable id<NCPositionListener>)listener;
 
 @end

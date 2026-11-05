@@ -4,25 +4,39 @@
 
 
 /**
- * Class is used to handle events coming from LocationListManager (@see LocationListManager).
- * Methods invoked in UI
+ * Class provides a callback to be invoked when ``NCLocationListManager``
+ * class downloads list of available locations from server.
+ * Referenced from ``NCLocationListManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCLocationListListener <NSObject>
 
 /**
+ * Called when new list of available locations has been downloaded from server
+ * @param locationInfos dictionary of ``NCLocationInfo``s which represents location id to location general info.
  *
- * @method onLocationListLoaded - called when new list of locations has been downloaded from CMS
- * @parameter locationInfos - dictionary represents location id to location general info (@see LocationInfo).
- *
+ * @discussion Example:
+ * @code
+ * - (void)onLocationListLoaded:(NSDictionary<NSNumber *, NCLocationInfo *> *)locationInfos {
+ *    NSLog(@"Location list loaded");
+ *    [self.example demonstrateLocationList:locationInfos];
+ * }
+ * @endcode
  */
 - (void)onLocationListLoaded:(nonnull NSDictionary<NSNumber *, NCLocationInfo *> *)locationInfos;
 
 /**
+ * Called if unable to download list of available locations
+ * @param error handled error.
  *
- * @method onLocationListFailed - called if unable to download location list from CMS
- * @parameter error - handled error.
- *
+ * @discussion Example:
+ * @code
+ * - (void)onLocationListFailed:(NSError *)error {
+ *    NSLog(@"Location list failed");
+ *    [self.example demonstrateErrorHandling:error];
+ * }
+ * @endcode
  */
 - (void)onLocationListFailed:(nullable NSError *)error;
 

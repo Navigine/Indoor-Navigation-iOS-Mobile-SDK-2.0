@@ -14,9 +14,21 @@ class DebugController: UIViewController {
     var textView: UITextView!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        mUuid.text = "UUID: \(NCNavigineSdk.getDeviceId())"
+        mErrorCode.text = "Error code: waiting for position"
+        mNavResult.text = "Result: waiting for position"
+        mAccellerometer.text = "Accelerometer: waiting for measurements"
+        mMagnetometer.text = "Magnetometer: waiting for measurements"
+        mGyro.text = "Gyroscope: waiting for measurements"
+        mGps.text = "GPS: waiting for measurements"
+
         textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(textView)
+        textView.text = "Waiting for signal measurements…"
+
         NavigineApp.mMeasurementManager?.add(self)
         NavigineApp.mNavigationManager?.add(self)
         
@@ -27,6 +39,7 @@ class DebugController: UIViewController {
         textView.font = .systemFont(ofSize: 8)
         textView.isEditable = false
     }
+
 }
 
 extension DebugController: NCMeasurementListener {
@@ -58,17 +71,22 @@ extension DebugController: NCMeasurementListener {
     func onSignalMeasurementDetected(_ signals: [String : NCSignalMeasurement]){
         var signalsText: String = ""
         var i = 1
-        for item in signals {
-            let id = item.key.replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").split(separator: ",")
-            if item.value.type == NCSignalType.BEACON {
-                signalsText += "\(String(format: "%02d", i)))  \(item.value.rssi)   \(String(format: "%05d", Int(String(id[0]))!))   \(String(format: "%05d", Int(String(id[1]))!))   \(id[2])\n"
-            } else if item.value.type == NCSignalType.EDDYSTONE {
-                signalsText += "\(String(format: "%02d", i)))  \(item.value.rssi)   \(id[0])   \(id[1])\n"
-            }
+        let bleSignals = signals.values
+            .filter { $0.type == NCSignalType.BEACON || $0.type == NCSignalType.EDDYSTONE }
+            .sorted { $0.id < $1.id }
+
+        for signal in bleSignals {
+            let signalType = signal.type == NCSignalType.BEACON ? "Beacon" : "Eddystone"
+            signalsText += "\(String(format: "%02d", i)))  \(signalType)  RSSI: \(signal.rssi)  ID: \(signal.id)\n"
             i += 1
         }
-        
+
+        if bleSignals.isEmpty {
+            signalsText = "No BLE measurements received"
+        }
+
         textView.text = signalsText
+        mBleCount.text = "BLE devices: \(bleSignals.count)"
     }
 }
 
@@ -84,7 +102,8 @@ extension DebugController: NCPositionListener {
     }
     
     func onPositionError(_ error: Error?) {
-        mErrorCode.text = "Error code:  Sublocation:"
-        mNavResult.text = "Result:"
+        let code = (error as NSError?)?.code
+        mErrorCode.text = "Error code: \(code.map { String($0) } ?? "unknown")   Sublocation:"
+        mNavResult.text = "Result: \(error?.localizedDescription ?? "Position is not available")"
     }
 }

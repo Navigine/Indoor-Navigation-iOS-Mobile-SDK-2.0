@@ -1,52 +1,41 @@
 #import "NCExport.h"
-#import "NCLocationPoint.h"
+#import "NCGlobalPoint.h"
 #import <Foundation/Foundation.h>
 @class NCMapObject;
 
 
 /**
- * @file NCMapObjectPickResult.h
- * @brief @copybrief NCMapObjectPickResult
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_location_view
- *
- * @brief Class is useed to handle information in @see PickListener "PickListener".
- *
- * Referenced from @see PickListener "PickListener".
- *
+ * Class is used to handle information in ``NCPickListener``.
+ * Referenced from ``NCPickListener``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCMapObjectPickResult : NSObject
 
 /**
+ * WGS84 location of the picked map object ``NCGlobalPoint``.
  *
- * @brief Location of the picked map object @see LocationPoint "LocationPoint".
- *
- *
- * Swift code snippet:
- * @snippet LocationWindowInteractionExample.swift swift_MapObjectPickResult_getPoint
- *
- * Objective C code snippet:
- * @snippet LocationWindowInteractionExample.m objc_MapObjectPickResult_getPoint
- *
- *
+ * @discussion Example:
+ * @code
+ * NCLocationPoint *point = mapObjectPickResult.point;
+ * NSLog(@"Map object picked at screen position (%.1f, %.1f)", screenPosition.x, screenPosition.y);
+ * NSLog(@"  Object location: (%.1f, %.1f)", point.x, point.y);
+ * @endcode
  */
-@property (nonatomic, nonnull, readonly) NCLocationPoint * point;
+@property (nonatomic, nonnull, readonly) NCGlobalPoint * point;
 
 /**
+ * Floor the picked object is attached to, or null for the outdoor map.
+ */
+@property (nonatomic, nullable, readonly) NSNumber * sublocationId;
+
+/**
+ * Picked map object ``NCMapObject``.
  *
- * @brief Picked map object @see MapObject "MapObject".
- *
- *
- * Swift code snippet:
- * @snippet LocationWindowInteractionExample.swift swift_MapObjectPickResult_getMapObject
- *
- * Objective C code snippet:
- * @snippet LocationWindowInteractionExample.m objc_MapObjectPickResult_getMapObject
- *
- *
+ * @discussion Example:
+ * @code
+ * NCMapObject *mapObject = mapObjectPickResult.mapObject;
+ * NSLog(@"  Object type: %@", NSStringFromClass([mapObject class]));
+ * @endcode
  */
 @property (nonatomic, nullable, readonly) NCMapObject * mapObject;
 

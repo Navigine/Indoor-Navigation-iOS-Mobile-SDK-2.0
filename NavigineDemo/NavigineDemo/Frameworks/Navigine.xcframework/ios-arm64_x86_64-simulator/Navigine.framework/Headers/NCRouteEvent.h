@@ -1,78 +1,98 @@
 #import "NCExport.h"
 #import "NCRouteEventType.h"
+#import "NCTargetReachedEvent.h"
+#import "NCTransitionEntryEvent.h"
+#import "NCTransitionExitEvent.h"
+#import "NCTurnEvent.h"
 #import <Foundation/Foundation.h>
 
 /**
- * @file NCRouteEvent.h
- * @brief @copybrief NCRouteEvent
- */
-/**
- * @ingroup navigine_objc_classes
- * @ingroup navigine_objc_secondary_classes
- *
- * @brief Class is used for storing the route path events.
- *
- * Referenced from: @see RoutePath "RoutePath".
- *
+ * Class storing one route event payload.
+ * Referenced from ``NCRoutePath``, ``NCRouteNode``.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @interface NCRouteEvent : NSObject
 
 /** 
- * @brief Default constructor for class NCRouteEvent 
+ * Default constructor for class NCRouteEvent 
  */
 - (nonnull instancetype)initWithType:(NCRouteEventType)type
-                               value:(int32_t)value
-                            distance:(float)distance;
+                           turnEvent:(nullable NCTurnEvent *)turnEvent
+                transitionEntryEvent:(nullable NCTransitionEntryEvent *)transitionEntryEvent
+                 transitionExitEvent:(nullable NCTransitionExitEvent *)transitionExitEvent
+                  targetReachedEvent:(nullable NCTargetReachedEvent *)targetReachedEvent;
 
 /** 
- * @brief Factory method for class NCRouteEvent 
+ * Factory method for class NCRouteEvent 
  */
 + (nonnull instancetype)routeEventWithType:(NCRouteEventType)type
-                                     value:(int32_t)value
-                                  distance:(float)distance;
+                                 turnEvent:(nullable NCTurnEvent *)turnEvent
+                      transitionEntryEvent:(nullable NCTransitionEntryEvent *)transitionEntryEvent
+                       transitionExitEvent:(nullable NCTransitionExitEvent *)transitionExitEvent
+                        targetReachedEvent:(nullable NCTargetReachedEvent *)targetReachedEvent;
 
 /**
- * @brief Incoming event type @see RouteEventType "RouteEventType"
+ * Active event variant discriminator.
  *
- *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getType
- *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getType
- *
- *
+ * @discussion Example:
+ * @code
+ * // Get event type
+ * NCRouteEventType type = [event getType];
+ * NSLog(@"Event type: %ld", (long)type);
+ * @endcode
  */
 @property (nonatomic, readonly) NCRouteEventType type;
 
 /**
- * @brief Indicates angle in degrees for TURN_LEFT/TURN_RIGHT types @see RouteEventType "RouteEventType"
- * and target sublocation unique identifier if type is TRANSITION @see Sublocation "Sublocation"
+ * Payload for turn events, set when type is TURN_EVENT.
  *
- *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getValue
- *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getValue
- *
- *
+ * @discussion Example:
+ * @code
+ * NCTurnEvent *turnEvent = [event getTurnEvent];
+ * if (turnEvent != nil) {
+ *    [self demonstrateTurnEventUsage:turnEvent];
+ * }
+ * @endcode
  */
-@property (nonatomic, readonly) int32_t value;
+@property (nonatomic, readonly, nullable) NCTurnEvent * turnEvent;
 
 /**
- * @brief distance from the beginning of the route to incoming event in meters.
+ * Payload for transition entry events.
  *
- *
- * Swift code snippet:
- * @snippet RouteManagerExample.swift swift_RouteEvent_getDistance
- *
- * Objective C code snippet:
- * @snippet RouteManagerExample.m objc_RouteEvent_getDistance
- *
- *
+ * @discussion Example:
+ * @code
+ * NCTransitionEntryEvent *entryEvent = [event getTransitionEntryEvent];
+ * if (entryEvent != nil) {
+ *    [self demonstrateTransitionEntryEventUsage:entryEvent];
+ * }
+ * @endcode
  */
-@property (nonatomic, readonly) float distance;
+@property (nonatomic, readonly, nullable) NCTransitionEntryEvent * transitionEntryEvent;
+
+/**
+ * Payload for transition exit events.
+ *
+ * @discussion Example:
+ * @code
+ * NCTransitionExitEvent *exitEvent = [event getTransitionExitEvent];
+ * if (exitEvent != nil) {
+ *    [self demonstrateTransitionExitEventUsage:exitEvent];
+ * }
+ * @endcode
+ */
+@property (nonatomic, readonly, nullable) NCTransitionExitEvent * transitionExitEvent;
+
+/**
+ * Payload for target reached events.
+ *
+ * @discussion Example:
+ * @code
+ * NCTargetReachedEvent *targetEvent = [event getTargetReachedEvent];
+ * if (targetEvent != nil) {
+ *    [self demonstrateTargetReachedEventUsage:targetEvent];
+ * }
+ * @endcode
+ */
+@property (nonatomic, readonly, nullable) NCTargetReachedEvent * targetReachedEvent;
 
 @end

@@ -4,25 +4,38 @@
 
 
 /**
- * Class is used to handle events coming from NavigationManager (@see NavigationManager).
- * Methods invoked in UI
+ * Class provides a callback to be invoked when ``NCNavigationManager``
+ * updates the position of the device.
+ * Referenced from ``NCNavigationManager`` ``NCRouteManager``.
+ * @discussion Note: The callback is invoked in the UI thread.
  */
 DEFAULT_EXPORT_ATTRIBUTE
 @protocol NCPositionListener <NSObject>
 
 /**
+ * Called when new position has been calculated
+ * @param position current user ``NCPosition``.
  *
- * @method onPositionUpdated - called when new position has been calculated
- * @parameter position - current user position (@see Position).
- *
+ * @discussion Example:
+ * @code
+ * - (void)onPositionUpdated:(NCPosition *)position {
+ *    NSLog(@"Position updated successfully");
+ *    [self demonstratePositionUsage:position];
+ * }
+ * @endcode
  */
 - (void)onPositionUpdated:(nonnull NCPosition *)position;
 
 /**
+ * Called if unable to calculate user's position
+ * @param error handled error.
  *
- * @method onPositionError - called if unable to calculate user's position
- * @parameter error - handled error.
- *
+ * @discussion Example:
+ * @code
+ * - (void)onPositionError:(NSError *)error {
+ *    NSLog(@"Position error: %@", error.localizedDescription);
+ * }
+ * @endcode
  */
 - (void)onPositionError:(nullable NSError *)error;
 

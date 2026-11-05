@@ -158,28 +158,6 @@ private extension NavigationViewController {
             rssiMin: -89,
             rssiMax: -55
         )
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            NavigineApp.mMeasurementManager?.removeBleGenerators()
-            NavigineApp.mMeasurementManager?.addBeaconGenerator(
-                "F7826DA6-4FA2-4E98-8024-BC5B71E0893E",
-                major: 22334,
-                minor: 2,
-                power: 100,
-                timeout: 100,
-                rssiMin: -89,
-                rssiMax: -55
-            )
-            NavigineApp.mMeasurementManager?.addBeaconGenerator(
-                "F7826DA6-4FA2-4E98-8024-BC5B71E0893E",
-                major: 11223,
-                minor: 1,
-                power: 32,
-                timeout: 100,
-                rssiMin: -89,
-                rssiMax: -55
-            )
-        }
     }
 }
 
